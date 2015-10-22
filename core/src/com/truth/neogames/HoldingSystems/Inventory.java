@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by Ahmane on 10/21/2015.
+ * Class Description:
  */
 public class Inventory {
     final List<Gear> inv;

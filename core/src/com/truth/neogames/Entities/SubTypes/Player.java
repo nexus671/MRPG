@@ -1,4 +1,4 @@
-package com.truth.neogames.Entities;
+package com.truth.neogames.Entities.SubTypes;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.HoldingSystems.Inventory;
@@ -6,6 +6,7 @@ import com.truth.neogames.HoldingSystems.Inventory;
 
 /**
  * Created by Ahmane on 10/21/2015.
+ * Class Description:
  */
 public class Player {
     private String race;
