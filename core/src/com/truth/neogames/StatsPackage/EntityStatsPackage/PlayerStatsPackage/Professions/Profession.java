@@ -1,10 +1,12 @@
-package com.truth.neogames.Stats.EntityStatsPackage.PlayerStatsPackage.Professions;
+package com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.Professions;
+
+import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description:
  */
-public class Profession {
+public class Profession extends PlayerStats {
     /**
      * Barbarian
      *      Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves.

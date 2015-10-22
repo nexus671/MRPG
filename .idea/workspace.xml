@@ -2,29 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28e846b6-ed19-4853-b203-3386b1bb7a71" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Adam.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/EntityStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/GearStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/MeleeWeapon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
-      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\playerStats.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\Monster.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\NPC.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\Player.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\Professions.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/Environment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\EntityStatsPackage\EntityStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\EntityStatsPackage\MonsterStatsPackage\MonsterStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\EntityStatsPackage\PlayerStatsPackage\PlayerStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\EntityStatsPackage\PlayerStatsPackage\Professions\Profession.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\GearStatsPackage\GearStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\GearStatsPackage\WeaponStatsPackage\WeaponStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Stats\GearStatsPackage\WearableStatsPackage\WearableStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/MeleeWeapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/MeleeWeapon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MRPG.iws" />
@@ -82,6 +81,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="EntityStats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeaponStats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WearableStats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyGdxGame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.024110219">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Environment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/Environment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Battle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,81 +173,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wearable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java">
+      <file leaf-file-name="WornGear.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonsterStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profession.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0367393">
-              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/EntityStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeaponStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WearableStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WearableStatsPackage/WearableStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GearStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/GearStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -2628,20 +2639,36 @@
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStats/PlayerStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStats/PlayerStats/PlayerStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystem/Inventory.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStats/PlayerStats/Professions/Profession.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStats/PlayerStatsPackage/PlayerStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/EntityStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStats/WeaponStatsPackage/WeaponStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStats/WearableStatsPackage/WearableStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/GearStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/MeleeWeapon.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/Environment.java" />
       </list>
     </option>
   </component>
@@ -2773,44 +2800,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="truth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SubTypes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3381,7 +3370,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445545831026</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ensured synchronization">
+      <created>1445546578076</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1445546578076</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3395,7 +3390,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3411,7 +3406,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22068231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3440,7 +3435,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created class files and organized into packages" />
     <MESSAGE value="Reorganized packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganized packages" />
+    <MESSAGE value="Ensured synchronization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ensured synchronization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3451,14 +3447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -3479,50 +3467,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/NPC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -3530,15 +3486,31 @@
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -3546,23 +3518,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/MeleeWeapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -3570,15 +3526,91 @@
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/SubTypes/RangedWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -3591,7 +3623,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
@@ -3599,42 +3655,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/EntityStats.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/WearableStatsPackage/WearableStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/GearStatsPackage/GearStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Stats/EntityStatsPackage/PlayerStatsPackage/Professions/Profession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0367393">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.024110219">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
