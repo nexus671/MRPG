@@ -1,4 +1,6 @@
-package com.truth.neogames.Items;
+package com.truth.neogames.HoldingSystems;
+
+import com.truth.neogames.Items.GearPackage.Gear;
 
 import java.util.ArrayList;
 import java.util.List;

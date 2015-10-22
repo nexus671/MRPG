@@ -1,7 +1,7 @@
 package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.truth.neogames.Items.Inventory;
+import com.truth.neogames.HoldingSystems.Inventory;
 
 
 /**
