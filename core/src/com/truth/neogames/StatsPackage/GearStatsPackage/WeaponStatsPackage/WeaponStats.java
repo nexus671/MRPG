@@ -7,4 +7,9 @@ import com.truth.neogames.StatsPackage.GearStatsPackage.GearStats;
  * Class Description:
  */
 public class WeaponStats extends GearStats {
+    private double minDamage, maxDamage;
+    private double minTypeDamage, maxTypeDamage;
+
+
+
 }

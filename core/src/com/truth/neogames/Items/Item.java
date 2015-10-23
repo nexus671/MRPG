@@ -5,5 +5,15 @@ package com.truth.neogames.Items;
  * Class Description:
  */
 public class Item {
+    private String name;
+    private String description;
+    private boolean stackable;
 
+
+
+    public Item(String name, String description, boolean stackable) {
+        this.name = name;
+        this.description = description;
+        this.stackable = stackable;
+    }
 }

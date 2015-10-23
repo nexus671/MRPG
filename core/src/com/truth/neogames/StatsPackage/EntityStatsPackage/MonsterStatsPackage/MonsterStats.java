@@ -7,4 +7,11 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
  * Class Description:
  */
 public class MonsterStats extends EntityStats {
+    private double maxArmor, currentArmor;
+
+    public MonsterStats(int level, double armor) {
+        super(level);
+        maxArmor = armor;
+        currentArmor = maxArmor;
+    }
 }
