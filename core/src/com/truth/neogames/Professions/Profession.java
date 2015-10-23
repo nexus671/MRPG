@@ -1,5 +1,6 @@
-package com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.Professions;
+package com.truth.neogames.Professions;
 
+import com.truth.neogames.Enums.ProfessionName;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 
 /**
@@ -44,4 +45,6 @@ public class Profession extends PlayerStats {
      *      Typically this means devotion to a nature deity, though druids are just as likely to revere vague spirits, animalistic demigods, or even specific
      *      awe-inspiring natural wonders.
      */
+
+    private ProfessionName name;
 }

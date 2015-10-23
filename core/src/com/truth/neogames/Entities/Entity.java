@@ -1,6 +1,7 @@
 package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.truth.neogames.Enums.Race;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -8,11 +9,26 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
  */
 public class Entity {
     private String name;
-    private String race;
+    private Race race;
     private String sex;
     private Sprite sprite;
     private String description;
     private int xPos, yPos;
+
+    /************* Constructors *************/
+
+    public Entity(String name, Race race, String sex, Sprite sprite, String description, int xPos, int yPos) {
+        this.name = name;
+        this.race = race;
+        this.sex = sex;
+        this.sprite = sprite;
+        this.description = description;
+        this.xPos = xPos;
+        this.yPos = yPos;
+    }
+
+    public Entity() {
+    }
 
     /************* Getters *************/
 
@@ -20,7 +36,7 @@ public class Entity {
         return name;
     }
 
-    public String getRace() {
+    public Race getRace() {
         return race;
     }
 
@@ -50,7 +66,7 @@ public class Entity {
         this.name = name;
     }
 
-    public void setRace(String race) {
+    public void setRace(Race race) {
         this.race = race;
     }
 

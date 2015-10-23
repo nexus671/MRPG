@@ -2,10 +2,11 @@ package com.truth.neogames.Entities.SubTypes;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Entities.Entity;
+import com.truth.neogames.Enums.Race;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
+import com.truth.neogames.Professions.Profession;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
-import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.Professions.Profession;
 import com.truth.neogames.StatsPackage.Stats;
 
 
@@ -21,7 +22,7 @@ public class Player extends Entity {
 
     /************* Constructors *************/
 
-    public Player(String name, String race, String sex, Profession profession, Sprite sprite, Stats stats) {
+    public Player(String name, Race race, String sex, Profession profession, Sprite sprite, Stats stats) {
         this.setName(name);
         this.setRace(race);
         this.setSex(sex);
@@ -31,43 +32,44 @@ public class Player extends Entity {
         this.wornGear = new WornGear();
     }
 
+    /************* Specific Methods *************/
+
     /************* Getters *************/
 
     public PlayerStats getStats() {
         return this.stats;
     }
 
-    /*************
-     * Setters
-     *************/
-
-    public void setStats(PlayerStats stats) {
-        this.stats = stats;
-    }
-
     public Profession getProfession() {
         return this.profession;
-    }
-
-    public void setProfession(Profession profession) {
-        this.profession = profession;
     }
 
     public WornGear getWornGear() {
         return this.wornGear;
     }
 
-    public void setWornGear(WornGear wornGear) {
-        this.wornGear = wornGear;
-    }
-
     public Inventory getInventory() {
         return this.inventory;
+    }
+
+    /************** Setters *************/
+
+    public void setStats(PlayerStats stats) {
+        this.stats = stats;
+    }
+
+    public void setProfession(Profession profession) {
+        this.profession = profession;
+    }
+
+    public void setWornGear(WornGear wornGear) {
+        this.wornGear = wornGear;
     }
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
+
 
 }
 
