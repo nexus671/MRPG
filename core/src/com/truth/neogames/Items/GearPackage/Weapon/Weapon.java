@@ -7,4 +7,6 @@ import com.truth.neogames.Items.GearPackage.Gear;
  * Class Description:
  */
 public class Weapon extends Gear {
+    private boolean isTwoHanded;
+
 }

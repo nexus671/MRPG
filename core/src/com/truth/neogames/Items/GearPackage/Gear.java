@@ -7,12 +7,12 @@ import com.truth.neogames.Items.Item;
  * Class Description:
  */
 public class Gear extends Item {
-    //Slot that item goes into for the worngear
-    public int getSlot() {
-        return 0; //replaced
+
+    private int slot;
+
+    public Gear() {
+        slot = 0;
     }
 
-    public boolean isTwoHanded() {
-        return true;//replaced
-    }
+
 }

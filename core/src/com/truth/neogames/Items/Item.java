@@ -10,6 +10,11 @@ public class Item {
     private final boolean stackable;
 
 
+    public Item() {
+        name = null;
+        description = null;
+        stackable = false;
+    }
 
     public Item(String name, String description, boolean stackable) {
         this.name = name;
