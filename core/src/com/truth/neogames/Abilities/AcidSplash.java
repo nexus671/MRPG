@@ -14,6 +14,7 @@ public class AcidSplash extends Spell {
     private final int duration = 0;
     private final String savingThrow = "None";
     private final boolean resistible = false;
+    private final String target = "Single";
     private Random random;
 
     public int damage() {

@@ -12,5 +12,6 @@ public class Resistance extends Spell {
     private final int duration = 10;
     private final String savingThrow = "Will";
     private final boolean resistible = true;
+    private final String target = "Single";
 
 }
