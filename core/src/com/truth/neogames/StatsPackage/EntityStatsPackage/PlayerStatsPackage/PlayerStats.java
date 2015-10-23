@@ -11,8 +11,12 @@ public class PlayerStats extends EntityStats {
 
     /************* Constructors *************/
 
-    public PlayerStats(int level, double exp) {
-        super(level);
+    public PlayerStats() {
+
+    }
+
+    public PlayerStats(double exp) {
+        super(1);
         this.exp = exp;
     }
 }

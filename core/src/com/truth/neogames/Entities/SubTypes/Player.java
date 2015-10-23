@@ -22,19 +22,19 @@ public class Player extends Entity {
     /************* Constructors *************/
 
     public Player(String name, String race, String sex, Profession profession, Sprite sprite, Stats stats) {
-        setName(name);
-        setRace(race);
-        setSex(sex);
+        this.setName(name);
+        this.setRace(race);
+        this.setSex(sex);
         this.profession = profession;
-        stats = new PlayerStats(1, 0);
-        inventory = new Inventory();
-        wornGear = new WornGear();
+        stats = new PlayerStats(0);
+        this.inventory = new Inventory();
+        this.wornGear = new WornGear();
     }
 
     /************* Getters *************/
 
     public PlayerStats getStats() {
-        return stats;
+        return this.stats;
     }
 
     /*************
@@ -46,7 +46,7 @@ public class Player extends Entity {
     }
 
     public Profession getProfession() {
-        return profession;
+        return this.profession;
     }
 
     public void setProfession(Profession profession) {
@@ -54,7 +54,7 @@ public class Player extends Entity {
     }
 
     public WornGear getWornGear() {
-        return wornGear;
+        return this.wornGear;
     }
 
     public void setWornGear(WornGear wornGear) {
@@ -62,7 +62,7 @@ public class Player extends Entity {
     }
 
     public Inventory getInventory() {
-        return inventory;
+        return this.inventory;
     }
 
     public void setInventory(Inventory inventory) {
