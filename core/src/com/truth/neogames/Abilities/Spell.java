@@ -8,7 +8,6 @@ public abstract class Spell {
     protected String name;
     protected String desc;
     protected String school;
-    protected int level;
     protected int castTime;
     protected String range;
     protected int duration;
@@ -16,38 +15,34 @@ public abstract class Spell {
     protected boolean resistible;
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getDesc() {
-        return desc;
+        return this.desc;
     }
 
     public String getSchool() {
-        return school;
-    }
-
-    public int getLevel() {
-        return level;
+        return this.school;
     }
 
     public int getCastTime() {
-        return castTime;
+        return this.castTime;
     }
 
     public String getRange() {
-        return range;
+        return this.range;
     }
 
     public int getDuration() {
-        return duration;
+        return this.duration;
     }
 
     public String getSavingThrow() {
-        return savingThrow;
+        return this.savingThrow;
     }
 
     public boolean isResistible() {
-        return resistible;
+        return this.resistible;
     }
 }
