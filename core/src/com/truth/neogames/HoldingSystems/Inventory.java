@@ -1,6 +1,6 @@
 package com.truth.neogames.HoldingSystems;
 
-import com.truth.neogames.Items.GearPackage.Gear;
+import com.truth.neogames.Items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,14 @@ import java.util.List;
  * Class Description:
  */
 public class Inventory {
-    final List<Gear> inv;
+    final List<Item> inv;
 
     public Inventory() {
-        inv = new ArrayList<Gear>(20);
+        inv = new ArrayList<Item>(20);
+
     }
 
-    //Does this add to the first empty slot or to the end?
-
-    public boolean addItem(Gear i) {
+    public boolean addItem(Item i) {
         if (inv.size() == 30) {
             return false;
         } else {
@@ -27,11 +26,11 @@ public class Inventory {
         }
     }
 
-    public void removeItem(Gear i) {
+    public void removeItem(Item i) {
         inv.remove(i);
     }
 
-    public Gear getItem(int i) {
+    public Item getItem(int i) {
         return inv.get(i);
     }
 }
