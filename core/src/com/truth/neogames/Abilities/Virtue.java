@@ -9,7 +9,7 @@ public class Virtue extends Spell {
     private final String school = "Transmutation";
     private final int castTime = 1;
     private final String range = "Touch";
-    private final int duration = 1;
+    private final int duration = 10;
     private final String savingThrow = "None";
     private final boolean resistible = true;
 

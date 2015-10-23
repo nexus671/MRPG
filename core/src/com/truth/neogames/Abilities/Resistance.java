@@ -9,7 +9,7 @@ public class Resistance extends Spell {
     private final String school = "Abjuration";
     private final int castTime = 1;
     private final String range = "Touch";
-    private final int duration = 1;
+    private final int duration = 10;
     private final String savingThrow = "Will";
     private final boolean resistible = true;
 
