@@ -26,7 +26,7 @@ public class Player extends Entity {
         setRace(race);
         setSex(sex);
         this.profession = profession;
-        stats = new PlayerStats();
+        stats = new PlayerStats(1, 0);
         inventory = new Inventory();
         wornGear = new WornGear();
     }
