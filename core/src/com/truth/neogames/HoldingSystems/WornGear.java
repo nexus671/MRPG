@@ -7,9 +7,9 @@ import com.truth.neogames.Items.GearPackage.Gear;
  * Class Description:
  */
 public class WornGear {
-    private final Gear[] Gear;
+    private final Gear[] gear;
 
     public WornGear() {
-        Gear = new Gear[9];
+        this.gear = new Gear[9];
     }
 }

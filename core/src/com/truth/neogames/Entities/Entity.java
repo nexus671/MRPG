@@ -7,41 +7,17 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
 public class Entity {
-    private String name;
-    private String race;
-    private String sex;
-    private Sprite sprite;
-    private String description;
-    private int xPos, yPos;
+    protected String name;
+    protected String race;
+    protected String sex;
+    protected Sprite sprite;
+    protected String description;
+    protected int xPos, yPos;
 
     /************* Getters *************/
 
     public String getName() {
-        return name;
-    }
-
-    public String getRace() {
-        return race;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getxPos() {
-        return xPos;
-    }
-
-    public int getyPos() {
-        return yPos;
-    }
-
-    public Sprite getSprite() {
-        return sprite;
+        return this.name;
     }
 
     /************* Setters *************/
@@ -50,24 +26,48 @@ public class Entity {
         this.name = name;
     }
 
+    public String getRace() {
+        return this.race;
+    }
+
     public void setRace(String race) {
         this.race = race;
+    }
+
+    public String getSex() {
+        return this.sex;
     }
 
     public void setSex(String sex) {
         this.sex = sex;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getxPos() {
+        return this.xPos;
     }
 
     public void setxPos(int xPos) {
         this.xPos = xPos;
     }
 
+    public int getyPos() {
+        return this.yPos;
+    }
+
     public void setyPos(int yPos) {
         this.yPos = yPos;
+    }
+
+    public Sprite getSprite() {
+        return this.sprite;
     }
 
     public void setSprite(Sprite sprite) {
@@ -76,6 +76,6 @@ public class Entity {
 
     @Override
     public String toString() {
-        return name;
+        return this.name;
     }
 }

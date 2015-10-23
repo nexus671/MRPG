@@ -7,5 +7,5 @@ import com.truth.neogames.StatsPackage.Stats;
  * Class Description:
  */
 public class GearStats extends Stats {
-    int levelReq;
+    protected int levelReq;
 }

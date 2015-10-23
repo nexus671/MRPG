@@ -5,6 +5,6 @@ package com.truth.neogames.StatsPackage;
  * Class Description:
  */
 public class Stats {
-    private int level;
+    protected int level;
 
 }
