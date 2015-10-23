@@ -10,8 +10,8 @@ import java.util.ArrayList;
  * Class Description: Defines a non-hostile character that can interact with the player.
  */
 public class NPC extends Entity {
-    Shop shop;
-    ArrayList<String> dialogueOptions;
+    private Shop shop;
+    private ArrayList<String> dialogueOptions;
 
     /************* Constructors *************/
 
