@@ -5,9 +5,9 @@ package com.truth.neogames.Items;
  * Class Description:
  */
 public class Item {
-    private String name;
-    private String description;
-    private boolean stackable;
+    private final String name;
+    private final String description;
+    private final boolean stackable;
 
 
 

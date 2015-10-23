@@ -12,7 +12,7 @@ public class WornGear {
 
     public WornGear() {
         Gear = new Gear[9];
-        inv = this.inv;
+        inv = inv;
     }
 
     public boolean equip(Gear item, int s) {
