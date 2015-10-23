@@ -7,7 +7,7 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
  * Class Description:
  */
 public class PlayerStats extends EntityStats {
-    private double exp;
+    protected double exp;
 
     /************* Constructors *************/
 

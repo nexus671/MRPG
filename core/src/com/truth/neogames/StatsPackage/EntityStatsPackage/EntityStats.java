@@ -7,16 +7,16 @@ import com.truth.neogames.StatsPackage.Stats;
  * Class Description: Defines stats for a player or monster.
  */
 public class EntityStats extends Stats {
-    private int level;
-    private double maxHealth, currentHealth;
-    private double maxHealthRegen, currentHealthRegen;
-    private double maxMana, currentMana;
-    private double maxManaRegen, currentManaRegen;
-    private double maxStrength, currentStrength;
-    private double maxConstitution, currentConstitution;
-    private double maxWisdom, currentWisdom;
-    private double maxIntelligence, currentIntelligence;
-    private double maxLuck, currentLuck;
+    protected int level;
+    protected double maxHealth, currentHealth;
+    protected double maxHealthRegen, currentHealthRegen;
+    protected double maxMana, currentMana;
+    protected double maxManaRegen, currentManaRegen;
+    protected double maxStrength, currentStrength;
+    protected double maxConstitution, currentConstitution;
+    protected double maxWisdom, currentWisdom;
+    protected double maxIntelligence, currentIntelligence;
+    protected double maxLuck, currentLuck;
 
     /************* Constructors *************/
     public EntityStats() {
@@ -29,7 +29,7 @@ public class EntityStats extends Stats {
     /************* Getters *************/
 
     public int getLevel() {
-        return level;
+        return this.level;
     }
 
     /*************
@@ -41,7 +41,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxHealth() {
-        return maxHealth;
+        return this.maxHealth;
     }
 
     public void setMaxHealth(double maxHealth) {
@@ -49,7 +49,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentHealth() {
-        return currentHealth;
+        return this.currentHealth;
     }
 
     public void setCurrentHealth(double currentHealth) {
@@ -57,7 +57,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxHealthRegen() {
-        return maxHealthRegen;
+        return this.maxHealthRegen;
     }
 
     public void setMaxHealthRegen(double maxHealthRegen) {
@@ -65,7 +65,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentHealthRegen() {
-        return currentHealthRegen;
+        return this.currentHealthRegen;
     }
 
     public void setCurrentHealthRegen(double currentHealthRegen) {
@@ -73,7 +73,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxMana() {
-        return maxMana;
+        return this.maxMana;
     }
 
     public void setMaxMana(double maxMana) {
@@ -81,7 +81,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentMana() {
-        return currentMana;
+        return this.currentMana;
     }
 
     public void setCurrentMana(double currentMana) {
@@ -89,7 +89,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxManaRegen() {
-        return maxManaRegen;
+        return this.maxManaRegen;
     }
 
     public void setMaxManaRegen(double maxManaRegen) {
@@ -97,7 +97,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentManaRegen() {
-        return currentManaRegen;
+        return this.currentManaRegen;
     }
 
     public void setCurrentManaRegen(double currentManaRegen) {
@@ -105,7 +105,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxStrength() {
-        return maxStrength;
+        return this.maxStrength;
     }
 
     public void setMaxStrength(double maxStrength) {
@@ -113,7 +113,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentStrength() {
-        return currentStrength;
+        return this.currentStrength;
     }
 
     public void setCurrentStrength(double currentStrength) {
@@ -121,7 +121,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxConstitution() {
-        return maxConstitution;
+        return this.maxConstitution;
     }
 
     public void setMaxConstitution(double maxConstitution) {
@@ -129,7 +129,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentConstitution() {
-        return currentConstitution;
+        return this.currentConstitution;
     }
 
     public void setCurrentConstitution(double currentConstitution) {
@@ -137,7 +137,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxWisdom() {
-        return maxWisdom;
+        return this.maxWisdom;
     }
 
     public void setMaxWisdom(double maxWisdom) {
@@ -145,7 +145,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentWisdom() {
-        return currentWisdom;
+        return this.currentWisdom;
     }
 
     public void setCurrentWisdom(double currentWisdom) {
@@ -153,7 +153,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxIntelligence() {
-        return maxIntelligence;
+        return this.maxIntelligence;
     }
 
     public void setMaxIntelligence(double maxIntelligence) {
@@ -161,7 +161,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentIntelligence() {
-        return currentIntelligence;
+        return this.currentIntelligence;
     }
 
     public void setCurrentIntelligence(double currentIntelligence) {
@@ -169,7 +169,7 @@ public class EntityStats extends Stats {
     }
 
     public double getMaxLuck() {
-        return maxLuck;
+        return this.maxLuck;
     }
 
     public void setMaxLuck(double maxLuck) {
@@ -177,7 +177,7 @@ public class EntityStats extends Stats {
     }
 
     public double getCurrentLuck() {
-        return currentLuck;
+        return this.currentLuck;
     }
 
     public void setCurrentLuck(double currentLuck) {

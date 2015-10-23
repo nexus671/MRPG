@@ -10,6 +10,6 @@ public class WornGear {
     private final Gear[] gear;
 
     public WornGear() {
-        gear = new Gear[9];
+        this.gear = new Gear[9];
     }
 }
