@@ -22,9 +22,9 @@ public class Player extends Entity {
     /************* Constructors *************/
 
     public Player(String name, String race, String sex, Profession profession, Sprite sprite, Stats stats) {
-        super.setName(name);
-        super.setRace(race);
-        super.setSex(sex);
+        setName(name);
+        setRace(race);
+        setSex(sex);
         this.profession = profession;
         stats = new PlayerStats();
         inventory = new Inventory();
@@ -37,30 +37,32 @@ public class Player extends Entity {
         return stats;
     }
 
-    public Profession getProfession() {
-        return profession;
-    }
-
-    public WornGear getWornGear() {
-        return wornGear;
-    }
-
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    /************* Setters *************/
+    /*************
+     * Setters
+     *************/
 
     public void setStats(PlayerStats stats) {
         this.stats = stats;
+    }
+
+    public Profession getProfession() {
+        return profession;
     }
 
     public void setProfession(Profession profession) {
         this.profession = profession;
     }
 
+    public WornGear getWornGear() {
+        return wornGear;
+    }
+
     public void setWornGear(WornGear wornGear) {
         this.wornGear = wornGear;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
     }
 
     public void setInventory(Inventory inventory) {
