@@ -15,39 +15,40 @@ public abstract class Spell {
     protected boolean resistible;
     protected String target;
 
+
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getDesc() {
-        return this.desc;
+        return desc;
     }
 
     public String getSchool() {
-        return this.school;
+        return school;
     }
 
     public int getCastTime() {
-        return this.castTime;
+        return castTime;
     }
 
     public String getRange() {
-        return this.range;
+        return range;
     }
 
     public int getDuration() {
-        return this.duration;
+        return duration;
     }
 
     public String getSavingThrow() {
-        return this.savingThrow;
+        return savingThrow;
     }
 
     public boolean isResistible() {
-        return this.resistible;
+        return resistible;
     }
 
     public String getTarget() {
-        return this.target;
+        return target;
     }
 }

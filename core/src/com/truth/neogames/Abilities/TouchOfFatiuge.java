@@ -11,13 +11,21 @@ public class TouchOfFatiuge extends Spell {
     private final String school = "Necromancy";
     private final int castTime = 1;
     private final String range = "Touch";
-    private final int duration = 0;
     private final String savingThrow = "Fortitude";
     private final boolean resistible = true;
     private final String target = "Single";
     private Random random;
 
-    public int damage() {
-        return random.nextInt(3) + 1;
+    public TouchOfFatiuge(int level) {
+        this.setDuration(level);
+
     }
+    public int damage() {
+        return this.random.nextInt(3) + 1;
+    }
+
+    private void setDuration(int level) {
+        duration = level;
+    }
+
 }
