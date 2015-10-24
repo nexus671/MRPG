@@ -13,6 +13,7 @@ public abstract class Spell {
     protected int duration;
     protected String savingThrow;
     protected boolean resistible;
+    protected String target;
 
     public String getName() {
         return this.name;
@@ -44,5 +45,9 @@ public abstract class Spell {
 
     public boolean isResistible() {
         return this.resistible;
+    }
+
+    public String getTarget() {
+        return this.target;
     }
 }

@@ -13,6 +13,7 @@ public class Flare extends Spell {
     private final int duration = 0;
     private final String savingThrow = "Fortitude";
     private final boolean resistible = true;
+    private final String target = "Single";
     /**
      * Need to create Status Effects: Dazzled
      *
