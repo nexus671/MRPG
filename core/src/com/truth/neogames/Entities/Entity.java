@@ -8,12 +8,12 @@ import com.truth.neogames.Enums.Race;
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
 public class Entity {
-    private String name;
-    private Race race;
-    private String sex;
-    private Sprite sprite;
-    private String description;
-    private int xPos, yPos;
+    protected String name;
+    protected Race race;
+    protected String sex;
+    protected Sprite sprite;
+    protected String description;
+    protected int xPos, yPos;
 
     /************* Constructors *************/
 
@@ -33,57 +33,59 @@ public class Entity {
     /************* Getters *************/
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public Race getRace() {
-        return race;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getxPos() {
-        return xPos;
-    }
-
-    public int getyPos() {
-        return yPos;
-    }
-
-    public Sprite getSprite() {
-        return sprite;
-    }
-
-    /************* Setters *************/
+    /*************
+     * Setters
+     *************/
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Race getRace() {
+        return this.race;
     }
 
     public void setRace(Race race) {
         this.race = race;
     }
 
+    public String getSex() {
+        return this.sex;
+    }
+
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public int getxPos() {
+        return this.xPos;
+    }
+
     public void setxPos(int xPos) {
         this.xPos = xPos;
     }
 
+    public int getyPos() {
+        return this.yPos;
+    }
+
     public void setyPos(int yPos) {
         this.yPos = yPos;
+    }
+
+    public Sprite getSprite() {
+        return this.sprite;
     }
 
     public void setSprite(Sprite sprite) {
@@ -92,6 +94,6 @@ public class Entity {
 
     @Override
     public String toString() {
-        return name;
+        return this.name;
     }
 }
