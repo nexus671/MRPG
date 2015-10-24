@@ -7,4 +7,7 @@ package com.truth.neogames.StatsPackage;
 public class Stats {
     protected int level;
 
+    public int getLevel() {
+        return level;
+    }
 }

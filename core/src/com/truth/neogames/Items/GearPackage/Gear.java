@@ -37,4 +37,8 @@ public class Gear extends Item {
     public void setSlot(WornSlot slot) {
         this.slot = slot;
     }
+
+    public GearStats getStats() {
+        return stats;
+    }
 }

@@ -5,6 +5,7 @@ import com.truth.neogames.Entities.Entity;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
+import com.truth.neogames.Items.GearPackage.Gear;
 import com.truth.neogames.Professions.Profession;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 import com.truth.neogames.StatsPackage.Stats;
@@ -33,6 +34,13 @@ public class Player extends Entity {
     }
 
     /************* Specific Methods *************/
+
+    public int equip(Gear g) {
+        if(g.getStats().getLevel() > stats.getLevel()) {
+            return -1;
+        }
+        return 0; /**Incomplete**/
+    }
 
     /************* Getters *************/
 
