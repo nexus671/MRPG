@@ -4,41 +4,40 @@ import com.truth.neogames.Items.Item;
 
 /**
  * Created by Ahmane on 10/21/2015.
- * Class Description:
+ * Class Description: The inventory system for the player.
  */
 public class Inventory {
     public static final int SIZE = 20;
+
     private Item[] inv;
+
+    /************* Constructors *************/
 
     public Inventory() {
         inv = new Item[SIZE];
     }
 
-    public boolean add(Item i) {
-        int index = getFirstEmptySpace();
-        if(index == -1) {
-            return false;
-        }
-        else {
-            inv[index] = i;
-            return true;
-        }
-    }
+    /************* Specific Methods *************/
 
     /**
-     * Adds an item at a specified index. Be careful when using this, because it will overwrite
-     * any item at the specified index.
+     * Adds an item to the inventory. If an item is stackable and already contained in the
+     * inventory, it's added to that stack.
      * @param i The item to be added.
-     * @param index The index in the array.
-     * @return True if the index was in the valid range 0 - SIZE.
+     * @return True if the item was added successfully, false if inventory was full.
      */
-    public boolean add(Item i, int index) {
-        if(index < 0 || index > SIZE) {
-            return false;
+    public boolean add(Item i) {
+        int indexInArray = getIndexOf(i);
+        if(i.isStackable() && indexInArray != -1) {
+            inv[indexInArray].setStackCount(inv[indexInArray].getStackCount() + i.getStackCount());
+            return true;
         }
-        else {
+        else if(!isFull()) {
+            int index = getFirstEmptySpace();
             inv[index] = i;
             return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -55,6 +54,23 @@ public class Inventory {
     }
 
     /**
+     * Gets the index of an item in the inventory.
+     * @param i The item to be checked for.
+     * @return The first index the item is located at, or -1 if the item is not
+     * found in the inventory.
+     */
+    public int getIndexOf(Item i) {
+        Item check;
+        for(int count = 0; count < SIZE; count++) {
+            check = inv[count];
+            if(check.equals(i)) {
+                return count;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * @return True if the inventory is full of items.
      */
     public boolean isFull() {
@@ -64,6 +80,16 @@ public class Inventory {
             }
         }
         return true;
+    }
+
+    /************* Getters *************/
+
+    public Item[] getInv() {
+        return inv;
+    }
+
+    public static int getSIZE() {
+        return SIZE;
     }
 }
 
