@@ -13,14 +13,6 @@ public enum WornSlot {
         this.slot = slot;
     }
 
-
-    /**
-     * @return The index value that corresponds to the worn slot.
-     */
-    public int getSlot() {
-        return slot;
-    }
-
     /**
      * Gets the WornSlot that corresponds to the specified slot number.
      * @param slotNumber The slot number.
@@ -39,5 +31,12 @@ public enum WornSlot {
             case 8: return BOOTS;
             default: return null;
         }
+    }
+
+    /**
+     * @return The index value that corresponds to the worn slot.
+     */
+    public int getSlotNumber() {
+        return slot;
     }
 }

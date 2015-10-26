@@ -2,6 +2,9 @@ package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Items.Consumables.SubTypes.Food;
+import com.truth.neogames.Items.Consumables.SubTypes.Potion;
+import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -13,6 +16,7 @@ public class Entity {
     protected String sex;
     protected Sprite sprite;
     protected String description;
+    protected EntityStats stats;
     protected int xPos, yPos;
 
     /************* Constructors *************/
@@ -30,15 +34,35 @@ public class Entity {
     public Entity() {
     }
 
+    /************* Specific Methods *************/
+
+    /**
+     * Entity consumes a food object, healing the entity up to it's normal health.
+     *
+     * @param f The food object that is consumed.
+     */
+    public void consume(Food f) {
+        double amount = f.getHealAmount();
+        double currHealth = stats.getHealth().getCurrent();
+        double resultHealth = amount + currHealth;
+        if (resultHealth >= stats.getHealth().getMax()) {
+            stats.getHealth().setCurrent(stats.getHealth().getMax());
+        } else {
+            stats.getHealth().setCurrent(currHealth + amount);
+        }
+    }
+
+    public void consume(Potion p) {
+        //TODO: Define this method
+    }
+
     /************* Getters *************/
 
     public String getName() {
         return this.name;
     }
 
-    /*************
-     * Setters
-     *************/
+    /************** Setters *************/
 
     public void setName(String name) {
         this.name = name;

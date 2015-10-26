@@ -16,7 +16,6 @@ public class PlayerStats extends EntityStats {
     }
 
     public PlayerStats(double exp) {
-        super(1);
         this.exp = exp;
     }
 }
