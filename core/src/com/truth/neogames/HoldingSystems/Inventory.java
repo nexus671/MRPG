@@ -19,6 +19,10 @@ public class Inventory {
 
     /************* Specific Methods *************/
 
+    public static int getSIZE() {
+        return SIZE;
+    }
+
     /**
      * Adds an item to the inventory. If an item is stackable and already contained in the
      * inventory, it's added to that stack.
@@ -71,6 +75,21 @@ public class Inventory {
     }
 
     /**
+     * Checks whether the inventory contains a specific item.
+     *
+     * @param i The item to be checked.
+     * @return True if the inventory contains the item somewhere.
+     */
+    public boolean contains(Item i) {
+        for (Item check : inv) {
+            if (check.equals(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * @return True if the inventory is full of items.
      */
     public boolean isFull() {
@@ -86,10 +105,6 @@ public class Inventory {
 
     public Item[] getInv() {
         return inv;
-    }
-
-    public static int getSIZE() {
-        return SIZE;
     }
 }
 

@@ -7,14 +7,14 @@ package com.truth.neogames.StatsPackage;
 public class Stats {
     protected int level;
 
-    /*************
+    /**************
      * Constructors
      *************/
 
     public Stats() {
     }
 
-    /*************
+    /**************
      * Getters
      *************/
 

@@ -21,13 +21,6 @@ public class Food extends Consumable {
         this.healAmount = healAmount;
     }
 
-    public Food(String name, String desc, boolean stackable, int healAmount) {
-        this.name = name;
-        this.description = desc;
-        this.stackable = stackable;
-        this.healAmount = healAmount;
-    }
-
     /*************
      * Getters
      *************/

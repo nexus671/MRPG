@@ -7,4 +7,5 @@ import com.truth.neogames.StatsPackage.GearStatsPackage.GearStats;
  * Class Description:
  */
 public class WearableStats extends GearStats {
+    //TODO: Create this class
 }

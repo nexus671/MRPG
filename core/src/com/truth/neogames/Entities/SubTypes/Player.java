@@ -6,9 +6,9 @@ import com.truth.neogames.Enums.Race;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
 import com.truth.neogames.Items.GearPackage.Gear;
+import com.truth.neogames.Items.Item;
 import com.truth.neogames.Professions.Profession;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
-import com.truth.neogames.StatsPackage.Stats;
 
 
 /**
@@ -23,7 +23,7 @@ public class Player extends Entity {
 
     /************* Constructors *************/
 
-    public Player(String name, Race race, String sex, Profession profession, Sprite sprite, Stats stats) {
+    public Player(String name, Race race, String sex, Profession profession, Sprite sprite) {
         this.setName(name);
         this.setRace(race);
         this.setSex(sex);
@@ -35,11 +35,38 @@ public class Player extends Entity {
 
     /************* Specific Methods *************/
 
-    public int equip(Gear g) {
+    /**
+     * Equips a gear object into the player's worn gear. Removes that item from
+     * the player's inventory and places any item that was in that slot
+     * the player's worn gear into the inventory.
+     *
+     * @param g The gear to be equipped.
+     * @return False if the level requirement is too high, otherwise true.
+     */
+    public boolean equip(Gear g) {
+        int slot = g.getSlot().getSlotNumber();
         if(g.getStats().getLevel() > stats.getLevel()) {
-            return -1;
+            return false;
+        } else {
+            Gear old = wornGear.getGear()[slot];
+            wornGear.getGear()[slot] = g;
+            int index = inventory.getIndexOf(g);
+            inventory.getInv()[index] = null;
+            if (old != null) {
+                inventory.add(old);
+            }
+            return true;
         }
-        return 0; /**Incomplete**/
+    }
+
+    /**
+     * Picks up an item off the ground, and adds it to the inventory.
+     *
+     * @param i The item to be picked up.
+     * @return False if the item could not be added, otherwise true.
+     */
+    public boolean pickUp(Item i) {
+        return inventory.add(i);
     }
 
     /************* Getters *************/
@@ -48,30 +75,32 @@ public class Player extends Entity {
         return this.stats;
     }
 
-    public Profession getProfession() {
-        return this.profession;
-    }
-
-    public WornGear getWornGear() {
-        return this.wornGear;
-    }
-
-    public Inventory getInventory() {
-        return this.inventory;
-    }
-
-    /************** Setters *************/
+    /**************
+     * Setters
+     *************/
 
     public void setStats(PlayerStats stats) {
         this.stats = stats;
+    }
+
+    public Profession getProfession() {
+        return this.profession;
     }
 
     public void setProfession(Profession profession) {
         this.profession = profession;
     }
 
+    public WornGear getWornGear() {
+        return this.wornGear;
+    }
+
     public void setWornGear(WornGear wornGear) {
         this.wornGear = wornGear;
+    }
+
+    public Inventory getInventory() {
+        return this.inventory;
     }
 
     public void setInventory(Inventory inventory) {

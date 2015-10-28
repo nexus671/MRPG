@@ -15,6 +15,7 @@ public class Flare extends Spell {
     private final boolean resistible = true;
     private final String target = "Single";
     /**
+     * TODO:
      * Need to create Status Effects: Dazzled
      *
      * Desc: The creature is unable to see well because of over-stimulation of the eyes.

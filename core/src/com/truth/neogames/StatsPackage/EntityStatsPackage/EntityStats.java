@@ -25,15 +25,13 @@ public class EntityStats extends Stats {
         //TODO: Create a file with numbers for initializing stat values
     }
 
-    /************* Getters *************/
+    /*************
+     * Getters and Setters
+     *************/
 
     public int getLevel() {
         return this.level;
     }
-
-    /**************
-     * Setters
-     *************/
 
     public void setLevel(int level) {
         this.level = level;

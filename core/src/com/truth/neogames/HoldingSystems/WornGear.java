@@ -18,7 +18,7 @@ public class WornGear {
         this.gear = new Gear[9];
     }
 
-    /*************
+    /**************
      * Specific Methods
      *************/
 
@@ -33,9 +33,5 @@ public class WornGear {
 
     public Gear[] getGear() {
         return gear;
-    }
-
-    public int getSize() {
-        return gear.length;
     }
 }

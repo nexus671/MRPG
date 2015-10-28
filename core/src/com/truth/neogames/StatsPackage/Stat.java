@@ -11,7 +11,7 @@ import com.truth.neogames.Enums.StatName;
 public class Stat {
     protected StatName name;
 
-    /*************
+    /**************
      * Constructors
      *************/
 
@@ -22,7 +22,7 @@ public class Stat {
         this.name = name;
     }
 
-    /*************
+    /**************
      * Getters
      *************/
 
@@ -30,9 +30,7 @@ public class Stat {
         return name;
     }
 
-    /*************
-     * Setters
-     *************/
+    /************** Setters *************/
 
     public void setName(StatName name) {
         this.name = name;
