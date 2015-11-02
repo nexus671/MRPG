@@ -1,7 +1,7 @@
 package com.truth.neogames.Items.Consumables.SubTypes;
 
 import com.truth.neogames.Items.Consumables.Consumable;
-import com.truth.neogames.StatsPackage.EntityStat;
+import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 
 import java.util.HashSet;
 

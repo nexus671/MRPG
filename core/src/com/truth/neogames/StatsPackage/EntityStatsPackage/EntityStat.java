@@ -1,12 +1,13 @@
 package com.truth.neogames.StatsPackage.EntityStatsPackage;
 
-import com.truth.neogames.Enums.StatName;
+import com.truth.neogames.Enums.EntityStatName;
 
 /**
  * Created by Adam on 10/26/2015.
  * Class Description: A stat for an entity.
  */
-public class EntityStat extends com.truth.neogames.StatsPackage.EntityStat {
+public class EntityStat {
+    protected EntityStatName name;
     private double max;
     private double current;
 
@@ -14,7 +15,7 @@ public class EntityStat extends com.truth.neogames.StatsPackage.EntityStat {
      * Constructors
      *************/
 
-    public EntityStat(StatName name, double max) {
+    public EntityStat(EntityStatName name, double max) {
         this.name = name;
         this.max = max;
         this.current = max;
@@ -34,6 +35,10 @@ public class EntityStat extends com.truth.neogames.StatsPackage.EntityStat {
 
     public void setMax(double max) {
         this.max = max;
+    }
+
+    public EntityStatName getName() {
+        return name;
     }
 
     public double getCurrent() {

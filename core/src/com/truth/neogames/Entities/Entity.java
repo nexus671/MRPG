@@ -1,11 +1,11 @@
 package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Enums.StatName;
 import com.truth.neogames.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Items.Consumables.SubTypes.Potion;
-import com.truth.neogames.StatsPackage.EntityStat;
+import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
 
 import java.util.HashSet;
@@ -64,7 +64,7 @@ public class Entity {
     public void consume(Potion p) {
         HashSet<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
-            StatName name = stat.getName();
+            EntityStatName name = stat.getName();
             double percentValue = (1 + p.getPercentAmount()) * this.stats.get(name).getMax();
             this.stats.setStat(name, percentValue);
             this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());

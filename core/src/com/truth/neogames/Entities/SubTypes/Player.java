@@ -2,8 +2,8 @@ package com.truth.neogames.Entities.SubTypes;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Entities.Entity;
+import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Enums.StatName;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
 import com.truth.neogames.Items.Consumables.SubTypes.Food;
@@ -11,7 +11,7 @@ import com.truth.neogames.Items.Consumables.SubTypes.Potion;
 import com.truth.neogames.Items.GearPackage.Gear;
 import com.truth.neogames.Items.Item;
 import com.truth.neogames.Professions.Profession;
-import com.truth.neogames.StatsPackage.EntityStat;
+import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 
 import java.util.HashSet;
@@ -82,7 +82,7 @@ public class Player extends Entity {
      * @param f The food object that is consumed.
      */
     public void consume(Food f) {
-        com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat health = stats.getHealth();
+        EntityStat health = stats.getHealth();
         if (health.getCurrent() + f.getHealAmount() > health.getMax()) {
             health.setCurrent(health.getMax());
         } else {
@@ -105,7 +105,7 @@ public class Player extends Entity {
     public void consume(Potion p) {
         HashSet<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
-            StatName name = stat.getName();
+            EntityStatName name = stat.getName();
             double percentValue = (1 + p.getPercentAmount()) * this.stats.get(name).getMax();
             this.stats.setStat(name, percentValue);
             this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());
