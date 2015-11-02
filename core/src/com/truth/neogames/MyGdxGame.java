@@ -4,12 +4,29 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.truth.neogames.Entities.SubTypes.Player;
+import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Items.Consumables.SubTypes.Food;
+import com.truth.neogames.Items.Item;
+import com.truth.neogames.Professions.Profession;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+
+	public static void main(String[] args) {
+		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
+		p.getInventory().add(new Food(50));
+		System.out.println(p.getInventory().getInv()[0]);
+		Item food = p.getInventory().getInv()[0];
+		Food f = (Food) food;
+		p.consume(f);
+		System.out.println(p.getInventory().getInv()[0]);
+
+	}
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();

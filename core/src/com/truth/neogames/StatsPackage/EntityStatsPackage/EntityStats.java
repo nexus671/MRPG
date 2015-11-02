@@ -1,5 +1,6 @@
 package com.truth.neogames.StatsPackage.EntityStatsPackage;
 
+import com.truth.neogames.Enums.StatName;
 import com.truth.neogames.StatsPackage.Stats;
 
 /**
@@ -23,6 +24,63 @@ public class EntityStats extends Stats {
     public EntityStats() {
         level = 1;
         //TODO: Create a file with numbers for initializing stat values
+    }
+
+    public EntityStat get(StatName name) {
+        switch (name) {
+            case HEALTH:
+                return health;
+            case HEALTHREGEN:
+                return healthRegen;
+            case MANA:
+                return mana;
+            case MANAREGEN:
+                return manaRegen;
+            case STRENGTH:
+                return strength;
+            case CONSTITUTION:
+                return constitution;
+            case WISDOM:
+                return wisdom;
+            case INTELLIGENCE:
+                return intelligence;
+            case LUCK:
+                return luck;
+            default:
+                return null;
+        }
+    }
+
+    public void setStat(StatName name, double value) {
+        switch (name) {
+            case HEALTH:
+                health.setMax(value);
+                break;
+            case HEALTHREGEN:
+                healthRegen.setMax(value);
+                break;
+            case MANA:
+                mana.setMax(value);
+                break;
+            case MANAREGEN:
+                manaRegen.setMax(value);
+                break;
+            case STRENGTH:
+                strength.setMax(value);
+                break;
+            case CONSTITUTION:
+                constitution.setMax(value);
+                break;
+            case WISDOM:
+                wisdom.setMax(value);
+                break;
+            case INTELLIGENCE:
+                intelligence.setMax(value);
+                break;
+            case LUCK:
+                luck.setMax(value);
+                break;
+        }
     }
 
     /*************

@@ -8,17 +8,17 @@ import com.truth.neogames.Enums.StatName;
  * The Stats class is a list of all the stats for an entity or gear object.
  * This class describes a single stat.
  */
-public class Stat {
+public class EntityStat {
     protected StatName name;
 
     /**************
      * Constructors
      *************/
 
-    public Stat() {
+    public EntityStat() {
     }
 
-    public Stat(StatName name) {
+    public EntityStat(StatName name) {
         this.name = name;
     }
 

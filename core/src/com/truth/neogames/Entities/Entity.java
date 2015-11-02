@@ -2,9 +2,13 @@ package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.StatName;
 import com.truth.neogames.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Items.Consumables.SubTypes.Potion;
+import com.truth.neogames.StatsPackage.EntityStat;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
+
+import java.util.HashSet;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -52,8 +56,19 @@ public class Entity {
         }
     }
 
+    /**
+     * Boosts all the stats specified by the potion.
+     *
+     * @param p The potion to be consumed.
+     */
     public void consume(Potion p) {
-        //TODO: Define this method
+        HashSet<EntityStat> stats = p.getStats();
+        for (EntityStat stat : stats) {
+            StatName name = stat.getName();
+            double percentValue = (1 + p.getPercentAmount()) * this.stats.get(name).getMax();
+            this.stats.setStat(name, percentValue);
+            this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());
+        }
     }
 
     /************* Getters *************/

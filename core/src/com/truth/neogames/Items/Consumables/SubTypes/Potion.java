@@ -1,7 +1,7 @@
 package com.truth.neogames.Items.Consumables.SubTypes;
 
 import com.truth.neogames.Items.Consumables.Consumable;
-import com.truth.neogames.StatsPackage.Stat;
+import com.truth.neogames.StatsPackage.EntityStat;
 
 import java.util.HashSet;
 
@@ -13,13 +13,13 @@ public class Potion extends Consumable {
     private double flatAmount; //the flat amount of increase
     private double percentAmount; //the percentage increase in the stat (.5 will increase by 50%, etc.)
     private int duration;
-    private HashSet<Stat> stats; //the stats that are affected
+    private HashSet<EntityStat> stats; //the stats that are affected
 
     public Potion() {
         flatAmount = 0;
         percentAmount = 0;
         duration = 1;
-        stats = new HashSet<Stat>();
+        stats = new HashSet<EntityStat>();
     }
 
     /*************
@@ -50,11 +50,11 @@ public class Potion extends Consumable {
         this.duration = duration;
     }
 
-    public HashSet<Stat> getStats() {
+    public HashSet<EntityStat> getStats() {
         return stats;
     }
 
-    public void setStats(HashSet<Stat> stats) {
+    public void setStats(HashSet<EntityStat> stats) {
         this.stats = stats;
     }
 }

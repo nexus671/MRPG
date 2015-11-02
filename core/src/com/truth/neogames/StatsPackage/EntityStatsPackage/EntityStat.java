@@ -1,13 +1,12 @@
 package com.truth.neogames.StatsPackage.EntityStatsPackage;
 
 import com.truth.neogames.Enums.StatName;
-import com.truth.neogames.StatsPackage.Stat;
 
 /**
  * Created by Adam on 10/26/2015.
  * Class Description: A stat for an entity.
  */
-public class EntityStat extends Stat {
+public class EntityStat extends com.truth.neogames.StatsPackage.EntityStat {
     private double max;
     private double current;
 

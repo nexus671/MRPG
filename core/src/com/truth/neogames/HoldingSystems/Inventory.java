@@ -67,7 +67,7 @@ public class Inventory {
         Item check;
         for(int count = 0; count < SIZE; count++) {
             check = inv[count];
-            if(check.equals(i)) {
+            if (i.equals(check)) {
                 return count;
             }
         }
