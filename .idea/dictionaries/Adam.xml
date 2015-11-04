@@ -2,8 +2,10 @@
   <dictionary name="Adam">
     <words>
       <w>ahmane</w>
+      <w>healthregen</w>
       <w>mainhand</w>
       <w>mana</w>
+      <w>manaregen</w>
       <w>stackable</w>
     </words>
   </dictionary>

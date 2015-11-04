@@ -1,5 +1,6 @@
 package com.truth.neogames.StatsPackage.GearStatsPackage;
 
+import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.StatsPackage.Stats;
 
 /**
@@ -7,5 +8,8 @@ import com.truth.neogames.StatsPackage.Stats;
  * Class Description:
  */
 public class GearStats extends Stats {
+    private ElementalType elementalType;
 
+    public GearStats() {
+    }
 }

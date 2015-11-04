@@ -8,7 +8,6 @@ import com.truth.neogames.StatsPackage.Stats;
  * Class Description: Defines stats for a player or monster.
  */
 public class EntityStats extends Stats {
-    protected int level;
     protected EntityStat health;
     protected EntityStat healthRegen;
     protected EntityStat mana;
@@ -42,8 +41,6 @@ public class EntityStats extends Stats {
                 return constitution;
             case WISDOM:
                 return wisdom;
-            case INTELLIGENCE:
-                return intelligence;
             case DEXTERITY:
                 return luck;
             default:
@@ -74,9 +71,6 @@ public class EntityStats extends Stats {
             case WISDOM:
                 wisdom.setMax(value);
                 break;
-            case INTELLIGENCE:
-                intelligence.setMax(value);
-                break;
             case DEXTERITY:
                 luck.setMax(value);
                 break;
@@ -86,14 +80,6 @@ public class EntityStats extends Stats {
     /*************
      * Getters and Setters
      *************/
-
-    public int getLevel() {
-        return this.level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public EntityStat getHealth() {
         return health;

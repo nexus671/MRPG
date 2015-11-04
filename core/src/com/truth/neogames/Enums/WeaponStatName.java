@@ -5,5 +5,5 @@ package com.truth.neogames.Enums;
  * Class Description: Stat names for weapons and armor.
  */
 public enum WeaponStatName {
-    MINPHYSICAL, MAXPHYSICAL, MINELEMENTAL, MAXELEMENTAL, CRITCHANCE, RANGE, BASECOST
+    MINPHYSICAL, MAXPHYSICAL, MINELEMENTAL, MAXELEMENTAL, CRITCHANCE, RANGE
 }

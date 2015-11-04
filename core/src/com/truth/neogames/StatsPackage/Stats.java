@@ -7,18 +7,11 @@ package com.truth.neogames.StatsPackage;
 public class Stats {
     protected int level;
 
-    /**************
-     * Constructors
-     *************/
-
-    public Stats() {
-    }
-
-    /**************
-     * Getters
-     *************/
-
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

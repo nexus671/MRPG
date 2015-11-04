@@ -5,5 +5,5 @@ package com.truth.neogames.Enums;
  * Class Description:
  */
 public enum ElementalType {
-    LIGHT, DARK, AIR, FIRE, WATER, EARTH
+    LIGHT, DARK, AIR, FIRE, WATER, EARTH, NONE
 }
