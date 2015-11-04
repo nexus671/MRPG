@@ -37,6 +37,7 @@ public class Player extends Entity {
         stats = new PlayerStats(0);
         this.inventory = new Inventory();
         this.wornGear = new WornGear();
+        stats = new PlayerStats();
     }
 
     /************* Specific Methods *************/

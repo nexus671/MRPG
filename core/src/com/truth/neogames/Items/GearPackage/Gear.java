@@ -16,6 +16,7 @@ public class Gear extends Item {
     /************* Constructors *************/
 
     public Gear() {
+        stats = new GearStats();
     }
 
     public Gear(int slotNumber) {
@@ -28,6 +29,10 @@ public class Gear extends Item {
 
     /************* Getters *************/
 
+    public GearStats getStats() {
+        return stats;
+    }
+
     public WornSlot getSlot() {
         return slot;
     }
@@ -38,7 +43,4 @@ public class Gear extends Item {
         this.slot = slot;
     }
 
-    public GearStats getStats() {
-        return stats;
-    }
 }

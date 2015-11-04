@@ -5,7 +5,7 @@ package com.truth.neogames.Items;
  * Class Description: Describes a generic item that can be held in the inventory.
  */
 public class Item {
-    protected String name = "";
+    protected String name;
     protected String description;
     protected boolean stackable;
     protected int stackCount;
@@ -13,6 +13,10 @@ public class Item {
     /************* Constructors *************/
 
     public Item() {
+        name = "";
+        description = "";
+        stackable = false;
+        stackCount = 1;
     }
 
     public Item(String name, String description, boolean stackable) {
@@ -27,34 +31,36 @@ public class Item {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public int getStackCount() {
-        return stackCount;
-    }
-
-    public boolean isStackable() {
-        return stackable;
-    }
-
-    /************* Getters *************/
+    /*************
+     * Getters
+     *************/
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setStackable(boolean stackable) {
-        this.stackable = stackable;
+    public int getStackCount() {
+        return stackCount;
     }
 
     public void setStackCount(int stackCount) {
         this.stackCount = stackCount;
+    }
+
+    public boolean isStackable() {
+        return stackable;
+    }
+
+    public void setStackable(boolean stackable) {
+        this.stackable = stackable;
     }
 
     @Override

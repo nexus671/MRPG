@@ -6,31 +6,46 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import java.util.HashSet;
 
 /**
- * Created by Adam on 10/22/2015.
- * Class Description: Potions that increase certain stats by a flat amount and by a percentage.
+ * Created by Adam on 11/4/2015.
+ * Class Description: A generic potion that can be restorative or a temporary buff.
  */
 public class Potion extends Consumable {
-    private double flatAmount; //the flat amount of increase
-    private double percentAmount; //the percentage increase in the stat (.5 will increase by 50%, etc.)
-    private int duration;
+    private int flatAmount;
+    private double percentAmount;
+    private int duration; //the number of turns the potion lasts
     private HashSet<EntityStat> stats; //the stats that are affected
+    private boolean refreshes; //whether the potion buff refreshes every turn
+
 
     public Potion() {
         flatAmount = 0;
         percentAmount = 0;
         duration = 1;
         stats = new HashSet<EntityStat>();
+        refreshes = false;
     }
 
-    /*************
-     * Getters and Setters
-     *************/
+    public Potion(int flatAmount, double percentAmount, int duration, HashSet<EntityStat> stats, boolean refreshes) {
+        this.flatAmount = flatAmount;
+        this.percentAmount = percentAmount;
+        this.duration = duration;
+        this.stats = stats;
+        this.refreshes = refreshes;
+    }
 
-    public double getFlatAmount() {
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getFlatAmount() {
         return flatAmount;
     }
 
-    public void setFlatAmount(double flatAmount) {
+    public void setFlatAmount(int flatAmount) {
         this.flatAmount = flatAmount;
     }
 
@@ -42,19 +57,19 @@ public class Potion extends Consumable {
         this.percentAmount = percentAmount;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
     public HashSet<EntityStat> getStats() {
         return stats;
     }
 
     public void setStats(HashSet<EntityStat> stats) {
         this.stats = stats;
+    }
+
+    public boolean isRefreshes() {
+        return refreshes;
+    }
+
+    public void setRefreshes(boolean refreshes) {
+        this.refreshes = refreshes;
     }
 }
