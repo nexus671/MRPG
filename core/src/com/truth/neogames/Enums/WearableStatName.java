@@ -5,5 +5,5 @@ package com.truth.neogames.Enums;
  * Class Description:
  */
 public enum WearableStatName {
-    ARMOR, DEXTERITYBONUS,
+    STABDEF, SLASHDEF, CRUSHDEF, ARCANEDEF, DEXTERITYBONUS
 }
