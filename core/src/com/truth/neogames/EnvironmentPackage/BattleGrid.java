@@ -8,7 +8,7 @@ import java.util.Random;
  * Created by acurr on 11/4/2015.
  */
 public class BattleGrid {
-    int[][] BattleGrid;
+    Entity[][] BattleGrid;
 
     BattleGrid() {
         Entity[][] BattleGrid = new Entity[100][100];
@@ -24,8 +24,8 @@ public class BattleGrid {
         while (treesPlaced < 10) {
             int x = random.nextInt(100);
             int y = random.nextInt(100);
-            if (true) {
-                BattleGrid[x][y] = 0;
+            if (BattleGrid[x][y] == null) {
+                //BattleGrid[x][y] = Tree; TODO Add tree entity and add rocks
                 treesPlaced++;
             }
         }
