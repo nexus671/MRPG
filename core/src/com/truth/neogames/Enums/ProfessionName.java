@@ -7,7 +7,7 @@ package com.truth.neogames.Enums;
 public enum ProfessionName {
     BARBARIAN("Barbarian"), BARD("Bard"), CLERIC("Cleric"), DRUID("Druid"), FIGHTER("Fighter"), PALADIN("Paladin"), RANGER("Ranger"), ROGUE("Rogue"), SORCERER("Sorcerer");
 
-    private String lowercase;
+    private final String lowercase;
 
 
     /**

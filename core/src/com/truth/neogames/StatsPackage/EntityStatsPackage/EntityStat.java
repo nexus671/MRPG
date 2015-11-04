@@ -7,7 +7,7 @@ import com.truth.neogames.Enums.EntityStatName;
  * Class Description: A stat for an entity.
  */
 public class EntityStat {
-    protected EntityStatName name;
+    protected final EntityStatName name;
     private double max;
     private double current;
 

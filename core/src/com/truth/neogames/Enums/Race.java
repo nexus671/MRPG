@@ -7,7 +7,7 @@ package com.truth.neogames.Enums;
 public enum Race {
     HUMAN("human"), ELF("elf"), ORC("orc"), UNDEAD("undead");
 
-    private String lowercase;
+    private final String lowercase;
 
 
     /**
