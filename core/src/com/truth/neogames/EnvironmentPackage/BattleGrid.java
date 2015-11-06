@@ -18,7 +18,11 @@ public class BattleGrid {
         Entity[][] BattleGrid = new Entity[r][c];
     }
 
-    void placeTrees() {
+    public boolean isSpaceEmpty(int x, int y) {
+        return (BattleGrid[x][y] == null);
+    }
+
+    private void placeTrees() {
         int treesPlaced = 0;
         Random random = new Random();
         while (treesPlaced < 10) {
