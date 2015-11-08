@@ -22,7 +22,11 @@ public class BattleGrid {
         return (BattleGrid[x][y] == null);
     }
 
-    private void placeTrees() {
+    public void repostion(Entity e) {
+
+    }
+
+    private void placeObstacles() {
         int treesPlaced = 0;
         Random random = new Random();
         while (treesPlaced < 10) {
@@ -34,4 +38,5 @@ public class BattleGrid {
             }
         }
     }
+
 }
