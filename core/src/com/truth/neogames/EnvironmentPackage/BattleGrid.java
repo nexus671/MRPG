@@ -9,7 +9,7 @@ import java.util.Random;
  * Class Description:
  */
 public class BattleGrid {
-    Entity[][] BattleGrid;
+    private Entity[][] BattleGrid;
 
     BattleGrid() {
         Entity[][] BattleGrid = new Entity[100][100];
@@ -19,7 +19,27 @@ public class BattleGrid {
         Entity[][] BattleGrid = new Entity[r][c];
     }
 
-    void placeTrees() {
+    public boolean isSpaceEmpty(int x, int y) {
+        return (BattleGrid[x][y] == null);
+    }
+
+    public void moveEntity(Entity e, int x, int y) {
+        int oldX = e.getxPos();
+        int oldY = e.getyPos();
+
+        e.setxPos(oldX + x);
+        e.setyPos(oldY + y);
+
+        BattleGrid[oldX][oldY] = null;
+
+        addEntity(e);
+    }
+
+    public void addEntity(Entity e) {
+        BattleGrid[e.getxPos()][e.getyPos()] = e;
+    }
+
+    private void placeObstacles() {
         int treesPlaced = 0;
         Random random = new Random();
         while (treesPlaced < 10) {
@@ -31,4 +51,5 @@ public class BattleGrid {
             }
         }
     }
+
 }

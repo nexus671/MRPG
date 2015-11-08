@@ -3,6 +3,7 @@ package com.truth.neogames.Entities;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Items.Consumables.SubTypes.Potion;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
@@ -70,6 +71,39 @@ public class Entity {
             this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());
         }
     }
+
+    public boolean moveLeft(BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos - 1, yPos)) {
+            grid.moveEntity(this, -1, 0);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveRight(BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos + 1, yPos)) {
+            grid.moveEntity(this, 1, 0);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveForward(BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos, yPos + 1)) {
+            grid.moveEntity(this, 0, 1);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveDown(BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos, yPos - 1)) {
+            grid.moveEntity(this, 0, -1);
+            return true;
+        }
+        return false;
+    }
+
 
     /************* Getters *************/
 

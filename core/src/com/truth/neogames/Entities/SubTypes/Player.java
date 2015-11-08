@@ -17,6 +17,7 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.PlayerStatsPackage.Pla
 import java.util.HashSet;
 
 
+
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description: Defines a player.
@@ -119,6 +120,7 @@ public class Player extends Entity {
                 inventory.getInv()[index] = null;
         }
     }
+
 
     /************* Getters *************/
 

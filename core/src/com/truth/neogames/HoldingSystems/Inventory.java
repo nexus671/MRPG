@@ -7,20 +7,20 @@ import com.truth.neogames.Items.Item;
  * Class Description: The inventory system for the player.
  */
 public class Inventory {
-    public static final int SIZE = 20;
+    public static int size = 20;
 
     private Item[] inv;
 
     /************* Constructors *************/
 
     public Inventory() {
-        inv = new Item[SIZE];
+        inv = new Item[size];
     }
 
     /************* Specific Methods *************/
 
     public static int getSIZE() {
-        return SIZE;
+        return size;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Inventory {
      * @return The index of the first null object in the array, or -1 if the array is full.
      */
     public int getFirstEmptySpace() {
-        for(int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < size; i++) {
             if(inv[i] == null) {
                 return i;
             }
@@ -65,7 +65,7 @@ public class Inventory {
      */
     public int getIndexOf(Item i) {
         Item check;
-        for(int count = 0; count < SIZE; count++) {
+        for (int count = 0; count < size; count++) {
             check = inv[count];
             if (i.equals(check)) {
                 return count;
