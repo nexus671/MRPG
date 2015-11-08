@@ -1,5 +1,6 @@
 package com.truth.neogames.Items.GearPackage.Weapon;
 
+import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Items.GearPackage.Gear;
 import com.truth.neogames.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
 
@@ -13,6 +14,24 @@ public class Weapon extends Gear {
 
     public Weapon(boolean isTwoHanded, WeaponStats stats) {
         this.isTwoHanded = isTwoHanded;
+        this.stats = stats;
+        slot = WornSlot.MAINHAND;
+    }
+
+    public boolean isTwoHanded() {
+        return isTwoHanded;
+    }
+
+    public void setIsTwoHanded(boolean isTwoHanded) {
+        this.isTwoHanded = isTwoHanded;
+    }
+
+    @Override
+    public WeaponStats getStats() {
+        return stats;
+    }
+
+    public void setStats(WeaponStats stats) {
         this.stats = stats;
     }
 }

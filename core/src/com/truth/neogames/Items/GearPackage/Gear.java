@@ -10,8 +10,8 @@ import com.truth.neogames.StatsPackage.GearStatsPackage.GearStats;
  */
 public class Gear extends Item {
 
-    private WornSlot slot;
-    private GearStats stats;
+    protected WornSlot slot;
+    protected GearStats stats;
 
     /************* Constructors *************/
 

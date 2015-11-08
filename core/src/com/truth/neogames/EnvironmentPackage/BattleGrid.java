@@ -6,6 +6,7 @@ import java.util.Random;
 
 /**
  * Created by acurr on 11/4/2015.
+ * Class Description:
  */
 public class BattleGrid {
     Entity[][] BattleGrid;
