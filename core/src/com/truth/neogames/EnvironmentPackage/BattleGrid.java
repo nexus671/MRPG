@@ -8,7 +8,7 @@ import java.util.Random;
  * Created by acurr on 11/4/2015.
  */
 public class BattleGrid {
-    Entity[][] BattleGrid;
+    private Entity[][] BattleGrid;
 
     BattleGrid() {
         Entity[][] BattleGrid = new Entity[100][100];
@@ -22,8 +22,20 @@ public class BattleGrid {
         return (BattleGrid[x][y] == null);
     }
 
-    public void repostion(Entity e) {
+    public void moveEntity(Entity e, int x, int y) {
+        int oldX = e.getxPos();
+        int oldY = e.getyPos();
 
+        e.setxPos(oldX + x);
+        e.setyPos(oldY + y);
+
+        BattleGrid[oldX][oldY] = null;
+
+        addEntity(e);
+    }
+
+    public void addEntity(Entity e) {
+        BattleGrid[e.getxPos()][e.getyPos()] = e;
     }
 
     private void placeObstacles() {

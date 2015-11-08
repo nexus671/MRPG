@@ -74,7 +74,7 @@ public class Entity {
 
     public boolean moveLeft(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos - 1, yPos)) {
-            xPos--;
+            grid.moveEntity(this, -1, 0);
             return true;
         }
         return false;
@@ -82,7 +82,7 @@ public class Entity {
 
     public boolean moveRight(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos + 1, yPos)) {
-            xPos++;
+            grid.moveEntity(this, 1, 0);
             return true;
         }
         return false;
@@ -90,7 +90,7 @@ public class Entity {
 
     public boolean moveForward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos + 1)) {
-            yPos++;
+            grid.moveEntity(this, 0, 1);
             return true;
         }
         return false;
@@ -98,7 +98,7 @@ public class Entity {
 
     public boolean moveDown(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos - 1)) {
-            yPos--;
+            grid.moveEntity(this, 0, -1);
             return true;
         }
         return false;
