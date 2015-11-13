@@ -6,11 +6,11 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.truth.neogames.Entities.SubTypes.Player;
+import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Items.Consumables.SubTypes.Food;
-import com.truth.neogames.Items.Item;
-import com.truth.neogames.Professions.Profession;
+import com.truth.neogames.Adam_the_cool_kid.Items.Consumables.SubTypes.Food;
+import com.truth.neogames.Adam_the_cool_kid.Items.Item;
+import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;

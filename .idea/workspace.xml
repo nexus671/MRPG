@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="4" />
-  </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c5386f0-7920-420d-8d6f-b023113d170e" name="Default" comment="Improved potions">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/PrefixName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java" />
+    <list default="true" id="04dca8a0-851b-440a-83f7-a20cdf02ae96" name="Default" comment="Split it up">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Consumables/Consumable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/GearStatsPackage/GearStats.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/WeaponPrefixName.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/WeaponSuffixName.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/GearPackage/Wearables/Wearable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/WearableSuffixName.java" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\.idea\dictionaries\Adam.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\.idea\libraries\core_core_1_0.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\.idea\libraries\gdx_1_7_0.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\.idea\libraries\gdx_backend_android_1_7_0.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\.idea\libraries\gdx_box2d_1_7_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\build\classes\main\com\truth\neogames\Battle\Battle.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\Consumables\Consumable.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\GearPackage\Wearables\Wearable.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\GearStatsPackage\GearStats.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\GearStatsPackage\WeaponStatsPackage\WeaponStats.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\AbilityTrees\AbilityTree.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/AbilityTrees/AbilityTree.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Battle\Battle.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Battle/Battle.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\Entity.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/Entity.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\SubTypes\Monster.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/Monster.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\SubTypes\NPC.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/NPC.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Entities\SubTypes\Player.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/Player.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Enums\PrefixName.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/WearablePrefixName.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\EnvironmentPackage\BattleGrid.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/EnvironmentPackage/BattleGrid.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\EnvironmentPackage\Environment.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/EnvironmentPackage/Environment.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\HoldingSystems\Inventory.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/HoldingSystems/Inventory.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\HoldingSystems\WornGear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/HoldingSystems/WornGear.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\Consumables\SubTypes\Food.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Consumables/SubTypes/Food.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\Consumables\SubTypes\Potion.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Consumables/SubTypes/Potion.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\GearPackage\Gear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/GearPackage/Gear.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\GearPackage\Weapon\Weapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/GearPackage/Weapon/Weapon.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Items\Item.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Item.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Barbarian.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Barbarian.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Bard.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Bard.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Cleric.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Cleric.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Druid.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Druid.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Fighter.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Fighter.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Paladin.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Paladin.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Profession.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Profession.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Ranger.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Ranger.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Professions\Sorcerer.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Professions/Sorcerer.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Shops\Shop.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Shops/Shop.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\EntityStatsPackage\EntityStat.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/EntityStatsPackage/EntityStat.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\EntityStatsPackage\EntityStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/EntityStatsPackage/EntityStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\EntityStatsPackage\MonsterStatsPackage\MonsterStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\EntityStatsPackage\PlayerStatsPackage\PlayerStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\GearStatsPackage\WeaponStatsPackage\WeaponStat.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStat.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\GearStatsPackage\WearableStatsPackage\WearableStat.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\GearStatsPackage\WearableStatsPackage\WearableStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
+      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\StatsPackage\Stats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/StatsPackage/Stats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/truth/neogames/MyGdxGame.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/truth/neogames/MyGdxGame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/android/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/BattleGrid.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/BattleGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Gameplan" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Gameplan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/android.iml" afterPath="$PROJECT_DIR$/android/android.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/core.iml" afterPath="$PROJECT_DIR$/core/core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="1d058991-e7fe-41c0-9526-22e46e05a2bc" name="Rejected commit: Default" comment="Added player methods equip and pickUp, improved stats" />
     <ignored path="MRPG.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +90,7 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state />
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
@@ -57,138 +99,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Wearable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java">
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WearableStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
-                <element signature="e#1012#1013#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
-                <element signature="e#1091#1092#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#1176#1177#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
-                <element signature="e#1257#1258#0" expanded="true" />
-                <element signature="e#1288#1289#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-                <element signature="e#1382#1383#0" expanded="true" />
-                <element signature="e#1424#1425#0" expanded="true" />
-                <element signature="e#1456#1457#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#1595#1596#0" expanded="true" />
-                <element signature="e#1626#1627#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="e#1720#1721#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeaponStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeaponStat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.25027204">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AttackStyle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/AttackStyle.java">
+      <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GearStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WearableStat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#591#592#0" expanded="true" />
-                <element signature="e#620#621#0" expanded="true" />
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WearableStatName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WearableStatName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrefixName.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/PrefixName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1446613">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElementalType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="32" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,21 +121,7 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Enum" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Nexus" />
-      </list>
-    </option>
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -1624,7 +1535,6 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\Adam\Documents\Adam\Java\MRPG" value="5782176104891" />
-        <entry key="C:\Users\Ahmane\Desktop\Android\MRPG" value="5781758413711" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2012,64 +1922,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Player.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Inventory.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Stats/Professions.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Gear.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WornSlot.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Abilities/Flare.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stat.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/StatName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/GearStatName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Rules" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStat.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/EntityStatName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponStatName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/AttackStyle.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStat.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/BuffPotion.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potions/SubTypes/BuffPotion.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potions/SubTypes/RestorePotion.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Item.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potions/Potion.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/BattleGrid.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WearableStatName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/GearPrefix.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Prefix.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/PrefixName.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
       </list>
     </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState />
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -2080,7 +1934,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -2103,6 +1957,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2179,7 +2034,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="StatsPackage" />
+              <option name="myItemId" value="Adam_the_cool_kid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2205,101 +2060,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="StatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearStatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearStatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WearableStatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearStatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeaponStatsPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
+              <option name="myItemId" value="Adam_the_cool_kid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2329,131 +2090,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Wearables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GearPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Weapon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Consumables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
+              <option name="myItemId" value="Adam_the_cool_kid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2461,143 +2098,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EnvironmentPackage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Enums" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MRPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neogames" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SubTypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MRPG">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MRPG">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MRPG" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MRPG" />
@@ -2606,22 +2120,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="recentsLimit" value="5" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Console">
+  <component name="RunManager" selected="Android Application.android">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -2629,37 +2140,6 @@
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -2720,11 +2200,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -2781,35 +2256,19 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="Please select a project..." />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="Please select a project..." />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
       <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
       <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="Cloud configuration not specified" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
       <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
-    <configuration default="false" name="Console" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.truth.neogames.MyGdxGame" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="core" />
-      <envs />
-      <method />
-    </configuration>
-    <list size="2">
+    <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Android Application.android" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Console" />
     </list>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -2830,150 +2289,44 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2c5386f0-7920-420d-8d6f-b023113d170e" name="Default" comment="" />
-      <created>1445439558978</created>
+      <changelist id="04dca8a0-851b-440a-83f7-a20cdf02ae96" name="Default" comment="" />
+      <created>1447291280059</created>
       <option name="number" value="Default" />
-      <updated>1445439558978</updated>
+      <updated>1447291280059</updated>
     </task>
-    <task id="LOCAL-00001" summary="test">
-      <created>1445440223826</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1445440223826</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1445440263782</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1445440263782</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added folders">
-      <created>1445454939011</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1445454939011</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added folders">
-      <created>1445455012320</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1445455012320</updated>
-    </task>
-    <task id="LOCAL-00005" summary="added folders">
-      <created>1445455321816</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1445455321816</updated>
-    </task>
-    <task id="LOCAL-00006" summary="added inventory">
-      <created>1445529216193</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1445529216193</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added basic profession descriptions">
-      <created>1445541446449</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1445541446449</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added inventory">
-      <created>1445541858575</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1445541858575</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added inventory">
-      <created>1445542387337</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1445542387337</updated>
-    </task>
-    <task id="LOCAL-00010" summary="added inventory">
-      <created>1445542857544</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1445542857544</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Created enum for stat names, created Stat and EntityStat classes, modified consumables">
-      <created>1445884236412</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1445884236412</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Added player methods equip and pickUp, improved stats">
-      <created>1446054542735</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1446054542735</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added consume methods for potions and food">
-      <created>1446477734317</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1446477734317</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Less scrubby now">
-      <created>1446506079157</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1446506079157</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Improved gear stats">
-      <created>1446615472794</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1446615472794</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Improved potions">
-      <created>1446675056640</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1446675056640</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33259177" sideWeight="0.4978678" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.50319827" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18923241" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.4968017" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2988,193 +2341,19 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="test" />
-    <MESSAGE value="added folders" />
-    <MESSAGE value="Added basic profession descriptions" />
-    <MESSAGE value="added inventory" />
-    <MESSAGE value="Created enum for stat names, created Stat and EntityStat classes, modified consumables" />
-    <MESSAGE value="Added player methods equip and pickUp, improved stats" />
-    <MESSAGE value="Added consume methods for potions and food" />
-    <MESSAGE value="Less scrubby now" />
-    <MESSAGE value="Improved gear stats" />
-    <MESSAGE value="Improved potions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved potions" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Split it up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split it up" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WearableStatName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/PrefixName.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/truth/neogames/android/AndroidLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/truth/neogames/android/AndroidLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/truth/neogames/android/AndroidLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.378788">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/MonsterStatsPackage/MonsterStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/HashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/PlayerStatsPackage/PlayerStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Gameplan">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/EntityStatsPackage/EntityStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -3182,268 +2361,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/EntityStatName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ProfessionName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Race.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponStatName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WornSlot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/Consumable.java">
+    <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/Stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/HoldingSystems/WornGear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Consumables/SubTypes/Potion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Entities/SubTypes/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Battle/Battle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/EnvironmentPackage/BattleGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/Item.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam_the_cool_kid/Items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Gear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Weapon/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/AttackStyle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.25027204">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Items/GearPackage/Wearables/Wearable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WearableStatName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1257#1258#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1512#1513#0" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
-            <element signature="e#1680#1681#0" expanded="true" />
-            <element signature="e#1720#1721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/StatsPackage/GearStatsPackage/GearStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/PrefixName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1446613">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
