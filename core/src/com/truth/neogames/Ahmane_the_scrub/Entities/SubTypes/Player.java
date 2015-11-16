@@ -4,15 +4,15 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Adam_the_cool_kid.HoldingSystems.Inventory;
-import com.truth.neogames.Adam_the_cool_kid.HoldingSystems.WornGear;
-import com.truth.neogames.Adam_the_cool_kid.Items.Consumables.SubTypes.Food;
-import com.truth.neogames.Adam_the_cool_kid.Items.Consumables.SubTypes.Potion;
-import com.truth.neogames.Adam_the_cool_kid.Items.GearPackage.Gear;
-import com.truth.neogames.Adam_the_cool_kid.Items.Item;
+import com.truth.neogames.Adam.HoldingSystems.Inventory;
+import com.truth.neogames.Adam.HoldingSystems.WornGear;
+import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
+import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
+import com.truth.neogames.Adam.Items.GearPackage.Gear;
+import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.EntityStat;
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 
 import java.util.HashSet;
 

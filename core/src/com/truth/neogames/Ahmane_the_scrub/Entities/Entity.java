@@ -4,10 +4,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
-import com.truth.neogames.Adam_the_cool_kid.Items.Consumables.SubTypes.Food;
-import com.truth.neogames.Adam_the_cool_kid.Items.Consumables.SubTypes.Potion;
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.EntityStat;
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
+import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 
 import java.util.HashSet;
 

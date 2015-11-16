@@ -1,6 +1,6 @@
 package com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes;
 
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
 
 /**
  * Created by Ahmane on 10/21/2015.

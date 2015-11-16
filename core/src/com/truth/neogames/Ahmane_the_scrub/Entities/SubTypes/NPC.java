@@ -1,7 +1,7 @@
 package com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes;
 
 import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
-import com.truth.neogames.Adam_the_cool_kid.Shops.Shop;
+import com.truth.neogames.Adam.Shops.Shop;
 
 import java.util.ArrayList;
 

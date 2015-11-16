@@ -1,7 +1,7 @@
 package com.truth.neogames.Ahmane_the_scrub.Professions;
 
 import com.truth.neogames.Enums.ProfessionName;
-import com.truth.neogames.Adam_the_cool_kid.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 
 /**
  * Created by Adam on 10/22/2015.
