@@ -6,11 +6,22 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.truth.neogames.Adam.HoldingSystems.Inventory;
+import com.truth.neogames.Adam.HoldingSystems.WornGear;
+import com.truth.neogames.Adam.Items.GearPackage.Weapon.Weapon;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
+import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStat;
+import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
+import com.truth.neogames.Ahmane_the_scrub.Battle.Battle;
+import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
+import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
+import com.truth.neogames.Enums.AttackStyle;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
+import com.truth.neogames.Enums.WeaponStatName;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -18,12 +29,40 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public static void main(String[] args) {
 		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
-		p.getInventory().add(new Food(50));
-		System.out.println(p.getInventory().getInv()[0]);
-		Item food = p.getInventory().getInv()[0];
-		Food f = (Food) food;
-		p.consume(f);
-		System.out.println(p.getInventory().getInv()[0]);
+		Monster m = new Monster(true, new MonsterStats(1, 10));
+
+		//Create equipment
+		Weapon sword;
+        WeaponStats stats;
+        WeaponStat damage = new WeaponStat(WeaponStatName.STYLEDAMAGE, 2, 4);
+        WeaponStat elemDamage = new WeaponStat(WeaponStatName.ELEMENTALDAMAGE, 1, 2);
+        WeaponStat critChance = new WeaponStat(WeaponStatName.CRITCHANCE, .2, .2);
+
+        stats = new WeaponStats(damage, elemDamage, critChance, AttackStyle.SLASHING, 1);
+        sword = new Weapon(false, stats);
+
+        p.setWornGear(new WornGear());
+        p.setInventory(new Inventory());
+        p.getInventory().add(sword);
+
+		m.setName("Skeleton");
+		m.setDescription("A bony menace!");
+		m.setRace(Race.UNDEAD);
+		m.setSex("Male");
+		m.setPos(10, 10);
+		p.setPos(9, 10);
+		p.setDescription("It's you!");
+		p.equip(sword);
+
+        BattleGrid b = new BattleGrid();
+        b.addEntity(p);
+        b.addEntity(m);
+
+        p.moveForward(b);
+        m.moveLeft(b);
+
+        System.out.println(p.getxPos() + " " + p.getyPos());
+        System.out.println(m.getxPos() + " " + m.getyPos());
 
 	}
 

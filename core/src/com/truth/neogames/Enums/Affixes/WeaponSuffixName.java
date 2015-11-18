@@ -7,7 +7,7 @@ import com.truth.neogames.Enums.ElementalType;
  * Class Description:
  */
 public enum WeaponSuffixName {
-    NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION,  INCANDESCENCE(ElementalType.LIGHT),
+    NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION, INCANDESCENCE(ElementalType.LIGHT),
     DARKNESS(ElementalType.DARK), FLAME(ElementalType.FIRE), ICE(ElementalType.FROST);
 
     private ElementalType elementalType;

@@ -1,5 +1,7 @@
 package com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage;
 
+import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
+
 import java.util.Random;
 
 /**
@@ -7,21 +9,21 @@ import java.util.Random;
  * Class Description:
  */
 public class BattleGrid {
-    private com.truth.neogames.Ahmane_the_scrub.Entities.Entity[][] BattleGrid;
+    private Entity[][] BattleGrid;
 
-    BattleGrid() {
-        com.truth.neogames.Ahmane_the_scrub.Entities.Entity[][] BattleGrid = new com.truth.neogames.Ahmane_the_scrub.Entities.Entity[100][100];
+    public BattleGrid() {
+        Entity[][] BattleGrid = new Entity[100][100];
     }
 
-    BattleGrid(int r, int c) {
-        com.truth.neogames.Ahmane_the_scrub.Entities.Entity[][] BattleGrid = new com.truth.neogames.Ahmane_the_scrub.Entities.Entity[r][c];
+    public BattleGrid(int r, int c) {
+        Entity[][] BattleGrid = new Entity[r][c];
     }
 
     public boolean isSpaceEmpty(int x, int y) {
         return (BattleGrid[x][y] == null);
     }
 
-    public void moveEntity(com.truth.neogames.Ahmane_the_scrub.Entities.Entity e, int x, int y) {
+    public void moveEntity(Entity e, int x, int y) {
         int oldX = e.getxPos();
         int oldY = e.getyPos();
 
@@ -33,7 +35,7 @@ public class BattleGrid {
         addEntity(e);
     }
 
-    public void addEntity(com.truth.neogames.Ahmane_the_scrub.Entities.Entity e) {
+    public void addEntity(Entity e) {
         BattleGrid[e.getxPos()][e.getyPos()] = e;
     }
 

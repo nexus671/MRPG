@@ -8,7 +8,7 @@ import com.truth.neogames.Enums.ElementalType;
  */
 public enum WearableSuffixName {
     NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE, PROSPERITY, RADIANCE(ElementalType.LIGHT),
-    TWILIGHT(ElementalType.DARK), FLAME(ElementalType.FIRE), ICE(ElementalType.FROST);
+    TWILIGHT(ElementalType.DARK), FLAME(ElementalType.FIRE), FREEZING(ElementalType.FROST);
 
     private ElementalType elementalType;
 

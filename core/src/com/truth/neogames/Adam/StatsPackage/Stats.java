@@ -7,6 +7,10 @@ package com.truth.neogames.Adam.StatsPackage;
 public class Stats {
     protected int level;
 
+    public Stats() {
+        level = 1;
+    }
+
     public int getLevel() {
         return level;
     }

@@ -5,5 +5,5 @@ package com.truth.neogames.Enums;
  * Class Description:
  */
 public enum AttackStyle {
-    STAB, SLASH, CRUSH, ARCANE
+    PIERCING, SLASHING, CRUSHING, ARCANE
 }

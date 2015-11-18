@@ -2,6 +2,7 @@ package com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage
 
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.GearStats;
 import com.truth.neogames.Enums.AttackStyle;
+import com.truth.neogames.Enums.AbilityRange;
 
 /**
  * Created by Adam on 10/22/2015.

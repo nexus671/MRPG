@@ -1,5 +1,6 @@
 package com.truth.neogames.Enums.Affixes;
 
+import com.truth.neogames.Adam.StatsPackage.Affix;
 import com.truth.neogames.Enums.ElementalType;
 
 /**
@@ -11,6 +12,7 @@ public enum WeaponPrefixName {
     BLAZING(ElementalType.FIRE), FRIGID(ElementalType.FROST);
 
     private ElementalType elementalType;
+    private String lowercase;
 
     WeaponPrefixName() {
         elementalType = ElementalType.NONE;
@@ -26,5 +28,25 @@ public enum WeaponPrefixName {
 
     public boolean isElemental() {
         return elementalType == ElementalType.NONE;
+    }
+
+    public String getLowercase() {
+        return lowercase;
+    }
+
+    public void setLowercase(String lowercase) {
+        this.lowercase = lowercase;
+    }
+
+    private void findString(Affix name) {
+        String str = name.toString();
+        char[] chars = str.toCharArray();
+        for(int i = 0; i < chars.length; i++) {
+            char c = chars[i];
+            if(i > 0) {
+                chars[i] = Character.toLowerCase(c);
+            }
+        }
+        lowercase = str;
     }
 }

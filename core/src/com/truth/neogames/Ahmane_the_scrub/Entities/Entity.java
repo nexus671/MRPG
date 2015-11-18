@@ -96,7 +96,7 @@ public class Entity {
         return false;
     }
 
-    public boolean moveDown(BattleGrid grid) {
+    public boolean moveBackward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos - 1)) {
             grid.moveEntity(this, 0, -1);
             return true;
@@ -154,6 +154,11 @@ public class Entity {
     }
 
     public void setyPos(int yPos) {
+        this.yPos = yPos;
+    }
+
+    public void setPos(int xPos, int yPos) {
+        this.xPos = xPos;
         this.yPos = yPos;
     }
 
