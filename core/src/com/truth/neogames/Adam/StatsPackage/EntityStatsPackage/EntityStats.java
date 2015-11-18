@@ -15,7 +15,6 @@ public class EntityStats extends Stats {
     protected EntityStat strength;
     protected EntityStat constitution;
     protected EntityStat wisdom;
-    protected EntityStat intelligence;
     protected EntityStat luck;
 
     /************* Constructors *************/
@@ -135,14 +134,6 @@ public class EntityStats extends Stats {
 
     public void setWisdom(EntityStat wisdom) {
         this.wisdom = wisdom;
-    }
-
-    public EntityStat getIntelligence() {
-        return intelligence;
-    }
-
-    public void setIntelligence(EntityStat intelligence) {
-        this.intelligence = intelligence;
     }
 
     public EntityStat getLuck() {

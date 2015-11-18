@@ -9,9 +9,10 @@ import com.truth.neogames.Enums.WeaponStatName;
  */
 public class WeaponStat extends Stat {
     private WeaponStatName name;
-    private int min, max;
+    private double min;
+    private double max;
 
-    public WeaponStat(WeaponStatName name, int min, int max) {
+    public WeaponStat(WeaponStatName name, double min, double max) {
         this.name = name;
         this.min = min;
         this.max = max;
@@ -27,7 +28,7 @@ public class WeaponStat extends Stat {
         this.name = name;
     }
 
-    public int getMin() {
+    public double getMin() {
         return min;
     }
 
@@ -35,7 +36,7 @@ public class WeaponStat extends Stat {
         this.min = min;
     }
 
-    public int getMax() {
+    public double getMax() {
         return max;
     }
 

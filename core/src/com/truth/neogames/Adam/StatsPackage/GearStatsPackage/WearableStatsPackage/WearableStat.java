@@ -9,9 +9,9 @@ import com.truth.neogames.Enums.WearableStatName;
  */
 public class WearableStat extends Stat {
     private WearableStatName name;
-    private int value;
+    private double value;
 
-    public WearableStat(WearableStatName name, int value) {
+    public WearableStat(WearableStatName name, double value) {
         this.value = value;
         this.name = name;
     }
@@ -24,7 +24,7 @@ public class WearableStat extends Stat {
         this.name = name;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
