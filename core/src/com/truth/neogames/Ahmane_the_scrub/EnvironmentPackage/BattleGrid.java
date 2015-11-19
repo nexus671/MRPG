@@ -9,18 +9,18 @@ import java.util.Random;
  * Class Description:
  */
 public class BattleGrid {
-    private Entity[][] BattleGrid;
+    private Entity[][] Grid;
 
     public BattleGrid() {
-        Entity[][] BattleGrid = new Entity[100][100];
+         Grid = new Entity[100][100];
     }
 
     public BattleGrid(int r, int c) {
-        Entity[][] BattleGrid = new Entity[r][c];
+         Grid = new Entity[r][c];
     }
 
     public boolean isSpaceEmpty(int x, int y) {
-        return (BattleGrid[x][y] == null);
+        return (Grid[x][y] == null);
     }
 
     public void moveEntity(Entity e, int x, int y) {
@@ -30,13 +30,13 @@ public class BattleGrid {
         e.setxPos(oldX + x);
         e.setyPos(oldY + y);
 
-        BattleGrid[oldX][oldY] = null;
+        Grid[oldX][oldY] = null;
 
         addEntity(e);
     }
 
     public void addEntity(Entity e) {
-        BattleGrid[e.getxPos()][e.getyPos()] = e;
+        Grid[e.getxPos()][e.getyPos()] = e;
     }
 
     private void placeObstacles() {
@@ -45,8 +45,8 @@ public class BattleGrid {
         while (treesPlaced < 10) {
             int x = random.nextInt(100);
             int y = random.nextInt(100);
-            if (BattleGrid[x][y] == null) {
-                //BattleGrid[x][y] = Tree; TODO Add tree entity and add rocks
+            if (Grid[x][y] == null) {
+                //Grid[x][y] = Tree; TODO Add tree entity and add rocks
                 treesPlaced++;
             }
         }
