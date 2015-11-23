@@ -1,5 +1,7 @@
 package com.truth.neogames.Adam.Items.GearPackage.Weapon;
 
+import com.truth.neogames.Adam.Items.GearPackage.Gear;
+import com.truth.neogames.Enums.Affixes.GearMaterial;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
 
@@ -7,7 +9,7 @@ import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.
  * Created by Adam on 10/22/2015.
  * Class Description: A weapon.
  */
-public class Weapon extends com.truth.neogames.Adam.Items.GearPackage.Gear {
+public class Weapon extends Gear {
     private boolean isTwoHanded;
     private WeaponStats stats;
 

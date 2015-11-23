@@ -38,12 +38,8 @@ public class MyGdxGame extends ApplicationAdapter {
         WeaponStat elemDamage = new WeaponStat(WeaponStatName.ELEMENTALDAMAGE, 1, 2);
         WeaponStat critChance = new WeaponStat(WeaponStatName.CRITCHANCE, .2, .2);
 
-        stats = new WeaponStats(damage, elemDamage, critChance, AttackStyle.SLASHING, 1);
-        sword = new Weapon(false, stats);
-
         p.setWornGear(new WornGear());
         p.setInventory(new Inventory());
-        p.getInventory().add(sword);
 
 		m.setName("Skeleton");
 		m.setDescription("A bony menace!");
@@ -52,7 +48,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		m.setPos(10, 10);
 		p.setPos(9, 10);
 		p.setDescription("It's you!");
-		p.equip(sword);
 
         BattleGrid b = new BattleGrid();
         b.addEntity(p);

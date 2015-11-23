@@ -6,17 +6,18 @@ import com.truth.neogames.Enums.ElementalType;
  * Created by Adam on 11/9/2015.
  * Class Description:
  */
-public enum WearableSuffixName {
-    NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE, PROSPERITY, RADIANCE(ElementalType.LIGHT),
-    TWILIGHT(ElementalType.DARK), FLAME(ElementalType.FIRE), FREEZING(ElementalType.FROST);
+public enum WearableSuffix {
+    NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE, PROSPERITY, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
+    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE), BURNING(ElementalType.FIRE),
+    ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
     private ElementalType elementalType;
 
-    WearableSuffixName() {
+    WearableSuffix() {
         elementalType = ElementalType.NONE;
     }
 
-    WearableSuffixName(ElementalType type) {
+    WearableSuffix(ElementalType type) {
         elementalType = type;
     }
 

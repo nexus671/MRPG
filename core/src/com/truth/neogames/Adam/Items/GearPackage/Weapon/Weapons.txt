@@ -1,0 +1,13 @@
+// Weapon Template
+// [Name]:String
+// [Description]:String
+// [isTwoHanded]:Boolean
+// [level]:int
+// [elementalType]:ElementalType
+// [minStyleDamage]:double
+// [maxStyleDamage]:double
+// [critChance]:double
+// [attackStyle]:AttackStyle
+// [range]:int
+// END
+

@@ -1,6 +1,7 @@
 package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
 import com.truth.neogames.Adam.StatsPackage.Stats;
+import com.truth.neogames.Enums.Affixes.GearMaterial;
 import com.truth.neogames.Enums.ElementalType;
 
 /**
@@ -8,21 +9,24 @@ import com.truth.neogames.Enums.ElementalType;
  * Class Description:
  */
 public class GearStats extends Stats {
-    private ElementalType elementalType;
+    protected GearMaterial material;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
     public GearStats() {
-        elementalType = ElementalType.NONE;
     }
 
-    /************* Getter and Setter *************/
+    /*************
+     * Getter and Setter
+     *************/
 
-    public ElementalType getElementalType() {
-        return elementalType;
+    public GearMaterial getMaterial() {
+        return material;
     }
 
-    public void setElementalType(ElementalType elementalType) {
-        this.elementalType = elementalType;
+    public void setMaterial(GearMaterial material) {
+        this.material = material;
     }
 }

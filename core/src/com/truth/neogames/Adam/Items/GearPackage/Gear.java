@@ -1,6 +1,7 @@
 package com.truth.neogames.Adam.Items.GearPackage;
 
 import com.truth.neogames.Adam.Items.Item;
+import com.truth.neogames.Enums.Affixes.GearMaterial;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.GearStats;
 
@@ -12,8 +13,6 @@ public class Gear extends Item {
 
     protected WornSlot slot;
     protected GearStats stats;
-
-    /************* Constructors *************/
 
     public Gear() {
         stats = new GearStats();
@@ -27,20 +26,19 @@ public class Gear extends Item {
         this.slot = slot;
     }
 
-    /************* Getters *************/
-
-    public GearStats getStats() {
-        return stats;
-    }
-
     public WornSlot getSlot() {
         return slot;
     }
-
-    /************* Setters *************/
 
     public void setSlot(WornSlot slot) {
         this.slot = slot;
     }
 
+    public GearStats getStats() {
+        return stats;
+    }
+
+    public void setStats(GearStats stats) {
+        this.stats = stats;
+    }
 }

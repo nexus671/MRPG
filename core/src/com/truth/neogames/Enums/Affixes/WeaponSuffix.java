@@ -6,17 +6,18 @@ import com.truth.neogames.Enums.ElementalType;
  * Created by Adam on 11/9/2015.
  * Class Description:
  */
-public enum WeaponSuffixName {
-    NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION, INCANDESCENCE(ElementalType.LIGHT),
-    DARKNESS(ElementalType.DARK), FLAME(ElementalType.FIRE), ICE(ElementalType.FROST);
+public enum WeaponSuffix {
+    NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
+    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE), BURNING(ElementalType.FIRE),
+    ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
     private ElementalType elementalType;
 
-    WeaponSuffixName() {
+    WeaponSuffix() {
         elementalType = ElementalType.NONE;
     }
 
-    WeaponSuffixName(ElementalType elementalType) {
+    WeaponSuffix(ElementalType elementalType) {
         this.elementalType = elementalType;
     }
 
