@@ -1,9 +1,8 @@
 package com.truth.neogames.Adam.Items.GearPackage;
 
 import com.truth.neogames.Adam.Items.Item;
-import com.truth.neogames.Enums.Affixes.GearMaterial;
-import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.GearStats;
+import com.truth.neogames.Enums.WornSlot;
 
 /**
  * Created by Ahmane on 10/21/2015.
@@ -16,6 +15,14 @@ public class Gear extends Item {
 
     public Gear() {
         stats = new GearStats();
+    }
+
+    public GearStats getStats() {
+        return stats;
+    }
+
+    public void setStats(GearStats stats) {
+        this.stats = stats;
     }
 
     public WornSlot getSlot() {

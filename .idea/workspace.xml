@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04dca8a0-851b-440a-83f7-a20cdf02ae96" name="Default" comment="Created test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/Generators/GearGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponType.java" />
-      <change type="DELETED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Enums\WearableStatName.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Adam\Items\GearPackage\Weapon\Weapon.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Weapons/Weapon.java" />
-      <change type="MOVED" beforePath="C:\Users\Adam\Documents\Adam\Java\MRPG\core\src\com\truth\neogames\Adam\Items\GearPackage\Weapon\Weapons.txt" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Weapons/Weapons.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/truth/neogames/MyGdxGame.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/truth/neogames/MyGdxGame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/ElementalType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/GearMaterial.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/GearMaterial.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/MyGdxGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponStatName.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponStatName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Wearables/Wearable.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Wearables/Wearable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WornSlot.java" afterPath="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WornSlot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -122,13 +107,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GearGenerator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GearGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/Generators/GearGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2948929">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gear.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40043527">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#700#701#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,20 +161,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GearMaterial.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/GearMaterial.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-              <folding>
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1168#1169#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WearableStat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStat.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -174,23 +172,6 @@
                 <element signature="e#575#576#0" expanded="true" />
                 <element signature="e#617#618#0" expanded="true" />
                 <element signature="e#651#652#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gear.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="e#519#520#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#591#592#0" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2041,7 +2022,6 @@
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Weapon/Weapon.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WornSlot.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/WeaponType.java" />
-        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Weapons/Weapon.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Wearables/Wearable.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/GearMaterial.java" />
@@ -2051,6 +2031,7 @@
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WearableStatsPackage/WearableStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/StatsPackage/GearStatsPackage/WeaponStatsPackage/WeaponStats.java" />
         <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/Generators/GearGenerator.java" />
+        <option value="$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java" />
       </list>
     </option>
   </component>
@@ -2836,7 +2817,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448317687674</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Made gear stats a lot better, cleaned up some enums and classes">
+      <created>1448561167229</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1448561167229</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2844,10 +2831,10 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2891,7 +2878,8 @@
     <MESSAGE value="Created main testing" />
     <MESSAGE value="Changed affixes a lot" />
     <MESSAGE value="Added deadlines to gameplan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added deadlines to gameplan" />
+    <MESSAGE value="Made gear stats a lot better, cleaned up some enums and classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made gear stats a lot better, cleaned up some enums and classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3048,6 +3036,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3088,14 +3077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3232,21 +3213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Enums/Affixes/GearMaterial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3346,10 +3312,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/Generators/GearGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2948929">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Ahmane_the_scrub/Entities/SubTypes/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/truth/neogames/Adam/Items/GearPackage/Gear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40043527">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
           </folding>
         </state>
       </provider>
