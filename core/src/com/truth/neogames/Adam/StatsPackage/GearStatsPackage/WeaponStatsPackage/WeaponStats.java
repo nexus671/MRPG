@@ -5,38 +5,50 @@ import com.truth.neogames.Enums.AttackStyle;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.Affixes.GearMaterial;
 import com.truth.neogames.Enums.Affixes.WeaponSuffix;
+import com.truth.neogames.Enums.WeaponStatName;
+import com.truth.neogames.Enums.WeaponType;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: A collective class of all the stats for a weapon.
  */
 public class WeaponStats extends GearStats {
-    private WeaponStat styleDamage;
-    private GearMaterial material;
+    private double maxDamage;
+    private double minDamage;
     private WeaponSuffix suffix;
-    private double critChance;
-    private int range;
-    private AttackStyle style;
+    private WeaponType type;
 
     /************* Constructors *************/
 
-    public WeaponStats(WeaponStat styleDamage, GearMaterial material, WeaponSuffix suffix, double critChance, AttackStyle style, int range) {
-        this.styleDamage = styleDamage;
+    public WeaponStats(GearMaterial material, WeaponSuffix suffix, WeaponType type) {
+        double avgDamage = material.getAvgDamage() * type.getDamageModifier();
+        maxDamage = avgDamage + avgDamage * type.getRangeModifier();
+        minDamage = avgDamage - avgDamage * type.getRangeModifier();
         this.material = material;
         this.suffix = suffix;
-        this.critChance = critChance;
-        this.style = style;
-        this.range = range;
+        this.type = type;
     }
 
     /************* Getters and Setters *************/
 
-    public WeaponStat getStyleDamage() {
-        return styleDamage;
+    public double getMaxDamage() {
+        return maxDamage;
     }
 
-    public void setStyleDamage(WeaponStat styleDamage) {
-        this.styleDamage = styleDamage;
+    public void setMaxDamage(double maxDamage) {
+        this.maxDamage = maxDamage;
+    }
+
+    public double getMinDamage() {
+        return minDamage;
+    }
+
+    public void setMinDamage(double minDamage) {
+        this.minDamage = minDamage;
+    }
+
+    public void setType(WeaponType type) {
+        this.type = type;
     }
 
     public GearMaterial getMaterial() {
@@ -55,28 +67,20 @@ public class WeaponStats extends GearStats {
         this.suffix = suffix;
     }
 
-    public AttackStyle getStyle() {
-        return style;
+    public WeaponType getType() {
+        return type;
     }
 
-    public void setStyle(AttackStyle style) {
-        this.style = style;
+    public AttackStyle getAttackStyle() {
+       return type.getStyle();
     }
 
     public double getCritChance() {
-        return critChance;
-    }
-
-    public void setCritChance(double critChance) {
-        this.critChance = critChance;
+        return type.getCritChance();
     }
 
     public int getRange() {
-        return range;
-    }
-
-    public void setRange(int range) {
-        this.range = range;
+        return type.getRange();
     }
 
     public ElementalType getElementalType() {

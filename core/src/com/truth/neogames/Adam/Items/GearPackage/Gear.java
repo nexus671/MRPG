@@ -18,27 +18,11 @@ public class Gear extends Item {
         stats = new GearStats();
     }
 
-    public Gear(int slotNumber) {
-        this.slot = WornSlot.getSlotTitle(slotNumber);
-    }
-
-    public Gear(WornSlot slot) {
-        this.slot = slot;
-    }
-
     public WornSlot getSlot() {
         return slot;
     }
 
     public void setSlot(WornSlot slot) {
         this.slot = slot;
-    }
-
-    public GearStats getStats() {
-        return stats;
-    }
-
-    public void setStats(GearStats stats) {
-        this.stats = stats;
     }
 }

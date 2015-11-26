@@ -8,18 +8,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.truth.neogames.Adam.HoldingSystems.Inventory;
 import com.truth.neogames.Adam.HoldingSystems.WornGear;
-import com.truth.neogames.Adam.Items.GearPackage.Weapon.Weapon;
+import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStat;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
-import com.truth.neogames.Ahmane_the_scrub.Battle.Battle;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
-import com.truth.neogames.Enums.AttackStyle;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
-import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.WeaponStatName;
 
@@ -34,9 +30,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		//Create equipment
 		Weapon sword;
         WeaponStats stats;
-        WeaponStat damage = new WeaponStat(WeaponStatName.STYLEDAMAGE, 2, 4);
-        WeaponStat elemDamage = new WeaponStat(WeaponStatName.ELEMENTALDAMAGE, 1, 2);
-        WeaponStat critChance = new WeaponStat(WeaponStatName.CRITCHANCE, .2, .2);
 
         p.setWornGear(new WornGear());
         p.setInventory(new Inventory());

@@ -9,26 +9,26 @@ import com.truth.neogames.Enums.ElementalType;
  * Class Description: Stats for wearable gear.
  */
 public class WearableStats extends GearStats {
-    private WearableStat stabDef;
+    private WearableStat pierceDef;
     private WearableStat slashDef;
     private WearableStat crushDef;
     private WearableStat arcaneDef;
     private WearableSuffix suffix;
 
-    public WearableStats(WearableStat stabDef, WearableStat slashDef, WearableStat crushDef, WearableStat arcaneDef, WearableSuffix suffix) {
-        this.stabDef = stabDef;
-        this.slashDef = slashDef;
-        this.crushDef = crushDef;
-        this.arcaneDef = arcaneDef;
+    public WearableStats(double pierceDef, double slashDef, double crushDef, double arcaneDef, WearableSuffix suffix) {
+        this.pierceDef = new WearableStat("Piercing Defense", pierceDef);
+        this.slashDef = new WearableStat("Slashing Defense", slashDef);
+        this.crushDef = new WearableStat("Crushing Defense", crushDef);
+        this.arcaneDef = new WearableStat("Arcane Defense", arcaneDef);
         this.suffix = suffix;
     }
 
-    public WearableStat getStabDef() {
-        return stabDef;
+    public WearableStat getPierceDef() {
+        return pierceDef;
     }
 
-    public void setStabDef(WearableStat stabDef) {
-        this.stabDef = stabDef;
+    public void setPierceDef(WearableStat pierceDef) {
+        this.pierceDef = pierceDef;
     }
 
     public WearableStat getSlashDef() {

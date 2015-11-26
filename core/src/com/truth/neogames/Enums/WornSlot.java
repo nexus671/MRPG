@@ -5,7 +5,7 @@ package com.truth.neogames.Enums;
  * Class Description: Establishes the index values for WornGear arrays.
  */
 public enum WornSlot {
-    HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), GLOVES(5), RING(6), LEGS(7), BOOTS(8);
+    HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), GLOVES(5), RING(6), LEGS(7), BOOTS(8), AMMO(9);
 
     private final int slot;
 
@@ -29,6 +29,7 @@ public enum WornSlot {
             case 6: return RING;
             case 7: return LEGS;
             case 8: return BOOTS;
+            case 9: return AMMO;
             default: return null;
         }
     }

@@ -5,5 +5,5 @@ package com.truth.neogames.Enums;
  * Class Description: Stat names for weapons and armor.
  */
 public enum WeaponStatName {
-    STYLEDAMAGE, ELEMENTALDAMAGE, CRITCHANCE, RANGE
+    STYLEDAMAGE
 }
