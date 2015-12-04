@@ -1,16 +1,14 @@
-package com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WearableStatsPackage;
-
-import com.truth.neogames.Adam.StatsPackage.Stat;
+package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
 /**
  * Created by Adam on 11/4/2015.
  * Class Description: A statistic for a piece of wearable gear.
  */
-public class WearableStat extends Stat {
+public class ArmorStat {
     private String name;
     private double value;
 
-    public WearableStat(String name, double value) {
+    public ArmorStat(String name, double value) {
         this.value = value;
         this.name = name;
     }

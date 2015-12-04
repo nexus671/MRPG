@@ -2,7 +2,7 @@ package com.truth.neogames.Enums.Affixes;
 
 /**
  * Created by Adam on 11/9/2015.
- * Class Description: The material that a gear object is made of. Each material has a different
+ * Class Description: The material that an armor or weapon object is made of. Each material has a different
  * level requirement.
  */
 public enum GearMaterial {
@@ -14,12 +14,14 @@ public enum GearMaterial {
     private String lowercase;
     private double avgDamage;
     private double avgDefense;
+    private boolean metallic;
 
     GearMaterial(int level, String lowercase) {
         this.level = level;
         this.lowercase = lowercase;
         avgDamage = (1 + level) * (1 + level) / (level * level);
         avgDefense = (1 + level) * (1 + level) / (level * level);
+        metallic = true;
     }
 
     public int getLevel() {
@@ -40,5 +42,9 @@ public enum GearMaterial {
 
     public double getAvgDefense() {
         return avgDefense;
+    }
+
+    public boolean isMetallic() {
+        return metallic;
     }
 }

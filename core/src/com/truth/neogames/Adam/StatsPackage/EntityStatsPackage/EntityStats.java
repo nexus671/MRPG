@@ -1,13 +1,13 @@
 package com.truth.neogames.Adam.StatsPackage.EntityStatsPackage;
 
-import com.truth.neogames.Adam.StatsPackage.Stats;
 import com.truth.neogames.Enums.EntityStatName;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Defines stats for a player or monster.
  */
-public class EntityStats extends Stats {
+public class EntityStats {
+    protected int level;
     protected EntityStat health;
     protected EntityStat healthRegen;
     protected EntityStat mana;
@@ -20,7 +20,6 @@ public class EntityStats extends Stats {
     /************* Constructors *************/
 
     public EntityStats() {
-        level = 1;
         //TODO: Create a file with numbers for initializing stat values
     }
 
@@ -79,6 +78,14 @@ public class EntityStats extends Stats {
     /*************
      * Getters and Setters
      *************/
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public EntityStat getHealth() {
         return health;

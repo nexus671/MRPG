@@ -10,14 +10,11 @@ import com.truth.neogames.Adam.HoldingSystems.Inventory;
 import com.truth.neogames.Adam.HoldingSystems.WornGear;
 import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStat;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
-import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
-import com.truth.neogames.Enums.WeaponStatName;
+import com.truth.neogames.Enums.Race;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -29,7 +26,6 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		//Create equipment
 		Weapon sword;
-        WeaponStats stats;
 
         p.setWornGear(new WornGear());
         p.setInventory(new Inventory());

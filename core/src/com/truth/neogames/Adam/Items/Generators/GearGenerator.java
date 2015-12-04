@@ -1,16 +1,9 @@
 package com.truth.neogames.Adam.Items.Generators;
 
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
-import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
-import com.truth.neogames.Adam.Items.GearPackage.Wearables.Wearable;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.GearStats;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStat;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WeaponStatsPackage.WeaponStats;
-import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.WearableStatsPackage.WearableStats;
+import com.truth.neogames.Enums.Affixes.ArmorSuffix;
 import com.truth.neogames.Enums.Affixes.GearMaterial;
 import com.truth.neogames.Enums.Affixes.WeaponSuffix;
-import com.truth.neogames.Enums.Affixes.WearableSuffix;
-import com.truth.neogames.Enums.WeaponStatName;
 import com.truth.neogames.Enums.WeaponType;
 
 import java.util.Random;
@@ -37,7 +30,7 @@ public class GearGenerator {
             case 1:
             case 2:
             case 3:
-            case 4: gear = new Weapon(new WeaponStats(material, getRandomWeaponSuffix(), getRandomWeaponType())); break;
+            case 4:
         }
         return null;
     }
@@ -107,29 +100,29 @@ public class GearGenerator {
         }
     }
 
-    public WearableSuffix getRandomWearableSuffix() {
+    public ArmorSuffix getRandomWearableSuffix() {
         boolean hasSuffix = random.nextBoolean();
         int number = random.nextInt(13);
         if(hasSuffix) {
             switch(number) {
-                case 0: return WearableSuffix.HARDINESS;
-                case 1: return WearableSuffix.ENLIGHTENING;
-                case 2: return WearableSuffix.BRAWLING;
-                case 3: return WearableSuffix.APTITUDE;
-                case 4: return WearableSuffix.PROSPERITY;
-                case 5: return WearableSuffix.INCANDESCENCE;
-                case 6: return WearableSuffix.RADIANCE;
-                case 7: return WearableSuffix.TWILIGHT;
-                case 8: return WearableSuffix.SHADOW;
-                case 9: return WearableSuffix.FLAME;
-                case 10: return WearableSuffix.BURNING;
-                case 11: return WearableSuffix.ICE;
-                case 12: return WearableSuffix.FREEZING;
+                case 0: return ArmorSuffix.HARDINESS;
+                case 1: return ArmorSuffix.ENLIGHTENING;
+                case 2: return ArmorSuffix.BRAWLING;
+                case 3: return ArmorSuffix.APTITUDE;
+                case 4: return ArmorSuffix.PROSPERITY;
+                case 5: return ArmorSuffix.INCANDESCENCE;
+                case 6: return ArmorSuffix.RADIANCE;
+                case 7: return ArmorSuffix.TWILIGHT;
+                case 8: return ArmorSuffix.SHADOW;
+                case 9: return ArmorSuffix.FLAME;
+                case 10: return ArmorSuffix.BURNING;
+                case 11: return ArmorSuffix.ICE;
+                case 12: return ArmorSuffix.FREEZING;
                 default: return null;
             }
         }
         else {
-            return WearableSuffix.NONE;
+            return ArmorSuffix.NONE;
         }
     }
 }
