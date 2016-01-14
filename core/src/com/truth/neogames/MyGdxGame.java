@@ -47,6 +47,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
         System.out.println(p.getxPos() + " " + p.getyPos());
         System.out.println(m.getxPos() + " " + m.getyPos());
+		b.showgrid();
 
 	}
 

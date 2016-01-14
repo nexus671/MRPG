@@ -12,7 +12,7 @@ public class BattleGrid {
     private Entity[][] grid;
 
     public BattleGrid() {
-         grid = new Entity[100][100];
+        grid = new Entity[30][30];
     }
 
     public BattleGrid(int r, int c) {
@@ -43,8 +43,8 @@ public class BattleGrid {
         int treesPlaced = 0;
         Random random = new Random();
         while (treesPlaced < 10) {
-            int x = random.nextInt(100);
-            int y = random.nextInt(100);
+            int x = random.nextInt(30);
+            int y = random.nextInt(30);
             if (grid[x][y] == null) {
                 //grid[x][y] = Tree; TODO Add tree entity and add rocks
                 treesPlaced++;
@@ -52,4 +52,21 @@ public class BattleGrid {
         }
     }
 
+    public void showgrid() {
+        for (int i = 0; i < 30; i++) System.out.print("\t" + i);
+        System.out.println();
+
+        for (int row = 0; row < 30; row++) {
+            System.out.print((row + 1) + "");
+            for (int column = 0; column < 30; column++) {
+                if (grid[row][column] != null) {
+                    System.out.print("\t" + "E");
+                } else if (grid[row][column] == null) {
+                    System.out.print("\t" + "-");
+                }
+            }
+            System.out.println();
+        }
+
+    }
 }

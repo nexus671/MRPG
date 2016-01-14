@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Adam\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.7.0\1b08c96132448b5ab9c0cc8dea3e985dcf0166fd\gdx-1.7.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1b08c96132448b5ab9c0cc8dea3e985dcf0166fd">
-        <dex dex="C:\Users\Adam\Documents\Adam\Java\MRPG\android\build\intermediates\pre-dexed\debug\gdx-1.7.0-6effeaa418d94180c6a9a9902d8a06b44a958e3e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Adam\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.7.0\a560f1f94b939f2b5ccd4eec752797c3ea6e1c92\gdx-box2d-1.7.0.jar"
+        jar="C:\Users\acurr\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.7.0\a560f1f94b939f2b5ccd4eec752797c3ea6e1c92\gdx-box2d-1.7.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="a560f1f94b939f2b5ccd4eec752797c3ea6e1c92">
-        <dex dex="C:\Users\Adam\Documents\Adam\Java\MRPG\android\build\intermediates\pre-dexed\debug\gdx-box2d-1.7.0-6b323a8b68e4fcdad283870c03ae3c7e77d32bd1.jar" />
+        <dex dex="C:\Users\acurr\Desktop\MRPG\android\build\intermediates\pre-dexed\debug\gdx-box2d-1.7.0-bcbb45fc86411a6458f1da10c9ee6bbb968cd301.jar" />
     </item>
     <item
-        jar="C:\Users\Adam\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.7.0\d8c0e81a68812893d0bf80cea37fbcba9f23d38b\gdx-backend-android-1.7.0.jar"
+        jar="C:\Users\acurr\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.7.0\d8c0e81a68812893d0bf80cea37fbcba9f23d38b\gdx-backend-android-1.7.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d8c0e81a68812893d0bf80cea37fbcba9f23d38b">
-        <dex dex="C:\Users\Adam\Documents\Adam\Java\MRPG\android\build\intermediates\pre-dexed\debug\gdx-backend-android-1.7.0-f5a7679c14ed67f236ea2fafb36187f3184069e5.jar" />
+        <dex dex="C:\Users\acurr\Desktop\MRPG\android\build\intermediates\pre-dexed\debug\gdx-backend-android-1.7.0-9dc125964557f5759891815f2f92e7c95e324e38.jar" />
     </item>
     <item
-        jar="C:\Users\Adam\Documents\Adam\Java\MRPG\core\build\libs\core-1.0.jar"
+        jar="C:\Users\acurr\Desktop\MRPG\core\build\libs\core-1.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="6c68717b9592624102690f0a54a37afdbe5ab00b">
-        <dex dex="C:\Users\Adam\Documents\Adam\Java\MRPG\android\build\intermediates\pre-dexed\debug\core-1.0-10183d8c28c0d28a2feb13f8b83f270691cc147c.jar" />
+        sha1="de7a27da4121728ff86d7e506e0a97c433a40074">
+        <dex dex="C:\Users\acurr\Desktop\MRPG\android\build\intermediates\pre-dexed\debug\core-1.0-9619db9f1b6d18bf0daee706855ccc34cf99b963.jar" />
+    </item>
+    <item
+        jar="C:\Users\acurr\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.7.0\1b08c96132448b5ab9c0cc8dea3e985dcf0166fd\gdx-1.7.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1b08c96132448b5ab9c0cc8dea3e985dcf0166fd">
+        <dex dex="C:\Users\acurr\Desktop\MRPG\android\build\intermediates\pre-dexed\debug\gdx-1.7.0-67b8feaf0d2d1e3c702e504ba394b82dae3e8802.jar" />
     </item>
 
 </items>
