@@ -1,13 +1,13 @@
 package com.truth.neogames.Ahmane_the_scrub.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.truth.neogames.Enums.EntityStatName;
-import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
+import com.truth.neogames.Enums.EntityStatName;
+import com.truth.neogames.Enums.Race;
 
 import java.util.HashSet;
 
@@ -72,9 +72,17 @@ public class Entity {
         }
     }
 
+    public boolean move(BattleGrid grid, int x, int y) {
+        if (grid.isSpaceEmpty(x, y)) {
+            grid.moveEntity(this, x, y);
+            return true;
+        }
+        return false;
+    }
+
     public boolean moveLeft(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos - 1, yPos)) {
-            grid.moveEntity(this, -1, 0);
+            grid.shiftEntity(this, -1, 0);
             return true;
         }
         return false;
@@ -82,7 +90,7 @@ public class Entity {
 
     public boolean moveRight(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos + 1, yPos)) {
-            grid.moveEntity(this, 1, 0);
+            grid.shiftEntity(this, 1, 0);
             return true;
         }
         return false;
@@ -90,7 +98,7 @@ public class Entity {
 
     public boolean moveForward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos + 1)) {
-            grid.moveEntity(this, 0, 1);
+            grid.shiftEntity(this, 0, 1);
             return true;
         }
         return false;
@@ -98,7 +106,7 @@ public class Entity {
 
     public boolean moveBackward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos - 1)) {
-            grid.moveEntity(this, 0, -1);
+            grid.shiftEntity(this, 0, -1);
             return true;
         }
         return false;

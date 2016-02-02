@@ -16,6 +16,8 @@ import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.Race;
 
+import java.util.Scanner;
+
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
@@ -47,7 +49,23 @@ public class MyGdxGame extends ApplicationAdapter {
 
         System.out.println(p.getxPos() + " " + p.getyPos());
         System.out.println(m.getxPos() + " " + m.getyPos());
-		b.showgrid();
+
+		int choice = 1;
+		Scanner sc = new Scanner(System.in);
+		while (choice != 0) {
+			b.showgrid();
+			System.out.println("What would you like to do? Move(1) Attack(2) Inspect(3) Quit(0)");
+			choice = sc.nextInt();
+			if (choice == 1) {
+				int x = 0;
+				System.out.println("What X Cord?");
+				x = sc.nextInt();
+				int y = 0;
+				System.out.println("What Y Cord?");
+				y = sc.nextInt();
+				p.move(b, x, y);
+			}
+		}
 	}
 
 	@Override
