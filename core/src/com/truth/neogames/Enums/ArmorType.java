@@ -6,7 +6,13 @@ package com.truth.neogames.Enums;
  */
 public enum ArmorType {
     HELMET(WornSlot.HEAD, "Helmet", true), SALLET(WornSlot.HEAD, "Sallet", true),
-    HOOD(WornSlot.HEAD, "Hood", false);
+    HOOD(WornSlot.HEAD, "Hood", false), CHESTPLATE(WornSlot.CHEST, "Chestplate", true),
+    CHAINMAIL(WornSlot.CHEST, "Chainmail", true), CUIRASS(WornSlot.CHEST, "Cuirass", true),
+    ROBETOP(WornSlot.CHEST, "Robe top", false), GAUNTLETS(WornSlot.HANDS, "Gauntlets", true),
+    GLOVES(WornSlot.HANDS, "Gloves", false), VAMBRACES(WornSlot.HANDS, "Vambraces", true),
+    GREAVES(WornSlot.LEGS, "Greaves", true), CHAUSSES(WornSlot.LEGS, "Chausses", true),
+    ROBEBOTTOM(WornSlot.LEGS, "Robe bottom", false), BOOTS(WornSlot.FEET, "Boots", false),
+    SABATONS(WornSlot.FEET, "Sabatons", true);
 
 
     private WornSlot slot;

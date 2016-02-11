@@ -5,7 +5,7 @@ package com.truth.neogames.Enums.Affixes;
  * Class Description: The material that an armor or weapon object is made of. Each material has a different
  * level requirement.
  */
-public enum GearMaterial {
+public enum Material {
     BRONZE(1, "Bronze"), IRON(10, "Iron"), STEEL(20, "Steel"),  MITHRIL(30, "Mithril"),
     GOLDEN(40, "Golden"), LAMINAR(50, "Laminar"), PLATED(60, "Plated"), OBSIDIAN(70, "Obsidian"),
     CRYSTAL(80, "Crystal"), DRACONIC(90, "Draconic");
@@ -16,7 +16,7 @@ public enum GearMaterial {
     private double avgDefense;
     private boolean metallic;
 
-    GearMaterial(int level, String lowercase) {
+    Material(int level, String lowercase) {
         this.level = level;
         this.lowercase = lowercase;
         avgDamage = (1 + level) * (1 + level) / (level * level);

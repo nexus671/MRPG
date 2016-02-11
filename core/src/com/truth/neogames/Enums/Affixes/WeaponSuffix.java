@@ -4,7 +4,8 @@ import com.truth.neogames.Enums.ElementalType;
 
 /**
  * Created by Adam on 11/9/2015.
- * Class Description:
+ * Class Description: Suffixes for weapons: some of them give the weapon a certain elemental type,
+ * which provides a bonus.
  */
 public enum WeaponSuffix {
     NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),

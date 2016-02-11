@@ -2,7 +2,7 @@ package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
 /**
  * Created by Adam on 11/4/2015.
- * Class Description: A statistic for a piece of wearable gear.
+ * Class Description: A statistic for a piece of armor.
  */
 public class ArmorStat {
     private String name;

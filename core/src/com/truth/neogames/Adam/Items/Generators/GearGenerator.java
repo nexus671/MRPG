@@ -1,10 +1,14 @@
 package com.truth.neogames.Adam.Items.Generators;
 
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
+import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
+import com.truth.neogames.Adam.Items.GearPackage.Wearables.Armor;
 import com.truth.neogames.Enums.Affixes.ArmorSuffix;
-import com.truth.neogames.Enums.Affixes.GearMaterial;
+import com.truth.neogames.Enums.Affixes.Material;
 import com.truth.neogames.Enums.Affixes.WeaponSuffix;
+import com.truth.neogames.Enums.ArmorType;
 import com.truth.neogames.Enums.WeaponType;
+import com.truth.neogames.Enums.WornSlot;
 
 import java.util.Random;
 
@@ -21,33 +25,38 @@ public class GearGenerator {
     }
 
     //WIP
+    //HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), HANDS(5), RING(6), LEGS(7), FEET(8), AMMO(9);
     public Gear getRandom() {
         int slotNum = random.nextInt(9);
-        Gear gear;
-        GearMaterial material = getRandomGearMaterial();
+        Gear g;
         switch(slotNum) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
+            case 0: return new Armor(WornSlot.HEAD, getRandomGearMaterial(), getRandomArmorSuffix(), getRandomArmorType());
+            case 1: return new Armor(WornSlot.NECK, getRandomGearMaterial(), getRandomArmorSuffix(), getRandomArmorType());
+            case 2: return new Armor(WornSlot.CHEST, getRandomGearMaterial(), getRandomArmorSuffix(), getRandomArmorType());
+            case 3: return new Weapon(getRandomGearMaterial(), getRandomWeaponSuffix(), getRandomWeaponType());
+            case 4: return new Weapon(getRandomGearMaterial(), getRandomWeaponSuffix(), getRandomWeaponType());
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
         }
         return null;
     }
 
-    public GearMaterial getRandomGearMaterial() {
+    public Material getRandomGearMaterial() {
         int number = random.nextInt(10);
         switch(number) {
-            case 0: return GearMaterial.BRONZE;
-            case 1: return GearMaterial.IRON;
-            case 2: return GearMaterial.STEEL;
-            case 3: return GearMaterial.MITHRIL;
-            case 4: return GearMaterial.GOLDEN;
-            case 5: return GearMaterial.LAMINAR;
-            case 6: return GearMaterial.PLATED;
-            case 7: return GearMaterial.OBSIDIAN;
-            case 8: return GearMaterial.CRYSTAL;
-            case 9: return GearMaterial.DRACONIC;
+            case 0: return Material.BRONZE;
+            case 1: return Material.IRON;
+            case 2: return Material.STEEL;
+            case 3: return Material.MITHRIL;
+            case 4: return Material.GOLDEN;
+            case 5: return Material.LAMINAR;
+            case 6: return Material.PLATED;
+            case 7: return Material.OBSIDIAN;
+            case 8: return Material.CRYSTAL;
+            case 9: return Material.DRACONIC;
             default: return null;
         }
     }
@@ -100,7 +109,7 @@ public class GearGenerator {
         }
     }
 
-    public ArmorSuffix getRandomWearableSuffix() {
+    public ArmorSuffix getRandomArmorSuffix() {
         boolean hasSuffix = random.nextBoolean();
         int number = random.nextInt(13);
         if(hasSuffix) {
@@ -123,6 +132,28 @@ public class GearGenerator {
         }
         else {
             return ArmorSuffix.NONE;
+        }
+    }
+
+    public ArmorType getRandomArmorType() {
+        int number = random.nextInt(15);
+        switch(number) {
+            case 0: return ArmorType.BOOTS;
+            case 1: return ArmorType.CHAINMAIL;
+            case 2: return ArmorType.CHAUSSES;
+            case 3: return ArmorType.CHESTPLATE;
+            case 4: return ArmorType.CHAINMAIL;
+            case 5: return ArmorType.CUIRASS;
+            case 6: return ArmorType.GAUNTLETS;
+            case 7: return ArmorType.GLOVES;
+            case 8: return ArmorType.HELMET;
+            case 9: return ArmorType.HOOD;
+            case 10: return ArmorType.ROBEBOTTOM;
+            case 11: return ArmorType.ROBETOP;
+            case 12: return ArmorType.SABATONS;
+            case 13: return ArmorType.SALLET;
+            case 14: return ArmorType.VAMBRACES;
+            default: return null;
         }
     }
 }

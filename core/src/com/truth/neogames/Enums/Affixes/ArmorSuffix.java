@@ -4,7 +4,8 @@ import com.truth.neogames.Enums.ElementalType;
 
 /**
  * Created by Adam on 11/9/2015.
- * Class Description:
+ * Class Description: Suffixes for armor: some of them give the armor a certain elemental type, which
+ * gives special bonuses.
  */
 public enum ArmorSuffix {
     NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE, PROSPERITY, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),

@@ -1,17 +1,18 @@
 package com.truth.neogames.Adam.Items.GearPackage.Weapons;
 
-import com.truth.neogames.Adam.Items.GearPackage.Gear;
-import com.truth.neogames.Enums.Affixes.GearMaterial;
+import com.truth.neogames.Adam.Items.GearPackage.CombatGear;
+import com.truth.neogames.Enums.Affixes.Material;
 import com.truth.neogames.Enums.Affixes.WeaponSuffix;
 import com.truth.neogames.Enums.AttackStyle;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.WeaponType;
+import com.truth.neogames.Enums.WornSlot;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: A weapon.
  */
-public class Weapon extends Gear {
+public class Weapon extends CombatGear {
     private double maxDamage;
     private double minDamage;
     private WeaponSuffix suffix;
@@ -19,7 +20,17 @@ public class Weapon extends Gear {
 
     /************* Constructors *************/
 
-    public Weapon(GearMaterial material, WeaponSuffix suffix, WeaponType type) {
+    public Weapon(Material material, WeaponSuffix suffix, WeaponType type) {
+        double avgDamage = material.getAvgDamage() * type.getDamageModifier();
+        maxDamage = avgDamage + avgDamage * type.getRangeModifier();
+        minDamage = avgDamage - avgDamage * type.getRangeModifier();
+        this.suffix = suffix;
+        this.type = type;
+        this.slot = WornSlot.MAINHAND;
+    }
+
+    public Weapon(WornSlot slot, Material material, WeaponSuffix suffix, WeaponType type) {
+        this.slot = slot;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
         maxDamage = avgDamage + avgDamage * type.getRangeModifier();
         minDamage = avgDamage - avgDamage * type.getRangeModifier();
