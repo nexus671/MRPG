@@ -59,7 +59,8 @@ public class Player extends Entity {
             Gear old = wornGear.getGear()[slot];
             wornGear.getGear()[slot] = g;
             int index = inventory.getIndexOf(g);
-            inventory.getInv()[index] = null;
+            if (index != -1)
+                inventory.getInv()[index] = null;
             if (old != null) {
                 inventory.add(old);
             }
@@ -108,9 +109,9 @@ public class Player extends Entity {
         HashSet<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
             EntityStatName name = stat.getName();
-            double percentValue = (1 + p.getPercentAmount()) * this.stats.get(name).getMax();
+            double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
             this.stats.setStat(name, percentValue);
-            this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());
+            this.stats.setStat(name, this.stats.getStat(name).getMax() + p.getFlatAmount());
         }
         int index = inventory.getIndexOf(p);
         if (index != -1) {

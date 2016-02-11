@@ -1,5 +1,7 @@
 package com.truth.neogames.Adam.HoldingSystems;
 
+import com.truth.neogames.Adam.Items.Item;
+
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description: The inventory system for the player.
@@ -7,12 +9,12 @@ package com.truth.neogames.Adam.HoldingSystems;
 public class Inventory {
     public static int size = 20;
 
-    private com.truth.neogames.Adam.Items.Item[] inv;
+    private Item[] inv;
 
     /************* Constructors *************/
 
     public Inventory() {
-        inv = new com.truth.neogames.Adam.Items.Item[size];
+        inv = new Item[size];
     }
 
     /************* Specific Methods *************/
@@ -27,7 +29,7 @@ public class Inventory {
      * @param i The item to be added.
      * @return True if the item was added successfully, false if inventory was full.
      */
-    public boolean add(com.truth.neogames.Adam.Items.Item i) {
+    public boolean add(Item i) {
         int indexInArray = getIndexOf(i);
         if(i.isStackable() && indexInArray != -1) {
             inv[indexInArray].setStackCount(inv[indexInArray].getStackCount() + i.getStackCount());
@@ -61,7 +63,7 @@ public class Inventory {
      * @return The first index the item is located at, or -1 if the item is not
      * found in the inventory.
      */
-    public int getIndexOf(com.truth.neogames.Adam.Items.Item i) {
+    public int getIndexOf(Item i) {
         com.truth.neogames.Adam.Items.Item check;
         for (int count = 0; count < size; count++) {
             check = inv[count];
@@ -78,8 +80,8 @@ public class Inventory {
      * @param i The item to be checked.
      * @return True if the inventory contains the item somewhere.
      */
-    public boolean contains(com.truth.neogames.Adam.Items.Item i) {
-        for (com.truth.neogames.Adam.Items.Item check : inv) {
+    public boolean contains(Item i) {
+        for (Item check : inv) {
             if (check.equals(i)) {
                 return true;
             }
@@ -91,7 +93,7 @@ public class Inventory {
      * @return True if the inventory is full of items.
      */
     public boolean isFull() {
-        for(com.truth.neogames.Adam.Items.Item i:inv) {
+        for (Item i : inv) {
             if(i == null) {
                 return false;
             }
@@ -101,7 +103,7 @@ public class Inventory {
 
     /************* Getters *************/
 
-    public com.truth.neogames.Adam.Items.Item[] getInv() {
+    public Item[] getInv() {
         return inv;
     }
 }

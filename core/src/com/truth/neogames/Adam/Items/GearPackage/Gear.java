@@ -26,5 +26,13 @@ public class Gear extends Item {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        else if (!(obj instanceof Gear)) return false;
+        Gear g = (Gear) obj;
+        return (super.equals(obj) && g.getLevel() == level);
+    }
 }
 

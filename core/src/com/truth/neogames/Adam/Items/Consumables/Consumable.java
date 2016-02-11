@@ -1,8 +1,10 @@
 package com.truth.neogames.Adam.Items.Consumables;
 
+import com.truth.neogames.Adam.Items.Item;
+
 /**
  * Created by Adam on 10/22/2015.
  * Class Description:
  */
-public class Consumable extends com.truth.neogames.Adam.Items.Item {
+public abstract class Consumable extends Item {
 }

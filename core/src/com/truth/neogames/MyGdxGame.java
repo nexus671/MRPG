@@ -14,7 +14,10 @@ import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
+import com.truth.neogames.Enums.Affixes.Material;
+import com.truth.neogames.Enums.Affixes.WeaponSuffix;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.WeaponType;
 
 import java.util.Scanner;
 
@@ -27,10 +30,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		Monster m = new Monster(true, new MonsterStats(1, 10));
 
 		//Create equipment
-		Weapon sword;
+        Weapon sword = new Weapon(Material.BRONZE, WeaponSuffix.NONE, WeaponType.SWORD);
 
         p.setWornGear(new WornGear());
         p.setInventory(new Inventory());
+        p.equip(sword);
 
 		m.setName("Skeleton");
 		m.setDescription("A bony menace!");
@@ -53,14 +57,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		int choice = 1;
 		Scanner sc = new Scanner(System.in);
 		while (choice != 0) {
-			b.showgrid();
-			System.out.println("What would you like to do? Move(1) Attack(2) Inspect(3) Quit(0)");
-			choice = sc.nextInt();
+            b.showGrid();
+            System.out.println("What would you like to do? Move(1) Attack(2) Inspect(3) Quit(0)");
+            choice = sc.nextInt();
 			if (choice == 1) {
-				int x = 0;
-				System.out.println("What X Cord?");
+                int x, y;
+                System.out.println("What X Cord?");
 				x = sc.nextInt();
-				int y = 0;
 				System.out.println("What Y Cord?");
 				y = sc.nextInt();
 				p.move(b, x, y);

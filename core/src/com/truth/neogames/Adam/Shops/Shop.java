@@ -5,4 +5,5 @@ package com.truth.neogames.Adam.Shops;
  * Class Description:
  */
 public class Shop {
+    //TODO: make this class
 }

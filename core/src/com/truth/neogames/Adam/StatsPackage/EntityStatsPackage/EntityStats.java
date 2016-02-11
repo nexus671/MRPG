@@ -15,15 +15,32 @@ public class EntityStats {
     protected EntityStat strength;
     protected EntityStat constitution;
     protected EntityStat wisdom;
-    protected EntityStat luck;
 
     /************* Constructors *************/
 
     public EntityStats() {
-        //TODO: Create a file with numbers for initializing stat values
+        level = 1;
+        health = new EntityStat(EntityStatName.HEALTH, 100);
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5);
+        mana = new EntityStat(EntityStatName.MANA, 100);
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 10);
+        strength = new EntityStat(EntityStatName.STRENGTH, 1);
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1);
+        wisdom = new EntityStat(EntityStatName.WISDOM, 1);
     }
 
-    public EntityStat get(EntityStatName name) {
+    public EntityStats(int level) {
+        this.level = level;
+        health = new EntityStat(EntityStatName.HEALTH, 90 + (level * 10));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5 + level);
+        mana = new EntityStat(EntityStatName.MANA, 90 + (level * 10));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 9 + level);
+        strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
+        wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
+    }
+
+    public EntityStat getStat(EntityStatName name) {
         switch (name) {
             case HEALTH:
                 return health;
@@ -39,8 +56,6 @@ public class EntityStats {
                 return constitution;
             case WISDOM:
                 return wisdom;
-            case DEXTERITY:
-                return luck;
             default:
                 return null;
         }
@@ -68,9 +83,6 @@ public class EntityStats {
                 break;
             case WISDOM:
                 wisdom.setMax(value);
-                break;
-            case DEXTERITY:
-                luck.setMax(value);
                 break;
         }
     }
@@ -143,11 +155,14 @@ public class EntityStats {
         this.wisdom = wisdom;
     }
 
-    public EntityStat getLuck() {
-        return luck;
-    }
-
-    public void setLuck(EntityStat luck) {
-        this.luck = luck;
+    public void setByLevel(int level) {
+        this.level = level;
+        health = new EntityStat(EntityStatName.HEALTH, 90 + (level * 10));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5 + level);
+        mana = new EntityStat(EntityStatName.MANA, 90 + (level * 10));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 9 + level);
+        strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
+        wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
     }
 }

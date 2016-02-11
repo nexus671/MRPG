@@ -64,7 +64,7 @@ public class BattleGrid {
         }
     }
 
-    public void showgrid() {
+    public void showGrid() {
         for (int i = 0; i < 13; i++) System.out.print("\t" + (i));
         System.out.println();
 

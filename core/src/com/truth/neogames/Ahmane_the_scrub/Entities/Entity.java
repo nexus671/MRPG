@@ -66,9 +66,9 @@ public class Entity {
         HashSet<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
             EntityStatName name = stat.getName();
-            double percentValue = (1 + p.getPercentAmount()) * this.stats.get(name).getMax();
+            double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
             this.stats.setStat(name, percentValue);
-            this.stats.setStat(name, this.stats.get(name).getMax() + p.getFlatAmount());
+            this.stats.setStat(name, this.stats.getStat(name).getMax() + p.getFlatAmount());
         }
     }
 

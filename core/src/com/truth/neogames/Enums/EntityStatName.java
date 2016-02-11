@@ -5,7 +5,7 @@ package com.truth.neogames.Enums;
  * Class Description: An enumerator for the names of stats.
  */
 public enum EntityStatName {
-    HEALTH, HEALTHREGEN, MANA, MANAREGEN, STRENGTH, CONSTITUTION, WISDOM, DEXTERITY
+    HEALTH, HEALTHREGEN, MANA, MANAREGEN, STRENGTH, CONSTITUTION, WISDOM
 
     /**
      * TODO: Add descriptions for stats (in comments)
