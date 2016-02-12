@@ -34,4 +34,8 @@ public class WornGear {
     public Gear[] getGear() {
         return gear;
     }
+
+    public Gear getFromSlot(WornSlot slot) {
+        return gear[slot.getSlotNumber()];
+    }
 }

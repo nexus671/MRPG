@@ -61,6 +61,32 @@ public class EntityStats {
         }
     }
 
+    public void setBaseStat(EntityStatName name, double value) {
+        switch (name) {
+            case HEALTH:
+                health.setBaseMax(value);
+                break;
+            case HEALTHREGEN:
+                healthRegen.setBaseMax(value);
+                break;
+            case MANA:
+                mana.setBaseMax(value);
+                break;
+            case MANAREGEN:
+                manaRegen.setBaseMax(value);
+                break;
+            case STRENGTH:
+                strength.setBaseMax(value);
+                break;
+            case CONSTITUTION:
+                constitution.setBaseMax(value);
+                break;
+            case WISDOM:
+                wisdom.setBaseMax(value);
+                break;
+        }
+    }
+
     public void setStat(EntityStatName name, double value) {
         switch (name) {
             case HEALTH:
@@ -164,5 +190,18 @@ public class EntityStats {
         strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
         constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
         wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
+    }
+
+    @Override
+    public String toString() {
+        String str = "Level = " + level + "\n";
+        str += "Health = " + health + "\n";
+        str += "Health Regen = " + healthRegen + "\n";
+        str += "Mana = " + mana + "\n";
+        str += "Mana Regen = " + manaRegen + "\n";
+        str += "Strength = " + strength + "\n";
+        str += "Constitution = " + constitution + "\n";
+        str += "Wisdom = " + wisdom + "\n";
+        return str;
     }
 }

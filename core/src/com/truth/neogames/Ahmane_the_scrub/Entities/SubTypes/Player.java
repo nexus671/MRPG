@@ -6,6 +6,8 @@ import com.truth.neogames.Adam.HoldingSystems.WornGear;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
+import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
+import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
@@ -13,9 +15,10 @@ import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.WornSlot;
 
 import java.util.HashSet;
-
+import java.util.Random;
 
 
 /**
@@ -23,6 +26,7 @@ import java.util.HashSet;
  * Class Description: Defines a player.
  */
 public class Player extends Entity {
+    Random random = new Random();
     private Profession profession;
     private WornGear wornGear;
     private Inventory inventory;
@@ -64,6 +68,20 @@ public class Player extends Entity {
             if (old != null) {
                 inventory.add(old);
             }
+            return true;
+        }
+    }
+
+    public boolean equip(Jewelry j) {
+        if (j.getLevel() > stats.getLevel()) {
+            return false;
+        } else {
+            Gear old = wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
+            wornGear.getGear()[WornSlot.NECK.getSlotNumber()] = j;
+            EntityStatName statAffected = j.getStatAffected();
+            double newValue = (1 + j.getAmount()) * stats.getStat(statAffected).getBaseMax();
+            stats.setStat(statAffected, newValue);
+            stats.getStat(statAffected).setCurrent(stats.getStat(statAffected).getCurrent() + j.getAmount() * stats.getStat(statAffected).getBaseMax());
             return true;
         }
     }
@@ -122,6 +140,12 @@ public class Player extends Entity {
         }
     }
 
+    public double getBasicAttackDamage() {
+        Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+        double basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * random.nextDouble();
+        basicDamage += (stats.getStrength().getCurrent() / 100) * basicDamage;
+        return basicDamage;
+    }
 
     /************* Getters *************/
 

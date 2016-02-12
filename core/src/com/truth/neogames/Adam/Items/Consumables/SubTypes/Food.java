@@ -17,8 +17,10 @@ public class Food extends Consumable {
     public Food() {
     }
 
-    public Food(int healAmount) {
+    public Food(String name, String description, int healAmount) {
         this.healAmount = healAmount;
+        super.name = name;
+        super.description = description;
     }
 
     /*************

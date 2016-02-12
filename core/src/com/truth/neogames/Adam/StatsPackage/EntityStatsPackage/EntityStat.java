@@ -9,16 +9,18 @@ import com.truth.neogames.Enums.EntityStatName;
 public class EntityStat {
     protected final EntityStatName name;
     private double max;
+    private double baseMax;
     private double current;
 
     /*************
      * Constructors
      *************/
 
-    public EntityStat(EntityStatName name, double max) {
+    public EntityStat(EntityStatName name, double baseMax) {
         this.name = name;
-        this.max = max;
-        this.current = max;
+        this.baseMax = baseMax;
+        this.current = baseMax;
+        max = baseMax;
     }
 
     /*************
@@ -37,6 +39,14 @@ public class EntityStat {
         this.max = max;
     }
 
+    public double getBaseMax() {
+        return baseMax;
+    }
+
+    public void setBaseMax(double baseMax) {
+        this.baseMax = baseMax;
+    }
+
     public EntityStatName getName() {
         return name;
     }
@@ -47,5 +57,14 @@ public class EntityStat {
 
     public void setCurrent(double current) {
         this.current = current;
+    }
+
+    @Override
+    public String toString() {
+        String str = "Name = " + name + "\n";
+        str += "Base Max = " + baseMax + "\n";
+        str += "Current Max = " + max + "\n";
+        str += "Current Value = " + current + "\n";
+        return str;
     }
 }
