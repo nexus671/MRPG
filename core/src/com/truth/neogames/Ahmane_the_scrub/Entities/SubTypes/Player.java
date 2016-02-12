@@ -140,10 +140,25 @@ public class Player extends Entity {
         }
     }
 
+    /*************
+     * Combat Values
+     *************/
+
     public double getBasicAttackDamage() {
-        Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-        double basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * random.nextDouble();
+        Weapon weapon = null;
+        double basicDamage = 1;
+        boolean hasWeapon = !wornGear.slotIsEmpty(WornSlot.MAINHAND);
+        if (hasWeapon) {
+            weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+            basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * random.nextDouble();
+        }
         basicDamage += (stats.getStrength().getCurrent() / 100) * basicDamage;
+        if (hasWeapon) {
+            double critRoll = random.nextDouble();
+            if (critRoll < weapon.getCritChance()) {
+                basicDamage *= 2;
+            }
+        }
         return basicDamage;
     }
 

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
@@ -13,8 +14,11 @@ import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.Affixes.JewelryGem;
 import com.truth.neogames.Enums.Affixes.JewelryMetal;
+import com.truth.neogames.Enums.Affixes.Material;
+import com.truth.neogames.Enums.Affixes.WeaponSuffix;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.WeaponType;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -28,7 +32,14 @@ public class MyGdxGame extends ApplicationAdapter {
         System.out.println(p.getStats());
         p.equip(new Jewelry(JewelryMetal.GOLD, JewelryGem.DIAMOND, EntityStatName.STRENGTH));
         System.out.println(p.getStats());
-    }
+
+		Weapon w = new Weapon(Material.BRONZE, WeaponSuffix.NONE, WeaponType.FLAIL);
+		p.equip(w);
+		System.out.println(w);
+
+		for (int i = 0; i < 10; i++)
+			System.out.println("Basic Attack Damage = " + p.getBasicAttackDamage());
+	}
 
 	@Override
 	public void create () {

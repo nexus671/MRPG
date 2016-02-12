@@ -27,6 +27,11 @@ public class WornGear {
         return gear[slot.getSlotNumber()].equals(g);
     }
 
+    public boolean slotIsEmpty(WornSlot slot) {
+        int index = slot.getSlotNumber();
+        return (gear[index] == null);
+    }
+
     /*************
      * Getters
      *************/

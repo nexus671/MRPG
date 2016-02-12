@@ -56,10 +56,6 @@ public class Weapon extends CombatGear {
         this.minDamage = minDamage;
     }
 
-    public void setType(WeaponType type) {
-        this.type = type;
-    }
-
     public WeaponSuffix getSuffix() {
         return suffix;
     }
@@ -70,6 +66,10 @@ public class Weapon extends CombatGear {
 
     public WeaponType getType() {
         return type;
+    }
+
+    public void setType(WeaponType type) {
+        this.type = type;
     }
 
     public AttackStyle getAttackStyle() {
@@ -86,5 +86,14 @@ public class Weapon extends CombatGear {
 
     public ElementalType getElementalType() {
         return suffix.getElementalType();
+    }
+
+    @Override
+    public String toString() {
+        String str = "Weapon Name = " + name + "\n";
+        str += "Damage Range = " + minDamage + " - " + maxDamage + "\n";
+        str += "Weapon Suffix = " + suffix + "\n";
+        str += "Weapon Type = " + type + "\n";
+        return str;
     }
 }

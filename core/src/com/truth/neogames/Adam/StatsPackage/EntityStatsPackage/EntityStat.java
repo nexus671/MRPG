@@ -61,7 +61,7 @@ public class EntityStat {
 
     @Override
     public String toString() {
-        String str = "Name = " + name + "\n";
+        String str = name + "\n";
         str += "Base Max = " + baseMax + "\n";
         str += "Current Max = " + max + "\n";
         str += "Current Value = " + current + "\n";

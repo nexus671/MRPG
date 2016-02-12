@@ -195,13 +195,13 @@ public class EntityStats {
     @Override
     public String toString() {
         String str = "Level = " + level + "\n";
-        str += "Health = " + health + "\n";
-        str += "Health Regen = " + healthRegen + "\n";
-        str += "Mana = " + mana + "\n";
-        str += "Mana Regen = " + manaRegen + "\n";
-        str += "Strength = " + strength + "\n";
-        str += "Constitution = " + constitution + "\n";
-        str += "Wisdom = " + wisdom + "\n";
+        str += health + "\n";
+        str += healthRegen + "\n";
+        str += mana + "\n";
+        str += manaRegen + "\n";
+        str += strength + "\n";
+        str += constitution + "\n";
+        str += wisdom + "\n";
         return str;
     }
 }
