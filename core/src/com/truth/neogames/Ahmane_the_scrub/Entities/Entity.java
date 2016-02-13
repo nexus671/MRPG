@@ -1,5 +1,6 @@
 package com.truth.neogames.Ahmane_the_scrub.Entities;
 
+
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
@@ -176,6 +177,10 @@ public class Entity {
 
     public void setSprite(Sprite sprite) {
         this.sprite = sprite;
+    }
+
+    public EntityStats getStats() {
+        return this.stats;
     }
 
     @Override

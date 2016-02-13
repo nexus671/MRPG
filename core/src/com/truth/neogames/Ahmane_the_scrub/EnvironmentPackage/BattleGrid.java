@@ -1,6 +1,8 @@
 package com.truth.neogames.Ahmane_the_scrub.EnvironmentPackage;
 
 import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
+import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
+import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 
 import java.util.Random;
 
@@ -71,10 +73,12 @@ public class BattleGrid {
         for (int row = 0; row < 13; row++) {
             System.out.print((row) + "");
             for (int column = 0; column < 13; column++) {
-                if (grid[row][column] != null) {
-                    System.out.print("\t" + "E");
-                } else if (grid[row][column] == null) {
+                if (grid[row][column] == null) {
                     System.out.print("\t" + "-");
+                } else if (grid[row][column].getClass() == Monster.class) {
+                    System.out.print("\t" + "M");
+                } else if (grid[row][column].getClass() == Player.class) {
+                    System.out.print("\t" + "P");
                 }
             }
             System.out.println();

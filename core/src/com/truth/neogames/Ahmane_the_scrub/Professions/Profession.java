@@ -1,7 +1,7 @@
 package com.truth.neogames.Ahmane_the_scrub.Professions;
 
-import com.truth.neogames.Enums.ProfessionName;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
+import com.truth.neogames.Enums.ProfessionName;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -45,6 +45,9 @@ public class Profession extends PlayerStats {
      *      Typically this means devotion to a nature deity, though druids are just as likely to revere vague spirits, animalistic demigods, or even specific
      *      awe-inspiring natural wonders.
      */
-
     private ProfessionName name;
+
+    public Profession() {
+
+    }
 }
