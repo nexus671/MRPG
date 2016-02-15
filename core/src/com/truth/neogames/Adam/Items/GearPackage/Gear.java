@@ -8,8 +8,13 @@ import com.truth.neogames.Enums.WornSlot;
  * Class Description: Describes any item that can be equipped in the worn gear (weapon, armor, or jewelry).
  */
 public class Gear extends Item {
+    protected static final int MAXLEVEL = 21;
     protected WornSlot slot;
     protected int level;
+
+    public static int getMAXLEVEL() {
+        return MAXLEVEL;
+    }
 
     public WornSlot getSlot() {
         return slot;

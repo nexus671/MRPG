@@ -11,7 +11,7 @@ public enum WeaponType {
     BROADSWORD(true, "Broadsword", AttackStyle.SLASHING, 1.7, .4, .4, 2), PIKE(true, "Pike", AttackStyle.PIERCING, 1.7, .2, .2, 3),
     HALBERD(true, "Halberd", AttackStyle.SLASHING, 1.1, .2, .1, 3), FLAIL(true, "Flail", AttackStyle.CRUSHING, 2, .95, 0, 2),
     BOW(true, "Bow", AttackStyle.PIERCING, .8, .2, .2, 10), CROSSBOW(false, "Crossbow", AttackStyle.PIERCING, .6, .3, .1, 8),
-    STAFF(true, "Staff", AttackStyle.ARCANE, 1.7, .2, 0, 8), WAND(false, "Wand", AttackStyle.ARCANE, 1, .1, 0, 6);
+    STAFF(true, "Staff", AttackStyle.CRUSHING, .2, .2, 0, 1), WAND(false, "Wand", AttackStyle.CRUSHING, .1, .1, 0, 1);
 
     private boolean twoHanded;
     private String lowercase;

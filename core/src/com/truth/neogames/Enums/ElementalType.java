@@ -9,8 +9,8 @@ public enum ElementalType {
 
     /**
      * LIGHT: Buffs defensive bonuses on hit.
-     * DARK: Saps mana and strength.
+     * DARK: Saps mana.
      * FIRE: Applies a burning effect for several turns (drains health).
-     * FROST: Drains constitution and wisdom, lowers move spaces on next turn.
+     * FROST: Lowers move spaces on next turn.
      */
 }
