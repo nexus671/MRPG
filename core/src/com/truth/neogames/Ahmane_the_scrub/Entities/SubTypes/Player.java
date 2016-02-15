@@ -13,6 +13,7 @@ import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
 import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
+import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WornSlot;
@@ -144,8 +145,15 @@ public class Player extends Entity {
      * Combat Values
      *************/
 
+    /**
+     * Gets the damage of a basic attack, accounting for weapon damage and the user's strength level.
+     * Note: Crit chance is not accounted for in this calculation. It should be applied after the
+     * basic attack value is generated.
+     *
+     * @return The damage value.
+     */
     public double getBasicAttackDamage() {
-        Weapon weapon = null;
+        Weapon weapon;
         double basicDamage = 1;
         boolean hasWeapon = !wornGear.slotIsEmpty(WornSlot.MAINHAND);
         if (hasWeapon) {
@@ -153,13 +161,39 @@ public class Player extends Entity {
             basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * random.nextDouble();
         }
         basicDamage += (stats.getStrength().getCurrent() / 100) * basicDamage;
-        if (hasWeapon) {
-            double critRoll = random.nextDouble();
-            if (critRoll < weapon.getCritChance()) {
-                basicDamage *= 2;
-            }
-        }
         return basicDamage;
+    }
+
+    /**
+     * Gets the value for the bonus from an elemental affix.
+     *
+     * @param forWeapon Indicates whether the method looks at the weapon's elemental stats,
+     *                  or the armor's elemental stats.
+     * @return A value for the strength of the elemental buff, dependent on the type of buff.
+     */ //TODO Finish this method
+    public double getElementalValue(boolean forWeapon) {
+        double elementalValue;
+        if (forWeapon) {
+            Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+            int level = weapon.getLevel();
+            ElementalType type = weapon.getElementalType();
+            switch (type) {
+                case NONE:
+                    elementalValue = 0;
+                    break;
+                case LIGHT:
+                    elementalValue = 0;
+                    break;
+                case DARK:
+                    elementalValue = ((double) level / Gear.getMAXLEVEL());
+                    break;
+                default:
+                    elementalValue = 0;
+            }
+        } else {
+            elementalValue = 0;
+        }
+        return elementalValue;
     }
 
     /************* Getters *************/
