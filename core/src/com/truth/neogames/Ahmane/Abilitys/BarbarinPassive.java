@@ -1,21 +1,17 @@
 package com.truth.neogames.Ahmane.Abilitys;
 
 
-import com.truth.neogames.Ahmane.Effects.Damage;
 import com.truth.neogames.Ahmane.Effects.Effect;
-import com.truth.neogames.Ahmane.Effects.Stun;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
-import com.truth.neogames.Enums.AttackStyle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by acurr on 2/13/2016.
  */
-public class HeavyStrike extends Ability {
+public class BarbarinPassive extends Ability {
 
     private int level;
     private int cost;
@@ -28,17 +24,12 @@ public class HeavyStrike extends Ability {
     private List<Effect> effects = new ArrayList<Effect>();
 
 
-    public HeavyStrike(int level, LivingEntity e) {
+    public BarbarinPassive(int level, LivingEntity e) {
         this.level = level;
-        setCost(getCost());
-        Damage damage = new Damage(getDamage(e), AttackStyle.CRUSHING);
-        effects.add(damage);
-        Random random = new Random();
-
-        if (random.nextInt() > getstunc() * 100) {
-            Stun stun = new Stun(1);
-            effects.add(stun);
-        }
+        double modifier;
+        modifier = 1.5 + (.1 * level);
+        //PercentBuff buff = new PercentBuff(-1,modifier,e.g,false);
+        //effects.add();
     }
 
     public int getCost() {

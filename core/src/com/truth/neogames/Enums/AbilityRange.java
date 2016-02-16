@@ -1,25 +1,24 @@
 package com.truth.neogames.Enums;
 
 /**
- * Created by Adam on 11/2/2015.
- * Class Description:
+ * Created by acurr on 2/12/2016.
  */
 public enum AbilityRange {
-    CLOSE("CLOSE", 5), PERSONAL("PERSONAL", 0), TOUCH("TOUCH", 1), MEDIUM("MEDIUM", 20), LONG("LONG", 80), UNLIMITED("UNLIMITED", 100);
-    private final int range;
-    private final String type;
+    NONE(0, "PERSONAL"), TOUCH(1, "Close"), SMALL(3, "Small"), MEDIUM(5, "Medium"), LARGE(10, "Large");
 
+    private final int radius;
+    private final String name;
 
-    AbilityRange(String t, int r) {
-        range = r;
-        type = t;
+    AbilityRange(int r, String n) {
+        radius = r;
+        name = n;
     }
 
-    public int getRange() {
-        return range;
+    public int getRadius() {
+        return radius;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 }
