@@ -8,8 +8,6 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
-import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.Affixes.JewelryGem;
@@ -26,7 +24,6 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public static void main(String[] args) {
 		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
-		Monster m = new Monster(true, new MonsterStats(1, 10));
 
 		//Create equipment
         System.out.println(p.getStats());

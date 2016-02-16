@@ -10,7 +10,7 @@ import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
 import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.ElementalType;
@@ -31,7 +31,7 @@ public class Player extends Entity {
     private Profession profession;
     private WornGear wornGear;
     private Inventory inventory;
-    private PlayerStats stats;
+    private EntityStats stats;
 
     /************* Constructors *************/
 
@@ -40,10 +40,9 @@ public class Player extends Entity {
         this.setRace(race);
         this.setSex(sex);
         this.profession = profession;
-        stats = new PlayerStats(0);
+        stats = new EntityStats();
         this.inventory = new Inventory();
         this.wornGear = new WornGear();
-        stats = new PlayerStats();
     }
 
     /************* Specific Methods *************/
@@ -172,41 +171,47 @@ public class Player extends Entity {
      * @return A value for the strength of the elemental buff, dependent on the type of buff.
      */ //TODO Finish this method
     public double getElementalValue(boolean forWeapon) {
-        double elementalValue;
+        double elementalValue = 0;
         if (forWeapon) {
             Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
             int level = weapon.getLevel();
+            double levelRatio = (double) level / Gear.getMAXLEVEL();
             ElementalType type = weapon.getElementalType();
             switch (type) {
                 case NONE:
                     elementalValue = 0;
                     break;
                 case LIGHT:
-                    elementalValue = 0;
+                    elementalValue = levelRatio / 5;
                     break;
                 case DARK:
-                    elementalValue = ((double) level / Gear.getMAXLEVEL());
+                    elementalValue = levelRatio / 3;
                     break;
-                default:
-                    elementalValue = 0;
+                case FIRE:
+                    elementalValue = levelRatio / 20;
+                case FROST:
+                    elementalValue = levelRatio / 2;
             }
         } else {
-            elementalValue = 0;
+            int lightCounter, darkCounter, fireCounter, frostCounter;
+            lightCounter = darkCounter = fireCounter = frostCounter = 0;
+            Gear[] gear = wornGear.getGear();
+
         }
         return elementalValue;
     }
 
     /************* Getters *************/
 
-    public PlayerStats getStats() {
-        return this.stats;
+    public EntityStats getStats() {
+        return stats;
     }
 
     /**************
      * Setters
      *************/
 
-    public void setStats(PlayerStats stats) {
+    public void setStats(EntityStats stats) {
         this.stats = stats;
     }
 

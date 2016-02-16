@@ -8,6 +8,7 @@ import com.truth.neogames.Enums.EntityStatName;
  */
 public class EntityStats {
     protected int level;
+    protected double exp;
     protected EntityStat health;
     protected EntityStat healthRegen;
     protected EntityStat mana;
@@ -20,6 +21,7 @@ public class EntityStats {
 
     public EntityStats() {
         level = 1;
+        exp = 0;
         health = new EntityStat(EntityStatName.HEALTH, 100);
         healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5);
         mana = new EntityStat(EntityStatName.MANA, 100);
@@ -179,6 +181,14 @@ public class EntityStats {
 
     public void setWisdom(EntityStat wisdom) {
         this.wisdom = wisdom;
+    }
+
+    public double getExp() {
+        return exp;
+    }
+
+    public void setExp(double exp) {
+        this.exp = exp;
     }
 
     public void setByLevel(int level) {
