@@ -1,27 +1,39 @@
-package com.truth.neogames.Ahmane.Entities.SubTypes;
+package com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes;
 
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.MonsterStatsPackage.MonsterStats;
-import com.truth.neogames.Ahmane.Entities.Entity;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane_the_scrub.AbilityTrees.AbilityTree;
+import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
 
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description:
  */
 public class Monster extends Entity {
-
+    private AbilityTree abilities;
     private boolean hostile;
-    private MonsterStats stats;
+    private EntityStats stats;
 
     /************* Constructors *************/
 
-    public Monster(boolean hostile, MonsterStats stats) {
+    public Monster(boolean hostile, EntityStats stats) {
+        abilities = new com.truth.neogames.Ahmane_the_scrub.AbilityTrees.AbilityTree();
         this.hostile = hostile;
         this.stats = stats;
     }
 
+    /************* Getters *************/
 
-    /************* Setters *************/
+    public AbilityTree getAbilities() {
+        return abilities;
+    }
 
+    /*************
+     * Setters
+     *************/
+
+    public void setAbilities(com.truth.neogames.Ahmane_the_scrub.AbilityTrees.AbilityTree abilities) {
+        this.abilities = abilities;
+    }
 
     public boolean isHostile() {
         return hostile;
@@ -31,11 +43,11 @@ public class Monster extends Entity {
         this.hostile = hostile;
     }
 
-    public MonsterStats getStats() {
+    public EntityStats getStats() {
         return stats;
     }
 
-    public void setStats(MonsterStats stats) {
+    public void setStats(EntityStats stats) {
         this.stats = stats;
     }
 

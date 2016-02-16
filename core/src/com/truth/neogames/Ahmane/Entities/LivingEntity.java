@@ -1,6 +1,6 @@
-package com.truth.neogames.Ahmane.Entities;
+package com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes;
 
-
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Adam.HoldingSystems.Inventory;
 import com.truth.neogames.Adam.HoldingSystems.WornGear;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
@@ -10,23 +10,41 @@ import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
-import com.truth.neogames.Ahmane.Professions.Profession;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
+import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
+import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WornSlot;
 
 import java.util.HashSet;
 import java.util.Random;
 
+
 /**
- * Created by Adam on 10/22/2015.
- * Class Description: Defines any entity in the game, including player, monster, or NPC.
+ * Created by Ahmane on 10/21/2015.
+ * Class Description: Defines a player.
  */
-public class LivingEntity extends Entity {
-    protected Profession profession;
-    protected WornGear wornGear;
-    protected Inventory inventory;
+public class Player extends Entity {
     Random random = new Random();
+    private Profession profession;
+    private WornGear wornGear;
+    private Inventory inventory;
+    private EntityStats stats;
+
+    /************* Constructors *************/
+
+    public Player(String name, Race race, String sex, Profession profession, Sprite sprite) {
+        this.setName(name);
+        this.setRace(race);
+        this.setSex(sex);
+        this.profession = profession;
+        stats = new EntityStats();
+        this.inventory = new Inventory();
+        this.wornGear = new WornGear();
+    }
+
     /************* Specific Methods *************/
 
     /**
@@ -39,7 +57,7 @@ public class LivingEntity extends Entity {
      */
     public boolean equip(Gear g) {
         int slot = g.getSlot().getSlotNumber();
-        if (g.getLevel() > stats.getLevel()) {
+        if(g.getLevel() > stats.getLevel()) {
             return false;
         } else {
             Gear old = wornGear.getGear()[slot];
@@ -153,27 +171,75 @@ public class LivingEntity extends Entity {
      * @return A value for the strength of the elemental buff, dependent on the type of buff.
      */ //TODO Finish this method
     public double getElementalValue(boolean forWeapon) {
-        double elementalValue;
+        double elementalValue = 0;
         if (forWeapon) {
             Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
             int level = weapon.getLevel();
+            double levelRatio = (double) level / Gear.getMAXLEVEL();
             ElementalType type = weapon.getElementalType();
             switch (type) {
                 case NONE:
                     elementalValue = 0;
                     break;
                 case LIGHT:
-                    elementalValue = 0;
+                    elementalValue = levelRatio / 5;
                     break;
                 case DARK:
-                    elementalValue = ((double) level / Gear.getMAXLEVEL());
+                    elementalValue = levelRatio / 3;
                     break;
-                default:
-                    elementalValue = 0;
+                case FIRE:
+                    elementalValue = levelRatio / 20;
+                case FROST:
+                    elementalValue = levelRatio / 2;
             }
         } else {
-            elementalValue = 0;
+            int lightCounter, darkCounter, fireCounter, frostCounter;
+            lightCounter = darkCounter = fireCounter = frostCounter = 0;
+            Gear[] gear = wornGear.getGear();
+
         }
         return elementalValue;
     }
+
+    /************* Getters *************/
+
+    public EntityStats getStats() {
+        return stats;
+    }
+
+    /**************
+     * Setters
+     *************/
+
+    public void setStats(EntityStats stats) {
+        this.stats = stats;
+    }
+
+    public Profession getProfession() {
+        return this.profession;
+    }
+
+    public void setProfession(Profession profession) {
+        this.profession = profession;
+    }
+
+    public WornGear getWornGear() {
+        return this.wornGear;
+    }
+
+    public void setWornGear(WornGear wornGear) {
+        this.wornGear = wornGear;
+    }
+
+    public Inventory getInventory() {
+        return this.inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+
 }
+
+
