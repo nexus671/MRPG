@@ -66,4 +66,8 @@ public class Item {
         Item i = (Item)obj;
         return i.getName().equalsIgnoreCase(name);
     }
+
+    public String toString() {
+        return name;
+    }
 }

@@ -5,7 +5,17 @@ package com.truth.neogames.Enums;
  * Class Description: Elemental types based on suffix, which apply different effects on hit.
  */
 public enum ElementalType {
-    LIGHT, DARK, FIRE, FROST, NONE
+    LIGHT("Light"), DARK("Dark"), FIRE("Fire"), FROST("Frost"), NONE("None");
+
+    private String lowercase;
+
+    ElementalType(String lowercase) {
+        this.lowercase = lowercase;
+    }
+
+    public String toString() {
+        return lowercase;
+    }
 
     /**
      * LIGHT: Buffs defensive bonuses on hit.

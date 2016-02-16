@@ -47,4 +47,9 @@ public enum Material {
     public boolean isMetallic() {
         return metallic;
     }
+
+    @Override
+    public String toString() {
+        return lowercase;
+    }
 }

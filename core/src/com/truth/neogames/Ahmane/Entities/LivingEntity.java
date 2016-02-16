@@ -50,9 +50,11 @@ public abstract class LivingEntity extends Entity {
     /************* Specific Methods *************/
 
     /**
-     * Entity consumes a food object, healing the entity up to it's normal health.
+     * Equips the specified gear object into the correct slot in the worn gear,
+     * if the entity has the proper level.
      *
-     * @param f The food object that is consumed.
+     * @param g The gear object to be equipped.
+     * @return True if the item was equipped successfully
      */
     public boolean equip(Gear g) {
         int slot = g.getSlot().getSlotNumber();

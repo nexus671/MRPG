@@ -5,7 +5,7 @@ package com.truth.neogames.Enums;
  * Class Description: Enumerator class for race names.
  */
 public enum Race {
-    HUMAN("human"), ELF("elf"), ORC("orc"), UNDEAD("undead");
+    HUMAN("human"), ELF("elf"), ORC("orc"), DWARF("dwarf"), GNOME("gnome"), CATFOLK("catfolk");
 
     private final String lowercase;
 

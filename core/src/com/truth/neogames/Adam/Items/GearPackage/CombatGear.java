@@ -7,7 +7,7 @@ import com.truth.neogames.Enums.Affixes.Material;
  * Class Description: Parent class for weapons and armor, but not jewelry.
  */
 public class CombatGear extends Gear {
-    protected Material  material;
+    protected Material material;
 
     public CombatGear() {
     }

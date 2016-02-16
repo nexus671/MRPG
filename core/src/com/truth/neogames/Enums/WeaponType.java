@@ -58,4 +58,9 @@ public enum WeaponType {
     public int getRange() {
         return range;
     }
+
+    @Override
+    public String toString() {
+        return lowercase;
+    }
 }

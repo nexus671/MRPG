@@ -21,12 +21,14 @@ public class Weapon extends CombatGear {
     /************* Constructors *************/
 
     public Weapon(Material material, WeaponSuffix suffix, WeaponType type) {
+        this.material = material;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
         maxDamage = avgDamage + avgDamage * type.getRangeModifier();
         minDamage = avgDamage - avgDamage * type.getRangeModifier();
         this.suffix = suffix;
         this.type = type;
         this.slot = WornSlot.MAINHAND;
+        assignName();
     }
 
     public Weapon(WornSlot slot, Material material, WeaponSuffix suffix, WeaponType type) {
@@ -88,12 +90,19 @@ public class Weapon extends CombatGear {
         return suffix.getElementalType();
     }
 
+    public void assignName() {
+        String str = getMaterial().toString();
+        str += " " + type.toString();
+        if (suffix != WeaponSuffix.NONE) {
+            str += " of " + suffix;
+        }
+        name = str;
+    }
+
     @Override
     public String toString() {
-        String str = "Weapon Name = " + name + "\n";
+        String str = name + "\n";
         str += "Damage Range = " + minDamage + " - " + maxDamage + "\n";
-        str += "Weapon Suffix = " + suffix + "\n";
-        str += "Weapon Type = " + type + "\n";
         return str;
     }
 }

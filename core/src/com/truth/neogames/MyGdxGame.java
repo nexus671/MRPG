@@ -6,19 +6,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
-import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
+import com.truth.neogames.Adam.Items.Generators.GearGenerator;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane.Professions.Profession;
-import com.truth.neogames.Enums.Affixes.JewelryGem;
-import com.truth.neogames.Enums.Affixes.JewelryMetal;
-import com.truth.neogames.Enums.Affixes.Material;
-import com.truth.neogames.Enums.Affixes.WeaponSuffix;
-import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
-import com.truth.neogames.Enums.WeaponType;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -26,19 +17,10 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public static void main(String[] args) {
 		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
-		Monster m = new Monster(true, new EntityStats(1));
-
-		//Create equipment
-        System.out.println(p.getStats());
-        p.equip(new Jewelry(JewelryMetal.GOLD, JewelryGem.DIAMOND, EntityStatName.STRENGTH));
-        System.out.println(p.getStats());
-
-		Weapon w = new Weapon(Material.BRONZE, WeaponSuffix.NONE, WeaponType.FLAIL);
-		p.equip(w);
-		System.out.println(w);
+		GearGenerator generator = new GearGenerator();
 
 		for (int i = 0; i < 10; i++)
-			System.out.println("Basic Attack Damage = " + p.getBasicAttackDamage());
+			System.out.println(generator.getRandom());
 	}
 
 	@Override

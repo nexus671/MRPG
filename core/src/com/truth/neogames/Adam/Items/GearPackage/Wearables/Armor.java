@@ -30,6 +30,7 @@ public class Armor extends CombatGear {
         crushDef = new ArmorStat("Crushing Defense", material.getAvgDefense() * type.getCrushModifier());
         arcaneDef = new ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
         this.level = material.getLevel();
+        assignName();
     }
 
     public ArmorStat getPierceDef() {
@@ -82,5 +83,13 @@ public class Armor extends CombatGear {
 
     public void setType(ArmorType type) {
         this.type = type;
+    }
+
+    public void assignName() {
+        String str = material.toString() + " " + type.toString();
+        if (suffix != ArmorSuffix.NONE) {
+            str += " of " + suffix;
+        }
+        name = str;
     }
 }

@@ -4,6 +4,7 @@ import com.truth.neogames.Adam.Items.GearPackage.Gear;
 import com.truth.neogames.Enums.Affixes.JewelryGem;
 import com.truth.neogames.Enums.Affixes.JewelryMetal;
 import com.truth.neogames.Enums.EntityStatName;
+import com.truth.neogames.Enums.WornSlot;
 
 /**
  * Created by Adam on 12/4/2015.
@@ -15,11 +16,16 @@ public class Jewelry extends Gear {
     private EntityStatName statAffected;
     private double amount; // percent increase of the entity stat
 
-    public Jewelry(JewelryMetal metal, JewelryGem gem, EntityStatName stat) {
+    public Jewelry(JewelryMetal metal, JewelryGem gem, EntityStatName stat, boolean isRing) {
         this.metal = metal;
         this.gem = gem;
         statAffected = stat;
         amount = metal.getPowerModifier() * gem.getPowerModifier(); //TODO: needs testing if this is op
+        if (isRing) {
+            slot = WornSlot.RING;
+        } else {
+            slot = WornSlot.NECK;
+        }
     }
 
     public JewelryMetal getMetal() {

@@ -86,4 +86,9 @@ public enum ArmorType {
     public boolean isMetallic() {
         return metallic;
     }
+
+    @Override
+    public String toString() {
+        return lowercase;
+    }
 }
