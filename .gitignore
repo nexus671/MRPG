@@ -91,6 +91,7 @@ proguard/
 
 # Log Files
 *.log
+/.idea
 /android/build
 /gradle
 
