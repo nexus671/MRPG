@@ -3,7 +3,7 @@ package com.truth.neogames.Ahmane.Entities.SubTypes;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Adam.HoldingSystems.Inventory;
 import com.truth.neogames.Adam.HoldingSystems.WornGear;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.PlayerStatsPackage.PlayerStats;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.Race;
@@ -16,7 +16,7 @@ import com.truth.neogames.Enums.Race;
 public class Player extends LivingEntity {
 
 
-    private PlayerStats stats;
+    private EntityStats stats;
 
     /************* Constructors *************/
 
@@ -24,11 +24,7 @@ public class Player extends LivingEntity {
         this.setName(name);
         this.setRace(race);
         this.setSex(sex);
-        this.profession = profession;
-        stats = new PlayerStats(0);
-        this.inventory = new Inventory();
-        this.wornGear = new WornGear();
-        stats = new PlayerStats();
+        this.setProfession(profession);
     }
 
 
@@ -44,7 +40,7 @@ public class Player extends LivingEntity {
 
     /************* Getters *************/
 
-    public PlayerStats getStats() {
+    public EntityStats getStats() {
         return this.stats;
     }
 
@@ -52,15 +48,15 @@ public class Player extends LivingEntity {
      * Setters
      *************/
 
-    public void setStats(PlayerStats stats) {
+    public void setStats(EntityStats stats) {
         this.stats = stats;
     }
 
-    public Profession getProfession() {
+    public com.truth.neogames.Ahmane.Professions.Profession getProfession() {
         return this.profession;
     }
 
-    public void setProfession(Profession profession) {
+    public void setProfession(com.truth.neogames.Ahmane.Professions.Profession profession) {
         this.profession = profession;
     }
 

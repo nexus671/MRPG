@@ -1,7 +1,7 @@
 package com.truth.neogames.Ahmane.Professions;
 
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane.Entities.Entity;
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 
 /**
  * Created by Ahmane on 10/24/2015.
@@ -18,7 +18,7 @@ public class Barbarian extends Profession {
     private int level = 1;
     private int sp = 1;
 
-    public Barbarian(Entity e) {
+    public Barbarian(LivingEntity e) {
         stats = e.getStats();
     }
 

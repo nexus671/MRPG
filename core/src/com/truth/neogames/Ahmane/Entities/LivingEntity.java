@@ -1,4 +1,5 @@
-package com.truth.neogames.Ahmane_the_scrub.Entities.SubTypes;
+package com.truth.neogames.Ahmane.Entities;
+
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Adam.HoldingSystems.Inventory;
@@ -11,8 +12,7 @@ import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane_the_scrub.Entities.Entity;
-import com.truth.neogames.Ahmane_the_scrub.Professions.Profession;
+import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
@@ -21,39 +21,38 @@ import com.truth.neogames.Enums.WornSlot;
 import java.util.HashSet;
 import java.util.Random;
 
-
 /**
- * Created by Ahmane on 10/21/2015.
- * Class Description: Defines a player.
+ * Created by Adam on 10/22/2015.
+ * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
-public class Player extends Entity {
+public abstract class LivingEntity extends Entity {
+    protected Profession profession;
+    protected WornGear wornGear;
+    protected Inventory inventory;
+    protected EntityStats stats;
     Random random = new Random();
-    private Profession profession;
-    private WornGear wornGear;
-    private Inventory inventory;
-    private EntityStats stats;
 
-    /************* Constructors *************/
-
-    public Player(String name, Race race, String sex, Profession profession, Sprite sprite) {
-        this.setName(name);
-        this.setRace(race);
-        this.setSex(sex);
+    public LivingEntity(String name, Race race, String sex, Sprite sprite, String description, int xPos, int yPos, Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
-        stats = new EntityStats();
-        this.inventory = new Inventory();
-        this.wornGear = new WornGear();
+        this.stats = entityStats;
+        this.inventory = inventory;
+        this.wornGear = wornGear;
+    }
+
+    /*************
+     * Constructors
+     *************/
+
+
+    public LivingEntity() {
     }
 
     /************* Specific Methods *************/
 
     /**
-     * Equips a gear object into the player's worn gear. Removes that item from
-     * the player's inventory and places any item that was in that slot
-     * the player's worn gear into the inventory.
+     * Entity consumes a food object, healing the entity up to it's normal health.
      *
-     * @param g The gear to be equipped.
-     * @return False if the level requirement is too high, otherwise true.
+     * @param f The food object that is consumed.
      */
     public boolean equip(Gear g) {
         int slot = g.getSlot().getSlotNumber();
@@ -240,6 +239,119 @@ public class Player extends Entity {
     }
 
 
+    public boolean move(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid, int x, int y) {
+        if (grid.isSpaceEmpty(x, y)) {
+            grid.moveEntity(this, x, y);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveLeft(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos - 1, yPos)) {
+            grid.shiftEntity(this, -1, 0);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveRight(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos + 1, yPos)) {
+            grid.shiftEntity(this, 1, 0);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveForward(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos, yPos + 1)) {
+            grid.shiftEntity(this, 0, 1);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveBackward(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+        if (grid.isSpaceEmpty(xPos, yPos - 1)) {
+            grid.shiftEntity(this, 0, -1);
+            return true;
+        }
+        return false;
+    }
+
+
+    /*************
+     * Getters
+     *************/
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**************
+     * Setters
+     *************/
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Race getRace() {
+        return this.race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
+
+    public String getSex() {
+        return this.sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getxPos() {
+        return this.xPos;
+    }
+
+    public void setxPos(int xPos) {
+        this.xPos = xPos;
+    }
+
+    public int getyPos() {
+        return this.yPos;
+    }
+
+    public void setyPos(int yPos) {
+        this.yPos = yPos;
+    }
+
+    public void setPos(int xPos, int yPos) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+    }
+
+    public Sprite getSprite() {
+        return this.sprite;
+    }
+
+    public void setSprite(Sprite sprite) {
+        this.sprite = sprite;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
-
-

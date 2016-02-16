@@ -2,27 +2,18 @@ package com.truth.neogames.Ahmane.Entities;
 
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
-import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
-import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
-
-import java.util.HashSet;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
-public class Entity {
+public abstract class Entity {
     protected String name;
     protected Race race;
     protected String sex;
     protected Sprite sprite;
     protected String description;
-    protected EntityStats stats;
     protected int xPos, yPos;
 
     /************* Constructors *************/
@@ -39,80 +30,6 @@ public class Entity {
 
     public Entity() {
     }
-
-    /************* Specific Methods *************/
-
-    /**
-     * Entity consumes a food object, healing the entity up to it's normal health.
-     *
-     * @param f The food object that is consumed.
-     */
-    public void consume(Food f) {
-        double amount = f.getHealAmount();
-        double currHealth = stats.getHealth().getCurrent();
-        double resultHealth = amount + currHealth;
-        if (resultHealth >= stats.getHealth().getMax()) {
-            stats.getHealth().setCurrent(stats.getHealth().getMax());
-        } else {
-            stats.getHealth().setCurrent(currHealth + amount);
-        }
-    }
-
-    /**
-     * Boosts all the stats specified by the potion.
-     *
-     * @param p The potion to be consumed.
-     */
-    public void consume(Potion p) {
-        HashSet<EntityStat> stats = p.getStats();
-        for (EntityStat stat : stats) {
-            EntityStatName name = stat.getName();
-            double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
-            this.stats.setStat(name, percentValue);
-            this.stats.setStat(name, this.stats.getStat(name).getMax() + p.getFlatAmount());
-        }
-    }
-
-    public boolean move(BattleGrid grid, int x, int y) {
-        if (grid.isSpaceEmpty(x, y)) {
-            grid.moveEntity(this, x, y);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean moveLeft(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos - 1, yPos)) {
-            grid.shiftEntity(this, -1, 0);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean moveRight(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos + 1, yPos)) {
-            grid.shiftEntity(this, 1, 0);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean moveForward(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos, yPos + 1)) {
-            grid.shiftEntity(this, 0, 1);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean moveBackward(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos, yPos - 1)) {
-            grid.shiftEntity(this, 0, -1);
-            return true;
-        }
-        return false;
-    }
-
 
     /************* Getters *************/
 
@@ -179,9 +96,6 @@ public class Entity {
         this.sprite = sprite;
     }
 
-    public EntityStats getStats() {
-        return this.stats;
-    }
 
     @Override
     public String toString() {

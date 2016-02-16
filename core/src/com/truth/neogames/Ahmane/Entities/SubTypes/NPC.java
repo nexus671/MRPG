@@ -1,7 +1,6 @@
 package com.truth.neogames.Ahmane.Entities.SubTypes;
 
 import com.truth.neogames.Adam.Shops.Shop;
-import com.truth.neogames.Ahmane.Entities.Entity;
 
 import java.util.ArrayList;
 
@@ -9,7 +8,7 @@ import java.util.ArrayList;
  * Created by Ahmane on 10/21/2015.
  * Class Description: Defines a non-hostile character that can interact with the player.
  */
-public class NPC extends Entity {
+public class NPC extends com.truth.neogames.Ahmane.Entities.Entity {
     private Shop shop;
     private ArrayList<String> dialogueOptions;
 
