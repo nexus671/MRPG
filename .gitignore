@@ -91,6 +91,13 @@ proguard/
 
 # Log Files
 *.log
+/core/build/libs/core-1.0.jar
+/.idea/workspace.xml
+/.gradle/2.4/taskArtifacts/taskArtifacts.bin
+/.gradle/2.4/taskArtifacts/fileSnapshots.bin
+/.gradle/2.4/taskArtifacts/fileHashes.bin
+/.gradle/2.4/taskArtifacts/cache.properties
+/.gradle
 /.idea
 /android/build
 /gradle
