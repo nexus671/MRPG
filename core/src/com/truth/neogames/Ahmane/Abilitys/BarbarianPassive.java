@@ -1,8 +1,8 @@
 package com.truth.neogames.Ahmane.Abilitys;
 
 
+import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Effects.Effect;
-import com.truth.neogames.Ahmane.Effects.PercentBuff;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
 
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by acurr on 2/13/2016.
  */
-public class BarbarinPassive extends Ability {
+public class BarbarianPassive extends Ability {
 
     private int level;
     private int cost;
@@ -25,10 +25,10 @@ public class BarbarinPassive extends Ability {
     private List<Effect> effects = new ArrayList<Effect>();
 
 
-    public BarbarinPassive(int level, LivingEntity e) {
+    public BarbarianPassive(int level, LivingEntity e) {
         this.level = level;
-        double modifier = 1.5 + (.1 * level);
-        PercentBuff buff = new PercentBuff(-1, modifier, e.getStats().getStrength(), false);
+        double modifier = .5 + (.1 * level);
+        Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
     }
 
