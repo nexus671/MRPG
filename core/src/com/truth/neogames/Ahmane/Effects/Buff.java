@@ -10,12 +10,12 @@ import com.truth.neogames.Enums.EntityStatName;
 public class Buff extends Effect {
     private int duration;
     private double magnitude;
-    private double value;
+    private int value;
     private EntityStat stat;
     private EntityStatName statName;
     private boolean debuff;
 
-    public Buff(int duration, double magnitude, double value, EntityStat stat, boolean debuff) {
+    public Buff(int duration, double magnitude, int value, EntityStat stat, boolean debuff) {
         this.duration = duration;
         this.magnitude = magnitude;
         this.value = value;
@@ -23,9 +23,36 @@ public class Buff extends Effect {
         this.stat = stat;
     }
 
-    public Buff(double percent, double flat, EntityStatName stat, boolean debuff) {
+    public Buff(int duration, int value, EntityStat stat, boolean debuff) {
+        this.duration = duration;
+        this.value = value;
+        this.debuff = debuff;
+        this.stat = stat;
+    }
+
+    public Buff(int duration, double magnitude, EntityStat stat, boolean debuff) {
+        this.duration = duration;
+        this.magnitude = magnitude;
+        this.debuff = debuff;
+        this.stat = stat;
+    }
+
+    public Buff(double percent, int flat, EntityStatName stat, boolean debuff) {
         this.magnitude = percent;
         this.value = flat;
+        this.debuff = debuff;
+        this.statName = stat;
+    }
+
+    public Buff(int flat, EntityStatName stat, boolean debuff) {
+
+        this.value = flat;
+        this.debuff = debuff;
+        this.statName = stat;
+    }
+
+    public Buff(double percent, EntityStatName stat, boolean debuff) {
+        this.magnitude = percent;
         this.debuff = debuff;
         this.statName = stat;
     }
@@ -66,7 +93,7 @@ public class Buff extends Effect {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
