@@ -1,6 +1,9 @@
 package com.truth.neogames.Ahmane.Abilitys;
 
 
+import com.truth.neogames.Ahmane.Effects.Buff;
+import com.truth.neogames.Ahmane.Effects.Effect;
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
 
 import java.util.ArrayList;
@@ -9,7 +12,7 @@ import java.util.List;
 /**
  * Created by acurr on 2/13/2016.
  */
-public class BarbarinPassive extends Ability {
+public class BarbarianPassive extends Ability {
 
     private int level;
     private int cost;
@@ -19,15 +22,14 @@ public class BarbarinPassive extends Ability {
     private AbilityRange r = AbilityRange.TOUCH;
     private double basestunc = .05;
 
-    private List<com.truth.neogames.Ahmane.Effects.Effect> effects = new ArrayList<com.truth.neogames.Ahmane.Effects.Effect>();
+    private List<Effect> effects = new ArrayList<Effect>();
 
 
-    public BarbarinPassive(int level, com.truth.neogames.Ahmane.Entities.LivingEntity e) {
+    public BarbarianPassive(int level, LivingEntity e) {
         this.level = level;
-        double modifier;
-        modifier = 1.5 + (.1 * level);
-        //PercentBuff buff = new PercentBuff(-1,modifier,e.g,false);
-        //effects.add();
+        double modifier = .5 + (.1 * level);
+        Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
+        effects.add(buff);
     }
 
     public int getCost() {
@@ -42,7 +44,7 @@ public class BarbarinPassive extends Ability {
         return basestunc + ((level - 1) * .2);
     }
 
-    public double getDamage(com.truth.neogames.Ahmane.Entities.LivingEntity e) {
+    public double getDamage(LivingEntity e) {
         return (1.40 + ((level - 1) * .1)) * e.getBasicAttackDamage();
     }
 

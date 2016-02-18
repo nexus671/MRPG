@@ -1,6 +1,9 @@
 package com.truth.neogames.Adam.StatsPackage.EntityStatsPackage;
 
+import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Enums.EntityStatName;
+
+import java.util.ArrayList;
 
 /**
  * Created by Adam on 10/26/2015.
@@ -8,9 +11,11 @@ import com.truth.neogames.Enums.EntityStatName;
  */
 public class EntityStat {
     protected final EntityStatName name;
-    private double max;
-    private double baseMax;
-    private double current;
+    protected double max;
+    protected double baseMax;
+    protected double current;
+
+    protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
 
     /*************
      * Constructors
@@ -28,15 +33,41 @@ public class EntityStat {
      *************/
 
     public double getMax() {
-        return max;
+        return calculateValue();
+    }
+
+    public void setMax(double max) {
+        this.max = max;
     }
 
     /*************
      * Setters
      *************/
+    public void addBonus(Buff e) {
+        bonuses.add(e);
+    }
 
-    public void setMax(double max) {
-        this.max = max;
+    public void removeBonus(Buff e) {
+        bonuses.remove(e);
+    }
+
+    public double calculateValue() {
+        max = baseMax;
+        applyBonuses();
+        return max;
+    }
+
+    protected void applyBonuses() {
+        max = baseMax;
+        double bonusValue = 0;
+        double bonusMultiplier = 0;
+
+        for (Buff b : bonuses) {
+            bonusValue += b.getValue();
+            bonusMultiplier += (b.getMagnitude());
+        }
+        max += bonusValue;
+        max *= (1 + bonusMultiplier);
     }
 
     public double getBaseMax() {

@@ -8,12 +8,12 @@ import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
  */
 public class PercentBuff extends Effect {
     private int duration;
-    private int magnitude;
+    private double magnitude;
     private EntityStat stat;
     private boolean debuff;
 
 
-    public PercentBuff(int duration, int magnitude, EntityStat stat, boolean debuff) {
+    public PercentBuff(int duration, double magnitude, EntityStat stat, boolean debuff) {
         this.duration = duration;
         this.magnitude = magnitude;
         this.stat = stat;
@@ -28,7 +28,7 @@ public class PercentBuff extends Effect {
         this.duration = duration;
     }
 
-    public int getMagnitude() {
+    public double getMagnitude() {
         return magnitude;
     }
 

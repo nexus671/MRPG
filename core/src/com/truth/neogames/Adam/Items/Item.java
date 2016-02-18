@@ -4,7 +4,7 @@ package com.truth.neogames.Adam.Items;
  * Created by Adam on 10/22/2015.
  * Class Description: Describes a generic item that can be held in the inventory.
  */
-public class Item {
+public abstract class Item {
     protected String name;
     protected String description;
     protected boolean stackable;
