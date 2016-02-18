@@ -10,8 +10,6 @@ import java.util.ArrayList;
  * Class Description: A stat for an entity.
  */
 public class DependantEntityStat extends EntityStat {
-
-
     protected ArrayList<EntityStat> attrs = new ArrayList<EntityStat>();
 
     /*************

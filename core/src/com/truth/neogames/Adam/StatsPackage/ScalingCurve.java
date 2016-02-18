@@ -16,9 +16,9 @@ public class ScalingCurve {
         return Math.pow(k1, (1 + level / k2));
     }
 
-    public static double getLevel(double exp) {
+    public static int getLevel(double exp) {
         if (exp <= 1)
             return 1;
-        return (Math.log(exp) / Math.log(k3));
+        return (int) (Math.log(exp) / Math.log(k3));
     }
 }
