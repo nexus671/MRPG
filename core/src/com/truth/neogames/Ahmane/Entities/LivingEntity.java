@@ -73,15 +73,29 @@ public abstract class LivingEntity extends Entity {
         }
     }
 
+    public boolean deEquip(Gear g) {
+        int slot = g.getSlot().getSlotNumber();
+        if (inventory.isFull()) {
+            return false;
+        } else {
+            Gear old = wornGear.getGear()[slot];
+            inventory.add(g);
+            if (g.getClass() == Jewelry.class) {
+                stats.getStat(g.getStatAffected()).removeListOfBonuses(g.getBonuses());
+            }
+            wornGear.getGear()[slot] = null;
+            return true;
+        }
+    }
+
     public boolean equip(Jewelry j) {
         if (j.getLevel() > stats.getLevel()) {
             return false;
         } else {
             Gear old = wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
             wornGear.getGear()[WornSlot.NECK.getSlotNumber()] = j;
-            EntityStatName statAffected = j.getStatAffected();
-            Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(statAffected), false);
-            stats.getStat(statAffected).addBonus(buff);
+
+            stats.getStat(j.getStatAffected()).addListOfBonuses(j.getBonuses());
             return true;
         }
     }

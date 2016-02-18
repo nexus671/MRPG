@@ -51,6 +51,14 @@ public class EntityStat {
         bonuses.remove(e);
     }
 
+    public void removeListOfBonuses(ArrayList<Buff> buffs) {
+        bonuses.removeAll(buffs);
+    }
+
+    public void addListOfBonuses(ArrayList<Buff> buffs) {
+        bonuses.addAll(buffs);
+    }
+
     public double calculateValue() {
         max = baseMax;
         applyBonuses();

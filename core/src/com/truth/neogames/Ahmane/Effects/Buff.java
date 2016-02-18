@@ -2,6 +2,7 @@ package com.truth.neogames.Ahmane.Effects;
 
 
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
+import com.truth.neogames.Enums.EntityStatName;
 
 /**
  * Created by acurr on 2/15/2016.
@@ -11,6 +12,7 @@ public class Buff extends Effect {
     private double magnitude;
     private double value;
     private EntityStat stat;
+    private EntityStatName statName;
     private boolean debuff;
 
     public Buff(int duration, double magnitude, double value, EntityStat stat, boolean debuff) {
@@ -21,8 +23,23 @@ public class Buff extends Effect {
         this.stat = stat;
     }
 
+    public Buff(double percent, double flat, EntityStatName stat, boolean debuff) {
+        this.magnitude = percent;
+        this.value = flat;
+        this.debuff = debuff;
+        this.statName = stat;
+    }
+
     public void startTimer() {
         //TODO: 2/17/2016
+    }
+
+    public EntityStatName getStatName() {
+        return statName;
+    }
+
+    public void setStatName(EntityStatName statName) {
+        this.statName = statName;
     }
 
     public void onTimerEnd() {
