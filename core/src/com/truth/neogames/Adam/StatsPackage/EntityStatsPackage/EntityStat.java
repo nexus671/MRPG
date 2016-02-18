@@ -11,11 +11,11 @@ import java.util.ArrayList;
  */
 public class EntityStat {
     protected final EntityStatName name;
-    private double max;
-    private double baseMax;
-    private double current;
+    protected double max;
+    protected double baseMax;
+    protected double current;
 
-    private ArrayList<Buff> bonuses = new ArrayList<Buff>();
+    protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
 
     /*************
      * Constructors
@@ -53,6 +53,12 @@ public class EntityStat {
 
     public double calculateValue() {
         max = baseMax;
+        applyBonuses();
+        return max;
+    }
+
+    protected void applyBonuses() {
+        max = baseMax;
         double bonusValue = 0;
         double bonusMultiplier = 0;
 
@@ -62,8 +68,6 @@ public class EntityStat {
         }
         max += bonusValue;
         max *= (1 + bonusMultiplier);
-
-        return max;
     }
 
     public double getBaseMax() {

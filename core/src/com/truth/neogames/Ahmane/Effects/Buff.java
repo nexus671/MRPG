@@ -21,6 +21,14 @@ public class Buff extends Effect {
         this.stat = stat;
     }
 
+    public void startTimer() {
+        //TODO: 2/17/2016
+    }
+
+    public void onTimerEnd() {
+        stat.removeBonus(this);
+    }
+
     public int getDuration() {
         return duration;
     }
