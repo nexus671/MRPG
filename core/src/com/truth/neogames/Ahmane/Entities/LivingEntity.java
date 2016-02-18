@@ -12,6 +12,7 @@ import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
@@ -80,9 +81,8 @@ public abstract class LivingEntity extends Entity {
             Gear old = wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
             wornGear.getGear()[WornSlot.NECK.getSlotNumber()] = j;
             EntityStatName statAffected = j.getStatAffected();
-            double newValue = (1 + j.getAmount()) * stats.getStat(statAffected).getBaseMax();
-            stats.setStat(statAffected, newValue);
-            stats.getStat(statAffected).setCurrent(stats.getStat(statAffected).getCurrent() + j.getAmount() * stats.getStat(statAffected).getBaseMax());
+            Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(statAffected), false);
+            stats.getStat(statAffected).addBonus(buff);
             return true;
         }
     }
@@ -129,8 +129,10 @@ public abstract class LivingEntity extends Entity {
         for (EntityStat stat : stats) {
             EntityStatName name = stat.getName();
             double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
-            this.stats.setStat(name, percentValue);
-            this.stats.setStat(name, this.stats.getStat(name).getMax() + p.getFlatAmount());
+
+            Buff buff = new Buff(-1, p.getPercentAmount(), p.getFlatAmount(), stat, false);
+            stat.addBonus(buff);
+
         }
         int index = inventory.getIndexOf(p);
         if (index != -1) {

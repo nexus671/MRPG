@@ -90,6 +90,14 @@ public class EntityStat {
         this.current = current;
     }
 
+    public ArrayList<Buff> getBonuses() {
+        return bonuses;
+    }
+
+    public void setBonuses(ArrayList<Buff> bonuses) {
+        this.bonuses = bonuses;
+    }
+
     @Override
     public String toString() {
         String str = name + "\n";
