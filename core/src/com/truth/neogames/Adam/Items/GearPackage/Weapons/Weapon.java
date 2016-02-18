@@ -102,7 +102,7 @@ public class Weapon extends CombatGear {
     @Override
     public String toString() {
         String str = name + "\n";
-        str += "Damage Range = " + minDamage + " - " + maxDamage + "\n";
+        str += "Damage Range = " + minDamage + " - " + maxDamage;
         return str;
     }
 }

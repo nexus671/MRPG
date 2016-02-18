@@ -8,17 +8,21 @@ import com.truth.neogames.Enums.ElementalType;
  * gives special bonuses.
  */
 public enum ArmorSuffix {
-    NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE, PROSPERITY, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
-    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE), BURNING(ElementalType.FIRE),
-    ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
+    NONE("None"), HARDINESS("Hardiness"), ENLIGHTENING("Enlightening"), BRAWLING("Brawling"), APTITUDE("Aptitude"),
+    PROSPERITY("Prosperity"), INCANDESCENCE("Incandescence", ElementalType.LIGHT), RADIANCE("Radiance", ElementalType.LIGHT),
+    TWILIGHT("Twilight", ElementalType.DARK), SHADOW("Shadow", ElementalType.DARK), FLAME("Flame", ElementalType.FIRE),
+    BURNING("Burning", ElementalType.FIRE), ICE("Ice", ElementalType.FROST), FREEZING("Freezing", ElementalType.FROST);
 
     private ElementalType elementalType;
+    private String lowercase;
 
-    ArmorSuffix() {
+    ArmorSuffix(String lowercase) {
+        this.lowercase = lowercase;
         elementalType = ElementalType.NONE;
     }
 
-    ArmorSuffix(ElementalType type) {
+    ArmorSuffix(String lowercase, ElementalType type) {
+        this.lowercase = lowercase;
         elementalType = type;
     }
 
@@ -28,5 +32,9 @@ public enum ArmorSuffix {
 
     public boolean isElemental() {
         return elementalType == ElementalType.NONE;
+    }
+
+    public String toString() {
+        return lowercase;
     }
 }

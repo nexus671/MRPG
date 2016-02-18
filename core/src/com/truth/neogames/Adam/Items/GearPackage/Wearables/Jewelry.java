@@ -26,6 +26,7 @@ public class Jewelry extends Gear {
         } else {
             slot = WornSlot.NECK;
         }
+        assignName();
     }
 
     public JewelryMetal getMetal() {
@@ -58,5 +59,16 @@ public class Jewelry extends Gear {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public void assignName() {
+        String str = metal + " ";
+        if (slot == WornSlot.RING) {
+            str += "Ring ";
+        } else {
+            str += "Necklace ";
+        }
+        str += "of " + statAffected;
+        name = str;
     }
 }

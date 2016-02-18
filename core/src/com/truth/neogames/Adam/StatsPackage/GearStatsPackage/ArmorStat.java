@@ -1,5 +1,7 @@
 package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
+import com.truth.neogames.Utilities.DecimalRounder;
+
 /**
  * Created by Adam on 11/4/2015.
  * Class Description: A statistic for a piece of armor.
@@ -31,5 +33,9 @@ public class ArmorStat {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public String toString() {
+        return "" + DecimalRounder.round(value);
     }
 }

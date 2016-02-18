@@ -8,18 +8,22 @@ import com.truth.neogames.Enums.ElementalType;
  * which provides a bonus.
  */
 public enum WeaponSuffix {
-    NONE, TRIUMPH, FEROCITY, VICTORY, CHAOS, EONS, OBLIVION, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
-    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE), BURNING(ElementalType.FIRE),
-    ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
+    NONE("None"), TRIUMPH("Triumph"), FEROCITY("Ferocity"), VICTORY("Victory"), CHAOS("Chaos"), EONS("Eons"),
+    OBLIVION("Oblivion"), INCANDESCENCE("Incandescence", ElementalType.LIGHT), RADIANCE("Radiance", ElementalType.LIGHT),
+    TWILIGHT("Twilight", ElementalType.DARK), SHADOW("Shadow", ElementalType.DARK), FLAME("Flame", ElementalType.FIRE),
+    BURNING("Burning", ElementalType.FIRE), ICE("Ice", ElementalType.FROST), FREEZING("Freezing", ElementalType.FROST);
 
     private ElementalType elementalType;
+    private String lowercase;
 
-    WeaponSuffix() {
+    WeaponSuffix(String lowercase) {
         elementalType = ElementalType.NONE;
+        this.lowercase = lowercase;
     }
 
-    WeaponSuffix(ElementalType elementalType) {
+    WeaponSuffix(String lowercase, ElementalType elementalType) {
         this.elementalType = elementalType;
+        this.lowercase = lowercase;
     }
 
     public ElementalType getElementalType() {
@@ -28,5 +32,9 @@ public enum WeaponSuffix {
 
     public boolean isElemental() {
         return elementalType == ElementalType.NONE;
+    }
+
+    public String toString() {
+        return lowercase;
     }
 }

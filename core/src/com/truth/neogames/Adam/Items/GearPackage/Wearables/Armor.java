@@ -92,4 +92,13 @@ public class Armor extends CombatGear {
         }
         name = str;
     }
+
+    public String toString() {
+        String str = name + "\n";
+        str += "Pierce Defense: " + pierceDef + "\n";
+        str += "Slash Defense: " + slashDef + "\n";
+        str += "Crush Defense: " + crushDef + "\n";
+        str += "Arcane Defense: " + arcaneDef;
+        return str;
+    }
 }

@@ -5,15 +5,22 @@ package com.truth.neogames.Enums.Affixes;
  * Class Description: Metal types for rings, amulets, etc.
  */
 public enum JewelryMetal {
-    COPPER(.3), SILVER(.6), GOLD(1);
+    COPPER("Copper", .3), SILVER("Silver", .6), GOLD("Gold", 1);
 
     private double powerModifier;
+    private String lowercase;
 
-    JewelryMetal(double powerModifier) {
+    JewelryMetal(String lowercase, double powerModifier) {
+        this.lowercase = lowercase;
         this.powerModifier = powerModifier;
     }
 
     public double getPowerModifier() {
         return powerModifier;
+    }
+
+    @Override
+    public String toString() {
+        return lowercase;
     }
 }
