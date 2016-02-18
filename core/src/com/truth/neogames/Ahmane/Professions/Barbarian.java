@@ -24,9 +24,7 @@ public class Barbarian extends Profession {
 
     //Passives
     private void strPassive() {
-        double modifier;
-        modifier = 1.5 + (.1 * level);
-        stats.getStrength().setMax(stats.getStrength().getMax() * modifier);
+
     }
 
     //Actives

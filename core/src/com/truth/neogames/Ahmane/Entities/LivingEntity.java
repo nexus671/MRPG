@@ -23,8 +23,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 /**
- * Created by Adam on 10/22/2015.
- * Class Description: Defines any entity in the game, including player, monster, or NPC.
+ * Created by acurr on 2/17/2016.
  */
 public abstract class LivingEntity extends Entity {
     protected Profession profession;

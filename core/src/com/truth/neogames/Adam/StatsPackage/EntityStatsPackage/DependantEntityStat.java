@@ -6,8 +6,7 @@ import com.truth.neogames.Enums.EntityStatName;
 import java.util.ArrayList;
 
 /**
- * Created by Adam on 10/26/2015.
- * Class Description: A stat for an entity.
+ * Created by acurr on 2/17/2016.
  */
 public class DependantEntityStat extends EntityStat {
     protected ArrayList<EntityStat> attrs = new ArrayList<EntityStat>();
