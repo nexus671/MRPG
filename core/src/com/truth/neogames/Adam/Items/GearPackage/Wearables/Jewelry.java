@@ -1,6 +1,7 @@
 package com.truth.neogames.Adam.Items.GearPackage.Wearables;
 
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
+import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Enums.Affixes.JewelryGem;
 import com.truth.neogames.Enums.Affixes.JewelryMetal;
 import com.truth.neogames.Enums.EntityStatName;
@@ -29,6 +30,8 @@ public class Jewelry extends Gear {
             slot = WornSlot.NECK;
         }
         assignName();
+        Buff buff = new Buff(amount, 0, statAffected, false);
+        this.addBonus(buff);
     }
 
     public JewelryMetal getMetal() {

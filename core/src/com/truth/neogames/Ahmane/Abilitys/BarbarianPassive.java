@@ -2,12 +2,8 @@ package com.truth.neogames.Ahmane.Abilitys;
 
 
 import com.truth.neogames.Ahmane.Effects.Buff;
-import com.truth.neogames.Ahmane.Effects.Effect;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by acurr on 2/13/2016.
@@ -21,8 +17,6 @@ public class BarbarianPassive extends Ability {
     private int area = 1;
     private AbilityRange r = AbilityRange.TOUCH;
     private double basestunc = .05;
-
-    private List<Effect> effects = new ArrayList<Effect>();
 
 
     public BarbarianPassive(int level, LivingEntity e) {

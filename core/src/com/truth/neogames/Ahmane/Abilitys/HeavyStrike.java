@@ -2,14 +2,11 @@ package com.truth.neogames.Ahmane.Abilitys;
 
 
 import com.truth.neogames.Ahmane.Effects.Damage;
-import com.truth.neogames.Ahmane.Effects.Effect;
 import com.truth.neogames.Ahmane.Effects.Stun;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
 import com.truth.neogames.Enums.AttackStyle;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -25,7 +22,6 @@ public class HeavyStrike extends Ability {
     private AbilityRange r = AbilityRange.TOUCH;
     private double basestunc = .05;
 
-    private List<Effect> effects = new ArrayList<Effect>();
 
 
     public HeavyStrike(int level, LivingEntity e) {
