@@ -11,6 +11,7 @@ import java.util.List;
  * Created by acurr on 2/17/2016.
  */
 public abstract class Ability {
+    private static AbilityRange r;
     protected int level = 1;
     protected int cost;
     protected boolean passive;
@@ -18,7 +19,6 @@ public abstract class Ability {
     protected List<Target> targets = new ArrayList<Target>();
     private int duration;
     private int area;
-    private AbilityRange r;
 
 
 }

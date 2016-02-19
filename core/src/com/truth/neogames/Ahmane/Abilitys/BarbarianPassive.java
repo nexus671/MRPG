@@ -10,13 +10,12 @@ import com.truth.neogames.Enums.AbilityRange;
  */
 public class BarbarianPassive extends Ability {
 
+    private static AbilityRange r = AbilityRange.TOUCH;
     private int level;
     private int cost;
     private boolean passive = false;
     private int duration = 0;
     private int area = 1;
-    private AbilityRange r = AbilityRange.TOUCH;
-    private double basestunc = .05;
 
 
     public BarbarianPassive(int level, LivingEntity e) {
@@ -24,6 +23,15 @@ public class BarbarianPassive extends Ability {
         double modifier = .5 + (.1 * level);
         Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
+        e.getStats().getStrength().addBonus(buff);
+    }
+
+    public static AbilityRange getR() {
+        return r;
+    }
+
+    public void setR(AbilityRange r) {
+        this.r = r;
     }
 
     public int getCost() {
@@ -32,14 +40,6 @@ public class BarbarianPassive extends Ability {
 
     public void setCost(int cost) {
         this.cost = cost;
-    }
-
-    public double getstunc() {
-        return basestunc + ((level - 1) * .2);
-    }
-
-    public double getDamage(LivingEntity e) {
-        return (1.40 + ((level - 1) * .1)) * e.getBasicAttackDamage();
     }
 
     public boolean isPassive() {
@@ -64,13 +64,5 @@ public class BarbarianPassive extends Ability {
 
     public void setArea(int area) {
         this.area = area;
-    }
-
-    public AbilityRange getR() {
-        return r;
-    }
-
-    public void setR(AbilityRange r) {
-        this.r = r;
     }
 }

@@ -14,12 +14,12 @@ import java.util.Random;
  */
 public class HeavyStrike extends Ability {
 
+    private static AbilityRange r = AbilityRange.TOUCH;
     private int level;
     private int cost;
     private boolean passive = false;
     private int duration = 0;
     private int area = 1;
-    private AbilityRange r = AbilityRange.TOUCH;
     private double basestunc = .05;
 
 
@@ -35,6 +35,14 @@ public class HeavyStrike extends Ability {
             Stun stun = new Stun(1);
             effects.add(stun);
         }
+    }
+
+    public static AbilityRange getR() {
+        return r;
+    }
+
+    public void setR(AbilityRange r) {
+        this.r = r;
     }
 
     public int getCost() {
@@ -75,13 +83,5 @@ public class HeavyStrike extends Ability {
 
     public void setArea(int area) {
         this.area = area;
-    }
-
-    public AbilityRange getR() {
-        return r;
-    }
-
-    public void setR(AbilityRange r) {
-        this.r = r;
     }
 }

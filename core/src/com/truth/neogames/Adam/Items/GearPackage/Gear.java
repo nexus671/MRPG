@@ -36,8 +36,14 @@ public abstract class Gear extends Item {
         bonuses.remove(e);
     }
 
-    public ArrayList<Buff> getBonuses() {
-        return bonuses;
+    public ArrayList<Buff> getBonusesStat(EntityStatName name) {
+        ArrayList<Buff> b = new ArrayList<Buff>();
+
+        for (Buff buffs : bonuses) {
+            if (buffs.getStatName() == name)
+                b.add(buffs);
+        }
+        return b;
     }
 
     public void setBonuses(ArrayList<Buff> bonuses) {

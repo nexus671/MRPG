@@ -91,8 +91,7 @@ public abstract class LivingEntity extends Entity {
             if (old != null)
                 inventory.add(old);
             for (EntityStatName name : statsAffected) {
-                Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(name), false);
-                stats.getStat(name).addBonus(buff);
+                stats.getStat(name).addListOfBonuses(j.getBonusesStat(name));
             }
             return true;
         }
