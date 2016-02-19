@@ -19,6 +19,7 @@ import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WornSlot;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -90,7 +91,6 @@ public abstract class LivingEntity extends Entity {
             if (old != null)
                 inventory.add(old);
             for (EntityStatName name : statsAffected) {
-                Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(name), false);
                 stats.getStat(name).addBonus(buff);
             }
             return true;

@@ -16,7 +16,7 @@ public abstract class Gear extends Item {
     protected WornSlot slot;
     protected int level;
     protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
-    private EntityStatName statAffected;
+    protected EntityStatName statAffected;
 
     public static int getMAXLEVEL() {
         return MAXLEVEL;
