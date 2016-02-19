@@ -14,6 +14,7 @@ import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane.Effects.Buff;
+import com.truth.neogames.Ahmane.Effects.Damage;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
@@ -74,6 +75,10 @@ public abstract class LivingEntity extends Entity {
             }
             return true;
         }
+    }
+
+    public void recieveDamage(Damage d) {
+        stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d.getDamage());
     }
 
     public boolean equip(Jewelry j) {

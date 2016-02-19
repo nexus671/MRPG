@@ -1,18 +1,17 @@
 package com.truth.neogames.Ahmane.Abilitys;
 
 
+import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Ahmane.Effects.Damage;
-import com.truth.neogames.Ahmane.Effects.Stun;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
 import com.truth.neogames.Enums.AttackStyle;
-
-import java.util.Random;
+import com.truth.neogames.Enums.WornSlot;
 
 /**
  * Created by acurr on 2/13/2016.
  */
-public class HeavyStrike extends Ability {
+public class BasicAttack extends Ability {
 
     private static AbilityRange r = AbilityRange.TOUCH;
     private int level;
@@ -20,12 +19,10 @@ public class HeavyStrike extends Ability {
     private boolean passive = false;
     private int duration = 0;
     private int area = 1;
-    private double basestunc = .05;
     private LivingEntity user;
 
 
-
-    public HeavyStrike(int level, LivingEntity e) {
+    public BasicAttack(int level, LivingEntity e) {
         this.level = level;
         setCost(getCost());
         this.user = e;
@@ -42,15 +39,18 @@ public class HeavyStrike extends Ability {
     }
 
     public void use(LivingEntity target) {
-        Damage damage = new Damage(getDamage(user), AttackStyle.CRUSHING, target);
-        effects.add(damage);
-        Random random = new Random();
-        target.recieveDamage(damage);
-        if (random.nextInt() > getstunc() * 100) {
-            Stun stun = new Stun(1, target);
-            effects.add(stun);
+        Weapon weapon;
+        boolean hasWeapon = !user.getWornGear().slotIsEmpty(WornSlot.MAINHAND);
+        Damage damage;
+        if (hasWeapon) {
+            weapon = (Weapon) user.getWornGear().getFromSlot(WornSlot.MAINHAND);
+            damage = new Damage(getDamage(), weapon.getAttackStyle(), target);
+        } else {
+            damage = new Damage(getDamage(), AttackStyle.CRUSHING, target);
         }
 
+        effects.add(damage);
+        target.recieveDamage(damage);
     }
 
     public int getCost() {
@@ -61,12 +61,17 @@ public class HeavyStrike extends Ability {
         this.cost = cost;
     }
 
-    public double getstunc() {
-        return basestunc + ((level - 1) * .2);
-    }
 
-    public double getDamage(LivingEntity e) {
-        return (1.40 + ((level - 1) * .1)) * e.getBasicAttackDamage();
+    public double getDamage() {
+        Weapon weapon;
+        double basicDamage = 1;
+        boolean hasWeapon = !user.getWornGear().slotIsEmpty(WornSlot.MAINHAND);
+        if (hasWeapon) {
+            weapon = (Weapon) user.getWornGear().getFromSlot(WornSlot.MAINHAND);
+            basicDamage = weapon.getRandomDamage();
+        }
+        basicDamage += (user.getStats().getStrength().getCurrent() / 100) * basicDamage;
+        return basicDamage;
     }
 
     public boolean isPassive() {

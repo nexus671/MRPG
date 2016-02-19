@@ -1,7 +1,10 @@
 package com.truth.neogames.Ahmane.Professions;
 
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane.Abilitys.Ability;
 import com.truth.neogames.Enums.ProfessionName;
+
+import java.util.ArrayList;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -45,7 +48,12 @@ public class Profession extends EntityStats {
      *      Typically this means devotion to a nature deity, though druids are just as likely to revere vague spirits, animalistic demigods, or even specific
      *      awe-inspiring natural wonders.
      */
-    private ProfessionName name;
+    protected ProfessionName name;
+
+    protected ArrayList<Ability> unlockedAblities = new ArrayList<Ability>();
+
+    protected ArrayList<Ability> lockedAblities = new ArrayList<Ability>();
+
 
     public Profession() {
 

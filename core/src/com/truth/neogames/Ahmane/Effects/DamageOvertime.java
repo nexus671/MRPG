@@ -1,5 +1,6 @@
 package com.truth.neogames.Ahmane.Effects;
 
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AttackStyle;
 
 /**
@@ -9,11 +10,19 @@ public class DamageOvertime extends Effect {
     private double damage;
     private AttackStyle type;
     private int duration;
+    private LivingEntity e;
 
     public DamageOvertime(double damage, AttackStyle type, int duration) {
         this.damage = damage;
         this.type = type;
         this.duration = duration;
+    }
+
+    public DamageOvertime(double damage, AttackStyle type, int duration, LivingEntity e) {
+        this.damage = damage;
+        this.type = type;
+        this.duration = duration;
+        this.e = e;
     }
 
     public double getDamage() {

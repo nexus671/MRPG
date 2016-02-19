@@ -1,5 +1,6 @@
 package com.truth.neogames.Ahmane.Effects;
 
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AttackStyle;
 
 /**
@@ -8,10 +9,17 @@ import com.truth.neogames.Enums.AttackStyle;
 public class Damage extends Effect {
     private double damage;
     private AttackStyle type;
+    private LivingEntity e;
 
     public Damage(double damage, AttackStyle type) {
         this.damage = damage;
         this.type = type;
+    }
+
+    public Damage(double damage, AttackStyle type, LivingEntity e) {
+        this.damage = damage;
+        this.type = type;
+        this.e = e;
     }
 
     public double getDamage() {

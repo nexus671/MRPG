@@ -1,7 +1,11 @@
 package com.truth.neogames.Ahmane.Battle;
 
+import com.truth.neogames.Ahmane.Abilitys.Ability;
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
+
+import java.util.ArrayList;
 
 /**
  * Created by Ahmane on 10/21/2015.
@@ -16,6 +20,13 @@ public class Battle {
         this.monsters = monsters;
     }
 
+    public void ApplyAbility(Ability ability, LivingEntity target, LivingEntity caster) {
+
+    }
+
+    public void ApplyAbility(Ability ability, ArrayList<LivingEntity> targets, LivingEntity caster) {
+
+    }
     public Player getPlayer() {
         return player;
     }
