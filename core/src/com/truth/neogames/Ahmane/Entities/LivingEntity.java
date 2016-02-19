@@ -251,6 +251,11 @@ public abstract class LivingEntity extends Entity {
                     break;
             }
         }
+        double reducer = .25;
+        lightTotal *= reducer;
+        darkTotal *= reducer;
+        fireTotal *= reducer;
+        frostTotal *= reducer;
         values[0] = lightTotal;
         values[1] = darkTotal;
         values[2] = fireTotal;

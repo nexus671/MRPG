@@ -8,10 +8,10 @@ public enum ElementalType {
     LIGHT("Light"), DARK("Dark"), FIRE("Fire"), FROST("Frost"), NONE("None");
 
     // These constants are multiplied by (CombatGear.getLevel() / Gear.getMAXLEVEL());
-    private static final double LIGHT_SCALING = .3;
-    private static final double DARK_SCALING = 3;
-    private static final double FIRE_SCALING = 20;
-    private static final double FROST_SCALING = 2;
+    private static final double LIGHT_SCALING = .05;
+    private static final double DARK_SCALING = .1;
+    private static final double FIRE_SCALING = .05;
+    private static final double FROST_SCALING = .3;
     private String lowercase;
 
     ElementalType(String lowercase) {
@@ -40,8 +40,8 @@ public enum ElementalType {
 
     /**
      * LIGHT: Buffs defensive bonuses on hit.
-     * DARK: Saps mana.
-     * FIRE: Applies a burning effect for several turns (drains health).
+     * DARK: Saps a percentage of current mana.
+     * FIRE: Applies a burning effect for several turns (drains current health).
      * FROST: Lowers move spaces on next turn.
      */
 }
