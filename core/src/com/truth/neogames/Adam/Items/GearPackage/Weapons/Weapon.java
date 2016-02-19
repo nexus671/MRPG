@@ -8,6 +8,8 @@ import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.WeaponType;
 import com.truth.neogames.Enums.WornSlot;
 
+import java.util.Random;
+
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: A weapon.
@@ -17,6 +19,7 @@ public class Weapon extends CombatGear {
     private double minDamage;
     private WeaponSuffix suffix;
     private WeaponType type;
+    private Random random = new Random();
 
     /************* Constructors *************/
 
@@ -56,6 +59,10 @@ public class Weapon extends CombatGear {
 
     public void setMinDamage(double minDamage) {
         this.minDamage = minDamage;
+    }
+
+    public double getRandomDamage() {
+        return (minDamage + (maxDamage - minDamage) * random.nextDouble());
     }
 
     public WeaponSuffix getSuffix() {
