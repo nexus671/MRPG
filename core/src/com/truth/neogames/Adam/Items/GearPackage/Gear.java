@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * Class Description: Describes any item that can be equipped in the worn gear (weapon, armor, or jewelry).
  */
 public abstract class Gear extends Item {
-    protected static final int MAXLEVEL = 21;
+    protected static final int MAX_LEVEL = 21;
     protected WornSlot slot;
     protected int level;
     protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
 
     public static int getMAXLEVEL() {
-        return MAXLEVEL;
+        return MAX_LEVEL;
     }
 
     public void addBuffs(ArrayList<EntityStatName> stats, double amount) {
