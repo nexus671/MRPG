@@ -6,6 +6,8 @@ import com.truth.neogames.Enums.Affixes.JewelryMetal;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
 
+import java.util.ArrayList;
+
 /**
  * Created by Adam on 12/4/2015.
  * Class Description: A piece of jewelry that provides a bonus to a certain stat.
@@ -13,14 +15,14 @@ import com.truth.neogames.Enums.WornSlot;
 public class Jewelry extends Gear {
     private JewelryMetal metal;
     private JewelryGem gem;
-    private EntityStatName statAffected;
+    private ArrayList<EntityStatName> statsAffected;
     private double amount; // percent increase of the entity stat
 
-    public Jewelry(JewelryMetal metal, JewelryGem gem, EntityStatName stat, boolean isRing) {
+    public Jewelry(JewelryMetal metal, JewelryGem gem, ArrayList<EntityStatName> stats, boolean isRing) {
         this.metal = metal;
         this.gem = gem;
-        statAffected = stat;
-        amount = metal.getPowerModifier() * gem.getPowerModifier(); //TODO: needs testing if this is op
+        statsAffected = stats;
+        amount = metal.getPowerModifier() * gem.getPowerModifier();
         if (isRing) {
             slot = WornSlot.RING;
         } else {
@@ -45,12 +47,12 @@ public class Jewelry extends Gear {
         this.gem = gem;
     }
 
-    public EntityStatName getStatAffected() {
-        return statAffected;
+    public ArrayList<EntityStatName> getStatsAffected() {
+        return statsAffected;
     }
 
-    public void setStatAffected(EntityStatName statAffected) {
-        this.statAffected = statAffected;
+    public void setStatsAffected(ArrayList<EntityStatName> statsAffected) {
+        this.statsAffected = statsAffected;
     }
 
     public double getAmount() {
@@ -63,12 +65,12 @@ public class Jewelry extends Gear {
 
     public void assignName() {
         String str = metal + " ";
+        str += gem + " ";
         if (slot == WornSlot.RING) {
-            str += "Ring ";
+            str += "Ring";
         } else {
-            str += "Necklace ";
+            str += "Necklace";
         }
-        str += "of " + statAffected;
         name = str;
     }
 }

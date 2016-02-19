@@ -19,6 +19,7 @@ import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WornSlot;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -78,11 +79,21 @@ public abstract class LivingEntity extends Entity {
         if (j.getLevel() > stats.getLevel()) {
             return false;
         } else {
-            Gear old = wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
-            wornGear.getGear()[WornSlot.NECK.getSlotNumber()] = j;
-            EntityStatName statAffected = j.getStatAffected();
-            Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(statAffected), false);
-            stats.getStat(statAffected).addBonus(buff);
+            ArrayList<EntityStatName> statsAffected = j.getStatsAffected();
+            Jewelry old;
+            if (j.getSlot() == WornSlot.NECK) {
+                old = (Jewelry) wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
+                wornGear.getGear()[WornSlot.NECK.getSlotNumber()] = j;
+            } else {
+                old = (Jewelry) wornGear.getGear()[WornSlot.RING.getSlotNumber()];
+                wornGear.getGear()[WornSlot.RING.getSlotNumber()] = j;
+            }
+            if (old != null)
+                inventory.add(old);
+            for (EntityStatName name : statsAffected) {
+                Buff buff = new Buff(-1, j.getAmount(), 0, stats.getStat(name), false);
+                stats.getStat(name).addBonus(buff);
+            }
             return true;
         }
     }

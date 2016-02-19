@@ -63,11 +63,16 @@ public class EntityStat {
         double bonusMultiplier = 0;
 
         for (Buff b : bonuses) {
-            bonusValue += b.getValue();
-            bonusMultiplier += (b.getMagnitude());
+            if (b.isDebuff()) {
+                bonusValue -= b.getValue();
+                bonusMultiplier -= b.getMagnitude();
+            } else {
+                bonusValue += b.getValue();
+                bonusMultiplier += b.getMagnitude();
+            }
         }
-        max += bonusValue;
         max *= (1 + bonusMultiplier);
+        max += bonusValue;
     }
 
     public double getBaseMax() {
