@@ -8,6 +8,7 @@ import com.truth.neogames.Adam.Items.Consumables.SubTypes.Food;
 import com.truth.neogames.Adam.Items.Consumables.SubTypes.Potion;
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
 import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
+import com.truth.neogames.Adam.Items.GearPackage.Wearables.Armor;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
@@ -177,15 +178,12 @@ public abstract class LivingEntity extends Entity {
     }
 
     /**
-     * Gets the value for the bonus from an elemental affix.
+     * Gets the value for the bonus from the elemental affix of the weapon.
      *
-     * @param forWeapon Indicates whether the method looks at the weapon's elemental stats,
-     *                  or the armor's elemental stats.
      * @return A value for the strength of the elemental buff, dependent on the type of buff.
-     */ //TODO Finish this method
-    public double getElementalValue(boolean forWeapon) {
+     */
+    public double getWeaponElementalValue() {
         double elementalValue = 0;
-        if (forWeapon) {
             Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
             int level = weapon.getLevel();
             double levelRatio = (double) level / Gear.getMAXLEVEL();
@@ -195,23 +193,64 @@ public abstract class LivingEntity extends Entity {
                     elementalValue = 0;
                     break;
                 case LIGHT:
-                    elementalValue = levelRatio / 5;
+                    elementalValue = levelRatio * ElementalType.getLightScaling();
                     break;
                 case DARK:
-                    elementalValue = levelRatio / 3;
+                    elementalValue = levelRatio * ElementalType.getDarkScaling();
                     break;
                 case FIRE:
-                    elementalValue = levelRatio / 20;
+                    elementalValue = levelRatio * ElementalType.getFireScaling();
+                    break;
                 case FROST:
-                    elementalValue = levelRatio / 2;
+                    elementalValue = levelRatio * ElementalType.getFrostScaling();
             }
-        } else {
-            int lightCounter, darkCounter, fireCounter, frostCounter;
-            lightCounter = darkCounter = fireCounter = frostCounter = 0;
-            Gear[] gear = wornGear.getGear();
-
-        }
         return elementalValue;
+    }
+
+    /**
+     * Gets an array of doubles that represents the elemental values for each elemental type.
+     * The array returns the values in the following order: {light, dark, fire, frost}
+     *
+     * @return An array of values representing the elemental buff modifiers
+     */
+    public double[] getArmorElementalValues() {
+        double lightTotal, darkTotal, fireTotal, frostTotal;
+        double[] values = new double[4];
+        lightTotal = darkTotal = fireTotal = frostTotal = 0;
+        Gear[] gear = wornGear.getGear();
+        for (Gear g : gear) {
+            ElementalType type;
+            switch (g.getSlot()) {
+                case HEAD:
+                case NECK:
+                case CHEST:
+                case HANDS:
+                case LEGS:
+                case FEET:
+                case OFFHAND:
+                    type = ((Armor) g).getElementalType();
+                    double levelRatio = ((double) g.getLevel() / Gear.getMAXLEVEL());
+                    switch (type) {
+                        case LIGHT:
+                            lightTotal += levelRatio * ElementalType.getLightScaling();
+                            break;
+                        case DARK:
+                            darkTotal += levelRatio * ElementalType.getDarkScaling();
+                            break;
+                        case FIRE:
+                            fireTotal += levelRatio * ElementalType.getFireScaling();
+                            break;
+                        case FROST:
+                            frostTotal += levelRatio * ElementalType.getFrostScaling();
+                    }
+                    break;
+            }
+        }
+        values[0] = lightTotal;
+        values[1] = darkTotal;
+        values[2] = fireTotal;
+        values[3] = frostTotal;
+        return values;
     }
 
     /************* Getters *************/
