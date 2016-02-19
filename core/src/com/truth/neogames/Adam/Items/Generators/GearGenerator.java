@@ -6,25 +6,24 @@ import com.truth.neogames.Adam.Items.GearPackage.Wearables.Armor;
 import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Utilities.RandomNumber;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Adam on 11/25/2015.
  * Class Description: Generates weapons and armor for monster drops and chests.
  */
 public class GearGenerator {
-    private static Random random = new Random();
     ArrayList<EntityStatName> statsAffected = new ArrayList<EntityStatName>();
 
     public Gear getRandom() {
-        int slotNum = random.nextInt(9);
+        int slotNum = RandomNumber.random.nextInt(9);
         switch (slotNum) {
             case 0:
                 return new Armor(WornSlot.HEAD, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HEAD));
             case 1:
-                int numStats = 1 + random.nextInt(3);
+                int numStats = 1 + RandomNumber.random.nextInt(3);
                 addRandomStats(numStats);
                 return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, false);
             case 2:
@@ -36,7 +35,7 @@ public class GearGenerator {
             case 5:
                 return new Armor(WornSlot.HANDS, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HANDS));
             case 6:
-                numStats = 1 + random.nextInt(3);
+                numStats = 1 + RandomNumber.random.nextInt(3);
                 addRandomStats(numStats);
                 return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, true);
             case 7:
@@ -48,7 +47,7 @@ public class GearGenerator {
     }
 
     /**
-     * Adds the specified number of random entity stat names to the ArrayList statsAffected.
+     * Adds the specified number of RandomNumber.random entity stat names to the ArrayList statsAffected.
      * Note: This method clears the contents of statsAffected upon method call.
      *
      * @param number The  number of stats to be placed into the statsAffected ArrayList.

@@ -11,19 +11,17 @@ import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WeaponType;
 import com.truth.neogames.Enums.WornSlot;
-
-import java.util.Random;
+import com.truth.neogames.Utilities.RandomNumber;
 
 /**
  * Created by Adam on 2/16/2016.
- * Class Description: Provides static methods for picking random enumerator values.
+ * Class Description: Provides static methods for picking RandomNumber.random enumerator values.
  */
 public class EnumPicker {
-    public static Random random = new Random();
 
     public static ArmorSuffix getRandomArmorSuffix() {
-        boolean hasSuffix = random.nextBoolean();
-        int number = random.nextInt(13);
+        boolean hasSuffix = RandomNumber.random.nextBoolean();
+        int number = RandomNumber.random.nextInt(13);
         if (hasSuffix) {
             switch (number) {
                 case 0:
@@ -61,7 +59,7 @@ public class EnumPicker {
     }
 
     public static JewelryGem getRandomJewelryGem() {
-        int number = random.nextInt(14);
+        int number = RandomNumber.random.nextInt(14);
         switch (number) {
             case 0:
                 return JewelryGem.ALEXANDRITE;
@@ -97,7 +95,7 @@ public class EnumPicker {
     }
 
     public static JewelryMetal getRandomJewelryMetal() {
-        int number = random.nextInt(3);
+        int number = RandomNumber.random.nextInt(3);
         switch (number) {
             case 0:
                 return JewelryMetal.COPPER;
@@ -111,7 +109,7 @@ public class EnumPicker {
     }
 
     public static Material getRandomGearMaterial() {
-        int number = random.nextInt(10);
+        int number = RandomNumber.random.nextInt(10);
         switch (number) {
             case 0:
                 return Material.BRONZE;
@@ -139,8 +137,8 @@ public class EnumPicker {
     }
 
     public static WeaponSuffix getRandomWeaponSuffix() {
-        boolean hasSuffix = random.nextBoolean();
-        int number = random.nextInt(14);
+        boolean hasSuffix = RandomNumber.random.nextBoolean();
+        int number = RandomNumber.random.nextInt(14);
         if (hasSuffix) {
             switch (number) {
                 case 0:
@@ -180,7 +178,7 @@ public class EnumPicker {
     }
 
     public static ArmorType getRandomArmorType() {
-        int number = random.nextInt(17);
+        int number = RandomNumber.random.nextInt(17);
         switch (number) {
             case 0:
                 return ArmorType.BOOTS;
@@ -222,9 +220,9 @@ public class EnumPicker {
     }
 
     public static ArmorType getRandomArmorType(WornSlot slot) {
-        int number2 = random.nextInt(2);
-        int number3 = random.nextInt(3);
-        int number4 = random.nextInt(4);
+        int number2 = RandomNumber.random.nextInt(2);
+        int number3 = RandomNumber.random.nextInt(3);
+        int number4 = RandomNumber.random.nextInt(4);
         switch (slot) {
             case HEAD:
                 switch (number2) {
@@ -276,7 +274,7 @@ public class EnumPicker {
     }
 
     public static ElementalType getRandomElementalType() {
-        int number = random.nextInt(5);
+        int number = RandomNumber.random.nextInt(5);
         switch (number) {
             case 0:
                 return ElementalType.DARK;
@@ -294,7 +292,7 @@ public class EnumPicker {
     }
 
     public static EntityStatName getRandomEntityStat() {
-        int number = random.nextInt(7);
+        int number = RandomNumber.random.nextInt(7);
         switch (number) {
             case 0:
                 return EntityStatName.HEALTH;
@@ -316,7 +314,7 @@ public class EnumPicker {
     }
 
     public static WeaponType getRandomWeaponType() {
-        int number = random.nextInt(14);
+        int number = RandomNumber.random.nextInt(14);
         switch (number) {
             case 0:
                 return WeaponType.SWORD;
@@ -352,7 +350,7 @@ public class EnumPicker {
     }
 
     public static Race getRandomRace() {
-        int number = random.nextInt(6);
+        int number = RandomNumber.random.nextInt(6);
         switch (number) {
             case 0:
                 return Race.CATFOLK;
@@ -372,7 +370,7 @@ public class EnumPicker {
     }
 
     public static WornSlot getRandomSlot() {
-        int number = random.nextInt(10);
+        int number = RandomNumber.random.nextInt(10);
         switch (number) {
             case 0:
                 return WornSlot.HEAD;

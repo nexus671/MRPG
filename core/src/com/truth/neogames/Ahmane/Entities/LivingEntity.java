@@ -20,10 +20,10 @@ import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Utilities.RandomNumber;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Random;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -34,7 +34,6 @@ public abstract class LivingEntity extends Entity {
     protected WornGear wornGear;
     protected Inventory inventory;
     protected EntityStats stats;
-    Random random = new Random();
 
     public LivingEntity(String name, Race race, String sex, Sprite sprite, String description, int xPos, int yPos, Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
@@ -176,7 +175,7 @@ public abstract class LivingEntity extends Entity {
         boolean hasWeapon = !wornGear.slotIsEmpty(WornSlot.MAINHAND);
         if (hasWeapon) {
             weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-            basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * random.nextDouble();
+            basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * RandomNumber.random.nextDouble();
         }
         basicDamage += (stats.getStrength().getCurrent() / 100) * basicDamage;
         return basicDamage;
