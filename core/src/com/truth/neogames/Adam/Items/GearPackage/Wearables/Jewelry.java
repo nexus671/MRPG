@@ -30,7 +30,7 @@ public class Jewelry extends Gear {
             slot = WornSlot.NECK;
         }
         assignName();
-        Buff buff = new Buff(amount, 0, statAffected, false);
+        Buff buff = new Buff(amount, statAffected, false);
         this.addBonus(buff);
     }
 
