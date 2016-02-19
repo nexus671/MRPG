@@ -16,14 +16,16 @@ public abstract class Gear extends Item {
     protected WornSlot slot;
     protected int level;
     protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
-    private EntityStatName statAffected;
 
     public static int getMAXLEVEL() {
         return MAXLEVEL;
     }
 
-    public EntityStatName getStatAffected() {
-        return statAffected;
+    public void addBuffs(ArrayList<EntityStatName> stats, double amount) {
+        for (EntityStatName statName : stats) {
+            Buff buff = new Buff(amount, statName, false);
+            this.addBonus(buff);
+        }
     }
 
     public void addBonus(Buff e) {
