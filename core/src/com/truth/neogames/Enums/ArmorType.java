@@ -12,7 +12,7 @@ public enum ArmorType {
     GLOVES(WornSlot.HANDS, "Gloves", false), VAMBRACES(WornSlot.HANDS, "Vambraces", true),
     GREAVES(WornSlot.LEGS, "Greaves", true), CHAUSSES(WornSlot.LEGS, "Chausses", true),
     ROBEBOTTOM(WornSlot.LEGS, "Robe Bottom", false), BOOTS(WornSlot.FEET, "Boots", false),
-    SABATONS(WornSlot.FEET, "Sabatons", true);
+    SABATONS(WornSlot.FEET, "Sabatons", true), SHIELD(WornSlot.OFFHAND, "Shield", true);
 
 
     private WornSlot slot;

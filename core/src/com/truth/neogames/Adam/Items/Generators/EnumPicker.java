@@ -180,7 +180,7 @@ public class EnumPicker {
     }
 
     public static ArmorType getRandomArmorType() {
-        int number = random.nextInt(16);
+        int number = random.nextInt(17);
         switch (number) {
             case 0:
                 return ArmorType.BOOTS;
@@ -214,6 +214,8 @@ public class EnumPicker {
                 return ArmorType.VAMBRACES;
             case 15:
                 return ArmorType.GREAVES;
+            case 16:
+                return ArmorType.SHIELD;
             default:
                 return null;
         }
@@ -267,6 +269,8 @@ public class EnumPicker {
                     case 1:
                         return ArmorType.SABATONS;
                 }
+            case OFFHAND:
+                return ArmorType.SHIELD;
         }
         return null;
     }

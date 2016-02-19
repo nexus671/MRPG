@@ -7,10 +7,31 @@ package com.truth.neogames.Enums;
 public enum ElementalType {
     LIGHT("Light"), DARK("Dark"), FIRE("Fire"), FROST("Frost"), NONE("None");
 
+    // These constants are multiplied by (CombatGear.getLevel() / Gear.getMAXLEVEL());
+    private static final double LIGHT_SCALING = .3;
+    private static final double DARK_SCALING = 3;
+    private static final double FIRE_SCALING = 20;
+    private static final double FROST_SCALING = 2;
     private String lowercase;
 
     ElementalType(String lowercase) {
         this.lowercase = lowercase;
+    }
+
+    public static double getLightScaling() {
+        return LIGHT_SCALING;
+    }
+
+    public static double getDarkScaling() {
+        return DARK_SCALING;
+    }
+
+    public static double getFireScaling() {
+        return FIRE_SCALING;
+    }
+
+    public static double getFrostScaling() {
+        return FROST_SCALING;
     }
 
     public String toString() {
