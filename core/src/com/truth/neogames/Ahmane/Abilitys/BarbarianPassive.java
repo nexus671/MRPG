@@ -34,6 +34,14 @@ public class BarbarianPassive extends Ability {
         this.r = r;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public int getCost() {
         return (int) (Math.pow(2, level) * 5);
     }
