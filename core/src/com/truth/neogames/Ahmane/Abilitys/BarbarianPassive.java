@@ -1,6 +1,7 @@
 package com.truth.neogames.Ahmane.Abilitys;
 
 
+
 import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
@@ -13,12 +14,12 @@ public class BarbarianPassive extends Ability {
     private static AbilityRange r = AbilityRange.TOUCH;
     private int level;
     private int cost;
-    private boolean passive = false;
+    private boolean passive = true;
     private int duration = 0;
     private int area = 1;
 
-
     public BarbarianPassive(int level, LivingEntity e) {
+        this.name = "BarbarianPassive";
         this.level = level;
         double modifier = .5 + (.1 * level);
         Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);

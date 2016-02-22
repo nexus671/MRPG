@@ -38,8 +38,6 @@ public class Barbarian extends Profession {
         Ablities.add(ablitiy3);
         unlockedAblities.add(ablitiy3);
 
-
-
     }
 
     //Passives

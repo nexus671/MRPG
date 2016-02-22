@@ -23,6 +23,7 @@ public class BasicAttack extends Ability {
 
 
     public BasicAttack(int level, LivingEntity e) {
+        this.name = "Basic Attack";
         this.level = level;
         setCost(getCost());
         this.user = e;

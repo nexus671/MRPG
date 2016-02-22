@@ -26,6 +26,7 @@ public class HeavyStrike extends Ability {
 
 
     public HeavyStrike(int level, LivingEntity e) {
+        this.name = "Heavy Strike";
         this.level = level;
         setCost(getCost());
         this.user = e;
