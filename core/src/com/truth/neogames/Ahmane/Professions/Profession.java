@@ -52,10 +52,35 @@ public class Profession extends EntityStats {
 
     protected ArrayList<Ability> unlockedAblities = new ArrayList<Ability>();
 
-    protected ArrayList<Ability> lockedAblities = new ArrayList<Ability>();
+    protected ArrayList<Ability> Ablities = new ArrayList<Ability>();
+
 
 
     public Profession() {
 
+    }
+
+    public ProfessionName getName() {
+        return name;
+    }
+
+    public void setName(ProfessionName name) {
+        this.name = name;
+    }
+
+    public ArrayList<Ability> getUnlockedAblities() {
+        return unlockedAblities;
+    }
+
+    public void setUnlockedAblities(ArrayList<Ability> unlockedAblities) {
+        this.unlockedAblities = unlockedAblities;
+    }
+
+    public ArrayList<Ability> getAblities() {
+        return Ablities;
+    }
+
+    public void setAblities(ArrayList<Ability> ablities) {
+        Ablities = ablities;
     }
 }

@@ -13,6 +13,7 @@ import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane.Abilitys.Ability;
 import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Effects.Damage;
 import com.truth.neogames.Ahmane.Professions.Profession;
@@ -80,6 +81,18 @@ public abstract class LivingEntity extends Entity {
             return true;
         }
     }
+
+    public void printAblities() {
+        for (Ability a : profession.getUnlockedAblities()
+                ) {
+            if (a.isPassive()) {
+
+            } else
+                System.out.println(a.getName());
+        }
+
+    }
+
 
     public void recieveDamage(Damage d) {
         stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d.getDamage());

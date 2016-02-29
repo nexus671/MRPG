@@ -23,11 +23,10 @@ public class BasicAttack extends Ability {
 
 
     public BasicAttack(int level, LivingEntity e) {
+        this.name = "Basic Attack";
         this.level = level;
         setCost(getCost());
         this.user = e;
-
-
     }
 
     public static AbilityRange getR() {
@@ -72,6 +71,14 @@ public class BasicAttack extends Ability {
         }
         basicDamage += (user.getStats().getStrength().getCurrent() / 100) * basicDamage;
         return basicDamage;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public boolean isPassive() {
