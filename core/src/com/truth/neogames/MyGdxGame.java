@@ -7,9 +7,16 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.truth.neogames.Adam.Items.Generators.GearGenerator;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane.Battle.Battle;
+import com.truth.neogames.Ahmane.Battle.TempUI;
+import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
+import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
+import com.truth.neogames.Ahmane.Professions.Barbarian;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.WornSlot;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -17,17 +24,27 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public static void main(String[] args) {
 		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
-		GearGenerator generator = new GearGenerator();
-
-		int lvl;
-		int maxlevel = 21;
-		int exp = 0;
-
-		for (lvl = 1; lvl <= maxlevel; lvl++) {
-			exp += lvl + 300 * Math.pow(5, lvl / 4);
-		}
-
-	}
+        p.setProfession(new Barbarian(p));
+        Monster m = new Monster(true, new EntityStats(1));
+        m.setName("Skeleton");
+        m.setDescription("A bony menace!");
+        p.setPos(0, 0);
+        m.setPos(1, 0);
+        Monster[] monsters = {m};
+        GearGenerator generator = new GearGenerator();
+        WornSlot[] slots = {WornSlot.HEAD, WornSlot.NECK, WornSlot.CHEST, WornSlot.MAINHAND, WornSlot.OFFHAND, WornSlot.HANDS, WornSlot.RING, WornSlot.LEGS, WornSlot.FEET};
+        for (WornSlot slot : slots) {
+            p.equip(generator.getRandom(1, slot));
+        }
+        System.out.println(p.getWornGear());
+        BattleGrid grid = new BattleGrid();
+        grid.addEntity(p);
+        grid.addEntity(m);
+        Battle b = new Battle(p, monsters, grid);
+        System.out.println("Skeleton Health: " + m.getStats().getHealth().getCurrent());
+        new TempUI(b);
+        System.out.println("Skeleton Health: " + m.getStats().getHealth().getCurrent());
+    }
 
 	@Override
 	public void create() {

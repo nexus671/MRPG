@@ -83,6 +83,12 @@ public class GearGenerator {
         return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, ring);
     }
 
+    public Jewelry getJewelry(int level, boolean isRing) {
+        int numStats = RandomNumber.random.nextInt(Jewelry.getMaxStats());
+        addRandomStats(numStats);
+        return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, isRing);
+    }
+
     public Armor getRandomArmor(WornSlot slot) {
         switch (slot) {
             case RING:
@@ -137,6 +143,26 @@ public class GearGenerator {
                 return new Armor(WornSlot.LEGS, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.LEGS));
             case 8:
                 return new Armor(WornSlot.FEET, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.FEET));
+        }
+        return null;
+    }
+
+    //HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), HANDS(5), RING(6), LEGS(7), FEET(8), AMMO(9)
+    public Gear getRandom(int level, WornSlot slot) {
+        switch (slot) {
+            case HEAD:
+            case CHEST:
+            case HANDS:
+            case LEGS:
+            case FEET:
+                return getArmor(level, slot);
+            case MAINHAND:
+            case OFFHAND:
+                return getWeapon(level);
+            case NECK:
+                return getJewelry(level, false);
+            case RING:
+                return getJewelry(level, true);
         }
         return null;
     }

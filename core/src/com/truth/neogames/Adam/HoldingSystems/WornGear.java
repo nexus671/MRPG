@@ -43,4 +43,14 @@ public class WornGear {
     public Gear getFromSlot(WornSlot slot) {
         return gear[slot.getSlotNumber()];
     }
+
+    public String toString() {
+        String str = "";
+        int i = 0;
+        for(Gear g : gear) {
+            str += WornSlot.getSlotTitle(i) + ": " + g + "\n";
+            i++;
+        }
+        return str;
+    }
 }

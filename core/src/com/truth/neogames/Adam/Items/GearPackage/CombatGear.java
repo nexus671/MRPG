@@ -9,7 +9,6 @@ import com.truth.neogames.Enums.Affixes.Material;
 public abstract class CombatGear extends Gear {
     protected Material material;
 
-
     public CombatGear() {
     }
 

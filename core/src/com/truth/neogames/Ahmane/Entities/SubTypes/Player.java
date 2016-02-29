@@ -15,8 +15,6 @@ import com.truth.neogames.Enums.Race;
  */
 public class Player extends LivingEntity {
 
-    private EntityStats stats;
-
     /************* Constructors *************/
 
     public Player(String name, Race race, String sex, Profession profession, Sprite sprite) {
@@ -24,6 +22,10 @@ public class Player extends LivingEntity {
         this.setRace(race);
         this.setSex(sex);
         this.setProfession(profession);
+        this.setStats(new EntityStats(1));
+        this.setWornGear(new WornGear());
+        this.setInventory(new Inventory());
+        setStats(new EntityStats(1));
     }
 
 
@@ -36,45 +38,6 @@ public class Player extends LivingEntity {
                 ", stats=" + stats +
                 '}';
     }
-
-    /************* Getters *************/
-
-    public EntityStats getStats() {
-        return this.stats;
-    }
-
-    /**************
-     * Setters
-     *************/
-
-    public void setStats(EntityStats stats) {
-        this.stats = stats;
-    }
-
-    public com.truth.neogames.Ahmane.Professions.Profession getProfession() {
-        return this.profession;
-    }
-
-    public void setProfession(com.truth.neogames.Ahmane.Professions.Profession profession) {
-        this.profession = profession;
-    }
-
-    public WornGear getWornGear() {
-        return this.wornGear;
-    }
-
-    public void setWornGear(WornGear wornGear) {
-        this.wornGear = wornGear;
-    }
-
-    public Inventory getInventory() {
-        return this.inventory;
-    }
-
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
-    }
-
 
 }
 

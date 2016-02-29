@@ -1,9 +1,10 @@
 package com.truth.neogames.Ahmane.Battle;
 
-import com.truth.neogames.Ahmane.Abilitys.Ability;
+import com.truth.neogames.Ahmane.Abilities.ActiveAbility;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
+import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
 
 import java.util.ArrayList;
 
@@ -14,17 +15,15 @@ import java.util.ArrayList;
 public class Battle {
     private Player player;
     private Monster[] monsters;
+    private BattleGrid grid;
 
-    public Battle(Player p, Monster[] monsters) {
+    public Battle(Player p, Monster[] monsters, BattleGrid b) {
         player = p;
         this.monsters = monsters;
+        grid = b;
     }
 
-    public void ApplyAbility(Ability ability, LivingEntity target, LivingEntity caster) {
-
-    }
-
-    public void ApplyAbility(Ability ability, ArrayList<LivingEntity> targets, LivingEntity caster) {
+    public void ApplyAbility(ActiveAbility ability, ArrayList<LivingEntity> targets, LivingEntity caster) {
 
     }
 
@@ -42,5 +41,13 @@ public class Battle {
 
     public void setMonsters(Monster[] monsters) {
         this.monsters = monsters;
+    }
+
+    public BattleGrid getGrid() {
+        return grid;
+    }
+
+    public void setGrid(BattleGrid grid) {
+        this.grid = grid;
     }
 }

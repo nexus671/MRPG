@@ -13,10 +13,11 @@ import com.truth.neogames.Adam.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Adam.Items.Item;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane.Abilitys.Ability;
+import com.truth.neogames.Ahmane.Abilities.ActiveAbility;
 import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Effects.Damage;
 import com.truth.neogames.Ahmane.Professions.Profession;
+import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.Race;
@@ -43,11 +44,6 @@ public abstract class LivingEntity extends Entity {
         this.inventory = inventory;
         this.wornGear = wornGear;
     }
-
-    /*************
-     * Constructors
-     *************/
-
 
     public LivingEntity() {
     }
@@ -83,18 +79,17 @@ public abstract class LivingEntity extends Entity {
     }
 
     public void printAblities() {
-        for (Ability a : profession.getUnlockedAblities()
-                ) {
-            if (a.isPassive()) {
-
-            } else
+        for (ActiveAbility a : profession.getUnlockedActiveAbilities()) {
+            if (!(a.getType() == AbilityType.PASSIVE))
                 System.out.println(a.getName());
         }
 
     }
 
 
-    public void recieveDamage(Damage d) {
+    public void receiveDamage(Damage d) {
+        stats.getHealth();
+        d.getDamage();
         stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d.getDamage());
     }
 

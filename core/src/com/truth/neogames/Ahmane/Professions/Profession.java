@@ -1,7 +1,9 @@
 package com.truth.neogames.Ahmane.Professions;
 
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
-import com.truth.neogames.Ahmane.Abilitys.Ability;
+import com.truth.neogames.Ahmane.Abilities.Ability;
+import com.truth.neogames.Ahmane.Abilities.ActiveAbility;
+import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.ProfessionName;
 
 import java.util.ArrayList;
@@ -50,9 +52,9 @@ public class Profession extends EntityStats {
      */
     protected ProfessionName name;
 
-    protected ArrayList<Ability> unlockedAblities = new ArrayList<Ability>();
+    protected ArrayList<Ability> unlockedAbilities = new ArrayList<Ability>();
 
-    protected ArrayList<Ability> Ablities = new ArrayList<Ability>();
+    protected ArrayList<Ability> abilities = new ArrayList<Ability>();
 
 
 
@@ -68,19 +70,29 @@ public class Profession extends EntityStats {
         this.name = name;
     }
 
-    public ArrayList<Ability> getUnlockedAblities() {
-        return unlockedAblities;
+    public ArrayList<Ability> getUnlockedAbilities() {
+        return unlockedAbilities;
     }
 
-    public void setUnlockedAblities(ArrayList<Ability> unlockedAblities) {
-        this.unlockedAblities = unlockedAblities;
+    public void setUnlockedAbilities(ArrayList<Ability> unlockedAbilities) {
+        this.unlockedAbilities = unlockedAbilities;
     }
 
-    public ArrayList<Ability> getAblities() {
-        return Ablities;
+    public ArrayList<ActiveAbility> getUnlockedActiveAbilities() {
+        ArrayList<ActiveAbility> abilities = new ArrayList<ActiveAbility>();
+        for (Ability a : unlockedAbilities) {
+            if (a.getType() == AbilityType.AOE || a.getType() == AbilityType.TARGETED) {
+                abilities.add((ActiveAbility) a);
+            }
+        }
+        return abilities;
     }
 
-    public void setAblities(ArrayList<Ability> ablities) {
-        Ablities = ablities;
+    public ArrayList<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(ArrayList<Ability> abilities) {
+        this.abilities = abilities;
     }
 }

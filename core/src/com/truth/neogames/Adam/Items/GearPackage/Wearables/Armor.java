@@ -31,6 +31,7 @@ public class Armor extends CombatGear {
         arcaneDef = new ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
         this.level = material.getLevel();
         assignName();
+        super.setLevel(material.getLevel());
     }
 
     public ArmorStat getPierceDef() {

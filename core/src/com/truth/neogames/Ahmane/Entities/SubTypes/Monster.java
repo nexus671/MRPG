@@ -12,7 +12,6 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 public class Monster extends LivingEntity {
 
     private boolean hostile;
-    private EntityStats stats;
 
     /************* Constructors *************/
 

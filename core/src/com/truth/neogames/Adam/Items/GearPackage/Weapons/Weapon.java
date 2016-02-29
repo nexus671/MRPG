@@ -39,6 +39,7 @@ public class Weapon extends CombatGear {
         minDamage = avgDamage - avgDamage * type.getRangeModifier();
         this.suffix = suffix;
         this.type = type;
+        super.setLevel(material.getLevel());
     }
 
     /************* Getters and Setters *************/

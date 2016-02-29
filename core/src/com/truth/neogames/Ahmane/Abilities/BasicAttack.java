@@ -1,22 +1,24 @@
-package com.truth.neogames.Ahmane.Abilitys;
+package com.truth.neogames.Ahmane.Abilities;
 
 
 import com.truth.neogames.Adam.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Ahmane.Effects.Damage;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
+import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Enums.AbilityRange;
+import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.AttackStyle;
 import com.truth.neogames.Enums.WornSlot;
+
+import java.util.ArrayList;
 
 /**
  * Created by acurr on 2/13/2016.
  */
-public class BasicAttack extends Ability {
+public class BasicAttack extends ActiveAbility {
 
-    private static AbilityRange r = AbilityRange.TOUCH;
+    private static final AbilityRange r = AbilityRange.TOUCH;
     private int level;
-    private int cost;
-    private boolean passive = false;
     private int duration = 0;
     private int area = 1;
     private LivingEntity user;
@@ -25,7 +27,8 @@ public class BasicAttack extends Ability {
     public BasicAttack(int level, LivingEntity e) {
         this.name = "Basic Attack";
         this.level = level;
-        setCost(getCost());
+        setType(AbilityType.TARGETED);
+        setCost(calcCost());
         this.user = e;
     }
 
@@ -33,27 +36,27 @@ public class BasicAttack extends Ability {
         return r;
     }
 
-    public void setR(AbilityRange r) {
-        this.r = r;
-    }
-
-    public void use(LivingEntity target) {
+    public void use(ArrayList<Monster> monsters) {
         Weapon weapon;
         boolean hasWeapon = !user.getWornGear().slotIsEmpty(WornSlot.MAINHAND);
         Damage damage;
         if (hasWeapon) {
             weapon = (Weapon) user.getWornGear().getFromSlot(WornSlot.MAINHAND);
-            damage = new Damage(getDamage(), weapon.getAttackStyle(), target);
+            damage = new Damage(getDamage(), weapon.getAttackStyle(), monsters.get(0));
         } else {
-            damage = new Damage(getDamage(), AttackStyle.CRUSHING, target);
+            damage = new Damage(getDamage(), AttackStyle.CRUSHING, monsters.get(0));
         }
 
         effects.add(damage);
-        target.recieveDamage(damage);
+        monsters.get(0).receiveDamage(damage);
+    }
+
+    public int calcCost() {
+        return (int) (Math.pow(2, level) * 5);
     }
 
     public int getCost() {
-        return (int) (Math.pow(2, level) * 5);
+        return cost;
     }
 
     public void setCost(int cost) {
@@ -79,14 +82,6 @@ public class BasicAttack extends Ability {
 
     public void setLevel(int level) {
         this.level = level;
-    }
-
-    public boolean isPassive() {
-        return passive;
-    }
-
-    public void setPassive(boolean passive) {
-        this.passive = passive;
     }
 
     public int getDuration() {
