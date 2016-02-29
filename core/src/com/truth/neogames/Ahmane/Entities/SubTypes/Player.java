@@ -15,7 +15,6 @@ import com.truth.neogames.Enums.Race;
  */
 public class Player extends LivingEntity {
 
-
     private EntityStats stats;
 
     /************* Constructors *************/

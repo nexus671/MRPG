@@ -1,5 +1,6 @@
 package com.truth.neogames.Adam.Items.Generators;
 
+import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.Affixes.ArmorSuffix;
 import com.truth.neogames.Enums.Affixes.JewelryGem;
 import com.truth.neogames.Enums.Affixes.JewelryMetal;
@@ -94,6 +95,45 @@ public class EnumPicker {
         }
     }
 
+    /**
+     * Gets a jewelry gem, with a higher chance for a high quality gem at higher levels.
+     *
+     * @param level The level of the player, to determine chances of getting a higher quality gem.
+     * @return The jewelry gem.
+     */
+    public static JewelryGem getJewelryGem(int level) {
+        double levelRatio = (double) level / LivingEntity.getMaxLevel();
+        double number = RandomNumber.random.nextDouble();
+        if (levelRatio - .5 > number)
+            return JewelryGem.DIAMOND;
+        else if (levelRatio - .4 > number)
+            return JewelryGem.RUBY;
+        else if (levelRatio - .3 > number)
+            return JewelryGem.EMERALD;
+        else if (levelRatio - .2 > number)
+            return JewelryGem.ALEXANDRITE;
+        else if (levelRatio - .1 > number)
+            return JewelryGem.MORGANITE;
+        else if (levelRatio > number)
+            return JewelryGem.SAPPHIRE;
+        else if (levelRatio + .1 > number)
+            return JewelryGem.IOLITE;
+        else if (levelRatio + .2 > number)
+            return JewelryGem.TANZANITE;
+        else if (levelRatio + .3 > number)
+            return JewelryGem.JADE;
+        else if (levelRatio + .4 > number)
+            return JewelryGem.TOPAZ;
+        else if (levelRatio + .5 > number)
+            return JewelryGem.GARNET;
+        else if (levelRatio + .6 > number)
+            return JewelryGem.OPAL;
+        else if (levelRatio + .7 > number)
+            return JewelryGem.AMETHYST;
+        else
+            return JewelryGem.NONE;
+    }
+
     public static JewelryMetal getRandomJewelryMetal() {
         int number = RandomNumber.random.nextInt(3);
         switch (number) {
@@ -105,6 +145,18 @@ public class EnumPicker {
                 return JewelryMetal.GOLD;
             default:
                 return null;
+        }
+    }
+
+    public static JewelryMetal getJewelryMetal(int level) {
+        double number = RandomNumber.random.nextDouble();
+        double levelRatio = (double) level / LivingEntity.getMaxLevel();
+        if (levelRatio > number) {
+            return JewelryMetal.GOLD;
+        } else if ((levelRatio + 1.0 / 3) > number) {
+            return JewelryMetal.SILVER;
+        } else {
+            return JewelryMetal.COPPER;
         }
     }
 
@@ -134,6 +186,37 @@ public class EnumPicker {
             default:
                 return Material.BRONZE;
         }
+    }
+
+    /**
+     * Gets the appropriate gear material based on the level.
+     *
+     * @param level The level of the player.
+     * @return The highest level gear material without exceeding the player's level.
+     */
+    public static Material getGearMaterial(int level) {
+        if (level < 1)
+            return null;
+        else if (level == 1)
+            return Material.BRONZE;
+        else if (level == 2)
+            return Material.IRON;
+        else if (level == 3)
+            return Material.STEEL;
+        else if (level == 4)
+            return Material.MITHRIL;
+        else if (level <= 7)
+            return Material.GOLDEN;
+        else if (level <= 9)
+            return Material.LAMINAR;
+        else if (level <= 11)
+            return Material.PLATED;
+        else if (level <= 15)
+            return Material.OBSIDIAN;
+        else if (level <= 20)
+            return Material.CRYSTAL;
+        else
+            return Material.DRACONIC;
     }
 
     public static WeaponSuffix getRandomWeaponSuffix() {

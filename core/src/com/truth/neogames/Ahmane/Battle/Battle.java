@@ -27,6 +27,7 @@ public class Battle {
     public void ApplyAbility(Ability ability, ArrayList<LivingEntity> targets, LivingEntity caster) {
 
     }
+
     public Player getPlayer() {
         return player;
     }

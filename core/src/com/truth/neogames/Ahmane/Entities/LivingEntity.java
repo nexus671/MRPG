@@ -30,6 +30,7 @@ import java.util.HashSet;
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
 public abstract class LivingEntity extends Entity {
+    private static final int MAX_LEVEL = 21;
     protected Profession profession;
     protected WornGear wornGear;
     protected Inventory inventory;
@@ -48,6 +49,10 @@ public abstract class LivingEntity extends Entity {
 
 
     public LivingEntity() {
+    }
+
+    public static int getMaxLevel() {
+        return MAX_LEVEL;
     }
 
     /************* Specific Methods *************/

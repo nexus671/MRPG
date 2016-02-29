@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.truth.neogames.Adam.Items.Generators.GearGenerator;
-import com.truth.neogames.Adam.StatsPackage.ScalingCurve;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.Race;
@@ -20,9 +19,14 @@ public class MyGdxGame extends ApplicationAdapter {
 		Player p = new Player("Adam", Race.HUMAN, "Male", new Profession(), new Sprite());
 		GearGenerator generator = new GearGenerator();
 
-		System.out.println(ScalingCurve.getLevel(0));
-		System.out.println(ScalingCurve.getLevel(80.92));
-		System.out.println(ScalingCurve.getLevel(100));
+		int lvl;
+		int maxlevel = 21;
+		int exp = 0;
+
+		for (lvl = 1; lvl <= maxlevel; lvl++) {
+			exp += lvl + 300 * Math.pow(5, lvl / 4);
+		}
+
 	}
 
 	@Override

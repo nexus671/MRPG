@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * Class Description: A piece of jewelry that provides a bonus to a certain stat.
  */
 public class Jewelry extends Gear {
+    private static final int maxStats = 3; //the max number of stats that a jewelry item can buff
     private JewelryMetal metal;
     private JewelryGem gem;
     private ArrayList<EntityStatName> statsAffected;
@@ -35,6 +36,10 @@ public class Jewelry extends Gear {
             this.addBonus(buff);
         }
 
+    }
+
+    public static int getMaxStats() {
+        return maxStats;
     }
 
     public JewelryMetal getMetal() {
