@@ -1,41 +1,43 @@
 package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
+import com.truth.neogames.RPGObject;
 import com.truth.neogames.Utilities.DecimalRounder;
 
 /**
  * Created by Adam on 11/4/2015.
  * Class Description: A statistic for a piece of armor.
  */
-public class ArmorStat {
-    private String name;
+public class ArmorStat extends RPGObject {
+    private double maxValue;
     private double value;
 
-    public ArmorStat(String name, double value) {
-        this.value = value;
-        this.name = name;
+    public ArmorStat(String name, double maxValue) {
+        this.maxValue = maxValue;
+        value = maxValue;
+        super.name = name;
     }
 
-    public String getName() {
-        return name;
+    public void setMaxValue(double maxValue) {
+        this.maxValue = maxValue;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public double getMaxValue() {
+        return maxValue;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setMaxValue(int maxValue) {
+        this.maxValue = value;
     }
 
     public double getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(double value) {
         this.value = value;
     }
 
     public String toString() {
-        return "" + DecimalRounder.round(value);
+        return "" + DecimalRounder.round(maxValue);
     }
 }

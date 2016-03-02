@@ -3,6 +3,7 @@ package com.truth.neogames.Ahmane.EnvironmentPackage;
 import com.truth.neogames.Ahmane.Entities.Entity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
+import com.truth.neogames.RPGObject;
 
 import java.util.Random;
 
@@ -10,7 +11,7 @@ import java.util.Random;
  * Created by acurr on 11/4/2015.
  * Class Description:
  */
-public class BattleGrid {
+public class BattleGrid extends RPGObject {
     private Entity[][] grid;
 
     public BattleGrid() {

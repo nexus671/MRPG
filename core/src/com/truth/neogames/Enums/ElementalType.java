@@ -1,11 +1,13 @@
 package com.truth.neogames.Enums;
 
+import com.truth.neogames.Utilities.StringManip;
+
 /**
  * Created by Adam on 11/2/2015.
  * Class Description: Elemental types based on suffix, which apply different effects on hit.
  */
 public enum ElementalType {
-    LIGHT("Light"), DARK("Dark"), FIRE("Fire"), FROST("Frost"), NONE("None");
+    LIGHT, DARK, FIRE, FROST, NONE;
 
     // These constants are multiplied by (CombatGear.getLevel() / Gear.getMAXLEVEL());
     private static final double LIGHT_SCALING = .05;
@@ -14,8 +16,8 @@ public enum ElementalType {
     private static final double FROST_SCALING = .3;
     private String lowercase;
 
-    ElementalType(String lowercase) {
-        this.lowercase = lowercase;
+    ElementalType() {
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
     public static double getLightScaling() {

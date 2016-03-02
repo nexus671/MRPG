@@ -6,6 +6,7 @@ import com.truth.neogames.Enums.EntityStatName;
 
 /**
  * Created by acurr on 2/15/2016.
+ * Class Description: Defines an effect that increases or decreases the value of an EntityStat.
  */
 public class Buff extends Effect {
     private int duration;
@@ -21,6 +22,8 @@ public class Buff extends Effect {
         this.value = value;
         this.debuff = debuff;
         this.stat = stat;
+        statName = stat.getStatName();
+        assignDescription();
     }
 
     public Buff(int duration, int value, EntityStat stat, boolean debuff) {
@@ -28,6 +31,9 @@ public class Buff extends Effect {
         this.value = value;
         this.debuff = debuff;
         this.stat = stat;
+        magnitude = 1;
+        statName = stat.getStatName();
+        assignDescription();
     }
 
     public Buff(int duration, double magnitude, EntityStat stat, boolean debuff) {
@@ -35,6 +41,9 @@ public class Buff extends Effect {
         this.magnitude = magnitude;
         this.debuff = debuff;
         this.stat = stat;
+        value = 0;
+        statName = stat.getStatName();
+        assignDescription();
     }
 
     public Buff(double percent, int flat, EntityStatName stat, boolean debuff) {
@@ -42,23 +51,64 @@ public class Buff extends Effect {
         this.value = flat;
         this.debuff = debuff;
         this.statName = stat;
+        duration = -1;
+        assignDescription();
     }
 
     public Buff(int flat, EntityStatName stat, boolean debuff) {
-
         this.value = flat;
         this.debuff = debuff;
         this.statName = stat;
+        duration = -1;
+        magnitude = 1;
+        assignDescription();
     }
 
     public Buff(double percent, EntityStatName stat, boolean debuff) {
         this.magnitude = percent;
         this.debuff = debuff;
         this.statName = stat;
+        value = 0;
+        duration = -1;
+        assignDescription();
     }
 
     public void startTimer() {
         //TODO: 2/17/2016
+    }
+
+    public void assignDescription() {
+        if (debuff)
+            description = "Decreases enemy's";
+        else
+            description = "Increases player's";
+        description += " " + statName + " by ";
+        boolean pctBuff = magnitude != 1;
+        boolean flatBuff = value != 0;
+        if (pctBuff) {
+            if (magnitude > 1)
+                description += ((magnitude - 1) * 100);
+            else
+                description += magnitude;
+            description += "%";
+        }
+        if (pctBuff && flatBuff) {
+            description += " plus ";
+        }
+        if (flatBuff) {
+            if (value > 0)
+                description += value;
+            else
+                description += (-value);
+        }
+        if (duration == -1) {
+            description += " for " + duration + " turns.";
+        } else {
+            if (debuff)
+                description += " each turn for the remainder of a battle.";
+            else
+                description += " while the item is equipped.";
+        }
     }
 
     public EntityStatName getStatName() {

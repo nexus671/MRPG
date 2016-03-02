@@ -1,6 +1,7 @@
 package com.truth.neogames.Enums.Affixes;
 
 import com.truth.neogames.Enums.ElementalType;
+import com.truth.neogames.Utilities.StringManip;
 
 /**
  * Created by Adam on 11/9/2015.
@@ -8,22 +9,22 @@ import com.truth.neogames.Enums.ElementalType;
  * which provides a bonus.
  */
 public enum WeaponSuffix {
-    NONE("None"), TRIUMPH("Triumph"), FEROCITY("Ferocity"), VICTORY("Victory"), CHAOS("Chaos"), EONS("Eons"),
-    OBLIVION("Oblivion"), INCANDESCENCE("Incandescence", ElementalType.LIGHT), RADIANCE("Radiance", ElementalType.LIGHT),
-    TWILIGHT("Twilight", ElementalType.DARK), SHADOW("Shadow", ElementalType.DARK), FLAME("Flame", ElementalType.FIRE),
-    BURNING("Burning", ElementalType.FIRE), ICE("Ice", ElementalType.FROST), FREEZING("Freezing", ElementalType.FROST);
+    NONE(), TRIUMPH(), FEROCITY(), VICTORY(), CHAOS(), EONS(),
+    OBLIVION(), INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
+    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE),
+    BURNING(ElementalType.FIRE), ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
     private ElementalType elementalType;
     private String lowercase;
 
-    WeaponSuffix(String lowercase) {
+    WeaponSuffix() {
         elementalType = ElementalType.NONE;
-        this.lowercase = lowercase;
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
-    WeaponSuffix(String lowercase, ElementalType elementalType) {
+    WeaponSuffix(ElementalType elementalType) {
         this.elementalType = elementalType;
-        this.lowercase = lowercase;
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
     public ElementalType getElementalType() {

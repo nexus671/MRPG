@@ -4,15 +4,14 @@ import com.truth.neogames.Utilities.StringManip;
 
 /**
  * Created by Adam on 10/23/2015.
- * Class Description:
+ * Class Description: Enumerator class for raceName names.
  */
-public enum ProfessionName {
-    BARBARIAN, BARD, CLERIC, DRUID, FIGHTER,
-    PALADIN, RANGER, ROGUE, SORCERER;
+public enum RaceName {
+    HUMAN(), ELF(), ORC(), DWARF(), GNOME(), CATFOLK();
 
-    private String lowercase;
+    private final String lowercase;
 
-    ProfessionName() {
+    RaceName() {
         lowercase = StringManip.toLowercase(super.toString());
     }
 

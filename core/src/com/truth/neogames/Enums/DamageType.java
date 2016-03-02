@@ -3,18 +3,19 @@ package com.truth.neogames.Enums;
 import com.truth.neogames.Utilities.StringManip;
 
 /**
- * Created by Adam on 2/29/2016.
+ * Created by Adam on 11/3/2015.
  * Class Description:
  */
-public enum AbilityType {
-    AOE, TARGETED, PASSIVE;
+public enum DamageType {
+    PIERCING, SLASHING, CRUSHING, ARCANE;
 
     String lowercase;
 
-    AbilityType() {
+    DamageType() {
         lowercase = StringManip.toLowercase(super.toString());
     }
 
+    @Override
     public String toString() {
         return lowercase;
     }

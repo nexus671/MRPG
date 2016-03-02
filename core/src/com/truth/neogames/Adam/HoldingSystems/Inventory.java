@@ -1,12 +1,13 @@
 package com.truth.neogames.Adam.HoldingSystems;
 
 import com.truth.neogames.Adam.Items.Item;
+import com.truth.neogames.RPGObject;
 
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description: The inventory system for the player.
  */
-public class Inventory {
+public class Inventory extends RPGObject {
     public static int size = 20;
 
     private Item[] inv;

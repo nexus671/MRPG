@@ -8,14 +8,14 @@ import java.util.ArrayList;
 /**
  * Created by acurr on 2/17/2016.
  */
-public class DependantEntityStat extends EntityStat {
+public abstract class DependentEntityStat extends EntityStat {
     protected ArrayList<EntityStat> attrs = new ArrayList<EntityStat>();
 
     /*************
      * Constructors
      *************/
 
-    public DependantEntityStat(EntityStatName name, double baseMax) {
+    public DependentEntityStat(EntityStatName name, double baseMax) {
         super(name, baseMax);
     }
 

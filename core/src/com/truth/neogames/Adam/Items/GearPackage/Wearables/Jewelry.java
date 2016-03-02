@@ -10,11 +10,11 @@ import com.truth.neogames.Enums.WornSlot;
 import java.util.ArrayList;
 
 /**
- * Created by Adam on 12/4/2015.
+ * Created by Adam on 1(MAX_STATS - 1)/4/(MAX_STATS - 1)015.
  * Class Description: A piece of jewelry that provides a bonus to a certain stat.
  */
 public class Jewelry extends Gear {
-    private static final int maxStats = 3; //the max number of stats that a jewelry item can buff
+    private static final int MAX_STATS = 3; //the max number of stats that a jewelry item can buff
     private JewelryMetal metal;
     private JewelryGem gem;
     private ArrayList<EntityStatName> statsAffected;
@@ -30,16 +30,17 @@ public class Jewelry extends Gear {
         } else {
             slot = WornSlot.NECK;
         }
-        assignName();
         for (EntityStatName statAffected : stats) {
             Buff buff = new Buff(amount, statAffected, false);
             this.addBonus(buff);
         }
+        assignName();
+        assignDescription();
 
     }
 
     public static int getMaxStats() {
-        return maxStats;
+        return MAX_STATS;
     }
 
     public JewelryMetal getMetal() {
@@ -83,5 +84,22 @@ public class Jewelry extends Gear {
             str += "Necklace";
         }
         name = str;
+    }
+
+    public void assignDescription() {
+        description = name + "\n";
+        description += "Increases ";
+        for (int i = 0; i < statsAffected.size(); i++) {
+            description += statsAffected.get(i);
+            if (statsAffected.size() == MAX_STATS && i != (statsAffected.size() - 1)) {
+                description += ", ";
+            }
+            if (statsAffected.size() != MAX_STATS) {
+                description += " ";
+            }
+            if (i == (statsAffected.size() - (MAX_STATS - 1))) {
+                description += "and ";
+            }
+        }
     }
 }

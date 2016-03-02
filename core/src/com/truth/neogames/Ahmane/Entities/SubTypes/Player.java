@@ -6,7 +6,7 @@ import com.truth.neogames.Adam.HoldingSystems.WornGear;
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Professions.Profession;
-import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.RaceName;
 
 
 /**
@@ -17,9 +17,9 @@ public class Player extends LivingEntity {
 
     /************* Constructors *************/
 
-    public Player(String name, Race race, String sex, Profession profession, Sprite sprite) {
-        this.setName(name);
-        this.setRace(race);
+    public Player(String name, RaceName raceName, String sex, Profession profession, Sprite sprite) {
+        super.setName(name);
+        this.setRaceName(raceName);
         this.setSex(sex);
         this.setProfession(profession);
         this.setStats(new EntityStats(1));

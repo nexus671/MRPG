@@ -2,12 +2,13 @@ package com.truth.neogames.Adam.HoldingSystems;
 
 import com.truth.neogames.Adam.Items.GearPackage.Gear;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.RPGObject;
 
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description: The array of worn gear for a player or monster.
  */
-public class WornGear {
+public class WornGear extends RPGObject {
     private final Gear[] gear;
 
     /*************

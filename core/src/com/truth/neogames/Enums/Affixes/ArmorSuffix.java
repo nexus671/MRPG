@@ -1,6 +1,7 @@
 package com.truth.neogames.Enums.Affixes;
 
 import com.truth.neogames.Enums.ElementalType;
+import com.truth.neogames.Utilities.StringManip;
 
 /**
  * Created by Adam on 11/9/2015.
@@ -8,22 +9,64 @@ import com.truth.neogames.Enums.ElementalType;
  * gives special bonuses.
  */
 public enum ArmorSuffix {
-    NONE("None"), HARDINESS("Hardiness"), ENLIGHTENING("Enlightening"), BRAWLING("Brawling"), APTITUDE("Aptitude"),
-    PROSPERITY("Prosperity"), INCANDESCENCE("Incandescence", ElementalType.LIGHT), RADIANCE("Radiance", ElementalType.LIGHT),
-    TWILIGHT("Twilight", ElementalType.DARK), SHADOW("Shadow", ElementalType.DARK), FLAME("Flame", ElementalType.FIRE),
-    BURNING("Burning", ElementalType.FIRE), ICE("Ice", ElementalType.FROST), FREEZING("Freezing", ElementalType.FROST);
+    NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE,
+    PROSPERITY, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
+    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE),
+    BURNING(ElementalType.FIRE), ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
     private ElementalType elementalType;
     private String lowercase;
 
-    ArmorSuffix(String lowercase) {
-        this.lowercase = lowercase;
+    ArmorSuffix() {
+        lowercase = StringManip.toLowercase(super.toString());
         elementalType = ElementalType.NONE;
     }
 
-    ArmorSuffix(String lowercase, ElementalType type) {
-        this.lowercase = lowercase;
+    ArmorSuffix(ElementalType type) {
+        lowercase = StringManip.toLowercase(super.toString());
         elementalType = type;
+    }
+
+    public static String getDescription(ArmorSuffix suffix) {
+        String description = "";
+        if (suffix.getElementalType() == ElementalType.NONE) {
+            description = "Passively increased";
+        }
+        switch (suffix) {
+            case HARDINESS:
+                description += " constitution.";
+                break;
+            case ENLIGHTENING:
+                description += " wisdom.";
+                break;
+            case BRAWLING:
+                description += " strength.";
+                break;
+            case APTITUDE:
+                description += " wisdom.";
+                break;
+            case PROSPERITY:
+                description += " luck.";
+                break;
+            case INCANDESCENCE:
+            case RADIANCE:
+                description = "Increased defensive stats (light elemental type).";
+                break;
+            case TWILIGHT:
+            case SHADOW:
+                description = "Saps enemy mana upon taking damage (dark elemental type).";
+                break;
+            case FLAME:
+            case BURNING:
+                description = "Applies a health draining burning effect to enemies for several turns" +
+                        " upon taking damage (fire elemental type).";
+                break;
+            case ICE:
+            case FREEZING:
+                description += "Reduces enemy movement stat for their next turn upon taking damage (frost elemental type).";
+                break;
+        }
+        return description;
     }
 
     public ElementalType getElementalType() {

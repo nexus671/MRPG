@@ -1,6 +1,7 @@
 package com.truth.neogames.Enums.Affixes;
 
 import com.truth.neogames.Adam.StatsPackage.ScalingCurve;
+import com.truth.neogames.Utilities.StringManip;
 
 /**
  * Created by Adam on 11/9/2015.
@@ -12,9 +13,9 @@ import com.truth.neogames.Adam.StatsPackage.ScalingCurve;
  * k2 = 3
  */
 public enum Material {
-    BRONZE(1, "Bronze"), IRON(2, "Iron"), STEEL(3, "Steel"), MITHRIL(4, "Mithril"),
-    GOLDEN(5, "Golden"), LAMINAR(8, "Laminar"), PLATED(10, "Plated"), OBSIDIAN(12, "Obsidian"),
-    CRYSTAL(16, "Crystal"), DRACONIC(21, "Draconic");
+    BRONZE(1), IRON(2), STEEL(3), MITHRIL(4),
+    GOLDEN(5), LAMINAR(8), PLATED(10), OBSIDIAN(12),
+    CRYSTAL(16), DRACONIC(21);
 
     private int level;
     private String lowercase;
@@ -22,9 +23,9 @@ public enum Material {
     private double avgDefense;
     private boolean metallic;
 
-    Material(int level, String lowercase) {
+    Material(int level) {
         this.level = level;
-        this.lowercase = lowercase;
+        lowercase = StringManip.toLowercase(super.toString());
         avgDamage = ScalingCurve.getDamageScaling(level);
         avgDefense = ScalingCurve.getDamageScaling(level);
         metallic = true;

@@ -37,7 +37,7 @@ public class GearGenerator {
             case 4:
                 return new Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
             case 5:
-                return new Armor(WornSlot.HANDS, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HANDS));
+                return new Armor(WornSlot.GLOVES, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
                 numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
                 addRandomStats(numStats);
@@ -134,7 +134,7 @@ public class GearGenerator {
             case 4:
                 return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
             case 5:
-                return new Armor(WornSlot.HANDS, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HANDS));
+                return new Armor(WornSlot.GLOVES, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
                 numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
                 addRandomStats(numStats);
@@ -147,12 +147,12 @@ public class GearGenerator {
         return null;
     }
 
-    //HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), HANDS(5), RING(6), LEGS(7), FEET(8), AMMO(9)
+    //HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), GLOVES(5), RING(6), LEGS(7), FEET(8), AMMO(9)
     public Gear getRandom(int level, WornSlot slot) {
         switch (slot) {
             case HEAD:
             case CHEST:
-            case HANDS:
+            case GLOVES:
             case LEGS:
             case FEET:
                 return getArmor(level, slot);
@@ -175,7 +175,7 @@ public class GearGenerator {
     private void addRandomStats(int number) {
         statsAffected = new ArrayList<EntityStatName>();
         statsAffected.add(EnumPicker.getRandomEntityStat());
-        for (int i = 1; i < number && i < 4; i++) {
+        for (int i = 0; i < number && i < Jewelry.getMaxStats(); i++) {
             EntityStatName statName = EnumPicker.getRandomEntityStat();
             if (statsAffected.contains(statName)) {
                 i -= 1;

@@ -9,7 +9,7 @@ import com.truth.neogames.Enums.Affixes.WeaponSuffix;
 import com.truth.neogames.Enums.ArmorType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
-import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.RaceName;
 import com.truth.neogames.Enums.WeaponType;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Utilities.RandomNumber;
@@ -325,7 +325,7 @@ public class EnumPicker {
                     case 3:
                         return ArmorType.ROBETOP;
                 }
-            case HANDS:
+            case GLOVES:
                 switch (number3) {
                     case 0:
                         return ArmorType.GAUNTLETS;
@@ -432,23 +432,23 @@ public class EnumPicker {
         }
     }
 
-    public static Race getRandomRace() {
+    public static RaceName getRandomRace() {
         int number = RandomNumber.random.nextInt(6);
         switch (number) {
             case 0:
-                return Race.CATFOLK;
+                return RaceName.CATFOLK;
             case 1:
-                return Race.DWARF;
+                return RaceName.DWARF;
             case 2:
-                return Race.ELF;
+                return RaceName.ELF;
             case 3:
-                return Race.GNOME;
+                return RaceName.GNOME;
             case 4:
-                return Race.HUMAN;
+                return RaceName.HUMAN;
             case 5:
-                return Race.ORC;
+                return RaceName.ORC;
             default:
-                return Race.HUMAN;
+                return RaceName.HUMAN;
         }
     }
 
@@ -466,7 +466,7 @@ public class EnumPicker {
             case 4:
                 return WornSlot.OFFHAND;
             case 5:
-                return WornSlot.HANDS;
+                return WornSlot.GLOVES;
             case 6:
                 return WornSlot.RING;
             case 7:

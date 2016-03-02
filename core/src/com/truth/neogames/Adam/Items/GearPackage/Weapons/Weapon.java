@@ -3,7 +3,7 @@ package com.truth.neogames.Adam.Items.GearPackage.Weapons;
 import com.truth.neogames.Adam.Items.GearPackage.CombatGear;
 import com.truth.neogames.Enums.Affixes.Material;
 import com.truth.neogames.Enums.Affixes.WeaponSuffix;
-import com.truth.neogames.Enums.AttackStyle;
+import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.WeaponType;
 import com.truth.neogames.Enums.WornSlot;
@@ -28,7 +28,7 @@ public class Weapon extends CombatGear {
         minDamage = avgDamage - avgDamage * type.getRangeModifier();
         this.suffix = suffix;
         this.type = type;
-        this.slot = WornSlot.MAINHAND;
+        super.slot = WornSlot.MAINHAND;
         assignName();
     }
 
@@ -40,6 +40,7 @@ public class Weapon extends CombatGear {
         this.suffix = suffix;
         this.type = type;
         super.setLevel(material.getLevel());
+        assignName();
     }
 
     /************* Getters and Setters *************/
@@ -80,7 +81,7 @@ public class Weapon extends CombatGear {
         this.type = type;
     }
 
-    public AttackStyle getAttackStyle() {
+    public DamageType getAttackStyle() {
         return type.getStyle();
     }
 
@@ -103,6 +104,19 @@ public class Weapon extends CombatGear {
             str += " of " + suffix;
         }
         name = str;
+    }
+
+    public void assignDescription() {
+        super.assignDescription();
+        if (type.isTwoHanded())
+            description += "Two-Handed";
+        else
+            description += "One-Handed";
+        description += " Weapon" + "\n";
+        description += "Damage: " + minDamage + " - " + maxDamage + "\n";
+        description += "Attack Style: " + type.getStyle() + "\n";
+        description += "Critical Chance: " + (type.getCritChance() * 100) + "%\n";
+        description += "Attack Range: " + type.getRange() + "\n";
     }
 
     @Override

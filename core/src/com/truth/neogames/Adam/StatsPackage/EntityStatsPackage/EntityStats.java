@@ -1,12 +1,13 @@
 package com.truth.neogames.Adam.StatsPackage.EntityStatsPackage;
 
 import com.truth.neogames.Enums.EntityStatName;
+import com.truth.neogames.RPGObject;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Defines stats for a player or monster.
  */
-public class EntityStats {
+public class EntityStats extends RPGObject {
     protected int level;
     protected double exp;
     protected EntityStat health;

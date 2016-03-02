@@ -1,12 +1,12 @@
 package com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.DependentEntityStats;
 
-import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.DependantEntityStat;
+import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.DependentEntityStat;
 import com.truth.neogames.Enums.EntityStatName;
 
 /**
  * Created by acurr on 2/17/2016.
  */
-public class physicalDefense extends DependantEntityStat {
+public class physicalDefense extends DependentEntityStat {
 
     public physicalDefense(EntityStatName name, double baseMax) {
         super(name, baseMax);

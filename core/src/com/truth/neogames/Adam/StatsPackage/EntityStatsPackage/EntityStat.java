@@ -2,6 +2,7 @@ package com.truth.neogames.Adam.StatsPackage.EntityStatsPackage;
 
 import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Enums.EntityStatName;
+import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * Created by Adam on 10/26/2015.
  * Class Description: A stat for an entity.
  */
-public class EntityStat {
+public class EntityStat extends RPGObject {
     protected final EntityStatName name;
     protected double max;
     protected double baseMax;
@@ -91,7 +92,7 @@ public class EntityStat {
         this.baseMax = baseMax;
     }
 
-    public EntityStatName getName() {
+    public EntityStatName getStatName() {
         return name;
     }
 

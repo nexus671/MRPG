@@ -2,25 +2,24 @@ package com.truth.neogames.Ahmane.Entities;
 
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.RaceName;
+import com.truth.neogames.RPGObject;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
-public abstract class Entity {
-    protected String name;
-    protected Race race;
+public abstract class Entity extends RPGObject {
+    protected RaceName raceName;
     protected String sex;
     protected Sprite sprite;
-    protected String description;
     protected int xPos, yPos;
 
     /************* Constructors *************/
 
-    public Entity(String name, Race race, String sex, Sprite sprite, String description, int xPos, int yPos) {
+    public Entity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos) {
         this.name = name;
-        this.race = race;
+        this.raceName = raceName;
         this.sex = sex;
         this.sprite = sprite;
         this.description = description;
@@ -43,12 +42,12 @@ public abstract class Entity {
         this.name = name;
     }
 
-    public Race getRace() {
-        return this.race;
+    public RaceName getRaceName() {
+        return this.raceName;
     }
 
-    public void setRace(Race race) {
-        this.race = race;
+    public void setRaceName(RaceName raceName) {
+        this.raceName = raceName;
     }
 
     public String getSex() {

@@ -14,28 +14,21 @@ public class Food extends Consumable {
      * Constructors
      *************/
 
-    public Food() {
-    }
-
     public Food(String name, String description, int healAmount) {
         this.healAmount = healAmount;
         super.name = name;
-        super.description = description;
+        assignDescription();
     }
-
-    /*************
-     * Getters
-     *************/
 
     public double getHealAmount() {
         return healAmount;
     }
 
-    /*************
-     * Setters
-     *************/
-
     public void setHealAmount(double healAmount) {
         this.healAmount = healAmount;
+    }
+
+    public void assignDescription() {
+        description = "Consume to restore up to " + healAmount + " health.";
     }
 }

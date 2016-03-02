@@ -23,4 +23,9 @@ public abstract class CombatGear extends Gear {
     public void setMaterial(Material material) {
         this.material = material;
     }
+
+    public void assignDescription() {
+        description = name + "\n";
+        description += "Level: " + level + "\n";
+    }
 }

@@ -6,6 +6,7 @@ package com.truth.neogames.Enums;
  */
 public enum Shape {
     SQUARE("square"), CIRCLE("circle");
+
     private final String lowercase;
 
 

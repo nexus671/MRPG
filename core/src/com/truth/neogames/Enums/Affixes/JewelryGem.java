@@ -1,5 +1,7 @@
 package com.truth.neogames.Enums.Affixes;
 
+import com.truth.neogames.Utilities.StringManip;
+
 /**
  * Created by Adam on 12/4/2015.
  * Class Description: Gemstones that can be embedded in jewelry.
@@ -9,12 +11,19 @@ public enum JewelryGem {
     MORGANITE(1.1), ALEXANDRITE(1.2), EMERALD(1.3), RUBY(1.4), DIAMOND(1.5);
 
     double powerModifier; //multiplied by the stats of an enchanted piece of jewelry
+    String lowercase;
 
     JewelryGem(double powerModifier) {
         this.powerModifier = powerModifier;
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
     public double getPowerModifier() {
         return powerModifier;
+    }
+
+    @Override
+    public String toString() {
+        return lowercase;
     }
 }

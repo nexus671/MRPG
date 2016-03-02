@@ -66,6 +66,7 @@ public abstract class Gear extends Item {
         this.level = level;
     }
 
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) return false;

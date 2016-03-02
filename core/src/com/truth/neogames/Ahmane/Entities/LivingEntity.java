@@ -20,12 +20,11 @@ import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
-import com.truth.neogames.Enums.Race;
+import com.truth.neogames.Enums.RaceName;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Utilities.RandomNumber;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Adam on 10/22/2015.
@@ -38,7 +37,8 @@ public abstract class LivingEntity extends Entity {
     protected Inventory inventory;
     protected EntityStats stats;
 
-    public LivingEntity(String name, Race race, String sex, Sprite sprite, String description, int xPos, int yPos, Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
+    public LivingEntity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos,
+                        Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
         this.stats = entityStats;
         this.inventory = inventory;
@@ -76,6 +76,46 @@ public abstract class LivingEntity extends Entity {
             }
             return true;
         }
+    }
+
+    /**
+     * Equips a weapon, checking for errors (level is too high, or inventory is full and both
+     * weapon slots are full.
+     *
+     * @param w The weapon to be equipped.
+     * @return True if the weapon was successfully equipped, false if it was not.
+     */
+    public boolean equip(Weapon w) {
+        boolean twoHanded = w.getType().isTwoHanded();
+        int index = inventory.getIndexOf(w);
+        if (index != -1)
+            inventory.getInv()[index] = null;
+        WornSlot destination = WornSlot.MAINHAND;
+        if (w.getLevel() > stats.getLevel()) {
+            return false;
+        } else if (twoHanded) {
+            if (inventory.isFull() && !wornGear.slotIsEmpty(WornSlot.MAINHAND) && !wornGear.slotIsEmpty(WornSlot.OFFHAND))
+                return false;
+            else {
+                Weapon oldMH = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+                Weapon oldOH = (Weapon) wornGear.getFromSlot(WornSlot.OFFHAND);
+                if (oldMH != null)
+                    inventory.add(oldMH);
+                if (oldOH != null)
+                    inventory.add(oldOH);
+                wornGear.getGear()[destination.getSlotNumber()] = w;
+            }
+        } else {
+            if (!wornGear.slotIsEmpty(WornSlot.MAINHAND) && !wornGear.slotIsEmpty(WornSlot.OFFHAND)) {
+                Weapon old = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+                if (old != null)
+                    inventory.add(old);
+            } else if (!wornGear.slotIsEmpty(WornSlot.MAINHAND)) {
+                destination = WornSlot.OFFHAND;
+            }
+            wornGear.getGear()[destination.getSlotNumber()] = w;
+        }
+        return true;
     }
 
     public void printAblities() {
@@ -153,9 +193,9 @@ public abstract class LivingEntity extends Entity {
      * @param p The potion to be consumed.
      */
     public void consume(Potion p) {
-        HashSet<EntityStat> stats = p.getStats();
+        ArrayList<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
-            EntityStatName name = stat.getName();
+            EntityStatName name = stat.getStatName();
             double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
 
             Buff buff = new Buff(-1, p.getPercentAmount(), p.getFlatAmount(), stat, false);
@@ -241,7 +281,7 @@ public abstract class LivingEntity extends Entity {
                 case HEAD:
                 case NECK:
                 case CHEST:
-                case HANDS:
+                case GLOVES:
                 case LEGS:
                 case FEET:
                 case OFFHAND:
@@ -371,12 +411,12 @@ public abstract class LivingEntity extends Entity {
         this.name = name;
     }
 
-    public Race getRace() {
-        return this.race;
+    public RaceName getRaceName() {
+        return this.raceName;
     }
 
-    public void setRace(Race race) {
-        this.race = race;
+    public void setRaceName(RaceName raceName) {
+        this.raceName = raceName;
     }
 
     public String getSex() {

@@ -7,7 +7,7 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Enums.AbilityRange;
 import com.truth.neogames.Enums.AbilityType;
-import com.truth.neogames.Enums.AttackStyle;
+import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.WornSlot;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class BasicAttack extends ActiveAbility {
             weapon = (Weapon) user.getWornGear().getFromSlot(WornSlot.MAINHAND);
             damage = new Damage(getDamage(), weapon.getAttackStyle(), monsters.get(0));
         } else {
-            damage = new Damage(getDamage(), AttackStyle.CRUSHING, monsters.get(0));
+            damage = new Damage(getDamage(), DamageType.CRUSHING, monsters.get(0));
         }
 
         effects.add(damage);

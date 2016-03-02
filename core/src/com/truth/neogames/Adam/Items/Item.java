@@ -1,12 +1,12 @@
 package com.truth.neogames.Adam.Items;
 
+import com.truth.neogames.RPGObject;
+
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Describes a generic item that can be held in the inventory.
  */
-public abstract class Item {
-    protected String name;
-    protected String description;
+public abstract class Item extends RPGObject {
     protected boolean stackable;
     protected int stackCount;
 
@@ -27,22 +27,6 @@ public abstract class Item {
 
     /************* Getters and Setters *************/
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getStackCount() {
         return stackCount;
     }
@@ -57,6 +41,8 @@ public abstract class Item {
 
     public void setStackable(boolean stackable) {
         this.stackable = stackable;
+        if (!stackable)
+            stackCount = 1;
     }
 
     @Override

@@ -56,13 +56,11 @@ public class Profession extends EntityStats {
 
     protected ArrayList<Ability> abilities = new ArrayList<Ability>();
 
-
-
     public Profession() {
 
     }
 
-    public ProfessionName getName() {
+    public ProfessionName getProfessionName() {
         return name;
     }
 

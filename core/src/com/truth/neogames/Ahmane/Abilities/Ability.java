@@ -2,6 +2,7 @@ package com.truth.neogames.Ahmane.Abilities;
 
 import com.truth.neogames.Ahmane.Effects.Effect;
 import com.truth.neogames.Enums.AbilityType;
+import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
 
@@ -9,9 +10,8 @@ import java.util.ArrayList;
  * Created by Adam on 2/29/2016.
  * Class Description:
  */
-public abstract class Ability {
+public abstract class Ability extends RPGObject {
     protected AbilityType type;
-    protected String name;
     protected int level;
     protected ArrayList<Effect> effects = new ArrayList<Effect>();
     protected int cost;

@@ -5,6 +5,7 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
 import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
+import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * Created by Ahmane on 10/21/2015.
  * Class Description: Calculations for a battle.
  */
-public class Battle {
+public class Battle extends RPGObject {
     private Player player;
     private Monster[] monsters;
     private BattleGrid grid;

@@ -17,12 +17,13 @@ public class BarbarianPassive extends PassiveAbility {
 
     public BarbarianPassive(int level, LivingEntity e) {
         this.name = "Barbarian Passive";
-        this.level = level;
         setType(AbilityType.PASSIVE);
         setCost(0);
         double modifier = .5 + (.1 * level);
         Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
+
+        this.level = level;
         e.getStats().getStrength().addBonus(buff);
     }
 

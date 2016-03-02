@@ -1,6 +1,7 @@
 package com.truth.neogames.Adam.StatsPackage;
 
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
+import com.truth.neogames.RPGObject;
 
 /**
  * //TODO: Fix scaling
@@ -8,8 +9,9 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
  * Class Description: Provides methods for level scaling from exp, and stat scaling for entities and gear.
  * Damage Scaling Equation: k1 ^ (1 + level / k2) = avgDamage
  * Exp Scaling: level = ln(exp) / ln(k3)
+ * Armor Reduction Percentage = (armorValue ^ 2) / ( 3 * armorValue ^ 2 + 20 * armorValue)
  */
-public class ScalingCurve {
+public class ScalingCurve extends RPGObject {
     private static final double k1 = 2.3;
     private static final double k2 = 2.5;
     private static final double k3 = 9;
@@ -24,6 +26,17 @@ public class ScalingCurve {
             exp += lvl + 300 * Math.pow(5, lvl / 4);
         }
         return exp;
+    }
+
+
+    /**
+     * Gets the percentage reduction of a specified armor value.
+     *
+     * @param totalArmorValue The armor stat to be checked (ex. pierce defense)
+     * @return A double 0-1 that represents the percentage damage reduction.
+     */
+    public static double getArmorReduction(double totalArmorValue) {
+        return ((totalArmorValue * totalArmorValue) / (3 * (totalArmorValue * totalArmorValue) + 20 * totalArmorValue));
     }
 
     public static boolean levelUp(double exp, int currentLevel) {

@@ -1,17 +1,19 @@
 package com.truth.neogames.Enums;
 
+import com.truth.neogames.Utilities.StringManip;
+
 /**
  * Created by Adam on 10/26/2015.
  * Class Description: An enumerator for the names of stats.
  */
 public enum EntityStatName {
-    HEALTH("Health"), HEALTHREGEN("Health Regen"), MANA("Mana"), MANAREGEN("Mana Regen"),
-    STRENGTH("Strength"), CONSTITUTION("Constitution"), WISDOM("Wisdom");
+    HEALTH, HEALTHREGEN, MANA, MANAREGEN,
+    STRENGTH, CONSTITUTION, WISDOM;
 
     private String lowercase;
 
-    EntityStatName(String lowercase) {
-        this.lowercase = lowercase;
+    EntityStatName() {
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
     @Override

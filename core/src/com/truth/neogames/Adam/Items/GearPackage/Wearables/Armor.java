@@ -2,6 +2,7 @@ package com.truth.neogames.Adam.Items.GearPackage.Wearables;
 
 import com.truth.neogames.Adam.Items.GearPackage.CombatGear;
 import com.truth.neogames.Adam.StatsPackage.GearStatsPackage.ArmorStat;
+import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Enums.Affixes.ArmorSuffix;
 import com.truth.neogames.Enums.Affixes.Material;
 import com.truth.neogames.Enums.ArmorType;
@@ -31,6 +32,7 @@ public class Armor extends CombatGear {
         arcaneDef = new ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
         this.level = material.getLevel();
         assignName();
+        assignDescription();
         super.setLevel(material.getLevel());
     }
 
@@ -84,14 +86,30 @@ public class Armor extends CombatGear {
 
     public void setType(ArmorType type) {
         this.type = type;
+
     }
 
     public void assignName() {
-        String str = material.toString() + " " + type.toString();
+        name = material.toString() + " " + type.toString();
         if (suffix != ArmorSuffix.NONE) {
-            str += " of " + suffix;
+            name += " of " + suffix;
         }
-        name = str;
+    }
+
+    public void assignDescription() {
+        super.assignDescription();
+        description += "Worn Slot: " + slot + "\n";
+        description += "Pierce Defense: " + pierceDef + "\n";
+        description += "Slash Defense: " + slashDef + "\n";
+        description += "Crush Defense: " + crushDef + "\n";
+        description += "Arcane Defense: " + arcaneDef + "\n";
+        if (suffix != ArmorSuffix.NONE)
+            description += "Suffix Effect: " + ArmorSuffix.getDescription(suffix) + "\n";
+        if (!bonuses.isEmpty()) {
+            for (Buff b : bonuses) {
+                description += b.getDescription() + "\n";
+            }
+        }
     }
 
     public String toString() {

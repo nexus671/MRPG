@@ -7,7 +7,7 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Enums.AbilityRange;
 import com.truth.neogames.Enums.AbilityType;
-import com.truth.neogames.Enums.AttackStyle;
+import com.truth.neogames.Enums.DamageType;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -37,7 +37,7 @@ public class HeavyStrike extends ActiveAbility {
 
     public void use(ArrayList<Monster> targets) {
         LivingEntity target = targets.get(0);
-        Damage damage = new Damage(getDamage(user), AttackStyle.CRUSHING, target);
+        Damage damage = new Damage(getDamage(user), DamageType.CRUSHING, target);
         effects.add(damage);
         Random random = new Random();
         target.receiveDamage(damage);

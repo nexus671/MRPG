@@ -1,16 +1,21 @@
 package com.truth.neogames.Enums;
 
+import com.truth.neogames.Utilities.StringManip;
+
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Establishes the index values for WornGear arrays.
  */
 public enum WornSlot {
-    HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), HANDS(5), RING(6), LEGS(7), FEET(8), AMMO(9);
+    HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4),
+    GLOVES(5), RING(6), LEGS(7), FEET(8), AMMO(9);
 
     private final int slot;
+    private String lowercase;
 
     WornSlot(int slot) {
         this.slot = slot;
+        lowercase = StringManip.toLowercase(super.toString());
     }
 
     /**
@@ -25,7 +30,8 @@ public enum WornSlot {
             case 2: return CHEST;
             case 3: return MAINHAND;
             case 4: return OFFHAND;
-            case 5: return HANDS;
+            case 5:
+                return GLOVES;
             case 6: return RING;
             case 7: return LEGS;
             case 8: return FEET;
@@ -39,6 +45,10 @@ public enum WornSlot {
      */
     public int getSlotNumber() {
         return slot;
+    }
+
+    public String toString() {
+        return lowercase;
     }
 }
 
