@@ -16,6 +16,8 @@ public abstract class Ability extends RPGObject {
     protected ArrayList<Effect> effects = new ArrayList<Effect>();
     protected int cost;
     private int duration;
+    private int area;
+
 
     public AbilityType getType() {
         return type;
@@ -64,4 +66,9 @@ public abstract class Ability extends RPGObject {
     public void setCost(int cost) {
         this.cost = cost;
     }
+
+    public int getArea() {
+        return area;
+    }
+
 }

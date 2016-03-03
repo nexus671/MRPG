@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by acurr on 2/17/2016.
  */
-public abstract class DependentEntityStat extends EntityStat {
+public class DependentEntityStat extends EntityStat {
     protected ArrayList<EntityStat> attrs = new ArrayList<EntityStat>();
 
     /*************

@@ -40,15 +40,16 @@ public class BasicAttack extends ActiveAbility {
         Weapon weapon;
         boolean hasWeapon = !user.getWornGear().slotIsEmpty(WornSlot.MAINHAND);
         Damage damage;
+        ArrayList<Damage> damages = new ArrayList<Damage>();
         if (hasWeapon) {
             weapon = (Weapon) user.getWornGear().getFromSlot(WornSlot.MAINHAND);
             damage = new Damage(getDamage(), weapon.getAttackStyle(), monsters.get(0));
         } else {
             damage = new Damage(getDamage(), DamageType.CRUSHING, monsters.get(0));
         }
-
+        damages.add(damage);
         effects.add(damage);
-        monsters.get(0).receiveDamage(damage);
+        monsters.get(0).receiveDamage(damages);
     }
 
     public int calcCost() {

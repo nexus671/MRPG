@@ -8,6 +8,7 @@ import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Ahmane on 10/21/2015.
@@ -37,11 +38,33 @@ public class Battle extends RPGObject {
     }
 
     public Monster[] getMonsters() {
+
         return monsters;
     }
 
     public void setMonsters(Monster[] monsters) {
         this.monsters = monsters;
+    }
+
+    public List<Monster> getMonstersArea(int area) {
+
+
+        List<Monster> mlist = new ArrayList<Monster>();
+
+        for (int x = player.getxPos() - area; x <= x + area; x++) {
+            {
+                for (int y = player.getyPos() - area; y <= y + area; y++) {
+                    for (Monster monster : monsters) {
+                        if ((monster.getxPos() == x) && (monster.getyPos() == y)) {
+                            mlist.add(monster);
+                        }
+                    }
+                }
+            }
+
+
+        }
+        return mlist;
     }
 
     public BattleGrid getGrid() {

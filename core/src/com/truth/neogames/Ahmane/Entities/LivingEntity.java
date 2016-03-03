@@ -16,8 +16,10 @@ import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane.Abilities.ActiveAbility;
 import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Ahmane.Effects.Damage;
+import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Ahmane.Professions.Profession;
 import com.truth.neogames.Enums.AbilityType;
+import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.RaceName;
@@ -127,10 +129,23 @@ public abstract class LivingEntity extends Entity {
     }
 
 
-    public void receiveDamage(Damage d) {
-        stats.getHealth();
-        d.getDamage();
-        stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d.getDamage());
+    public void receiveDamage(ArrayList<Damage> damages) {
+
+
+        for (Damage damage : damages) {
+            double d = damage.getDamage();
+            if (damage.getType() == DamageType.ARCANE) {
+                //damage reduction
+            } else if (damage.getType() == DamageType.CRUSHING) {
+                //damage reduction
+            } else if (damage.getType() == DamageType.PIERCING) {
+                //damage reduction
+            } else if (damage.getType() == DamageType.SLASHING) {
+                //damage reduction
+            }
+            stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d);
+        }
+
     }
 
     public boolean equip(Jewelry j) {
@@ -354,7 +369,7 @@ public abstract class LivingEntity extends Entity {
     }
 
 
-    public boolean move(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid, int x, int y) {
+    public boolean move(BattleGrid grid, int x, int y) {
         if (grid.isSpaceEmpty(x, y)) {
             grid.moveEntity(this, x, y);
             return true;
@@ -362,7 +377,7 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
-    public boolean moveLeft(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveLeft(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos - 1, yPos)) {
             grid.shiftEntity(this, -1, 0);
             return true;
@@ -370,7 +385,7 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
-    public boolean moveRight(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveRight(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos + 1, yPos)) {
             grid.shiftEntity(this, 1, 0);
             return true;
@@ -378,7 +393,7 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
-    public boolean moveForward(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveForward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos + 1)) {
             grid.shiftEntity(this, 0, 1);
             return true;
@@ -386,7 +401,7 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
-    public boolean moveBackward(com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveBackward(BattleGrid grid) {
         if (grid.isSpaceEmpty(xPos, yPos - 1)) {
             grid.shiftEntity(this, 0, -1);
             return true;

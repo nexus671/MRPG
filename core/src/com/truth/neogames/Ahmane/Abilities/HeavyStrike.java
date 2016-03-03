@@ -38,9 +38,11 @@ public class HeavyStrike extends ActiveAbility {
     public void use(ArrayList<Monster> targets) {
         LivingEntity target = targets.get(0);
         Damage damage = new Damage(getDamage(user), DamageType.CRUSHING, target);
+        ArrayList<Damage> damages = new ArrayList<Damage>();
+        damages.add(damage);
         effects.add(damage);
         Random random = new Random();
-        target.receiveDamage(damage);
+        target.receiveDamage(damages);
         if (random.nextInt() > getstunc() * 100) {
             Stun stun = new Stun(1, target);
             effects.add(stun);

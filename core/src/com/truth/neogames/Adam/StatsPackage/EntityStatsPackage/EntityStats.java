@@ -17,6 +17,8 @@ public class EntityStats extends RPGObject {
     protected EntityStat strength;
     protected EntityStat constitution;
     protected EntityStat wisdom;
+    protected EntityStat dexterity;
+    protected DependentEntityStat speed;
 
     /************* Constructors *************/
 
@@ -30,6 +32,9 @@ public class EntityStats extends RPGObject {
         strength = new EntityStat(EntityStatName.STRENGTH, 1);
         constitution = new EntityStat(EntityStatName.CONSTITUTION, 1);
         wisdom = new EntityStat(EntityStatName.WISDOM, 1);
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1);
+        speed = new DependentEntityStat(EntityStatName.SPEED, 30);
+        speed.addStat(dexterity);
     }
 
     public EntityStats(int level) {
@@ -41,6 +46,9 @@ public class EntityStats extends RPGObject {
         strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
         constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
         wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1 + level);
+        speed = new DependentEntityStat(EntityStatName.SPEED, 30 + level);
+
     }
 
     public EntityStat getStat(EntityStatName name) {
@@ -59,6 +67,10 @@ public class EntityStats extends RPGObject {
                 return constitution;
             case WISDOM:
                 return wisdom;
+            case DEXTERITY:
+                return dexterity;
+            case SPEED:
+                return speed;
             default:
                 return null;
         }
@@ -87,6 +99,12 @@ public class EntityStats extends RPGObject {
             case WISDOM:
                 wisdom.setBaseMax(value);
                 break;
+            case DEXTERITY:
+                dexterity.setBaseMax(value);
+                break;
+            case SPEED:
+                speed.setMax(value);
+                break;
         }
     }
 
@@ -112,6 +130,12 @@ public class EntityStats extends RPGObject {
                 break;
             case WISDOM:
                 wisdom.setMax(value);
+                break;
+            case DEXTERITY:
+                dexterity.setMax(value);
+                break;
+            case SPEED:
+                speed.setMax(value);
                 break;
         }
     }

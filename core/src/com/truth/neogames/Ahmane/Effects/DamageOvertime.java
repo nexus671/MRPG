@@ -23,6 +23,7 @@ public class DamageOvertime extends Effect {
         this.type = type;
         this.duration = duration;
         this.e = e;
+
     }
 
     public double getDamage() {

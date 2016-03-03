@@ -8,7 +8,7 @@ import com.truth.neogames.Utilities.StringManip;
  */
 public enum EntityStatName {
     HEALTH, HEALTHREGEN, MANA, MANAREGEN,
-    STRENGTH, CONSTITUTION, WISDOM;
+    STRENGTH, CONSTITUTION, WISDOM, DEXTERITY, SPEED;
 
     private String lowercase;
 

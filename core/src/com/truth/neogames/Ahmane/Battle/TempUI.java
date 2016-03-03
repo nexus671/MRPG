@@ -2,9 +2,11 @@ package com.truth.neogames.Ahmane.Battle;
 
 import com.truth.neogames.Ahmane.Abilities.ActiveAbility;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
+import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Utilities.KBReader;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Adam on 2/29/2016.
@@ -24,7 +26,9 @@ public class TempUI {
 
     public void printPlayerMenu() {
         int i = 1;
+        double speed = battle.getPlayer().getStats().getStat(EntityStatName.SPEED).getMax();
         ArrayList<ActiveAbility> abilities = battle.getPlayer().getProfession().getUnlockedActiveAbilities();
+        System.out.println("0. Move");
         for (ActiveAbility a : abilities) {
             System.out.println(i + ". " + a.getName());
             i++;
@@ -32,16 +36,36 @@ public class TempUI {
         System.out.println(i + ". View Consumables");
         System.out.print("Enter your choice: ");
         int choice = KBReader.getScanner().nextInt();
+        if (i == 0 && speed > 0) {
+            int m = KBReader.getScanner().nextInt();
+            System.out.println("1. UP 2.Down 3.Left 4.Right");
+            if (m == 1 && battle.getPlayer().moveForward(battle.getGrid())) {
+                speed -= 10;
+            }
+            if (m == 2 && battle.getPlayer().moveBackward(battle.getGrid())) {
+                speed -= 10;
+            }
+            if (m == 3 && battle.getPlayer().moveLeft(battle.getGrid())) {
+                speed -= 10;
+            }
+            if (m == 4 && battle.getPlayer().moveRight(battle.getGrid())) {
+                speed -= 10;
+            }
+        } else if (i == 0 && speed <= 0) {
+            System.out.println("Cant Move no more fastness lmao rip gg get good boi");
+        }
         if (choice < i) {
             ActiveAbility ability = abilities.get(choice - 1);
             i = 1;
-            for (Monster m : battle.getMonsters()) {
+            List<Monster> availableTargets = battle.getMonstersArea(ability.getArea());
+
+            for (Monster m : availableTargets) {
                 System.out.println(i + ". " + m.getName());
                 i++;
             }
             System.out.println("Select a target: ");
             int targetChoice = KBReader.getScanner().nextInt();
-            Monster target = battle.getMonsters()[targetChoice - 1];
+            Monster target = availableTargets.get(targetChoice - 1);
             ArrayList<Monster> targets = new ArrayList<Monster>();
             targets.add(target);
             ability.use(targets);
