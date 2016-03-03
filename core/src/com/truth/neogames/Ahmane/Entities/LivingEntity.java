@@ -378,35 +378,59 @@ public abstract class LivingEntity extends Entity {
     }
 
     public boolean moveLeft(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos - 1, yPos)) {
-            grid.shiftEntity(this, -1, 0);
-            return true;
+        try {
+            if (grid.isSpaceEmpty(xPos - 1, yPos)) {
+                grid.shiftEntity(this, -1, 0);
+                return true;
+            }
+            return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            return false;
         }
-        return false;
     }
 
     public boolean moveRight(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos + 1, yPos)) {
-            grid.shiftEntity(this, 1, 0);
-            return true;
+        try {
+            if (grid.isSpaceEmpty(xPos + 1, yPos)) {
+                grid.shiftEntity(this, 1, 0);
+                return true;
+            }
+            return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            return false;
         }
-        return false;
+
+
     }
 
     public boolean moveForward(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos, yPos + 1)) {
-            grid.shiftEntity(this, 0, 1);
-            return true;
+        try {
+
+
+            if (grid.isSpaceEmpty(xPos, yPos + 1)) {
+                grid.shiftEntity(this, 0, 1);
+                return true;
+            }
+            return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            return false;
         }
-        return false;
     }
 
     public boolean moveBackward(BattleGrid grid) {
-        if (grid.isSpaceEmpty(xPos, yPos - 1)) {
-            grid.shiftEntity(this, 0, -1);
-            return true;
+        try {
+            if (grid.isSpaceEmpty(xPos, yPos - 1)) {
+                grid.shiftEntity(this, 0, -1);
+                return true;
+            }
+            return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            return false;
         }
-        return false;
     }
 
 
