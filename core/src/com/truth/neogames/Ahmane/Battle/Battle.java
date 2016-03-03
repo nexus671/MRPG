@@ -51,11 +51,13 @@ public class Battle extends RPGObject {
 
         List<Monster> mlist = new ArrayList<Monster>();
 
-        for (int x = player.getxPos() - area; x <= x + area; x++) {
+        for (int x = player.getxPos() - area; x <= player.getxPos() + area; x++) {
             {
-                for (int y = player.getyPos() - area; y <= y + area; y++) {
+                for (int y = player.getyPos() - area; y <= player.getyPos() + area; y++) {
+
                     for (Monster monster : monsters) {
                         if ((monster.getxPos() == x) && (monster.getyPos() == y)) {
+
                             mlist.add(monster);
                         }
                     }
@@ -64,6 +66,7 @@ public class Battle extends RPGObject {
 
 
         }
+
         return mlist;
     }
 

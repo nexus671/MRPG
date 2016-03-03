@@ -51,7 +51,6 @@ public class MyGdxGame extends ApplicationAdapter {
         Battle b = new Battle(p, monsters, grid);
         System.out.println("Skeleton Health: " + m.getStats().getHealth().getCurrent());
         new TempUI(b);
-            grid.showGrid();
         System.out.println("Skeleton Health: " + m.getStats().getHealth().getCurrent());
 
     }

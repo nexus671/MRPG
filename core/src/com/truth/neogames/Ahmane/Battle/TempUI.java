@@ -26,6 +26,7 @@ public class TempUI {
 
     public void printPlayerMenu() {
         int i = 1;
+        battle.getGrid().showGrid();
         double speed = battle.getPlayer().getStats().getStat(EntityStatName.SPEED).getMax();
         ArrayList<ActiveAbility> abilities = battle.getPlayer().getProfession().getUnlockedActiveAbilities();
         System.out.println("0. Move");
@@ -53,9 +54,11 @@ public class TempUI {
                 if (m == 4 && battle.getPlayer().moveRight(battle.getGrid())) {
                     speed -= 10;
                 }
+                battle.getGrid().showGrid();
             } else if (choice == 0 && speed <= 0) {
                 System.out.println("Cant Move no more fastness lmao rip gg get good boi");
                 System.out.println("0. Move");
+                i = 1;
                 for (ActiveAbility a : abilities) {
 
                     System.out.println(i + ". " + a.getName());
@@ -69,17 +72,21 @@ public class TempUI {
                 ActiveAbility ability = abilities.get(choice - 1);
                 i = 1;
                 List<Monster> availableTargets = battle.getMonstersArea(ability.getArea());
-
-                for (Monster m : availableTargets) {
-                    System.out.println(i + ". " + m.getName());
-                    i++;
+                if (!availableTargets.isEmpty()) {
+                    for (Monster m : availableTargets) {
+                        System.out.println(i + ". " + m.getName());
+                        i++;
+                    }
+                    System.out.println("Select a target: ");
+                    int targetChoice = KBReader.getScanner().nextInt();
+                    Monster target = availableTargets.get(targetChoice - 1);
+                    ArrayList<Monster> targets = new ArrayList<Monster>();
+                    targets.add(target);
+                    ability.use(targets);
+                } else {
+                    System.out.println("Nobody in range");
                 }
-                System.out.println("Select a target: ");
-                int targetChoice = KBReader.getScanner().nextInt();
-                Monster target = availableTargets.get(targetChoice - 1);
-                ArrayList<Monster> targets = new ArrayList<Monster>();
-                targets.add(target);
-                ability.use(targets);
+                break;
             }
         }
     }

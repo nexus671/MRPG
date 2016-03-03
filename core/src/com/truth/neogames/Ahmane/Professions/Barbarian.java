@@ -1,6 +1,7 @@
 package com.truth.neogames.Ahmane.Professions;
 
 import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
+import com.truth.neogames.Ahmane.Abilities.BarbarianPassive;
 import com.truth.neogames.Ahmane.Abilities.BasicAttack;
 import com.truth.neogames.Ahmane.Abilities.HeavyStrike;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
@@ -30,9 +31,9 @@ public class Barbarian extends Profession {
         BasicAttack ablitiy1 = new BasicAttack(level, e);
         abilities.add(ablitiy1);
         unlockedAbilities.add(ablitiy1);
-        //BarbarianPassive ablitiy2 = new BarbarianPassive(level, e);
-        //abilities.add(ablitiy2);
-        //unlockedAbilities.add(ablitiy2);
+        BarbarianPassive ablitiy2 = new BarbarianPassive(level, e);
+        abilities.add(ablitiy2);
+        unlockedAbilities.add(ablitiy2);
         HeavyStrike ablitiy3 = new HeavyStrike(level, e);
         abilities.add(ablitiy3);
         unlockedAbilities.add(ablitiy3);
