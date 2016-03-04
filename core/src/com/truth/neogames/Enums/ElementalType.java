@@ -10,11 +10,11 @@ public enum ElementalType {
     LIGHT, DARK, FIRE, FROST, NONE;
 
     // These constants are multiplied by (CombatGear.getLevel() / Gear.getMAXLEVEL());
-    private static final double LIGHT_SCALING = .05;
-    private static final double DARK_SCALING = .1;
-    private static final double FIRE_SCALING = .05;
-    private static final double FROST_SCALING = .3;
-    private String lowercase;
+    private static final double LIGHT_SCALING = 0.05;
+    private static final double DARK_SCALING = 0.1;
+    private static final double FIRE_SCALING = 0.05;
+    private static final double FROST_SCALING = 0.3;
+    private final String lowercase;
 
     ElementalType() {
         lowercase = StringManip.toLowercase(super.toString());

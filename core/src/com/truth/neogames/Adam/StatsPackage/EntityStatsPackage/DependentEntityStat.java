@@ -4,12 +4,13 @@ import com.truth.neogames.Ahmane.Effects.Buff;
 import com.truth.neogames.Enums.EntityStatName;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by acurr on 2/17/2016.
  */
 public class DependentEntityStat extends EntityStat {
-    protected ArrayList<EntityStat> attrs = new ArrayList<EntityStat>();
+    protected List<EntityStat> attrs = new ArrayList<EntityStat>();
 
     /*************
      * Constructors
@@ -31,14 +32,17 @@ public class DependentEntityStat extends EntityStat {
         attrs.remove(attr);
     }
 
+    @Override
     public void addBonus(Buff e) {
         bonuses.add(e);
     }
 
+    @Override
     public void removeBonus(Buff e) {
         bonuses.remove(e);
     }
 
+    @Override
     public double calculateValue() {
         max = baseMax;
         applyBonuses();
@@ -47,10 +51,8 @@ public class DependentEntityStat extends EntityStat {
 
     @Override
     public String toString() {
-        String str = name + "\n";
-        str += "Base Max = " + baseMax + "\n";
-        str += "Current Max = " + max + "\n";
-        str += "Current Value = " + current + "\n";
-        return str;
+        return "DependentEntityStat{" +
+                "attrs=" + attrs +
+                '}';
     }
 }

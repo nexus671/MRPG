@@ -9,6 +9,7 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 public class Silence extends Effect {
     private int duration;
     private LivingEntity e;
+
     public Silence(int duration) {
         this.duration = duration;
     }
@@ -24,5 +25,13 @@ public class Silence extends Effect {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Silence{" +
+                "duration=" + duration +
+                ", e=" + e +
+                '}';
     }
 }

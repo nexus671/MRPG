@@ -30,10 +30,10 @@ public class Armor extends CombatGear {
         slashDef = new ArmorStat("Slashing Defense", material.getAvgDefense() * type.getSlashModifier());
         crushDef = new ArmorStat("Crushing Defense", material.getAvgDefense() * type.getCrushModifier());
         arcaneDef = new ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
-        this.level = material.getLevel();
+        level = material.getLevel();
         assignName();
         assignDescription();
-        super.setLevel(material.getLevel());
+        setLevel(material.getLevel());
     }
 
     public ArmorStat getPierceDef() {
@@ -90,34 +90,39 @@ public class Armor extends CombatGear {
     }
 
     public void assignName() {
-        name = material.toString() + " " + type.toString();
+        name = material + " " + type;
         if (suffix != ArmorSuffix.NONE) {
             name += " of " + suffix;
         }
     }
 
+    @Override
     public void assignDescription() {
         super.assignDescription();
-        description += "Worn Slot: " + slot + "\n";
-        description += "Pierce Defense: " + pierceDef + "\n";
-        description += "Slash Defense: " + slashDef + "\n";
-        description += "Crush Defense: " + crushDef + "\n";
-        description += "Arcane Defense: " + arcaneDef + "\n";
-        if (suffix != ArmorSuffix.NONE)
-            description += "Suffix Effect: " + ArmorSuffix.getDescription(suffix) + "\n";
+        description += "Worn Slot: " + slot + '\n';
+        description += "Pierce Defense: " + pierceDef + '\n';
+        description += "Slash Defense: " + slashDef + '\n';
+        description += "Crush Defense: " + crushDef + '\n';
+        description += "Arcane Defense: " + arcaneDef + '\n';
+        if (suffix != ArmorSuffix.NONE) {
+            description += "Suffix Effect: " + ArmorSuffix.getDescription(suffix) + '\n';
+        }
         if (!bonuses.isEmpty()) {
             for (Buff b : bonuses) {
-                description += b.getDescription() + "\n";
+                description += b.getDescription() + '\n';
             }
         }
     }
 
+    @Override
     public String toString() {
-        String str = name + "\n";
-        str += "Pierce Defense: " + pierceDef + "\n";
-        str += "Slash Defense: " + slashDef + "\n";
-        str += "Crush Defense: " + crushDef + "\n";
-        str += "Arcane Defense: " + arcaneDef;
-        return str;
+        return "Armor{" +
+                "pierceDef=" + pierceDef +
+                ", slashDef=" + slashDef +
+                ", crushDef=" + crushDef +
+                ", arcaneDef=" + arcaneDef +
+                ", suffix=" + suffix +
+                ", type=" + type +
+                '}';
     }
 }

@@ -15,9 +15,11 @@ public abstract class Entity extends RPGObject {
     protected Sprite sprite;
     protected int xPos, yPos;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
-    public Entity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos) {
+    protected Entity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos) {
         this.name = name;
         this.raceName = raceName;
         this.sex = sex;
@@ -27,23 +29,29 @@ public abstract class Entity extends RPGObject {
         this.yPos = yPos;
     }
 
-    public Entity() {
+    protected Entity() {
     }
 
-    /************* Getters *************/
+    /*************
+     * Getters
+     *************/
 
+    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    /************** Setters *************/
+    /**************
+     * Setters
+     *************/
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
     public RaceName getRaceName() {
-        return this.raceName;
+        return raceName;
     }
 
     public void setRaceName(RaceName raceName) {
@@ -51,23 +59,25 @@ public abstract class Entity extends RPGObject {
     }
 
     public String getSex() {
-        return this.sex;
+        return sex;
     }
 
     public void setSex(String sex) {
         this.sex = sex;
     }
 
+    @Override
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }
 
     public int getxPos() {
-        return this.xPos;
+        return xPos;
     }
 
     public void setxPos(int xPos) {
@@ -75,7 +85,7 @@ public abstract class Entity extends RPGObject {
     }
 
     public int getyPos() {
-        return this.yPos;
+        return yPos;
     }
 
     public void setyPos(int yPos) {
@@ -88,7 +98,7 @@ public abstract class Entity extends RPGObject {
     }
 
     public Sprite getSprite() {
-        return this.sprite;
+        return sprite;
     }
 
     public void setSprite(Sprite sprite) {
@@ -98,6 +108,12 @@ public abstract class Entity extends RPGObject {
 
     @Override
     public String toString() {
-        return this.name;
+        return "Entity{" +
+                "raceName=" + raceName +
+                ", sex='" + sex + '\'' +
+                ", sprite=" + sprite +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                '}';
     }
 }

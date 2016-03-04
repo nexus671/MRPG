@@ -27,10 +27,12 @@ public abstract class Ability extends RPGObject {
         this.type = type;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
@@ -71,4 +73,15 @@ public abstract class Ability extends RPGObject {
         return area;
     }
 
+    @Override
+    public String toString() {
+        return "Ability{" +
+                "type=" + type +
+                ", level=" + level +
+                ", effects=" + effects +
+                ", cost=" + cost +
+                ", duration=" + duration +
+                ", area=" + area +
+                '}';
+    }
 }

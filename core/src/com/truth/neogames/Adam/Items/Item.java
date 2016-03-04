@@ -10,22 +10,26 @@ public abstract class Item extends RPGObject {
     protected boolean stackable;
     protected int stackCount;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
-    public Item() {
+    protected Item() {
         name = "";
         description = "";
         stackable = false;
         stackCount = 1;
     }
 
-    public Item(String name, String description, boolean stackable) {
+    protected Item(String name, String description, boolean stackable) {
         this.name = name;
         this.description = description;
         this.stackable = stackable;
     }
 
-    /************* Getters and Setters *************/
+    /*************
+     * Getters and Setters
+     *************/
 
     public int getStackCount() {
         return stackCount;
@@ -41,19 +45,25 @@ public abstract class Item extends RPGObject {
 
     public void setStackable(boolean stackable) {
         this.stackable = stackable;
-        if (!stackable)
+        if (!stackable) {
             stackCount = 1;
+        }
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) return false;
-        else if (!(obj instanceof Item)) return false;
-        Item i = (Item)obj;
+        if ((obj == null) || !(obj instanceof Item)) {
+            return false;
+        }
+        Item i = (Item) obj;
         return i.getName().equalsIgnoreCase(name);
     }
 
+    @Override
     public String toString() {
-        return name;
+        return "Item{" +
+                "stackable=" + stackable +
+                ", stackCount=" + stackCount +
+                '}';
     }
 }

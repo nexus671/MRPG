@@ -11,7 +11,7 @@ public enum WornSlot {
     GLOVES(5), RING(6), LEGS(7), FEET(8), AMMO(9);
 
     private final int slot;
-    private String lowercase;
+    private final String lowercase;
 
     WornSlot(int slot) {
         this.slot = slot;
@@ -20,23 +20,34 @@ public enum WornSlot {
 
     /**
      * Gets the WornSlot that corresponds to the specified slot number.
+     *
      * @param slotNumber The slot number.
      * @return A WornSlot object of the correct type.
      */
     public static WornSlot getSlotTitle(int slotNumber) {
-        switch(slotNumber) {
-            case 0: return HEAD;
-            case 1: return NECK;
-            case 2: return CHEST;
-            case 3: return MAINHAND;
-            case 4: return OFFHAND;
+        switch (slotNumber) {
+            case 0:
+                return HEAD;
+            case 1:
+                return NECK;
+            case 2:
+                return CHEST;
+            case 3:
+                return MAINHAND;
+            case 4:
+                return OFFHAND;
             case 5:
                 return GLOVES;
-            case 6: return RING;
-            case 7: return LEGS;
-            case 8: return FEET;
-            case 9: return AMMO;
-            default: return null;
+            case 6:
+                return RING;
+            case 7:
+                return LEGS;
+            case 8:
+                return FEET;
+            case 9:
+                return AMMO;
+            default:
+                return null;
         }
     }
 
@@ -47,8 +58,12 @@ public enum WornSlot {
         return slot;
     }
 
+    @Override
     public String toString() {
-        return lowercase;
+        return "WornSlot{" +
+                "slot=" + slot +
+                ", lowercase='" + lowercase + '\'' +
+                '}';
     }
 }
 

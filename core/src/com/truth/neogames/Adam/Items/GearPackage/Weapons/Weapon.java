@@ -19,31 +19,35 @@ public class Weapon extends CombatGear {
     private WeaponSuffix suffix;
     private WeaponType type;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
     public Weapon(Material material, WeaponSuffix suffix, WeaponType type) {
         this.material = material;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
-        maxDamage = avgDamage + avgDamage * type.getRangeModifier();
-        minDamage = avgDamage - avgDamage * type.getRangeModifier();
+        maxDamage = avgDamage + (avgDamage * type.getRangeModifier());
+        minDamage = avgDamage - (avgDamage * type.getRangeModifier());
         this.suffix = suffix;
         this.type = type;
-        super.slot = WornSlot.MAINHAND;
+        slot = WornSlot.MAINHAND;
         assignName();
     }
 
     public Weapon(WornSlot slot, Material material, WeaponSuffix suffix, WeaponType type) {
         this.slot = slot;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
-        maxDamage = avgDamage + avgDamage * type.getRangeModifier();
-        minDamage = avgDamage - avgDamage * type.getRangeModifier();
+        maxDamage = avgDamage + (avgDamage * type.getRangeModifier());
+        minDamage = avgDamage - (avgDamage * type.getRangeModifier());
         this.suffix = suffix;
         this.type = type;
-        super.setLevel(material.getLevel());
+        setLevel(material.getLevel());
         assignName();
     }
 
-    /************* Getters and Setters *************/
+    /*************
+     * Getters and Setters
+     *************/
 
     public double getMaxDamage() {
         return maxDamage;
@@ -62,7 +66,7 @@ public class Weapon extends CombatGear {
     }
 
     public double getRandomDamage() {
-        return (minDamage + (maxDamage - minDamage) * RandomNumber.random.nextDouble());
+        return (minDamage + ((maxDamage - minDamage) * RandomNumber.random.nextDouble()));
     }
 
     public WeaponSuffix getSuffix() {
@@ -99,30 +103,31 @@ public class Weapon extends CombatGear {
 
     public void assignName() {
         String str = getMaterial().toString();
-        str += " " + type.toString();
+        str += " " + type;
         if (suffix != WeaponSuffix.NONE) {
             str += " of " + suffix;
         }
         name = str;
     }
 
+    @Override
     public void assignDescription() {
         super.assignDescription();
-        if (type.isTwoHanded())
-            description += "Two-Handed";
-        else
-            description += "One-Handed";
-        description += " Weapon" + "\n";
-        description += "Damage: " + minDamage + " - " + maxDamage + "\n";
-        description += "Attack Style: " + type.getStyle() + "\n";
-        description += "Critical Chance: " + (type.getCritChance() * 100) + "%\n";
-        description += "Attack Range: " + type.getRange() + "\n";
+        description += type.isTwoHanded() ? "Two-Handed" : "One-Handed";
+        description += " Weapon" + '\n';
+        description += "Damage: " + minDamage + " - " + maxDamage + '\n';
+        description += "Attack Style: " + type.getStyle() + '\n';
+        description += "Critical Chance: " + (type.getCritChance() * 100.0) + "%\n";
+        description += "Attack Range: " + type.getRange() + '\n';
     }
 
     @Override
     public String toString() {
-        String str = name + "\n";
-        str += "Damage Range = " + minDamage + " - " + maxDamage;
-        return str;
+        return "Weapon{" +
+                "maxDamage=" + maxDamage +
+                ", minDamage=" + minDamage +
+                ", suffix=" + suffix +
+                ", type=" + type +
+                '}';
     }
 }

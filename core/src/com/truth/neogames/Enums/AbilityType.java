@@ -9,7 +9,7 @@ import com.truth.neogames.Utilities.StringManip;
 public enum AbilityType {
     AOE, TARGETED, PASSIVE;
 
-    String lowercase;
+    final String lowercase;
 
     AbilityType() {
         lowercase = StringManip.toLowercase(super.toString());

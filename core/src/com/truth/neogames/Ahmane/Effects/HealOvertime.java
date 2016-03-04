@@ -9,6 +9,7 @@ public class HealOvertime extends Effect {
     private double heal;
     private int duration;
     private LivingEntity e;
+
     public HealOvertime(double heal, int duration) {
         this.heal = heal;
         this.duration = duration;
@@ -34,5 +35,14 @@ public class HealOvertime extends Effect {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "HealOvertime{" +
+                "heal=" + heal +
+                ", duration=" + duration +
+                ", e=" + e +
+                '}';
     }
 }

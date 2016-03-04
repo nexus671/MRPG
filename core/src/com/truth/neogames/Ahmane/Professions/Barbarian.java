@@ -7,25 +7,26 @@ import com.truth.neogames.Ahmane.Abilities.HeavyStrike;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 import com.truth.neogames.Enums.ProfessionName;
 
+import java.util.Arrays;
+
 /**
  * Created by Ahmane on 10/24/2015.
- *
+ * <p/>
  * * Barbarian
- *      Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves.
- *      With rage granting them boldness and daring beyond that of most other warriors, barbarians charge furiously into battle
- *      and ruin all who would stand in their way.
+ * Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves.
+ * With rage granting them boldness and daring beyond that of most other warriors, barbarians charge furiously into battle
+ * and ruin all who would stand in their way.
  */
 public class Barbarian extends Profession {
-    private final int MAXLEVEL = 18;
+    private static final int MAXLEVEL = 18;
+    private final int[] levelrequirements = {1, 1};
     private EntityStats stats;
-    private double exp = 0;
+    private double exp;
     private int level = 1;
     private int sp = 1;
 
-    private int[] levelrequirements = {1, 1};
-
     public Barbarian(LivingEntity e) {
-        this.name = ProfessionName.BARBARIAN;
+        name = ProfessionName.BARBARIAN;
         stats = e.getStats();
 
         BasicAttack ablitiy1 = new BasicAttack(level, e);
@@ -45,7 +46,7 @@ public class Barbarian extends Profession {
 
     //Actives
 
-    public int getMAXLEVEL() {
+    public static int getMAXLEVEL() {
         return MAXLEVEL;
     }
 
@@ -57,10 +58,12 @@ public class Barbarian extends Profession {
         this.stats = stats;
     }
 
+    @Override
     public double getExp() {
         return exp;
     }
 
+    @Override
     public void setExp(double exp) {
         this.exp = exp;
     }
@@ -76,4 +79,15 @@ public class Barbarian extends Profession {
         this.level = level;
     }
 
+    @Override
+    public String toString() {
+        return "Barbarian{" +
+                "MAXLEVEL=" + MAXLEVEL +
+                ", stats=" + stats +
+                ", exp=" + exp +
+                ", level=" + level +
+                ", sp=" + sp +
+                ", levelrequirements=" + Arrays.toString(levelrequirements) +
+                '}';
+    }
 }

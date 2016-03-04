@@ -9,10 +9,10 @@ import com.truth.neogames.Enums.Affixes.Material;
 public abstract class CombatGear extends Gear {
     protected Material material;
 
-    public CombatGear() {
+    protected CombatGear() {
     }
 
-    public CombatGear(Material material) {
+    protected CombatGear(Material material) {
         this.material = material;
     }
 
@@ -25,7 +25,14 @@ public abstract class CombatGear extends Gear {
     }
 
     public void assignDescription() {
-        description = name + "\n";
-        description += "Level: " + level + "\n";
+        description = name + '\n';
+        description += "Level: " + level + '\n';
+    }
+
+    @Override
+    public String toString() {
+        return "CombatGear{" +
+                "material=" + material +
+                '}';
     }
 }

@@ -37,4 +37,13 @@ public class Blind extends Effect {
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
     }
+
+    @Override
+    public String toString() {
+        return "Blind{" +
+                "duration=" + duration +
+                ", magnitude=" + magnitude +
+                ", e=" + e +
+                '}';
+    }
 }

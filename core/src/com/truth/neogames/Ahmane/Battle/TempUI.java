@@ -13,7 +13,7 @@ import java.util.List;
  * Class Description: Temporary UI for testing combat.
  */
 public class TempUI {
-    private Battle battle;
+    private final Battle battle;
 
     public TempUI(Battle b) {
         battle = b;
@@ -25,11 +25,11 @@ public class TempUI {
     }
 
     public void printPlayerMenu() {
-        int i = 1;
         battle.getGrid().showGrid();
         double speed = battle.getPlayer().getStats().getStat(EntityStatName.SPEED).getMax();
-        ArrayList<ActiveAbility> abilities = battle.getPlayer().getProfession().getUnlockedActiveAbilities();
+        List<ActiveAbility> abilities = battle.getPlayer().getProfession().getUnlockedActiveAbilities();
         System.out.println("0. Move");
+        int i = 1;
         for (ActiveAbility a : abilities) {
             System.out.println(i + ". " + a.getName());
             i++;
@@ -38,24 +38,24 @@ public class TempUI {
         System.out.print("Enter your choice: ");
         int choice = KBReader.getScanner().nextInt();
         while (choice != -1) {
-            if (choice == 0 && speed > 0) {
+            if ((choice == 0) && (speed > 0.0)) {
                 System.out.println("1. UP 2.Down 3.Left 4.Right");
                 int m = KBReader.getScanner().nextInt();
 
-                if (m == 1 && battle.getPlayer().moveForward(battle.getGrid())) {
-                    speed -= 10;
+                if ((m == 1) && battle.getPlayer().moveForward(battle.getGrid())) {
+                    speed -= 10.0;
                 }
-                if (m == 2 && battle.getPlayer().moveBackward(battle.getGrid())) {
-                    speed -= 10;
+                if ((m == 2) && battle.getPlayer().moveBackward(battle.getGrid())) {
+                    speed -= 10.0;
                 }
-                if (m == 3 && battle.getPlayer().moveLeft(battle.getGrid())) {
-                    speed -= 10;
+                if ((m == 3) && battle.getPlayer().moveLeft(battle.getGrid())) {
+                    speed -= 10.0;
                 }
-                if (m == 4 && battle.getPlayer().moveRight(battle.getGrid())) {
-                    speed -= 10;
+                if ((m == 4) && battle.getPlayer().moveRight(battle.getGrid())) {
+                    speed -= 10.0;
                 }
                 battle.getGrid().showGrid();
-            } else if (choice == 0 && speed <= 0) {
+            } else if ((choice == 0) && (speed <= 0.0)) {
                 System.out.println("Cant Move no more fastness lmao rip gg get good boi");
                 System.out.println("0. Move");
                 i = 1;
@@ -68,11 +68,13 @@ public class TempUI {
                 System.out.print("Enter your choice: ");
                 choice = KBReader.getScanner().nextInt();
             }
-            if (choice > 0 && choice < i) {
+            if ((choice > 0) && (choice < i)) {
                 ActiveAbility ability = abilities.get(choice - 1);
                 i = 1;
                 List<Monster> availableTargets = battle.getMonstersArea(ability.getArea());
-                if (!availableTargets.isEmpty()) {
+                if (availableTargets.isEmpty()) {
+                    System.out.println("Nobody in range");
+                } else {
                     for (Monster m : availableTargets) {
                         System.out.println(i + ". " + m.getName());
                         i++;
@@ -80,14 +82,19 @@ public class TempUI {
                     System.out.println("Select a target: ");
                     int targetChoice = KBReader.getScanner().nextInt();
                     Monster target = availableTargets.get(targetChoice - 1);
-                    ArrayList<Monster> targets = new ArrayList<Monster>();
+                    List<Monster> targets = new ArrayList<Monster>();
                     targets.add(target);
                     ability.use(targets);
-                } else {
-                    System.out.println("Nobody in range");
                 }
                 break;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "TempUI{" +
+                "battle=" + battle +
+                '}';
     }
 }

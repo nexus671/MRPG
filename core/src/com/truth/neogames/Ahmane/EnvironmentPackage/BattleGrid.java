@@ -5,6 +5,7 @@ import com.truth.neogames.Ahmane.Entities.SubTypes.Monster;
 import com.truth.neogames.Ahmane.Entities.SubTypes.Player;
 import com.truth.neogames.RPGObject;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -12,14 +13,14 @@ import java.util.Random;
  * Class Description:
  */
 public class BattleGrid extends RPGObject {
-    private Entity[][] grid;
+    private final Entity[][] grid;
 
     public BattleGrid() {
         grid = new Entity[13][13];
     }
 
     public BattleGrid(int r, int c) {
-         grid = new Entity[r][c];
+        grid = new Entity[r][c];
     }
 
     public boolean isSpaceEmpty(int x, int y) {
@@ -68,18 +69,20 @@ public class BattleGrid extends RPGObject {
     }
 
     public void showGrid() {
-        for (int i = 0; i < 13; i++) System.out.print("\t" + (i));
+        for (int i = 0; i < 13; i++) {
+            System.out.print("\t" + (i));
+        }
         System.out.println();
 
         for (int row = 0; row < 13; row++) {
-            System.out.print((row) + "");
+            System.out.print(row);
             for (int column = 0; column < 13; column++) {
                 if (grid[row][column] == null) {
-                    System.out.print("\t" + "-");
-                } else if (grid[row][column].getClass() == Monster.class) {
-                    System.out.print("\t" + "M");
-                } else if (grid[row][column].getClass() == Player.class) {
-                    System.out.print("\t" + "P");
+                    System.out.print("\t" + '-');
+                } else if (grid[row][column].getClass().equals(Monster.class)) {
+                    System.out.print("\t" + 'M');
+                } else if (grid[row][column].getClass().equals(Player.class)) {
+                    System.out.print("\t" + 'P');
                 }
             }
             System.out.println();
@@ -87,4 +90,10 @@ public class BattleGrid extends RPGObject {
 
     }
 
+    @Override
+    public String toString() {
+        return "BattleGrid{" +
+                "grid=" + Arrays.toString(grid) +
+                '}';
+    }
 }

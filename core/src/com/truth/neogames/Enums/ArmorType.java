@@ -17,20 +17,20 @@ public enum ArmorType { //TODO: Initialize modifier values for armor types
     SABATONS(WornSlot.FEET, true), SHIELD(WornSlot.OFFHAND, true);
 
 
-    private WornSlot slot;
-    private String lowercase;
+    private final WornSlot slot;
+    private final String lowercase;
+    private final boolean metallic; //whether the wearable type is intended to be metallic or cloth
     private double pierceModifier;
     private double slashModifier;
     private double crushModifier;
     private double arcaneModifier;
-    private boolean metallic; //whether the wearable type is intended to be metallic or cloth
 
     ArmorType(WornSlot slot, boolean metallic) {
         this.slot = slot;
-        pierceModifier = 1;
-        slashModifier = 1;
-        crushModifier = 1;
-        arcaneModifier = 1;
+        pierceModifier = 1.0;
+        slashModifier = 1.0;
+        crushModifier = 1.0;
+        arcaneModifier = 1.0;
         this.metallic = metallic;
         lowercase = StringManip.toLowercase(super.toString());
     }
@@ -91,6 +91,14 @@ public enum ArmorType { //TODO: Initialize modifier values for armor types
 
     @Override
     public String toString() {
-        return lowercase;
+        return "ArmorType{" +
+                "slot=" + slot +
+                ", lowercase='" + lowercase + '\'' +
+                ", pierceModifier=" + pierceModifier +
+                ", slashModifier=" + slashModifier +
+                ", crushModifier=" + crushModifier +
+                ", arcaneModifier=" + arcaneModifier +
+                ", metallic=" + metallic +
+                '}';
     }
 }

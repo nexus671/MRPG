@@ -7,10 +7,10 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description: Metal types for rings, amulets, etc.
  */
 public enum JewelryMetal {
-    COPPER(.3), SILVER(.6), GOLD(1);
+    COPPER(0.3), SILVER(0.6), GOLD(1);
 
-    private double powerModifier;
-    private String lowercase;
+    private final double powerModifier;
+    private final String lowercase;
 
     JewelryMetal(double powerModifier) {
         lowercase = StringManip.toLowercase(super.toString());
@@ -23,6 +23,9 @@ public enum JewelryMetal {
 
     @Override
     public String toString() {
-        return lowercase;
+        return "JewelryMetal{" +
+                "powerModifier=" + powerModifier +
+                ", lowercase='" + lowercase + '\'' +
+                '}';
     }
 }

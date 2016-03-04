@@ -9,7 +9,7 @@ import com.truth.neogames.Utilities.StringManip;
 public enum DamageType {
     PIERCING, SLASHING, CRUSHING, ARCANE;
 
-    String lowercase;
+    final String lowercase;
 
     DamageType() {
         lowercase = StringManip.toLowercase(super.toString());

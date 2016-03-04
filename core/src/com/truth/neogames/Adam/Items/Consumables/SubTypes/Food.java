@@ -15,7 +15,7 @@ public class Food extends Consumable {
      *************/
 
     public Food(String name, String description, int healAmount) {
-        this.healAmount = healAmount;
+        this.healAmount = (double) healAmount;
         super.name = name;
         assignDescription();
     }
@@ -30,5 +30,12 @@ public class Food extends Consumable {
 
     public void assignDescription() {
         description = "Consume to restore up to " + healAmount + " health.";
+    }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "healAmount=" + healAmount +
+                '}';
     }
 }

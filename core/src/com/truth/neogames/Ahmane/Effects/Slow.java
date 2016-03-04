@@ -37,4 +37,13 @@ public class Slow extends Effect {
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
     }
+
+    @Override
+    public String toString() {
+        return "Slow{" +
+                "duration=" + duration +
+                ", magnitude=" + magnitude +
+                ", e=" + e +
+                '}';
+    }
 }

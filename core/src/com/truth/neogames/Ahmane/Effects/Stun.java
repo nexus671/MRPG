@@ -26,4 +26,12 @@ public class Stun extends Effect {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "Stun{" +
+                "duration=" + duration +
+                ", e=" + e +
+                '}';
+    }
 }

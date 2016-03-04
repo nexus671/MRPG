@@ -21,4 +21,12 @@ public enum AbilityRange {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "AbilityRange{" +
+                "radius=" + radius +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

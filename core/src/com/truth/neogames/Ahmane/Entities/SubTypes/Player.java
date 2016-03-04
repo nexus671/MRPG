@@ -15,16 +15,18 @@ import com.truth.neogames.Enums.RaceName;
  */
 public class Player extends LivingEntity {
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
     public Player(String name, RaceName raceName, String sex, Profession profession, Sprite sprite) {
-        super.setName(name);
-        this.setRaceName(raceName);
-        this.setSex(sex);
-        this.setProfession(profession);
-        this.setStats(new EntityStats(1));
-        this.setWornGear(new WornGear());
-        this.setInventory(new Inventory());
+        setName(name);
+        setRaceName(raceName);
+        setSex(sex);
+        setProfession(profession);
+        setStats(new EntityStats(1));
+        setWornGear(new WornGear());
+        setInventory(new Inventory());
         setStats(new EntityStats(1));
     }
 

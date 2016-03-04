@@ -1,7 +1,6 @@
 package com.truth.neogames.Adam.StatsPackage.GearStatsPackage;
 
 import com.truth.neogames.RPGObject;
-import com.truth.neogames.Utilities.DecimalRounder;
 
 /**
  * Created by Adam on 11/4/2015.
@@ -37,7 +36,11 @@ public class ArmorStat extends RPGObject {
         this.value = value;
     }
 
+    @Override
     public String toString() {
-        return "" + DecimalRounder.round(maxValue);
+        return "ArmorStat{" +
+                "maxValue=" + maxValue +
+                ", value=" + value +
+                '}';
     }
 }

@@ -14,8 +14,8 @@ public enum WeaponSuffix {
     TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE),
     BURNING(ElementalType.FIRE), ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
-    private ElementalType elementalType;
-    private String lowercase;
+    private final ElementalType elementalType;
+    private final String lowercase;
 
     WeaponSuffix() {
         elementalType = ElementalType.NONE;
@@ -35,7 +35,11 @@ public enum WeaponSuffix {
         return elementalType == ElementalType.NONE;
     }
 
+    @Override
     public String toString() {
-        return lowercase;
+        return "WeaponSuffix{" +
+                "elementalType=" + elementalType +
+                ", lowercase='" + lowercase + '\'' +
+                '}';
     }
 }

@@ -7,7 +7,7 @@ import com.truth.neogames.Enums.Affixes.JewelryMetal;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Adam on 1(MAX_STATS - 1)/4/(MAX_STATS - 1)015.
@@ -17,22 +17,18 @@ public class Jewelry extends Gear {
     private static final int MAX_STATS = 3; //the max number of stats that a jewelry item can buff
     private JewelryMetal metal;
     private JewelryGem gem;
-    private ArrayList<EntityStatName> statsAffected;
+    private List<EntityStatName> statsAffected;
     private double amount; // percent increase of the entity stat
 
-    public Jewelry(JewelryMetal metal, JewelryGem gem, ArrayList<EntityStatName> stats, boolean isRing) {
+    public Jewelry(JewelryMetal metal, JewelryGem gem, List<EntityStatName> stats, boolean isRing) {
         this.metal = metal;
         this.gem = gem;
         statsAffected = stats;
         amount = metal.getPowerModifier() * gem.getPowerModifier();
-        if (isRing) {
-            slot = WornSlot.RING;
-        } else {
-            slot = WornSlot.NECK;
-        }
+        slot = isRing ? WornSlot.RING : WornSlot.NECK;
         for (EntityStatName statAffected : stats) {
             Buff buff = new Buff(amount, statAffected, false);
-            this.addBonus(buff);
+            addBonus(buff);
         }
         assignName();
         assignDescription();
@@ -59,11 +55,11 @@ public class Jewelry extends Gear {
         this.gem = gem;
     }
 
-    public ArrayList<EntityStatName> getStatsAffected() {
+    public Iterable<EntityStatName> getStatsAffected() {
         return statsAffected;
     }
 
-    public void setStatsAffected(ArrayList<EntityStatName> statsAffected) {
+    public void setStatsAffected(List<EntityStatName> statsAffected) {
         this.statsAffected = statsAffected;
     }
 
@@ -78,20 +74,16 @@ public class Jewelry extends Gear {
     public void assignName() {
         String str = metal + " ";
         str += gem + " ";
-        if (slot == WornSlot.RING) {
-            str += "Ring";
-        } else {
-            str += "Necklace";
-        }
+        str += (slot == WornSlot.RING) ? "Ring" : "Necklace";
         name = str;
     }
 
     public void assignDescription() {
-        description = name + "\n";
+        description = name + '\n';
         description += "Increases ";
         for (int i = 0; i < statsAffected.size(); i++) {
             description += statsAffected.get(i);
-            if (statsAffected.size() == MAX_STATS && i != (statsAffected.size() - 1)) {
+            if ((statsAffected.size() == MAX_STATS) && (i != (statsAffected.size() - 1))) {
                 description += ", ";
             }
             if (statsAffected.size() != MAX_STATS) {
@@ -101,5 +93,15 @@ public class Jewelry extends Gear {
                 description += "and ";
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Jewelry{" +
+                "metal=" + metal +
+                ", gem=" + gem +
+                ", statsAffected=" + statsAffected +
+                ", amount=" + amount +
+                '}';
     }
 }

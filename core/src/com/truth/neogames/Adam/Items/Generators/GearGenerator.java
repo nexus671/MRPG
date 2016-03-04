@@ -18,6 +18,49 @@ public class GearGenerator {
     ArrayList<EntityStatName> statsAffected;
 
     /**
+     * Generates a random weapon object.
+     *
+     * @return A random weapon.
+     */
+    public static Weapon getRandomWeapon() {
+        return new Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+    }
+
+    /**
+     * Gets a random weapon based on level.
+     *
+     * @param level The level of the player.
+     * @return A random weapon.
+     */
+    public static Weapon getWeapon(int level) {
+        return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+    }
+
+    public static Armor getRandomArmor(WornSlot slot) {
+        switch (slot) {
+            case RING:
+            case NECK:
+            case MAINHAND:
+            case OFFHAND:
+                return null;
+            default:
+                return new Armor(slot, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(slot));
+        }
+    }
+
+    public static Armor getArmor(int level, WornSlot slot) {
+        switch (slot) {
+            case RING:
+            case NECK:
+            case MAINHAND:
+            case OFFHAND:
+                return null;
+            default:
+                return new Armor(slot, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(slot));
+        }
+    }
+
+    /**
      * Gets a random gear object in any slot (except ammo).
      *
      * @return The random gear object.
@@ -39,8 +82,8 @@ public class GearGenerator {
             case 5:
                 return new Armor(WornSlot.GLOVES, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
-                numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
-                addRandomStats(numStats);
+                int i = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                addRandomStats(i);
                 return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, true);
             case 7:
                 return new Armor(WornSlot.LEGS, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.LEGS));
@@ -48,25 +91,6 @@ public class GearGenerator {
                 return new Armor(WornSlot.FEET, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.FEET));
         }
         return null;
-    }
-
-    /**
-     * Generates a random weapon object.
-     *
-     * @return A random weapon.
-     */
-    public Weapon getRandomWeapon() {
-        return new Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
-    }
-
-    /**
-     * Gets a random weapon based on level.
-     *
-     * @param level The level of the player.
-     * @return A random weapon.
-     */
-    public Weapon getWeapon(int level) {
-        return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
     }
 
     public Jewelry getRandomJewelry() {
@@ -87,30 +111,6 @@ public class GearGenerator {
         int numStats = RandomNumber.random.nextInt(Jewelry.getMaxStats());
         addRandomStats(numStats);
         return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, isRing);
-    }
-
-    public Armor getRandomArmor(WornSlot slot) {
-        switch (slot) {
-            case RING:
-            case NECK:
-            case MAINHAND:
-            case OFFHAND:
-                return null;
-            default:
-                return new Armor(slot, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(slot));
-        }
-    }
-
-    public Armor getArmor(int level, WornSlot slot) {
-        switch (slot) {
-            case RING:
-            case NECK:
-            case MAINHAND:
-            case OFFHAND:
-                return null;
-            default:
-                return new Armor(slot, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(slot));
-        }
     }
 
     /**
@@ -136,8 +136,8 @@ public class GearGenerator {
             case 5:
                 return new Armor(WornSlot.GLOVES, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
-                numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
-                addRandomStats(numStats);
+                int i = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                addRandomStats(i);
                 return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, true);
             case 7:
                 return new Armor(WornSlot.LEGS, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.LEGS));
@@ -170,12 +170,13 @@ public class GearGenerator {
     /**
      * Adds the specified number of RandomNumber.random entity stat names to the ArrayList statsAffected.
      * Note: This method clears the contents of statsAffected upon method call.
+     *
      * @param number The  number of stats to be placed into the statsAffected ArrayList.
      */
     private void addRandomStats(int number) {
         statsAffected = new ArrayList<EntityStatName>();
         statsAffected.add(EnumPicker.getRandomEntityStat());
-        for (int i = 0; i < number && i < Jewelry.getMaxStats(); i++) {
+        for (int i = 0; (i < number) && (i < Jewelry.getMaxStats()); i++) {
             EntityStatName statName = EnumPicker.getRandomEntityStat();
             if (statsAffected.contains(statName)) {
                 i -= 1;
@@ -183,5 +184,12 @@ public class GearGenerator {
                 statsAffected.add(statName);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "GearGenerator{" +
+                "statsAffected=" + statsAffected +
+                '}';
     }
 }

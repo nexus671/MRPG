@@ -8,6 +8,7 @@ import com.truth.neogames.Ahmane.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class Battle extends RPGObject {
         return monsters;
     }
 
-    public void setMonsters(Monster[] monsters) {
+    public void setMonsters(Monster... monsters) {
         this.monsters = monsters;
     }
 
@@ -51,15 +52,13 @@ public class Battle extends RPGObject {
 
         List<Monster> mlist = new ArrayList<Monster>();
 
-        for (int x = player.getxPos() - area; x <= player.getxPos() + area; x++) {
-            {
-                for (int y = player.getyPos() - area; y <= player.getyPos() + area; y++) {
+        for (int x = player.getxPos() - area; x <= (player.getxPos() + area); x++) {
+            for (int y = player.getyPos() - area; y <= (player.getyPos() + area); y++) {
 
-                    for (Monster monster : monsters) {
-                        if ((monster.getxPos() == x) && (monster.getyPos() == y)) {
+                for (Monster monster : monsters) {
+                    if ((monster.getxPos() == x) && (monster.getyPos() == y)) {
 
-                            mlist.add(monster);
-                        }
+                        mlist.add(monster);
                     }
                 }
             }
@@ -76,5 +75,14 @@ public class Battle extends RPGObject {
 
     public void setGrid(BattleGrid grid) {
         this.grid = grid;
+    }
+
+    @Override
+    public String toString() {
+        return "Battle{" +
+                "player=" + player +
+                ", monsters=" + Arrays.toString(monsters) +
+                ", grid=" + grid +
+                '}';
     }
 }

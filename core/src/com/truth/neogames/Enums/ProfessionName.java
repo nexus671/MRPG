@@ -10,7 +10,7 @@ public enum ProfessionName {
     BARBARIAN, BARD, CLERIC, DRUID, FIGHTER,
     PALADIN, RANGER, ROGUE, SORCERER;
 
-    private String lowercase;
+    private final String lowercase;
 
     ProfessionName() {
         lowercase = StringManip.toLowercase(super.toString());

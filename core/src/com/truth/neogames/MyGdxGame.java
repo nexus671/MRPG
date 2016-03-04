@@ -21,17 +21,18 @@ import com.truth.neogames.Enums.RaceName;
 import com.truth.neogames.Enums.WornSlot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class MyGdxGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+    SpriteBatch batch;
+    Texture img;
 
-	public static void main(String[] args) {
-        ArrayList<EntityStat> stats = new ArrayList<EntityStat>();
-        stats.add(new EntityStat(EntityStatName.STRENGTH, 20));
+    public static void main(String[] args) {
+        Collection<EntityStat> stats = new ArrayList<EntityStat>();
+        stats.add(new EntityStat(EntityStatName.STRENGTH, 20.0));
 
 
-         Player p = new Player("Adam", RaceName.HUMAN, "Male", new Profession(), new Sprite());
+        Player p = new Player("Adam", RaceName.HUMAN, "Male", new Profession(), new Sprite());
         p.setProfession(new Barbarian(p));
         Monster m = new Monster(true, new EntityStats(1));
         m.setName("Skeleton");
@@ -40,11 +41,12 @@ public class MyGdxGame extends ApplicationAdapter {
         m.setPos(1, 0);
         Monster[] monsters = {m};
         GearGenerator generator = new GearGenerator();
-         WornSlot[] slots = {WornSlot.HEAD, WornSlot.NECK, WornSlot.CHEST, WornSlot.MAINHAND, WornSlot.OFFHAND, WornSlot.GLOVES, WornSlot.RING, WornSlot.LEGS, WornSlot.FEET};
+        WornSlot[] slots = {WornSlot.HEAD, WornSlot.NECK, WornSlot.CHEST, WornSlot.MAINHAND, WornSlot.OFFHAND, WornSlot.GLOVES, WornSlot.RING, WornSlot.LEGS, WornSlot.FEET};
         for (WornSlot slot : slots) {
             p.equip(generator.getRandom(1, slot));
         }
-        System.out.println(p.getWornGear());
+        //System.out.println(p.getWornGear());
+        System.out.println(p.getWornGear().getFromSlot(WornSlot.CHEST).getDescription());
         BattleGrid grid = new BattleGrid();
         grid.addEntity(p);
         grid.addEntity(m);
@@ -55,18 +57,26 @@ public class MyGdxGame extends ApplicationAdapter {
 
     }
 
-	@Override
-	public void create() {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-	}
+    @Override
+    public void create() {
+        batch = new SpriteBatch();
+        img = new Texture("badlogic.jpg");
+    }
 
-	@Override
-	public void render() {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
+    @Override
+    public void render() {
+        Gdx.gl.glClearColor(1.0F, 0.0F, 0.0F, 1.0F);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        batch.begin();
+        batch.draw(img, 0.0F, 0.0F);
+        batch.end();
+    }
+
+    @Override
+    public String toString() {
+        return "MyGdxGame{" +
+                "batch=" + batch +
+                ", img=" + img +
+                '}';
+    }
 }

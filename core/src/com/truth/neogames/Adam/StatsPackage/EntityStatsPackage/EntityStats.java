@@ -20,34 +20,36 @@ public class EntityStats extends RPGObject {
     protected EntityStat dexterity;
     protected DependentEntityStat speed;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
     public EntityStats() {
         level = 1;
-        exp = 0;
-        health = new EntityStat(EntityStatName.HEALTH, 100);
-        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5);
-        mana = new EntityStat(EntityStatName.MANA, 100);
-        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 10);
-        strength = new EntityStat(EntityStatName.STRENGTH, 1);
-        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1);
-        wisdom = new EntityStat(EntityStatName.WISDOM, 1);
-        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1);
-        speed = new DependentEntityStat(EntityStatName.SPEED, 30);
+        exp = 0.0;
+        health = new EntityStat(EntityStatName.HEALTH, 100.0);
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5.0);
+        mana = new EntityStat(EntityStatName.MANA, 100.0);
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 10.0);
+        strength = new EntityStat(EntityStatName.STRENGTH, 1.0);
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1.0);
+        wisdom = new EntityStat(EntityStatName.WISDOM, 1.0);
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1.0);
+        speed = new DependentEntityStat(EntityStatName.SPEED, 30.0);
         speed.addStat(dexterity);
     }
 
     public EntityStats(int level) {
         this.level = level;
-        health = new EntityStat(EntityStatName.HEALTH, 90 + (level * 10));
-        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5 + level);
-        mana = new EntityStat(EntityStatName.MANA, 90 + (level * 10));
-        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 9 + level);
-        strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
-        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
-        wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
-        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1 + level);
-        speed = new DependentEntityStat(EntityStatName.SPEED, 30 + level);
+        health = new EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
+        mana = new EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
+        strength = new EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
+        wisdom = new EntityStat(EntityStatName.WISDOM, (double) (1 + level));
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, (double) (1 + level));
+        speed = new DependentEntityStat(EntityStatName.SPEED, (double) (30 + level));
 
     }
 
@@ -218,25 +220,29 @@ public class EntityStats extends RPGObject {
 
     public void setByLevel(int level) {
         this.level = level;
-        health = new EntityStat(EntityStatName.HEALTH, 90 + (level * 10));
-        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5 + level);
-        mana = new EntityStat(EntityStatName.MANA, 90 + (level * 10));
-        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 9 + level);
-        strength = new EntityStat(EntityStatName.STRENGTH, 1 + level);
-        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1 + level);
-        wisdom = new EntityStat(EntityStatName.WISDOM, 1 + level);
+        health = new EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
+        mana = new EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
+        strength = new EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
+        wisdom = new EntityStat(EntityStatName.WISDOM, (double) (1 + level));
     }
 
     @Override
     public String toString() {
-        String str = "Level = " + level + "\n";
-        str += health + "\n";
-        str += healthRegen + "\n";
-        str += mana + "\n";
-        str += manaRegen + "\n";
-        str += strength + "\n";
-        str += constitution + "\n";
-        str += wisdom + "\n";
-        return str;
+        return "EntityStats{" +
+                "level=" + level +
+                ", exp=" + exp +
+                ", health=" + health +
+                ", healthRegen=" + healthRegen +
+                ", mana=" + mana +
+                ", manaRegen=" + manaRegen +
+                ", strength=" + strength +
+                ", constitution=" + constitution +
+                ", wisdom=" + wisdom +
+                ", dexterity=" + dexterity +
+                ", speed=" + speed +
+                '}';
     }
 }

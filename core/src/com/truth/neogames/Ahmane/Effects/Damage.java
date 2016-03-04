@@ -37,4 +37,13 @@ public class Damage extends Effect {
     public void setType(DamageType type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Damage{" +
+                "damage=" + damage +
+                ", type=" + type +
+                ", e=" + e +
+                '}';
+    }
 }

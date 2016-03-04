@@ -49,4 +49,14 @@ public class DamageOvertime extends Effect {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "DamageOvertime{" +
+                "damage=" + damage +
+                ", type=" + type +
+                ", duration=" + duration +
+                ", e=" + e +
+                '}';
+    }
 }

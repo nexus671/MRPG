@@ -18,7 +18,10 @@ import com.truth.neogames.Utilities.RandomNumber;
  * Created by Adam on 2/16/2016.
  * Class Description: Provides static methods for picking RandomNumber.random enumerator values.
  */
-public class EnumPicker {
+public final class EnumPicker {
+
+    private EnumPicker() {
+    }
 
     public static ArmorSuffix getRandomArmorSuffix() {
         boolean hasSuffix = RandomNumber.random.nextBoolean();
@@ -102,36 +105,35 @@ public class EnumPicker {
      * @return The jewelry gem.
      */
     public static JewelryGem getJewelryGem(int level) {
-        double levelRatio = (double) level / LivingEntity.getMaxLevel();
+        double levelRatio = (double) level / (double) LivingEntity.getMaxLevel();
         double number = RandomNumber.random.nextDouble();
-        if (levelRatio - .5 > number)
+        if ((levelRatio - 0.5) > number) {
             return JewelryGem.DIAMOND;
-        else if (levelRatio - .4 > number)
+        } else if ((levelRatio - 0.4) > number) {
             return JewelryGem.RUBY;
-        else if (levelRatio - .3 > number)
+        } else if ((levelRatio - 0.3) > number) {
             return JewelryGem.EMERALD;
-        else if (levelRatio - .2 > number)
+        } else if ((levelRatio - 0.2) > number) {
             return JewelryGem.ALEXANDRITE;
-        else if (levelRatio - .1 > number)
+        } else if ((levelRatio - 0.1) > number) {
             return JewelryGem.MORGANITE;
-        else if (levelRatio > number)
+        } else if (levelRatio > number) {
             return JewelryGem.SAPPHIRE;
-        else if (levelRatio + .1 > number)
+        } else if ((levelRatio + 0.1) > number) {
             return JewelryGem.IOLITE;
-        else if (levelRatio + .2 > number)
+        } else if ((levelRatio + 0.2) > number) {
             return JewelryGem.TANZANITE;
-        else if (levelRatio + .3 > number)
+        } else if ((levelRatio + 0.3) > number) {
             return JewelryGem.JADE;
-        else if (levelRatio + .4 > number)
+        } else if ((levelRatio + 0.4) > number) {
             return JewelryGem.TOPAZ;
-        else if (levelRatio + .5 > number)
+        } else if ((levelRatio + 0.5) > number) {
             return JewelryGem.GARNET;
-        else if (levelRatio + .6 > number)
+        } else if ((levelRatio + 0.6) > number) {
             return JewelryGem.OPAL;
-        else if (levelRatio + .7 > number)
-            return JewelryGem.AMETHYST;
-        else
-            return JewelryGem.NONE;
+        } else {
+            return ((levelRatio + .7) > number) ? JewelryGem.AMETHYST : JewelryGem.NONE;
+        }
     }
 
     public static JewelryMetal getRandomJewelryMetal() {
@@ -150,13 +152,11 @@ public class EnumPicker {
 
     public static JewelryMetal getJewelryMetal(int level) {
         double number = RandomNumber.random.nextDouble();
-        double levelRatio = (double) level / LivingEntity.getMaxLevel();
+        double levelRatio = (double) level / (double) LivingEntity.getMaxLevel();
         if (levelRatio > number) {
             return JewelryMetal.GOLD;
-        } else if ((levelRatio + 1.0 / 3) > number) {
-            return JewelryMetal.SILVER;
         } else {
-            return JewelryMetal.COPPER;
+            return ((levelRatio + (1.0 / 3)) > number) ? JewelryMetal.SILVER : JewelryMetal.COPPER;
         }
     }
 
@@ -195,28 +195,27 @@ public class EnumPicker {
      * @return The highest level gear material without exceeding the player's level.
      */
     public static Material getGearMaterial(int level) {
-        if (level < 1)
+        if (level < 1) {
             return null;
-        else if (level == 1)
+        } else if (level == 1) {
             return Material.BRONZE;
-        else if (level == 2)
+        } else if (level == 2) {
             return Material.IRON;
-        else if (level == 3)
+        } else if (level == 3) {
             return Material.STEEL;
-        else if (level == 4)
+        } else if (level == 4) {
             return Material.MITHRIL;
-        else if (level <= 7)
+        } else if (level <= 7) {
             return Material.GOLDEN;
-        else if (level <= 9)
+        } else if (level <= 9) {
             return Material.LAMINAR;
-        else if (level <= 11)
+        } else if (level <= 11) {
             return Material.PLATED;
-        else if (level <= 15)
+        } else if (level <= 15) {
             return Material.OBSIDIAN;
-        else if (level <= 20)
-            return Material.CRYSTAL;
-        else
-            return Material.DRACONIC;
+        } else {
+            return (level <= 20) ? Material.CRYSTAL : Material.DRACONIC;
+        }
     }
 
     public static WeaponSuffix getRandomWeaponSuffix() {
@@ -314,6 +313,7 @@ public class EnumPicker {
                     case 1:
                         return ArmorType.HOOD;
                 }
+                break;
             case CHEST:
                 switch (number4) {
                     case 0:
@@ -325,6 +325,7 @@ public class EnumPicker {
                     case 3:
                         return ArmorType.ROBETOP;
                 }
+                break;
             case GLOVES:
                 switch (number3) {
                     case 0:
@@ -334,6 +335,7 @@ public class EnumPicker {
                     case 2:
                         return ArmorType.VAMBRACES;
                 }
+                break;
             case LEGS:
                 switch (number3) {
                     case 0:
@@ -343,6 +345,7 @@ public class EnumPicker {
                     case 2:
                         return ArmorType.ROBEBOTTOM;
                 }
+                break;
             case FEET:
                 switch (number2) {
                     case 0:
@@ -350,6 +353,7 @@ public class EnumPicker {
                     case 1:
                         return ArmorType.SABATONS;
                 }
+                break;
             case OFFHAND:
                 return ArmorType.SHIELD;
         }

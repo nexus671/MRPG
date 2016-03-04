@@ -26,4 +26,12 @@ public class Taunt extends Effect {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "Taunt{" +
+                "duration=" + duration +
+                ", e=" + e +
+                '}';
+    }
 }

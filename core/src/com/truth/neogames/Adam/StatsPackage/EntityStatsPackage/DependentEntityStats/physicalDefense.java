@@ -12,6 +12,7 @@ public class physicalDefense extends DependentEntityStat {
         super(name, baseMax);
     }
 
+    @Override
     public double calculateValue() {
         max = baseMax;
         //Every 5 points in constitution adds 1 to physicalDefense

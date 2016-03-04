@@ -5,23 +5,24 @@ import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Utilities.DecimalRounder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Adam on 11/4/2015.
  * Class Description: A generic potion that can be restorative or a temporary buff.
  */
 public class Potion extends Consumable {
-    private final double MAX_STATS = 3;
+    private final double MAX_STATS = 3.0;
     private int flatAmount;
     private double percentAmount;
     private int duration; //the number of turns the potion lasts
-    private ArrayList<EntityStat> stats; //the stats that are affected
+    private List<EntityStat> stats; //the stats that are affected
     private boolean refreshes; //whether the potion buff refreshes every turn
 
 
     public Potion() {
         flatAmount = 0;
-        percentAmount = 0;
+        percentAmount = 0.0;
         duration = 1;
         stats = new ArrayList<EntityStat>();
         refreshes = false;
@@ -30,7 +31,7 @@ public class Potion extends Consumable {
         setStackable(false);
     }
 
-    public Potion(int flatAmount, double percentAmount, int duration, ArrayList<EntityStat> stats, boolean refreshes,
+    public Potion(int flatAmount, double percentAmount, int duration, List<EntityStat> stats, boolean refreshes,
                   String name) {
         this.flatAmount = flatAmount;
         this.percentAmount = percentAmount;
@@ -38,7 +39,7 @@ public class Potion extends Consumable {
         this.stats = stats;
         this.refreshes = refreshes;
         super.name = name;
-        super.stackable = false;
+        stackable = false;
         assignDescription();
     }
 
@@ -70,11 +71,11 @@ public class Potion extends Consumable {
         this.percentAmount = percentAmount;
     }
 
-    public ArrayList<EntityStat> getStats() {
+    public Iterable<EntityStat> getStats() {
         return stats;
     }
 
-    public void setStats(ArrayList<EntityStat> stats) {
+    public void setStats(List<EntityStat> stats) {
         this.stats = stats;
     }
 
@@ -90,33 +91,43 @@ public class Potion extends Consumable {
         description = "Consume to increase ";
         for (int i = 0; i < stats.size(); i++) {
             description += stats.get(i).getStatName();
-            if (stats.size() == MAX_STATS && i != (stats.size() - 1)) {
+            if (((double) stats.size() == MAX_STATS) && (i != (stats.size() - 1))) {
                 description += ", ";
             }
-            if (i == (stats.size() - (MAX_STATS - 1))) {
+            if ((double) i == ((double) stats.size() - (MAX_STATS - 1.0))) {
                 description += "and ";
             }
         }
         description += " by ";
-        boolean pctBuff = percentAmount != 1;
+        boolean pctBuff = percentAmount != 1.0;
         boolean flatBuff = flatAmount != 0;
         if (pctBuff) {
-            if (percentAmount > 1)
-                description += (DecimalRounder.round((percentAmount - 1) * 100));
-            else
-                description += DecimalRounder.round(percentAmount);
+            description += (percentAmount > 1) ? DecimalRounder.round((percentAmount - 1.0) * 100.0) : DecimalRounder.round(percentAmount);
             description += "%";
         }
         if (pctBuff && flatBuff) {
             description += " plus ";
         }
         if (flatBuff) {
-            if (flatAmount > 0)
+            if (flatAmount > 0) {
                 description += flatAmount;
+            }
         }
         description += " for " + duration + " turns.";
         if (refreshes) {
             description += " Refreshes each turn.";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Potion{" +
+                "MAX_STATS=" + MAX_STATS +
+                ", flatAmount=" + flatAmount +
+                ", percentAmount=" + percentAmount +
+                ", duration=" + duration +
+                ", stats=" + stats +
+                ", refreshes=" + refreshes +
+                '}';
     }
 }

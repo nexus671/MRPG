@@ -31,7 +31,7 @@ public class Buff extends Effect {
         this.value = value;
         this.debuff = debuff;
         this.stat = stat;
-        magnitude = 1;
+        magnitude = 1.0;
         statName = stat.getStatName();
         assignDescription();
     }
@@ -47,27 +47,27 @@ public class Buff extends Effect {
     }
 
     public Buff(double percent, int flat, EntityStatName stat, boolean debuff) {
-        this.magnitude = percent;
-        this.value = flat;
+        magnitude = percent;
+        value = flat;
         this.debuff = debuff;
-        this.statName = stat;
+        statName = stat;
         duration = -1;
         assignDescription();
     }
 
     public Buff(int flat, EntityStatName stat, boolean debuff) {
-        this.value = flat;
+        value = flat;
         this.debuff = debuff;
-        this.statName = stat;
+        statName = stat;
         duration = -1;
-        magnitude = 1;
+        magnitude = 1.0;
         assignDescription();
     }
 
     public Buff(double percent, EntityStatName stat, boolean debuff) {
-        this.magnitude = percent;
+        magnitude = percent;
         this.debuff = debuff;
-        this.statName = stat;
+        statName = stat;
         value = 0;
         duration = -1;
         assignDescription();
@@ -78,36 +78,24 @@ public class Buff extends Effect {
     }
 
     public void assignDescription() {
-        if (debuff)
-            description = "Decreases enemy's";
-        else
-            description = "Increases player's";
+        description = debuff ? "Decreases enemy's" : "Increases player's";
         description += " " + statName + " by ";
-        boolean pctBuff = magnitude != 1;
+        boolean pctBuff = magnitude != 1.0;
         boolean flatBuff = value != 0;
         if (pctBuff) {
-            if (magnitude > 1)
-                description += ((magnitude - 1) * 100);
-            else
-                description += magnitude;
+            description += (magnitude > 1) ? ((magnitude - 1) * 100) : magnitude;
             description += "%";
         }
         if (pctBuff && flatBuff) {
             description += " plus ";
         }
         if (flatBuff) {
-            if (value > 0)
-                description += value;
-            else
-                description += (-value);
+            description += (value > 0) ? value : -value;
         }
         if (duration == -1) {
             description += " for " + duration + " turns.";
         } else {
-            if (debuff)
-                description += " each turn for the remainder of a battle.";
-            else
-                description += " while the item is equipped.";
+            description += debuff ? " each turn for the remainder of a battle." : " while the item is equipped.";
         }
     }
 
@@ -140,7 +128,7 @@ public class Buff extends Effect {
     }
 
     public double getValue() {
-        return value;
+        return (double) value;
     }
 
     public void setValue(int value) {
@@ -161,5 +149,17 @@ public class Buff extends Effect {
 
     public void setDebuff(boolean debuff) {
         this.debuff = debuff;
+    }
+
+    @Override
+    public String toString() {
+        return "Buff{" +
+                "duration=" + duration +
+                ", magnitude=" + magnitude +
+                ", value=" + value +
+                ", stat=" + stat +
+                ", statName=" + statName +
+                ", debuff=" + debuff +
+                '}';
     }
 }

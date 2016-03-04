@@ -51,10 +51,11 @@ public class Area extends Target {
     }
 
     public void setArea(int r) {
-        if (shape == Shape.SQUARE)
+        if (shape == Shape.SQUARE) {
             area = r * r;
-        else if (shape == Shape.CIRCLE)
+        } else if (shape == Shape.CIRCLE) {
             area = (int) (Math.PI * Math.pow(r, 2));
+        }
     }
 
     public int getCenterX() {
@@ -71,5 +72,17 @@ public class Area extends Target {
 
     public void setCenterY(int centerY) {
         this.centerY = centerY;
+    }
+
+    @Override
+    public String toString() {
+        return "Area{" +
+                "radius=" + radius +
+                ", friendlyFire=" + friendlyFire +
+                ", shape=" + shape +
+                ", area=" + area +
+                ", centerX=" + centerX +
+                ", centerY=" + centerY +
+                '}';
     }
 }

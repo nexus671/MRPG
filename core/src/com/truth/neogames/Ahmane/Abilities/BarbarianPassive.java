@@ -10,16 +10,16 @@ import com.truth.neogames.Enums.AbilityType;
  */
 public class BarbarianPassive extends PassiveAbility {
 
-    private static AbilityRange range = AbilityRange.TOUCH;
+    private static final AbilityRange range = AbilityRange.TOUCH;
     private int level;
-    private int duration = 0;
+    private int duration;
     private int area = 1;
 
     public BarbarianPassive(int level, LivingEntity e) {
-        this.name = "Barbarian Passive";
+        name = "Barbarian Passive";
         setType(AbilityType.PASSIVE);
-        setCost(0);
-        double modifier = .5 + (.1 * level);
+        cost = 0;
+        double modifier = 0.5 + (0.1 * (double) level);
         Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
 
@@ -31,31 +31,46 @@ public class BarbarianPassive extends PassiveAbility {
         return range;
     }
 
+    @Override
     public int getLevel() {
         return level;
     }
 
+    @Override
     public void setLevel(int level) {
         this.level = level;
     }
 
+    @Override
     public void setCost(int cost) {
         this.cost = cost;
     }
 
+    @Override
     public int getDuration() {
         return duration;
     }
 
+    @Override
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
+    @Override
     public int getArea() {
         return area;
     }
 
     public void setArea(int area) {
         this.area = area;
+    }
+
+    @Override
+    public String toString() {
+        return "BarbarianPassive{" +
+                "level=" + level +
+                ", duration=" + duration +
+                ", area=" + area +
+                '}';
     }
 }

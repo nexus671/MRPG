@@ -5,6 +5,7 @@ import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.RPGObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by Adam on 10/26/2015.
@@ -25,7 +26,7 @@ public class EntityStat extends RPGObject {
     public EntityStat(EntityStatName name, double baseMax) {
         this.name = name;
         this.baseMax = baseMax;
-        this.current = baseMax;
+        current = baseMax;
         max = baseMax;
     }
 
@@ -52,11 +53,11 @@ public class EntityStat extends RPGObject {
         bonuses.remove(e);
     }
 
-    public void removeListOfBonuses(ArrayList<Buff> buffs) {
+    public void removeListOfBonuses(Collection<Buff> buffs) {
         bonuses.removeAll(buffs);
     }
 
-    public void addListOfBonuses(ArrayList<Buff> buffs) {
+    public void addListOfBonuses(Collection<Buff> buffs) {
         bonuses.addAll(buffs);
     }
 
@@ -68,8 +69,8 @@ public class EntityStat extends RPGObject {
 
     protected void applyBonuses() {
         max = baseMax;
-        double bonusValue = 0;
-        double bonusMultiplier = 0;
+        double bonusValue = 0.0;
+        double bonusMultiplier = 0.0;
 
         for (Buff b : bonuses) {
             if (b.isDebuff()) {
@@ -80,7 +81,7 @@ public class EntityStat extends RPGObject {
                 bonusMultiplier += b.getMagnitude();
             }
         }
-        max *= (1 + bonusMultiplier);
+        max *= (1.0 + bonusMultiplier);
         max += bonusValue;
     }
 
@@ -114,10 +115,12 @@ public class EntityStat extends RPGObject {
 
     @Override
     public String toString() {
-        String str = name + "\n";
-        str += "Base Max = " + baseMax + "\n";
-        str += "Current Max = " + max + "\n";
-        str += "Current Value = " + current + "\n";
-        return str;
+        return "EntityStat{" +
+                "name=" + name +
+                ", max=" + max +
+                ", baseMax=" + baseMax +
+                ", current=" + current +
+                ", bonuses=" + bonuses +
+                '}';
     }
 }

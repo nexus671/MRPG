@@ -6,6 +6,7 @@ import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by Ahmane on 10/21/2015.
@@ -15,16 +16,16 @@ public abstract class Gear extends Item {
     protected static final int MAX_LEVEL = 21;
     protected WornSlot slot;
     protected int level;
-    protected ArrayList<Buff> bonuses = new ArrayList<Buff>();
+    protected Collection<Buff> bonuses = new ArrayList<Buff>();
 
     public static int getMAXLEVEL() {
         return MAX_LEVEL;
     }
 
-    public void addBuffs(ArrayList<EntityStatName> stats, double amount) {
+    public void addBuffs(Iterable<EntityStatName> stats, double amount) {
         for (EntityStatName statName : stats) {
             Buff buff = new Buff(amount, statName, false);
-            this.addBonus(buff);
+            addBonus(buff);
         }
     }
 
@@ -36,17 +37,18 @@ public abstract class Gear extends Item {
         bonuses.remove(e);
     }
 
-    public ArrayList<Buff> getBonusesStat(EntityStatName name) {
-        ArrayList<Buff> b = new ArrayList<Buff>();
+    public Collection<Buff> getBonusesStat(EntityStatName name) {
+        Collection<Buff> b = new ArrayList<Buff>();
 
         for (Buff buffs : bonuses) {
-            if (buffs.getStatName() == name)
+            if (buffs.getStatName() == name) {
                 b.add(buffs);
+            }
         }
         return b;
     }
 
-    public void setBonuses(ArrayList<Buff> bonuses) {
+    public void setBonuses(Collection<Buff> bonuses) {
         this.bonuses = bonuses;
     }
 
@@ -69,10 +71,20 @@ public abstract class Gear extends Item {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) return false;
-        else if (!(obj instanceof Gear)) return false;
+        if ((obj == null) || !(obj instanceof Gear)) {
+            return false;
+        }
         Gear g = (Gear) obj;
-        return (super.equals(obj) && g.getLevel() == level);
+        return (super.equals(obj) && (g.level == level));
+    }
+
+    @Override
+    public String toString() {
+        return "Gear{" +
+                "slot=" + slot +
+                ", level=" + level +
+                ", bonuses=" + bonuses +
+                '}';
     }
 }
 

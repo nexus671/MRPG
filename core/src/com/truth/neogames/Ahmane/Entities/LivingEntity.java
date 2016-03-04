@@ -26,8 +26,6 @@ import com.truth.neogames.Enums.RaceName;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Utilities.RandomNumber;
 
-import java.util.ArrayList;
-
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
@@ -39,15 +37,15 @@ public abstract class LivingEntity extends Entity {
     protected Inventory inventory;
     protected EntityStats stats;
 
-    public LivingEntity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos,
-                        Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
+    protected LivingEntity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos,
+                           Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
-        this.stats = entityStats;
+        stats = entityStats;
         this.inventory = inventory;
         this.wornGear = wornGear;
     }
 
-    public LivingEntity() {
+    protected LivingEntity() {
     }
 
     public static int getMaxLevel() {
@@ -65,14 +63,15 @@ public abstract class LivingEntity extends Entity {
      */
     public boolean equip(Gear g) {
         int slot = g.getSlot().getSlotNumber();
-        if(g.getLevel() > stats.getLevel()) {
+        if (g.getLevel() > stats.getLevel()) {
             return false;
         } else {
             Gear old = wornGear.getGear()[slot];
             wornGear.getGear()[slot] = g;
             int index = inventory.getIndexOf(g);
-            if (index != -1)
+            if (index != -1) {
                 inventory.getInv()[index] = null;
+            }
             if (old != null) {
                 inventory.add(old);
             }
@@ -90,30 +89,35 @@ public abstract class LivingEntity extends Entity {
     public boolean equip(Weapon w) {
         boolean twoHanded = w.getType().isTwoHanded();
         int index = inventory.getIndexOf(w);
-        if (index != -1)
+        if (index != -1) {
             inventory.getInv()[index] = null;
-        WornSlot destination = WornSlot.MAINHAND;
+        }
         if (w.getLevel() > stats.getLevel()) {
             return false;
-        } else if (twoHanded) {
-            if (inventory.isFull() && !wornGear.slotIsEmpty(WornSlot.MAINHAND) && !wornGear.slotIsEmpty(WornSlot.OFFHAND))
+        }
+        WornSlot destination = WornSlot.MAINHAND;
+        if (twoHanded) {
+            if (inventory.isFull() && !wornGear.slotIsEmpty(WornSlot.MAINHAND) && !wornGear.slotIsEmpty(WornSlot.OFFHAND)) {
                 return false;
-            else {
+            } else {
                 Weapon oldMH = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
                 Weapon oldOH = (Weapon) wornGear.getFromSlot(WornSlot.OFFHAND);
-                if (oldMH != null)
+                if (oldMH != null) {
                     inventory.add(oldMH);
-                if (oldOH != null)
+                }
+                if (oldOH != null) {
                     inventory.add(oldOH);
+                }
                 wornGear.getGear()[destination.getSlotNumber()] = w;
             }
         } else {
             if (!wornGear.slotIsEmpty(WornSlot.MAINHAND) && !wornGear.slotIsEmpty(WornSlot.OFFHAND)) {
                 Weapon old = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-                if (old != null)
+                if (old != null) {
                     inventory.add(old);
+                }
             } else if (!wornGear.slotIsEmpty(WornSlot.MAINHAND)) {
-                destination = WornSlot.OFFHAND;
+                WornSlot offhand = WornSlot.OFFHAND;
             }
             wornGear.getGear()[destination.getSlotNumber()] = w;
         }
@@ -122,27 +126,28 @@ public abstract class LivingEntity extends Entity {
 
     public void printAblities() {
         for (ActiveAbility a : profession.getUnlockedActiveAbilities()) {
-            if (!(a.getType() == AbilityType.PASSIVE))
+            if (a.getType() != AbilityType.PASSIVE) {
                 System.out.println(a.getName());
+            }
         }
 
     }
 
 
-    public void receiveDamage(ArrayList<Damage> damages) {
+    public void receiveDamage(Iterable<Damage> damages) {
 
 
         for (Damage damage : damages) {
             double d = damage.getDamage();
-            if (damage.getType() == DamageType.ARCANE) {
-                //damage reduction
-            } else if (damage.getType() == DamageType.CRUSHING) {
-                //damage reduction
-            } else if (damage.getType() == DamageType.PIERCING) {
-                //damage reduction
-            } else if (damage.getType() == DamageType.SLASHING) {
-                //damage reduction
+            if ((damage.getType() == DamageType.ARCANE)) {
+
             }
+            if ((damage.getType() == DamageType.CRUSHING)) {
+                //damage reduction
+            } else if ((damage.getType() == DamageType.PIERCING))
+                if ((damage.getType() == DamageType.SLASHING)) {
+                    //damage reduction
+                }
             stats.getHealth().setCurrent(stats.getHealth().getCurrent() - d);
         }
 
@@ -152,7 +157,7 @@ public abstract class LivingEntity extends Entity {
         if (j.getLevel() > stats.getLevel()) {
             return false;
         } else {
-            ArrayList<EntityStatName> statsAffected = j.getStatsAffected();
+            Iterable<EntityStatName> statsAffected = j.getStatsAffected();
             Jewelry old;
             if (j.getSlot() == WornSlot.NECK) {
                 old = (Jewelry) wornGear.getGear()[WornSlot.NECK.getSlotNumber()];
@@ -161,8 +166,9 @@ public abstract class LivingEntity extends Entity {
                 old = (Jewelry) wornGear.getGear()[WornSlot.RING.getSlotNumber()];
                 wornGear.getGear()[WornSlot.RING.getSlotNumber()] = j;
             }
-            if (old != null)
+            if (old != null) {
                 inventory.add(old);
+            }
             for (EntityStatName name : statsAffected) {
                 stats.getStat(name).addListOfBonuses(j.getBonusesStat(name));
             }
@@ -188,17 +194,18 @@ public abstract class LivingEntity extends Entity {
      */
     public void consume(Food f) {
         EntityStat health = stats.getHealth();
-        if (health.getCurrent() + f.getHealAmount() > health.getMax()) {
+        if ((health.getCurrent() + f.getHealAmount()) > health.getMax()) {
             health.setCurrent(health.getMax());
         } else {
             health.setCurrent(health.getCurrent() + f.getHealAmount());
         }
         int index = inventory.getIndexOf(f);
         if (index != -1) {
-            if (inventory.getInv()[index].getStackCount() > 1)
+            if (inventory.getInv()[index].getStackCount() > 1) {
                 inventory.getInv()[index].setStackCount(inventory.getInv()[index].getStackCount() - 1);
-            else
+            } else {
                 inventory.getInv()[index] = null;
+            }
         }
     }
 
@@ -208,10 +215,10 @@ public abstract class LivingEntity extends Entity {
      * @param p The potion to be consumed.
      */
     public void consume(Potion p) {
-        ArrayList<EntityStat> stats = p.getStats();
+        Iterable<EntityStat> stats = p.getStats();
         for (EntityStat stat : stats) {
             EntityStatName name = stat.getStatName();
-            double percentValue = (1 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
+            double percentValue = (1.0 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
 
             Buff buff = new Buff(-1, p.getPercentAmount(), p.getFlatAmount(), stat, false);
             stat.addBonus(buff);
@@ -219,10 +226,11 @@ public abstract class LivingEntity extends Entity {
         }
         int index = inventory.getIndexOf(p);
         if (index != -1) {
-            if (inventory.getInv()[index].getStackCount() > 1)
+            if (inventory.getInv()[index].getStackCount() > 1) {
                 inventory.getInv()[index].setStackCount(inventory.getInv()[index].getStackCount() - 1);
-            else
+            } else {
                 inventory.getInv()[index] = null;
+            }
         }
     }
 
@@ -238,14 +246,13 @@ public abstract class LivingEntity extends Entity {
      * @return The damage value.
      */
     public double getBasicAttackDamage() {
-        Weapon weapon;
-        double basicDamage = 1;
+        double basicDamage = 1.0;
         boolean hasWeapon = !wornGear.slotIsEmpty(WornSlot.MAINHAND);
         if (hasWeapon) {
-            weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-            basicDamage = weapon.getMinDamage() + (weapon.getMaxDamage() - weapon.getMinDamage()) * RandomNumber.random.nextDouble();
+            Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+            basicDamage = weapon.getMinDamage() + ((weapon.getMaxDamage() - weapon.getMinDamage()) * RandomNumber.random.nextDouble());
         }
-        basicDamage += (stats.getStrength().getCurrent() / 100) * basicDamage;
+        basicDamage += (stats.getStrength().getCurrent() / 100.0) * basicDamage;
         return basicDamage;
     }
 
@@ -255,27 +262,27 @@ public abstract class LivingEntity extends Entity {
      * @return A value for the strength of the elemental buff, dependent on the type of buff.
      */
     public double getWeaponElementalValue() {
-        double elementalValue = 0;
-            Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-            int level = weapon.getLevel();
-            double levelRatio = (double) level / Gear.getMAXLEVEL();
-            ElementalType type = weapon.getElementalType();
-            switch (type) {
-                case NONE:
-                    elementalValue = 0;
-                    break;
-                case LIGHT:
-                    elementalValue = levelRatio * ElementalType.getLightScaling();
-                    break;
-                case DARK:
-                    elementalValue = levelRatio * ElementalType.getDarkScaling();
-                    break;
-                case FIRE:
-                    elementalValue = levelRatio * ElementalType.getFireScaling();
-                    break;
-                case FROST:
-                    elementalValue = levelRatio * ElementalType.getFrostScaling();
-            }
+        double elementalValue = 0.0;
+        Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
+        int level = weapon.getLevel();
+        double levelRatio = (double) level / (double) Gear.getMAXLEVEL();
+        ElementalType type = weapon.getElementalType();
+        switch (type) {
+            case NONE:
+                elementalValue = 0.0;
+                break;
+            case LIGHT:
+                elementalValue = levelRatio * ElementalType.getLightScaling();
+                break;
+            case DARK:
+                elementalValue = levelRatio * ElementalType.getDarkScaling();
+                break;
+            case FIRE:
+                elementalValue = levelRatio * ElementalType.getFireScaling();
+                break;
+            case FROST:
+                elementalValue = levelRatio * ElementalType.getFrostScaling();
+        }
         return elementalValue;
     }
 
@@ -286,9 +293,8 @@ public abstract class LivingEntity extends Entity {
      * @return An array of values representing the elemental buff modifiers
      */
     public double[] getArmorElementalValues() {
-        double lightTotal, darkTotal, fireTotal, frostTotal;
-        double[] values = new double[4];
-        lightTotal = darkTotal = fireTotal = frostTotal = 0;
+        double darkTotal, fireTotal, frostTotal;
+        double lightTotal = darkTotal = fireTotal = frostTotal = 0.0;
         Gear[] gear = wornGear.getGear();
         for (Gear g : gear) {
             ElementalType type;
@@ -301,7 +307,7 @@ public abstract class LivingEntity extends Entity {
                 case FEET:
                 case OFFHAND:
                     type = ((Armor) g).getElementalType();
-                    double levelRatio = ((double) g.getLevel() / Gear.getMAXLEVEL());
+                    double levelRatio = ((double) g.getLevel() / (double) Gear.getMAXLEVEL());
                     switch (type) {
                         case LIGHT:
                             lightTotal += levelRatio * ElementalType.getLightScaling();
@@ -318,11 +324,12 @@ public abstract class LivingEntity extends Entity {
                     break;
             }
         }
-        double reducer = .25;
+        double reducer = 0.25;
         lightTotal *= reducer;
         darkTotal *= reducer;
         fireTotal *= reducer;
         frostTotal *= reducer;
+        double[] values = new double[4];
         values[0] = lightTotal;
         values[1] = darkTotal;
         values[2] = fireTotal;
@@ -330,7 +337,9 @@ public abstract class LivingEntity extends Entity {
         return values;
     }
 
-    /************* Getters *************/
+    /*************
+     * Getters
+     *************/
 
     public EntityStats getStats() {
         return stats;
@@ -345,7 +354,7 @@ public abstract class LivingEntity extends Entity {
     }
 
     public Profession getProfession() {
-        return this.profession;
+        return profession;
     }
 
     public void setProfession(Profession profession) {
@@ -353,7 +362,7 @@ public abstract class LivingEntity extends Entity {
     }
 
     public WornGear getWornGear() {
-        return this.wornGear;
+        return wornGear;
     }
 
     public void setWornGear(WornGear wornGear) {
@@ -361,7 +370,7 @@ public abstract class LivingEntity extends Entity {
     }
 
     public Inventory getInventory() {
-        return this.inventory;
+        return inventory;
     }
 
     public void setInventory(Inventory inventory) {
@@ -438,67 +447,82 @@ public abstract class LivingEntity extends Entity {
      * Getters
      *************/
 
+    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**************
      * Setters
      *************/
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public RaceName getRaceName() {
-        return this.raceName;
+        return raceName;
     }
 
+    @Override
     public void setRaceName(RaceName raceName) {
         this.raceName = raceName;
     }
 
+    @Override
     public String getSex() {
-        return this.sex;
+        return sex;
     }
 
+    @Override
     public void setSex(String sex) {
         this.sex = sex;
     }
 
+    @Override
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }
 
+    @Override
     public int getxPos() {
-        return this.xPos;
+        return xPos;
     }
 
+    @Override
     public void setxPos(int xPos) {
         this.xPos = xPos;
     }
 
+    @Override
     public int getyPos() {
-        return this.yPos;
+        return yPos;
     }
 
+    @Override
     public void setyPos(int yPos) {
         this.yPos = yPos;
     }
 
+    @Override
     public void setPos(int xPos, int yPos) {
         this.xPos = xPos;
         this.yPos = yPos;
     }
 
+    @Override
     public Sprite getSprite() {
-        return this.sprite;
+        return sprite;
     }
 
+    @Override
     public void setSprite(Sprite sprite) {
         this.sprite = sprite;
     }
@@ -506,6 +530,11 @@ public abstract class LivingEntity extends Entity {
 
     @Override
     public String toString() {
-        return this.name;
+        return "LivingEntity{" +
+                "profession=" + profession +
+                ", wornGear=" + wornGear +
+                ", inventory=" + inventory +
+                ", stats=" + stats +
+                '}';
     }
 }

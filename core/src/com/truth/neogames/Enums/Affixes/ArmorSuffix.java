@@ -14,8 +14,8 @@ public enum ArmorSuffix {
     TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE),
     BURNING(ElementalType.FIRE), ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
 
-    private ElementalType elementalType;
-    private String lowercase;
+    private final ElementalType elementalType;
+    private final String lowercase;
 
     ArmorSuffix() {
         lowercase = StringManip.toLowercase(super.toString());
@@ -29,7 +29,7 @@ public enum ArmorSuffix {
 
     public static String getDescription(ArmorSuffix suffix) {
         String description = "";
-        if (suffix.getElementalType() == ElementalType.NONE) {
+        if (suffix.elementalType == ElementalType.NONE) {
             description = "Passively increased";
         }
         switch (suffix) {
@@ -77,7 +77,11 @@ public enum ArmorSuffix {
         return elementalType == ElementalType.NONE;
     }
 
+    @Override
     public String toString() {
-        return lowercase;
+        return "ArmorSuffix{" +
+                "elementalType=" + elementalType +
+                ", lowercase='" + lowercase + '\'' +
+                '}';
     }
 }

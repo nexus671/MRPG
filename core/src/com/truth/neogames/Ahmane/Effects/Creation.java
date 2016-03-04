@@ -9,6 +9,7 @@ import com.truth.neogames.Ahmane.Entities.LivingEntity;
 public class Creation extends Effect {
     private int duration;
     private LivingEntity e;
+
     public Creation(int duration) {
         this.duration = duration;
     }
@@ -24,5 +25,13 @@ public class Creation extends Effect {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Creation{" +
+                "duration=" + duration +
+                ", e=" + e +
+                '}';
     }
 }

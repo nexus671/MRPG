@@ -4,7 +4,6 @@ import com.truth.neogames.Adam.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Ahmane.Entities.LivingEntity;
 
 
-
 /**
  * Created by Ahmane on 10/21/2015.
  * Class Description:
@@ -13,7 +12,9 @@ public class Monster extends LivingEntity {
 
     private boolean hostile;
 
-    /************* Constructors *************/
+    /*************
+     * Constructors
+     *************/
 
     public Monster(boolean hostile, EntityStats stats) {
 
@@ -37,12 +38,20 @@ public class Monster extends LivingEntity {
         this.hostile = hostile;
     }
 
+    @Override
     public EntityStats getStats() {
         return stats;
     }
 
+    @Override
     public void setStats(EntityStats stats) {
         this.stats = stats;
     }
 
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "hostile=" + hostile +
+                '}';
+    }
 }

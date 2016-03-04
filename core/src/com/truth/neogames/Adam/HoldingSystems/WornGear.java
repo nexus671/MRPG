@@ -16,7 +16,7 @@ public class WornGear extends RPGObject {
      *************/
 
     public WornGear() {
-        this.gear = new Gear[9];
+        gear = new Gear[9];
     }
 
     /**************
@@ -48,8 +48,8 @@ public class WornGear extends RPGObject {
     public String toString() {
         String str = "";
         int i = 0;
-        for(Gear g : gear) {
-            str += WornSlot.getSlotTitle(i) + ": " + g + "\n";
+        for (Gear g : gear) {
+            str += WornSlot.getSlotTitle(i) + ": " + g + '\n';
             i++;
         }
         return str;

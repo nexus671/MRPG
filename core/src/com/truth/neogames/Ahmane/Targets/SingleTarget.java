@@ -29,4 +29,12 @@ public class SingleTarget extends Target {
     public void setFriendlyFire(boolean friendlyFire) {
         this.friendlyFire = friendlyFire;
     }
+
+    @Override
+    public String toString() {
+        return "SingleTarget{" +
+                "entity=" + entity +
+                ", friendlyFire=" + friendlyFire +
+                '}';
+    }
 }

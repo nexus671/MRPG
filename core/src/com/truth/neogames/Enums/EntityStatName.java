@@ -10,7 +10,7 @@ public enum EntityStatName {
     HEALTH, HEALTHREGEN, MANA, MANAREGEN,
     STRENGTH, CONSTITUTION, WISDOM, DEXTERITY, SPEED;
 
-    private String lowercase;
+    private final String lowercase;
 
     EntityStatName() {
         lowercase = StringManip.toLowercase(super.toString());

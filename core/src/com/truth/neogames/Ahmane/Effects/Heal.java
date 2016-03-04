@@ -25,4 +25,12 @@ public class Heal extends Effect {
     public void setHeal(double heal) {
         this.heal = heal;
     }
+
+    @Override
+    public String toString() {
+        return "Heal{" +
+                "heal=" + heal +
+                ", e=" + e +
+                '}';
+    }
 }
