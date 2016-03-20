@@ -1,6 +1,7 @@
 package com.truth.neogames.HoldingSystems;
 
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Items.GearPackage.Gear;
 import com.truth.neogames.RPGObject;
 
 /**
@@ -8,21 +9,21 @@ import com.truth.neogames.RPGObject;
  * Class Description: The array of worn gear for a player or monster.
  */
 public class WornGear extends RPGObject {
-    private final com.truth.neogames.Items.GearPackage.Gear[] gear;
+    private final Gear[] gear;
 
     /*************
      * Constructors
      *************/
 
     public WornGear() {
-        gear = new com.truth.neogames.Items.GearPackage.Gear[9];
+        gear = new Gear[9];
     }
 
     /**************
      * Specific Methods
      *************/
 
-    public boolean contains(com.truth.neogames.Items.GearPackage.Gear g) {
+    public boolean contains(Gear g) {
         WornSlot slot = g.getSlot();
         return gear[slot.getSlotNumber()].equals(g);
     }
@@ -36,18 +37,18 @@ public class WornGear extends RPGObject {
      * Getters
      *************/
 
-    public com.truth.neogames.Items.GearPackage.Gear[] getGear() {
+    public Gear[] getGear() {
         return gear;
     }
 
-    public com.truth.neogames.Items.GearPackage.Gear getFromSlot(WornSlot slot) {
+    public Gear getFromSlot(WornSlot slot) {
         return gear[slot.getSlotNumber()];
     }
 
     public String toString() {
         String str = "";
         int i = 0;
-        for (com.truth.neogames.Items.GearPackage.Gear g : gear) {
+        for (Gear g : gear) {
             str += WornSlot.getSlotTitle(i) + ": " + g + '\n';
             i++;
         }

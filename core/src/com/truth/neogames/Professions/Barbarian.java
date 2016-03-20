@@ -1,5 +1,8 @@
 package com.truth.neogames.Professions;
 
+import com.truth.neogames.Abilities.BarbarianPassive;
+import com.truth.neogames.Abilities.BasicAttack;
+import com.truth.neogames.Abilities.HeavyStrike;
 import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Enums.ProfessionName;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
@@ -18,7 +21,7 @@ public class Barbarian extends Profession {
     private static final int MAXLEVEL = 18;
     private final int[] levelrequirements = {1, 1};
     private EntityStats stats;
-    private double exp;
+    private double exp = 0.0;
     private int level = 1;
     private int sp = 1;
 
@@ -26,13 +29,13 @@ public class Barbarian extends Profession {
         name = ProfessionName.BARBARIAN;
         stats = e.getStats();
 
-        com.truth.neogames.Abilities.BasicAttack ablitiy1 = new com.truth.neogames.Abilities.BasicAttack(level, e);
+        BasicAttack ablitiy1 = new BasicAttack(level, e);
         abilities.add(ablitiy1);
         unlockedAbilities.add(ablitiy1);
-        com.truth.neogames.Abilities.BarbarianPassive ablitiy2 = new com.truth.neogames.Abilities.BarbarianPassive(level, e);
+        BarbarianPassive ablitiy2 = new BarbarianPassive(level, e);
         abilities.add(ablitiy2);
         unlockedAbilities.add(ablitiy2);
-        com.truth.neogames.Abilities.HeavyStrike ablitiy3 = new com.truth.neogames.Abilities.HeavyStrike(level, e);
+        HeavyStrike ablitiy3 = new HeavyStrike(level, e);
         abilities.add(ablitiy3);
         unlockedAbilities.add(ablitiy3);
 

@@ -8,12 +8,12 @@ import java.text.DecimalFormat;
  * to two decimal places.
  */
 public final class DecimalRounder {
-    private static final DecimalFormat rounder = new DecimalFormat("0.00");
+    private static final DecimalFormat ROUNDER = new DecimalFormat("0.00");
 
     private DecimalRounder() {
     }
 
     public static String round(double a) {
-        return rounder.format(a);
+        return ROUNDER.format(a);
     }
 }

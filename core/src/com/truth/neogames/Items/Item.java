@@ -52,7 +52,7 @@ public abstract class Item extends RPGObject {
 
     @Override
     public boolean equals(Object obj) {
-        if ((obj == null) || !(obj instanceof Item)) {
+        if (!(obj instanceof Item)) {
             return false;
         }
         Item i = (Item) obj;

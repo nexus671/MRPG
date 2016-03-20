@@ -1,5 +1,6 @@
 package com.truth.neogames.Abilities;
 
+import com.truth.neogames.Effects.Buff;
 import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Enums.AbilityRange;
 import com.truth.neogames.Enums.AbilityType;
@@ -9,7 +10,7 @@ import com.truth.neogames.Enums.AbilityType;
  */
 public class BarbarianPassive extends PassiveAbility {
 
-    private static final AbilityRange range = AbilityRange.TOUCH;
+    private static final AbilityRange RANGE = AbilityRange.TOUCH;
     private int level;
     private int duration;
     private int area = 1;
@@ -19,7 +20,7 @@ public class BarbarianPassive extends PassiveAbility {
         setType(AbilityType.PASSIVE);
         cost = 0;
         double modifier = 0.5 + (0.1 * (double) level);
-        com.truth.neogames.Effects.Buff buff = new com.truth.neogames.Effects.Buff(-1, modifier, 0, e.getStats().getStrength(), false);
+        Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
 
         this.level = level;
@@ -27,7 +28,7 @@ public class BarbarianPassive extends PassiveAbility {
     }
 
     public static AbilityRange getRange() {
-        return range;
+        return RANGE;
     }
 
     @Override

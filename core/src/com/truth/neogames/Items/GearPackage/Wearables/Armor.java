@@ -6,16 +6,18 @@ import com.truth.neogames.Enums.Affixes.Material;
 import com.truth.neogames.Enums.ArmorType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Items.GearPackage.CombatGear;
+import com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: Worn armor or robes.
  */
-public class Armor extends com.truth.neogames.Items.GearPackage.CombatGear {
-    private com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat pierceDef;
-    private com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat slashDef;
-    private com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat crushDef;
-    private com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat arcaneDef;
+public class Armor extends CombatGear {
+    private ArmorStat pierceDef;
+    private ArmorStat slashDef;
+    private ArmorStat crushDef;
+    private ArmorStat arcaneDef;
     private ArmorSuffix suffix;
     private ArmorType type;
 
@@ -24,45 +26,45 @@ public class Armor extends com.truth.neogames.Items.GearPackage.CombatGear {
         this.material = material;
         this.suffix = suffix;
         this.type = type;
-        pierceDef = new com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat("Piercing Defense", material.getAvgDefense() * type.getPierceModifier());
-        slashDef = new com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat("Slashing Defense", material.getAvgDefense() * type.getSlashModifier());
-        crushDef = new com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat("Crushing Defense", material.getAvgDefense() * type.getCrushModifier());
-        arcaneDef = new com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
+        pierceDef = new ArmorStat("Piercing Defense", material.getAvgDefense() * type.getPierceModifier());
+        slashDef = new ArmorStat("Slashing Defense", material.getAvgDefense() * type.getSlashModifier());
+        crushDef = new ArmorStat("Crushing Defense", material.getAvgDefense() * type.getCrushModifier());
+        arcaneDef = new ArmorStat("Arcane Defense", material.getAvgDefense() * type.getArcaneModifier());
         level = material.getLevel();
         assignName();
         assignDescription();
         setLevel(material.getLevel());
     }
 
-    public com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat getPierceDef() {
+    public ArmorStat getPierceDef() {
         return pierceDef;
     }
 
-    public void setPierceDef(com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat pierceDef) {
+    public void setPierceDef(ArmorStat pierceDef) {
         this.pierceDef = pierceDef;
     }
 
-    public com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat getSlashDef() {
+    public ArmorStat getSlashDef() {
         return slashDef;
     }
 
-    public void setSlashDef(com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat slashDef) {
+    public void setSlashDef(ArmorStat slashDef) {
         this.slashDef = slashDef;
     }
 
-    public com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat getCrushDef() {
+    public ArmorStat getCrushDef() {
         return crushDef;
     }
 
-    public void setCrushDef(com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat crushDef) {
+    public void setCrushDef(ArmorStat crushDef) {
         this.crushDef = crushDef;
     }
 
-    public com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat getArcaneDef() {
+    public ArmorStat getArcaneDef() {
         return arcaneDef;
     }
 
-    public void setArcaneDef(com.truth.neogames.StatsPackage.GearStatsPackage.ArmorStat arcaneDef) {
+    public void setArcaneDef(ArmorStat arcaneDef) {
         this.arcaneDef = arcaneDef;
     }
 

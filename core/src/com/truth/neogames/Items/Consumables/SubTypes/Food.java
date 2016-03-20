@@ -1,10 +1,12 @@
 package com.truth.neogames.Items.Consumables.SubTypes;
 
+import com.truth.neogames.Items.Consumables.Consumable;
+
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: A food consumable that heals the player.
  */
-public class Food extends com.truth.neogames.Items.Consumables.Consumable {
+public class Food extends Consumable {
 
     private double healAmount;
 

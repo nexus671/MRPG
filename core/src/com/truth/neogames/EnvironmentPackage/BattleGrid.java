@@ -2,6 +2,7 @@ package com.truth.neogames.EnvironmentPackage;
 
 import com.truth.neogames.Entities.Entity;
 import com.truth.neogames.Entities.SubTypes.Monster;
+import com.truth.neogames.Entities.SubTypes.Player;
 import com.truth.neogames.RPGObject;
 
 import java.util.Arrays;
@@ -80,7 +81,7 @@ public class BattleGrid extends RPGObject {
                     System.out.print("\t" + '-');
                 } else if (grid[row][column].getClass().equals(Monster.class)) {
                     System.out.print("\t" + 'M');
-                } else if (grid[row][column].getClass().equals(com.truth.neogames.Entities.SubTypes.Player.class)) {
+                } else if (grid[row][column].getClass().equals(Player.class)) {
                     System.out.print("\t" + 'P');
                 }
             }

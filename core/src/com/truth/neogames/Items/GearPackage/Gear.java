@@ -3,6 +3,7 @@ package com.truth.neogames.Items.GearPackage;
 import com.truth.neogames.Effects.Buff;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Items.Item;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +12,7 @@ import java.util.Collection;
  * Created by Ahmane on 10/21/2015.
  * Class Description: Describes any item that can be equipped in the worn gear (weapon, armor, or jewelry).
  */
-public abstract class Gear extends com.truth.neogames.Items.Item {
+public abstract class Gear extends Item {
     protected static final int MAX_LEVEL = 21;
     protected WornSlot slot;
     protected int level;
@@ -70,7 +71,7 @@ public abstract class Gear extends com.truth.neogames.Items.Item {
 
     @Override
     public boolean equals(Object obj) {
-        if ((obj == null) || !(obj instanceof Gear)) {
+        if (!(obj instanceof Gear)) {
             return false;
         }
         Gear g = (Gear) obj;

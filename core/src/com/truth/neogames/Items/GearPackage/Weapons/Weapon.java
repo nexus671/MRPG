@@ -6,13 +6,14 @@ import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.WeaponType;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.Items.GearPackage.CombatGear;
 import com.truth.neogames.Utilities.RandomNumber;
 
 /**
  * Created by Adam on 10/22/2015.
  * Class Description: A weapon.
  */
-public class Weapon extends com.truth.neogames.Items.GearPackage.CombatGear {
+public class Weapon extends CombatGear {
     private double maxDamage;
     private double minDamage;
     private WeaponSuffix suffix;
@@ -65,7 +66,7 @@ public class Weapon extends com.truth.neogames.Items.GearPackage.CombatGear {
     }
 
     public double getRandomDamage() {
-        return (minDamage + ((maxDamage - minDamage) * RandomNumber.random.nextDouble()));
+        return (minDamage + ((maxDamage - minDamage) * RandomNumber.RANDOM.nextDouble()));
     }
 
     public WeaponSuffix getSuffix() {

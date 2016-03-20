@@ -16,7 +16,7 @@ import com.truth.neogames.Utilities.RandomNumber;
 
 /**
  * Created by Adam on 2/16/2016.
- * Class Description: Provides static methods for picking RandomNumber.random enumerator values.
+ * Class Description: Provides static methods for picking RandomNumber.RANDOM enumerator values.
  */
 public final class EnumPicker {
 
@@ -24,8 +24,8 @@ public final class EnumPicker {
     }
 
     public static ArmorSuffix getRandomArmorSuffix() {
-        boolean hasSuffix = RandomNumber.random.nextBoolean();
-        int number = RandomNumber.random.nextInt(13);
+        boolean hasSuffix = RandomNumber.RANDOM.nextBoolean();
+        int number = RandomNumber.RANDOM.nextInt(13);
         if (hasSuffix) {
             switch (number) {
                 case 0:
@@ -63,7 +63,7 @@ public final class EnumPicker {
     }
 
     public static JewelryGem getRandomJewelryGem() {
-        int number = RandomNumber.random.nextInt(14);
+        int number = RandomNumber.RANDOM.nextInt(14);
         switch (number) {
             case 0:
                 return JewelryGem.ALEXANDRITE;
@@ -106,7 +106,7 @@ public final class EnumPicker {
      */
     public static JewelryGem getJewelryGem(int level) {
         double levelRatio = (double) level / (double) LivingEntity.getMaxLevel();
-        double number = RandomNumber.random.nextDouble();
+        double number = RandomNumber.RANDOM.nextDouble();
         if ((levelRatio - 0.5) > number) {
             return JewelryGem.DIAMOND;
         } else if ((levelRatio - 0.4) > number) {
@@ -132,12 +132,12 @@ public final class EnumPicker {
         } else if ((levelRatio + 0.6) > number) {
             return JewelryGem.OPAL;
         } else {
-            return ((levelRatio + .7) > number) ? JewelryGem.AMETHYST : JewelryGem.NONE;
+            return ((levelRatio + 0.7) > number) ? JewelryGem.AMETHYST : JewelryGem.NONE;
         }
     }
 
     public static JewelryMetal getRandomJewelryMetal() {
-        int number = RandomNumber.random.nextInt(3);
+        int number = RandomNumber.RANDOM.nextInt(3);
         switch (number) {
             case 0:
                 return JewelryMetal.COPPER;
@@ -151,17 +151,17 @@ public final class EnumPicker {
     }
 
     public static JewelryMetal getJewelryMetal(int level) {
-        double number = RandomNumber.random.nextDouble();
+        double number = RandomNumber.RANDOM.nextDouble();
         double levelRatio = (double) level / (double) LivingEntity.getMaxLevel();
         if (levelRatio > number) {
             return JewelryMetal.GOLD;
         } else {
-            return ((levelRatio + (1.0 / 3)) > number) ? JewelryMetal.SILVER : JewelryMetal.COPPER;
+            return ((levelRatio + (1.0 / 3.0)) > number) ? JewelryMetal.SILVER : JewelryMetal.COPPER;
         }
     }
 
     public static Material getRandomGearMaterial() {
-        int number = RandomNumber.random.nextInt(10);
+        int number = RandomNumber.RANDOM.nextInt(10);
         switch (number) {
             case 0:
                 return Material.BRONZE;
@@ -219,8 +219,8 @@ public final class EnumPicker {
     }
 
     public static WeaponSuffix getRandomWeaponSuffix() {
-        boolean hasSuffix = RandomNumber.random.nextBoolean();
-        int number = RandomNumber.random.nextInt(14);
+        boolean hasSuffix = RandomNumber.RANDOM.nextBoolean();
+        int number = RandomNumber.RANDOM.nextInt(14);
         if (hasSuffix) {
             switch (number) {
                 case 0:
@@ -260,7 +260,7 @@ public final class EnumPicker {
     }
 
     public static ArmorType getRandomArmorType() {
-        int number = RandomNumber.random.nextInt(17);
+        int number = RandomNumber.RANDOM.nextInt(17);
         switch (number) {
             case 0:
                 return ArmorType.BOOTS;
@@ -302,9 +302,9 @@ public final class EnumPicker {
     }
 
     public static ArmorType getRandomArmorType(WornSlot slot) {
-        int number2 = RandomNumber.random.nextInt(2);
-        int number3 = RandomNumber.random.nextInt(3);
-        int number4 = RandomNumber.random.nextInt(4);
+        int number2 = RandomNumber.RANDOM.nextInt(2);
+        int number3 = RandomNumber.RANDOM.nextInt(3);
+        int number4 = RandomNumber.RANDOM.nextInt(4);
         switch (slot) {
             case HEAD:
                 switch (number2) {
@@ -361,7 +361,7 @@ public final class EnumPicker {
     }
 
     public static ElementalType getRandomElementalType() {
-        int number = RandomNumber.random.nextInt(5);
+        int number = RandomNumber.RANDOM.nextInt(5);
         switch (number) {
             case 0:
                 return ElementalType.DARK;
@@ -379,7 +379,7 @@ public final class EnumPicker {
     }
 
     public static EntityStatName getRandomEntityStat() {
-        int number = RandomNumber.random.nextInt(7);
+        int number = RandomNumber.RANDOM.nextInt(7);
         switch (number) {
             case 0:
                 return EntityStatName.HEALTH;
@@ -401,7 +401,7 @@ public final class EnumPicker {
     }
 
     public static WeaponType getRandomWeaponType() {
-        int number = RandomNumber.random.nextInt(14);
+        int number = RandomNumber.RANDOM.nextInt(14);
         switch (number) {
             case 0:
                 return WeaponType.SWORD;
@@ -437,7 +437,7 @@ public final class EnumPicker {
     }
 
     public static RaceName getRandomRace() {
-        int number = RandomNumber.random.nextInt(6);
+        int number = RandomNumber.RANDOM.nextInt(6);
         switch (number) {
             case 0:
                 return RaceName.CATFOLK;
@@ -457,7 +457,7 @@ public final class EnumPicker {
     }
 
     public static WornSlot getRandomSlot() {
-        int number = RandomNumber.random.nextInt(10);
+        int number = RandomNumber.RANDOM.nextInt(10);
         switch (number) {
             case 0:
                 return WornSlot.HEAD;

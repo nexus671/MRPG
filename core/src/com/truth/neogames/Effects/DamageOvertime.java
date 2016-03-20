@@ -1,5 +1,6 @@
 package com.truth.neogames.Effects;
 
+import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Enums.DamageType;
 
 /**
@@ -9,7 +10,7 @@ public class DamageOvertime extends Effect {
     private double damage;
     private DamageType type;
     private int duration;
-    private com.truth.neogames.Entities.LivingEntity e;
+    private LivingEntity e;
 
     public DamageOvertime(double damage, DamageType type, int duration) {
         this.damage = damage;
@@ -17,7 +18,7 @@ public class DamageOvertime extends Effect {
         this.duration = duration;
     }
 
-    public DamageOvertime(double damage, DamageType type, int duration, com.truth.neogames.Entities.LivingEntity e) {
+    public DamageOvertime(double damage, DamageType type, int duration, LivingEntity e) {
         this.damage = damage;
         this.type = type;
         this.duration = duration;

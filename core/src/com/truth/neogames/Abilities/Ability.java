@@ -1,5 +1,6 @@
 package com.truth.neogames.Abilities;
 
+import com.truth.neogames.Effects.Effect;
 import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.RPGObject;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 public abstract class Ability extends RPGObject {
     protected AbilityType type;
     protected int level;
-    protected ArrayList<com.truth.neogames.Effects.Effect> effects = new ArrayList<com.truth.neogames.Effects.Effect>();
+    protected ArrayList<Effect> effects = new ArrayList<Effect>();
     protected int cost;
     private int duration;
     private int area;
@@ -44,11 +45,11 @@ public abstract class Ability extends RPGObject {
         this.level = level;
     }
 
-    public ArrayList<com.truth.neogames.Effects.Effect> getEffects() {
+    public ArrayList<Effect> getEffects() {
         return effects;
     }
 
-    public void setEffects(ArrayList<com.truth.neogames.Effects.Effect> effects) {
+    public void setEffects(ArrayList<Effect> effects) {
         this.effects = effects;
     }
 

@@ -1,6 +1,8 @@
 package com.truth.neogames.Abilities;
 
+import com.truth.neogames.Entities.SubTypes.Monster;
 import com.truth.neogames.Enums.AbilityRange;
+import com.truth.neogames.Targets.Target;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +12,20 @@ import java.util.List;
  */
 public abstract class ActiveAbility extends Ability {
     protected AbilityRange range;
-    protected ArrayList<com.truth.neogames.Targets.Target> targets = new ArrayList<com.truth.neogames.Targets.Target>();
 
-    public abstract void use(List<com.truth.neogames.Entities.SubTypes.Monster> monsters);
+    protected ArrayList<Target> targets = new ArrayList<Target>();
+
+    public abstract void use(List<Monster> monsters);
 
     public AbilityRange getRange() {
         return range;
     }
 
-    public ArrayList<com.truth.neogames.Targets.Target> getTargets() {
+    public ArrayList<Target> getTargets() {
         return targets;
     }
 
-    public void setTargets(ArrayList<com.truth.neogames.Targets.Target> targets) {
+    public void setTargets(ArrayList<Target> targets) {
         this.targets = targets;
     }
 

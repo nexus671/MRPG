@@ -54,7 +54,7 @@ public class Area extends Target {
         if (shape == Shape.SQUARE) {
             area = r * r;
         } else if (shape == Shape.CIRCLE) {
-            area = (int) (Math.PI * Math.pow(r, 2));
+            area = (int) (Math.PI * Math.pow((double) r, 2.0));
         }
     }
 

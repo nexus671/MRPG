@@ -83,7 +83,7 @@ public class Buff extends Effect {
         boolean pctBuff = magnitude != 1.0;
         boolean flatBuff = value != 0;
         if (pctBuff) {
-            description += (magnitude > 1) ? ((magnitude - 1) * 100) : magnitude;
+            description += (magnitude > 1.0) ? ((magnitude - 1.0) * 100.0) : magnitude;
             description += "%";
         }
         if (pctBuff && flatBuff) {

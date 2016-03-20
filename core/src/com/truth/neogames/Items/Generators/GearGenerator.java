@@ -3,6 +3,7 @@ package com.truth.neogames.Items.Generators;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.Items.GearPackage.Gear;
+import com.truth.neogames.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Items.GearPackage.Wearables.Armor;
 import com.truth.neogames.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Utilities.RandomNumber;
@@ -17,22 +18,22 @@ public class GearGenerator {
     ArrayList<EntityStatName> statsAffected;
 
     /**
-     * Generates a random weapon object.
+     * Generates a RANDOM weapon object.
      *
-     * @return A random weapon.
+     * @return A RANDOM weapon.
      */
-    public static com.truth.neogames.Items.GearPackage.Weapons.Weapon getRandomWeapon() {
-        return new com.truth.neogames.Items.GearPackage.Weapons.Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+    public static Weapon getRandomWeapon() {
+        return new Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
     }
 
     /**
-     * Gets a random weapon based on level.
+     * Gets a RANDOM weapon based on level.
      *
      * @param level The level of the player.
-     * @return A random weapon.
+     * @return A RANDOM weapon.
      */
-    public static com.truth.neogames.Items.GearPackage.Weapons.Weapon getWeapon(int level) {
-        return new com.truth.neogames.Items.GearPackage.Weapons.Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+    public static Weapon getWeapon(int level) {
+        return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
     }
 
     public static Armor getRandomArmor(WornSlot slot) {
@@ -60,28 +61,28 @@ public class GearGenerator {
     }
 
     /**
-     * Gets a random gear object in any slot (except ammo).
+     * Gets a RANDOM gear object in any slot (except ammo).
      *
-     * @return The random gear object.
+     * @return The RANDOM gear object.
      */
     public Gear getRandom() {
-        int slotNum = RandomNumber.random.nextInt(9);
+        int slotNum = RandomNumber.RANDOM.nextInt(9);
         switch (slotNum) {
             case 0:
                 return new Armor(WornSlot.HEAD, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HEAD));
             case 1:
-                int numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                int numStats = 1 + RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
                 addRandomStats(numStats);
                 return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, false);
             case 2:
                 return new Armor(WornSlot.CHEST, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.CHEST));
             case 3:
             case 4:
-                return new com.truth.neogames.Items.GearPackage.Weapons.Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+                return new Weapon(EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
             case 5:
                 return new Armor(WornSlot.GLOVES, EnumPicker.getRandomGearMaterial(), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
-                int i = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                int i = 1 + RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
                 addRandomStats(i);
                 return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, true);
             case 7:
@@ -93,49 +94,49 @@ public class GearGenerator {
     }
 
     public Jewelry getRandomJewelry() {
-        boolean ring = RandomNumber.random.nextBoolean();
-        int numStats = RandomNumber.random.nextInt(Jewelry.getMaxStats());
+        boolean ring = RandomNumber.RANDOM.nextBoolean();
+        int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
         addRandomStats(numStats);
         return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, ring);
     }
 
     public Jewelry getJewelry(int level) {
-        boolean ring = RandomNumber.random.nextBoolean();
-        int numStats = RandomNumber.random.nextInt(Jewelry.getMaxStats());
+        boolean ring = RandomNumber.RANDOM.nextBoolean();
+        int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
         addRandomStats(numStats);
         return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, ring);
     }
 
     public Jewelry getJewelry(int level, boolean isRing) {
-        int numStats = RandomNumber.random.nextInt(Jewelry.getMaxStats());
+        int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
         addRandomStats(numStats);
         return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, isRing);
     }
 
     /**
-     * Returns a random gear object that scales based on the level.
+     * Returns a RANDOM gear object that scales based on the level.
      *
      * @param level The level of the player.
-     * @return A random gear object.
+     * @return A RANDOM gear object.
      */
     public Gear getRandom(int level) {
-        int slotNum = RandomNumber.random.nextInt(9);
+        int slotNum = RandomNumber.RANDOM.nextInt(9);
         switch (slotNum) {
             case 0:
                 return new Armor(WornSlot.HEAD, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.HEAD));
             case 1:
-                int numStats = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                int numStats = 1 + RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
                 addRandomStats(numStats);
                 return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, false);
             case 2:
                 return new Armor(WornSlot.CHEST, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.CHEST));
             case 3:
             case 4:
-                return new com.truth.neogames.Items.GearPackage.Weapons.Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
+                return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
             case 5:
                 return new Armor(WornSlot.GLOVES, EnumPicker.getGearMaterial(level), EnumPicker.getRandomArmorSuffix(), EnumPicker.getRandomArmorType(WornSlot.GLOVES));
             case 6:
-                int i = 1 + RandomNumber.random.nextInt(Jewelry.getMaxStats());
+                int i = 1 + RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
                 addRandomStats(i);
                 return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, true);
             case 7:
@@ -167,7 +168,7 @@ public class GearGenerator {
     }
 
     /**
-     * Adds the specified number of RandomNumber.random entity stat names to the ArrayList statsAffected.
+     * Adds the specified number of RandomNumber.RANDOM entity stat names to the ArrayList statsAffected.
      * Note: This method clears the contents of statsAffected upon method call.
      *
      * @param number The  number of stats to be placed into the statsAffected ArrayList.

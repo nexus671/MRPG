@@ -1,5 +1,6 @@
 package com.truth.neogames.Professions;
 
+import com.truth.neogames.Abilities.Ability;
 import com.truth.neogames.Abilities.ActiveAbility;
 import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.ProfessionName;
@@ -52,9 +53,9 @@ public class Profession extends EntityStats {
      */
     protected ProfessionName name;
 
-    protected ArrayList<com.truth.neogames.Abilities.Ability> unlockedAbilities = new ArrayList<com.truth.neogames.Abilities.Ability>();
+    protected ArrayList<Ability> unlockedAbilities = new ArrayList<Ability>();
 
-    protected ArrayList<com.truth.neogames.Abilities.Ability> abilities = new ArrayList<com.truth.neogames.Abilities.Ability>();
+    protected ArrayList<Ability> abilities = new ArrayList<Ability>();
 
     public ProfessionName getProfessionName() {
         return name;
@@ -64,17 +65,17 @@ public class Profession extends EntityStats {
         this.name = name;
     }
 
-    public ArrayList<com.truth.neogames.Abilities.Ability> getUnlockedAbilities() {
+    public ArrayList<Ability> getUnlockedAbilities() {
         return unlockedAbilities;
     }
 
-    public void setUnlockedAbilities(ArrayList<com.truth.neogames.Abilities.Ability> unlockedAbilities) {
+    public void setUnlockedAbilities(ArrayList<Ability> unlockedAbilities) {
         this.unlockedAbilities = unlockedAbilities;
     }
 
     public List<ActiveAbility> getUnlockedActiveAbilities() {
         List<ActiveAbility> abilities = new ArrayList<ActiveAbility>();
-        for (com.truth.neogames.Abilities.Ability a : unlockedAbilities) {
+        for (Ability a : unlockedAbilities) {
             if ((a.getType() == AbilityType.AOE) || (a.getType() == AbilityType.TARGETED)) {
                 abilities.add((ActiveAbility) a);
             }
@@ -82,11 +83,11 @@ public class Profession extends EntityStats {
         return abilities;
     }
 
-    public ArrayList<com.truth.neogames.Abilities.Ability> getAbilities() {
+    public ArrayList<Ability> getAbilities() {
         return abilities;
     }
 
-    public void setAbilities(ArrayList<com.truth.neogames.Abilities.Ability> abilities) {
+    public void setAbilities(ArrayList<Ability> abilities) {
         this.abilities = abilities;
     }
 

@@ -2,12 +2,17 @@ package com.truth.neogames.Entities;
 
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.truth.neogames.Abilities.ActiveAbility;
+import com.truth.neogames.Effects.Buff;
+import com.truth.neogames.Effects.Damage;
+import com.truth.neogames.Effects.StatusAilments.Ailment;
 import com.truth.neogames.Enums.AbilityType;
 import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.RaceName;
 import com.truth.neogames.Enums.WornSlot;
+import com.truth.neogames.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
 import com.truth.neogames.Items.Consumables.SubTypes.Food;
@@ -17,6 +22,7 @@ import com.truth.neogames.Items.GearPackage.Weapons.Weapon;
 import com.truth.neogames.Items.GearPackage.Wearables.Armor;
 import com.truth.neogames.Items.GearPackage.Wearables.Jewelry;
 import com.truth.neogames.Items.Item;
+import com.truth.neogames.Professions.Profession;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
 import com.truth.neogames.Utilities.RandomNumber;
@@ -29,14 +35,14 @@ import java.util.ArrayList;
  */
 public abstract class LivingEntity extends Entity {
     private static final int MAX_LEVEL = 21;
-    protected com.truth.neogames.Professions.Profession profession;
+    protected Profession profession;
     protected WornGear wornGear;
     protected Inventory inventory;
     protected EntityStats stats;
-    protected ArrayList<com.truth.neogames.Effects.StatusAilments.Ailment> aliments = new ArrayList<com.truth.neogames.Effects.StatusAilments.Ailment>();
+    protected ArrayList<Ailment> aliments = new ArrayList<Ailment>();
 
     protected LivingEntity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos,
-                           com.truth.neogames.Professions.Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
+                           Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
         stats = entityStats;
         this.inventory = inventory;
@@ -123,7 +129,7 @@ public abstract class LivingEntity extends Entity {
     }
 
     public void printAblities() {
-        for (com.truth.neogames.Abilities.ActiveAbility a : profession.getUnlockedActiveAbilities()) {
+        for (ActiveAbility a : profession.getUnlockedActiveAbilities()) {
             if (a.getType() != AbilityType.PASSIVE) {
                 System.out.println(a.getName());
             }
@@ -132,10 +138,10 @@ public abstract class LivingEntity extends Entity {
     }
 
 
-    public void receiveDamage(Iterable<com.truth.neogames.Effects.Damage> damages) {
+    public void receiveDamage(Iterable<Damage> damages) {
 
 
-        for (com.truth.neogames.Effects.Damage damage : damages) {
+        for (Damage damage : damages) {
             double d = damage.getDamage();
             if ((damage.getType() == DamageType.ARCANE)) {
 
@@ -218,7 +224,7 @@ public abstract class LivingEntity extends Entity {
             EntityStatName name = stat.getStatName();
             double percentValue = (1.0 + p.getPercentAmount()) * this.stats.getStat(name).getMax();
 
-            com.truth.neogames.Effects.Buff buff = new com.truth.neogames.Effects.Buff(-1, p.getPercentAmount(), p.getFlatAmount(), stat, false);
+            Buff buff = new Buff(-1, p.getPercentAmount(), p.getFlatAmount(), stat, false);
             stat.addBonus(buff);
 
         }
@@ -248,7 +254,7 @@ public abstract class LivingEntity extends Entity {
         boolean hasWeapon = !wornGear.slotIsEmpty(WornSlot.MAINHAND);
         if (hasWeapon) {
             Weapon weapon = (Weapon) wornGear.getFromSlot(WornSlot.MAINHAND);
-            basicDamage = weapon.getMinDamage() + ((weapon.getMaxDamage() - weapon.getMinDamage()) * RandomNumber.random.nextDouble());
+            basicDamage = weapon.getMinDamage() + ((weapon.getMaxDamage() - weapon.getMinDamage()) * RandomNumber.RANDOM.nextDouble());
         }
         basicDamage += (stats.getStrength().getCurrent() / 100.0) * basicDamage;
         return basicDamage;
@@ -351,11 +357,11 @@ public abstract class LivingEntity extends Entity {
         this.stats = stats;
     }
 
-    public com.truth.neogames.Professions.Profession getProfession() {
+    public Profession getProfession() {
         return profession;
     }
 
-    public void setProfession(com.truth.neogames.Professions.Profession profession) {
+    public void setProfession(Profession profession) {
         this.profession = profession;
     }
 
@@ -376,7 +382,7 @@ public abstract class LivingEntity extends Entity {
     }
 
 
-    public boolean move(com.truth.neogames.EnvironmentPackage.BattleGrid grid, int x, int y) {
+    public boolean move(BattleGrid grid, int x, int y) {
         if (grid.isSpaceEmpty(x, y)) {
             grid.moveEntity(this, x, y);
             return true;
@@ -384,7 +390,7 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
-    public boolean moveLeft(com.truth.neogames.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveLeft(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos - 1, yPos)) {
                 grid.shiftEntity(this, -1, 0);
@@ -397,14 +403,14 @@ public abstract class LivingEntity extends Entity {
         }
     }
 
-    public boolean moveRight(com.truth.neogames.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveRight(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos + 1, yPos)) {
                 grid.shiftEntity(this, 1, 0);
                 return true;
             }
             return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (ArrayIndexOutOfBoundsException ignored) {
 
             return false;
         }
@@ -412,7 +418,7 @@ public abstract class LivingEntity extends Entity {
 
     }
 
-    public boolean moveForward(com.truth.neogames.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveForward(BattleGrid grid) {
         try {
 
 
@@ -421,20 +427,20 @@ public abstract class LivingEntity extends Entity {
                 return true;
             }
             return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (ArrayIndexOutOfBoundsException ignored) {
 
             return false;
         }
     }
 
-    public boolean moveBackward(com.truth.neogames.EnvironmentPackage.BattleGrid grid) {
+    public boolean moveBackward(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos, yPos - 1)) {
                 grid.shiftEntity(this, 0, -1);
                 return true;
             }
             return false;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (ArrayIndexOutOfBoundsException ignored) {
 
             return false;
         }
@@ -515,20 +521,20 @@ public abstract class LivingEntity extends Entity {
         this.yPos = yPos;
     }
 
-    public void addAliment(com.truth.neogames.Effects.StatusAilments.Ailment e) {
+    public void addAliment(Ailment e) {
         aliments.add(e);
     }
 
-    public void removeAliment(com.truth.neogames.Effects.StatusAilments.Ailment e) {
+    public void removeAliment(Ailment e) {
         aliments.remove(e);
     }
 
 
-    public ArrayList<com.truth.neogames.Effects.StatusAilments.Ailment> getAliments() {
+    public ArrayList<Ailment> getAliments() {
         return aliments;
     }
 
-    public void setAliments(ArrayList<com.truth.neogames.Effects.StatusAilments.Ailment> aliments) {
+    public void setAliments(ArrayList<Ailment> aliments) {
         this.aliments = aliments;
     }
 

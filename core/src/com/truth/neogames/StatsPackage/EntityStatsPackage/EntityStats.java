@@ -10,14 +10,14 @@ import com.truth.neogames.RPGObject;
 public class EntityStats extends RPGObject {
     protected int level;
     protected double exp;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat health;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat healthRegen;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat mana;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat manaRegen;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat strength;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat constitution;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat wisdom;
-    protected com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat dexterity;
+    protected EntityStat health;
+    protected EntityStat healthRegen;
+    protected EntityStat mana;
+    protected EntityStat manaRegen;
+    protected EntityStat strength;
+    protected EntityStat constitution;
+    protected EntityStat wisdom;
+    protected EntityStat dexterity;
     protected DependentEntityStat speed;
 
     /*************
@@ -27,33 +27,33 @@ public class EntityStats extends RPGObject {
     public EntityStats() {
         level = 1;
         exp = 0.0;
-        health = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTH, 100.0);
-        healthRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTHREGEN, 5.0);
-        mana = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANA, 100.0);
-        manaRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANAREGEN, 10.0);
-        strength = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.STRENGTH, 1.0);
-        constitution = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.CONSTITUTION, 1.0);
-        wisdom = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.WISDOM, 1.0);
-        dexterity = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.DEXTERITY, 1.0);
+        health = new EntityStat(EntityStatName.HEALTH, 100.0);
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, 5.0);
+        mana = new EntityStat(EntityStatName.MANA, 100.0);
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, 10.0);
+        strength = new EntityStat(EntityStatName.STRENGTH, 1.0);
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, 1.0);
+        wisdom = new EntityStat(EntityStatName.WISDOM, 1.0);
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, 1.0);
         speed = new DependentEntityStat(EntityStatName.SPEED, 30.0);
         speed.addStat(dexterity);
     }
 
     public EntityStats(int level) {
         this.level = level;
-        health = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
-        healthRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
-        mana = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
-        manaRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
-        strength = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
-        constitution = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
-        wisdom = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.WISDOM, (double) (1 + level));
-        dexterity = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.DEXTERITY, (double) (1 + level));
+        health = new EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
+        mana = new EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
+        strength = new EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
+        wisdom = new EntityStat(EntityStatName.WISDOM, (double) (1 + level));
+        dexterity = new EntityStat(EntityStatName.DEXTERITY, (double) (1 + level));
         speed = new DependentEntityStat(EntityStatName.SPEED, (double) (30 + level));
 
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getStat(EntityStatName name) {
+    public EntityStat getStat(EntityStatName name) {
         switch (name) {
             case HEALTH:
                 return health;
@@ -154,59 +154,59 @@ public class EntityStats extends RPGObject {
         this.level = level;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getHealth() {
+    public EntityStat getHealth() {
         return health;
     }
 
-    public void setHealth(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat health) {
+    public void setHealth(EntityStat health) {
         this.health = health;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getHealthRegen() {
+    public EntityStat getHealthRegen() {
         return healthRegen;
     }
 
-    public void setHealthRegen(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat healthRegen) {
+    public void setHealthRegen(EntityStat healthRegen) {
         this.healthRegen = healthRegen;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getMana() {
+    public EntityStat getMana() {
         return mana;
     }
 
-    public void setMana(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat mana) {
+    public void setMana(EntityStat mana) {
         this.mana = mana;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getManaRegen() {
+    public EntityStat getManaRegen() {
         return manaRegen;
     }
 
-    public void setManaRegen(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat manaRegen) {
+    public void setManaRegen(EntityStat manaRegen) {
         this.manaRegen = manaRegen;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getStrength() {
+    public EntityStat getStrength() {
         return strength;
     }
 
-    public void setStrength(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat strength) {
+    public void setStrength(EntityStat strength) {
         this.strength = strength;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getConstitution() {
+    public EntityStat getConstitution() {
         return constitution;
     }
 
-    public void setConstitution(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat constitution) {
+    public void setConstitution(EntityStat constitution) {
         this.constitution = constitution;
     }
 
-    public com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat getWisdom() {
+    public EntityStat getWisdom() {
         return wisdom;
     }
 
-    public void setWisdom(com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat wisdom) {
+    public void setWisdom(EntityStat wisdom) {
         this.wisdom = wisdom;
     }
 
@@ -220,13 +220,13 @@ public class EntityStats extends RPGObject {
 
     public void setByLevel(int level) {
         this.level = level;
-        health = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
-        healthRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
-        mana = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
-        manaRegen = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
-        strength = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
-        constitution = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
-        wisdom = new com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat(EntityStatName.WISDOM, (double) (1 + level));
+        health = new EntityStat(EntityStatName.HEALTH, (double) (90 + (level * 10)));
+        healthRegen = new EntityStat(EntityStatName.HEALTHREGEN, (double) (5 + level));
+        mana = new EntityStat(EntityStatName.MANA, (double) (90 + (level * 10)));
+        manaRegen = new EntityStat(EntityStatName.MANAREGEN, (double) (9 + level));
+        strength = new EntityStat(EntityStatName.STRENGTH, (double) (1 + level));
+        constitution = new EntityStat(EntityStatName.CONSTITUTION, (double) (1 + level));
+        wisdom = new EntityStat(EntityStatName.WISDOM, (double) (1 + level));
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.truth.neogames.Items.Consumables.SubTypes;
 
+import com.truth.neogames.Items.Consumables.Consumable;
+import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.Utilities.DecimalRounder;
 
 import java.util.ArrayList;
@@ -9,12 +11,12 @@ import java.util.List;
  * Created by Adam on 11/4/2015.
  * Class Description: A generic potion that can be restorative or a temporary buff.
  */
-public class Potion extends com.truth.neogames.Items.Consumables.Consumable {
+public class Potion extends Consumable {
     private final double MAX_STATS = 3.0;
     private int flatAmount;
     private double percentAmount;
     private int duration; //the number of turns the potion lasts
-    private List<com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat> stats; //the stats that are affected
+    private List<EntityStat> stats; //the stats that are affected
     private boolean refreshes; //whether the potion buff refreshes every turn
 
 
@@ -22,14 +24,14 @@ public class Potion extends com.truth.neogames.Items.Consumables.Consumable {
         flatAmount = 0;
         percentAmount = 0.0;
         duration = 1;
-        stats = new ArrayList<com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat>();
+        stats = new ArrayList<EntityStat>();
         refreshes = false;
         setName("Unnamed Potion");
         setDescription("No Description");
         setStackable(false);
     }
 
-    public Potion(int flatAmount, double percentAmount, int duration, List<com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat> stats, boolean refreshes,
+    public Potion(int flatAmount, double percentAmount, int duration, List<EntityStat> stats, boolean refreshes,
                   String name) {
         this.flatAmount = flatAmount;
         this.percentAmount = percentAmount;
@@ -69,11 +71,11 @@ public class Potion extends com.truth.neogames.Items.Consumables.Consumable {
         this.percentAmount = percentAmount;
     }
 
-    public Iterable<com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat> getStats() {
+    public Iterable<EntityStat> getStats() {
         return stats;
     }
 
-    public void setStats(List<com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat> stats) {
+    public void setStats(List<EntityStat> stats) {
         this.stats = stats;
     }
 
@@ -100,7 +102,7 @@ public class Potion extends com.truth.neogames.Items.Consumables.Consumable {
         boolean pctBuff = percentAmount != 1.0;
         boolean flatBuff = flatAmount != 0;
         if (pctBuff) {
-            description += (percentAmount > 1) ? DecimalRounder.round((percentAmount - 1.0) * 100.0) : DecimalRounder.round(percentAmount);
+            description += (percentAmount > 1.0) ? DecimalRounder.round((percentAmount - 1.0) * 100.0) : DecimalRounder.round(percentAmount);
             description += "%";
         }
         if (pctBuff && flatBuff) {
