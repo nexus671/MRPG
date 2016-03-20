@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 /**
  * Created by Ahmane on 10/24/2015.
- * <p/>
  * * Barbarian
  * Barbarians excel in combat, possessing the martial prowess and fortitude to take on foes seemingly far superior to themselves.
  * With rage granting them boldness and daring beyond that of most other warriors, barbarians charge furiously into battle
