@@ -1,6 +1,6 @@
 package com.truth.neogames.Enums.Affixes;
 
-import com.truth.neogames.Adam.StatsPackage.ScalingCurve;
+import com.truth.neogames.StatsPackage.ScalingCurve;
 import com.truth.neogames.Utilities.StringManip;
 
 /**
