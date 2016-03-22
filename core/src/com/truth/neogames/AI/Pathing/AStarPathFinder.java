@@ -57,10 +57,10 @@ public class AStarPathFinder implements PathFinder {
     /**
      * Create a path finder
      *
-     * @param heuristic         The heuristic used to determine the search order of the map
      * @param map               The map to be searched
      * @param maxSearchDistance The maximum depth we'll search before giving up
      * @param allowDiagMovement True if the search should try diaganol movement
+     * @param heuristic         The heuristic used to determine the search order of the map
      */
     public AStarPathFinder(TileBasedMap map, int maxSearchDistance,
                            boolean allowDiagMovement, AStarHeuristic heuristic) {

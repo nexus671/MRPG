@@ -16,10 +16,22 @@ public class ScalingCurve extends RPGObject {
     private static final double k2 = 2.5;
     private static final double k3 = 9.0;
 
+    /**
+     * Gets damage scaling.
+     *
+     * @param level the level
+     * @return the damage scaling
+     */
     public static double getDamageScaling(int level) {
         return Math.pow(k1, (1.0 + ((double) level / k2)));
     }
 
+    /**
+     * Gets exp.
+     *
+     * @param level the level
+     * @return the exp
+     */
     public static double getExp(int level) {
         double exp = 0.0;
         for (int lvl = 1; (lvl <= level) && (lvl <= LivingEntity.getMaxLevel()); lvl++) {
@@ -39,6 +51,13 @@ public class ScalingCurve extends RPGObject {
         return ((totalArmorValue * totalArmorValue) / ((3.0 * (totalArmorValue * totalArmorValue)) + (20.0 * totalArmorValue)));
     }
 
+    /**
+     * Level up boolean.
+     *
+     * @param exp          the exp
+     * @param currentLevel the current level
+     * @return the boolean
+     */
     public static boolean levelUp(double exp, int currentLevel) {
         return (getExp(currentLevel + 1) <= exp);
     }

@@ -8,6 +8,12 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.DependentEntityStat;
  */
 public class physicalDefense extends DependentEntityStat {
 
+    /**
+     * Instantiates a new Physical defense.
+     *
+     * @param name    the name
+     * @param baseMax the base max
+     */
     public physicalDefense(EntityStatName name, double baseMax) {
         super(name, baseMax);
     }

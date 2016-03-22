@@ -23,6 +23,11 @@ public final class EnumPicker {
     private EnumPicker() {
     }
 
+    /**
+     * Gets random armor suffix.
+     *
+     * @return the random armor suffix
+     */
     public static ArmorSuffix getRandomArmorSuffix() {
         boolean hasSuffix = RandomNumber.RANDOM.nextBoolean();
         int number = RandomNumber.RANDOM.nextInt(13);
@@ -62,6 +67,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random jewelry gem.
+     *
+     * @return the random jewelry gem
+     */
     public static JewelryGem getRandomJewelryGem() {
         int number = RandomNumber.RANDOM.nextInt(14);
         switch (number) {
@@ -136,6 +146,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random jewelry metal.
+     *
+     * @return the random jewelry metal
+     */
     public static JewelryMetal getRandomJewelryMetal() {
         int number = RandomNumber.RANDOM.nextInt(3);
         switch (number) {
@@ -150,6 +165,12 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets jewelry metal.
+     *
+     * @param level the level
+     * @return the jewelry metal
+     */
     public static JewelryMetal getJewelryMetal(int level) {
         double number = RandomNumber.RANDOM.nextDouble();
         double levelRatio = (double) level / (double) LivingEntity.getMaxLevel();
@@ -160,6 +181,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random gear material.
+     *
+     * @return the random gear material
+     */
     public static Material getRandomGearMaterial() {
         int number = RandomNumber.RANDOM.nextInt(10);
         switch (number) {
@@ -218,6 +244,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random weapon suffix.
+     *
+     * @return the random weapon suffix
+     */
     public static WeaponSuffix getRandomWeaponSuffix() {
         boolean hasSuffix = RandomNumber.RANDOM.nextBoolean();
         int number = RandomNumber.RANDOM.nextInt(14);
@@ -259,6 +290,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random armor type.
+     *
+     * @return the random armor type
+     */
     public static ArmorType getRandomArmorType() {
         int number = RandomNumber.RANDOM.nextInt(17);
         switch (number) {
@@ -301,6 +337,12 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random armor type.
+     *
+     * @param slot the slot
+     * @return the random armor type
+     */
     public static ArmorType getRandomArmorType(WornSlot slot) {
         int number2 = RandomNumber.RANDOM.nextInt(2);
         int number3 = RandomNumber.RANDOM.nextInt(3);
@@ -360,6 +402,11 @@ public final class EnumPicker {
         return null;
     }
 
+    /**
+     * Gets random elemental type.
+     *
+     * @return the random elemental type
+     */
     public static ElementalType getRandomElementalType() {
         int number = RandomNumber.RANDOM.nextInt(5);
         switch (number) {
@@ -378,6 +425,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random entity stat.
+     *
+     * @return the random entity stat
+     */
     public static EntityStatName getRandomEntityStat() {
         int number = RandomNumber.RANDOM.nextInt(7);
         switch (number) {
@@ -400,6 +452,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random weapon type.
+     *
+     * @return the random weapon type
+     */
     public static WeaponType getRandomWeaponType() {
         int number = RandomNumber.RANDOM.nextInt(14);
         switch (number) {
@@ -436,6 +493,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random race.
+     *
+     * @return the random race
+     */
     public static RaceName getRandomRace() {
         int number = RandomNumber.RANDOM.nextInt(6);
         switch (number) {
@@ -456,6 +518,11 @@ public final class EnumPicker {
         }
     }
 
+    /**
+     * Gets random slot.
+     *
+     * @return the random slot
+     */
     public static WornSlot getRandomSlot() {
         int number = RandomNumber.RANDOM.nextInt(10);
         switch (number) {

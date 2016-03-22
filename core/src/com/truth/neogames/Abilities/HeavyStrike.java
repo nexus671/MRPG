@@ -25,6 +25,12 @@ public class HeavyStrike extends ActiveAbility {
     private int level;
     private int area = 1;
 
+    /**
+     * Instantiates a new Heavy strike.
+     *
+     * @param level the level
+     * @param e     the e
+     */
     public HeavyStrike(int level, LivingEntity e) {
         name = "Heavy Strike";
         this.level = level;
@@ -33,6 +39,11 @@ public class HeavyStrike extends ActiveAbility {
         user = e;
     }
 
+    /**
+     * Gets r.
+     *
+     * @return the r
+     */
     public static AbilityRange getR() {
         return r;
     }
@@ -73,14 +84,30 @@ public class HeavyStrike extends ActiveAbility {
         this.cost = cost;
     }
 
+    /**
+     * Calc cost int.
+     *
+     * @return the int
+     */
     public int calcCost() {
         return (int) (Math.pow(2.0, (double) level) * 5.0);
     }
 
+    /**
+     * Gets .
+     *
+     * @return the
+     */
     public double getstunc() {
         return basestunc + ((double) (level - 1) * 0.2);
     }
 
+    /**
+     * Gets damage.
+     *
+     * @param e the e
+     * @return the damage
+     */
     public double getDamage(LivingEntity e) {
         return (1.40 + ((double) (level - 1) * 0.1)) * e.getBasicAttackDamage();
     }
@@ -90,6 +117,11 @@ public class HeavyStrike extends ActiveAbility {
         return area;
     }
 
+    /**
+     * Sets area.
+     *
+     * @param area the area
+     */
     public void setArea(int area) {
         this.area = area;
     }

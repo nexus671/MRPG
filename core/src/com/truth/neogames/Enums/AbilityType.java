@@ -7,10 +7,25 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description:
  */
 public enum AbilityType {
-    AOE, TARGETED, PASSIVE;
+    /**
+     * Aoe ability type.
+     */
+    AOE, /**
+     * Targeted ability type.
+     */
+    TARGETED, /**
+     * Passive ability type.
+     */
+    PASSIVE;
 
+    /**
+     * The Lowercase.
+     */
     final String lowercase;
 
+    /**
+     * Instantiates a new Ability type.
+     */
     AbilityType() {
         lowercase = StringManip.toLowercase(super.toString());
     }

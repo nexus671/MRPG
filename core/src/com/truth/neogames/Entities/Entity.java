@@ -10,15 +10,37 @@ import com.truth.neogames.RPGObject;
  * Class Description: Defines any entity in the game, including player, monster, or NPC.
  */
 public abstract class Entity extends RPGObject {
+    /**
+     * The Race name.
+     */
     protected RaceName raceName;
+    /**
+     * The Sex.
+     */
     protected String sex;
+    /**
+     * The Sprite.
+     */
     protected Sprite sprite;
-    protected int xPos, yPos;
+    /**
+     * The X pos.
+     */
+    protected int xPos, /**
+     * The Y pos.
+     */
+    yPos;
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param name        the name
+     * @param raceName    the race name
+     * @param sex         the sex
+     * @param sprite      the sprite
+     * @param description the description
+     * @param xPos        the x pos
+     * @param yPos        the y pos
+     */
     protected Entity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos) {
         this.name = name;
         this.raceName = raceName;
@@ -29,6 +51,9 @@ public abstract class Entity extends RPGObject {
         this.yPos = yPos;
     }
 
+    /**
+     * Instantiates a new Entity.
+     */
     protected Entity() {
     }
 
@@ -50,18 +75,38 @@ public abstract class Entity extends RPGObject {
         this.name = name;
     }
 
+    /**
+     * Gets race name.
+     *
+     * @return the race name
+     */
     public RaceName getRaceName() {
         return raceName;
     }
 
+    /**
+     * Sets race name.
+     *
+     * @param raceName the race name
+     */
     public void setRaceName(RaceName raceName) {
         this.raceName = raceName;
     }
 
+    /**
+     * Gets sex.
+     *
+     * @return the sex
+     */
     public String getSex() {
         return sex;
     }
 
+    /**
+     * Sets sex.
+     *
+     * @param sex the sex
+     */
     public void setSex(String sex) {
         this.sex = sex;
     }
@@ -76,31 +121,67 @@ public abstract class Entity extends RPGObject {
         this.description = description;
     }
 
+    /**
+     * Gets pos.
+     *
+     * @return the pos
+     */
     public int getxPos() {
         return xPos;
     }
 
+    /**
+     * Sets pos.
+     *
+     * @param xPos the x pos
+     */
     public void setxPos(int xPos) {
         this.xPos = xPos;
     }
 
+    /**
+     * Gets pos.
+     *
+     * @return the pos
+     */
     public int getyPos() {
         return yPos;
     }
 
+    /**
+     * Sets pos.
+     *
+     * @param yPos the y pos
+     */
     public void setyPos(int yPos) {
         this.yPos = yPos;
     }
 
+    /**
+     * Sets pos.
+     *
+     * @param xPos the x pos
+     * @param yPos the y pos
+     */
     public void setPos(int xPos, int yPos) {
         this.xPos = xPos;
         this.yPos = yPos;
     }
 
+    /**
+     * Gets sprite.
+     *
+     * @return the sprite
+     */
     public Sprite getSprite() {
         return sprite;
     }
 
+    /**
+     * Sets sprite.
+     *
+     * @param sprite the sprite
+     */
     public void setSprite(Sprite sprite) {
         this.sprite = sprite;
     }

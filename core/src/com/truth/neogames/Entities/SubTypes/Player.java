@@ -17,8 +17,13 @@ public class Player extends LivingEntity {
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param name       the name
+     * @param raceName   the race name
+     * @param sex        the sex
+     * @param profession the profession
+     * @param sprite     the sprite
+     */
     public Player(String name, RaceName raceName, String sex, Profession profession, Sprite sprite) {
         setName(name);
         setRaceName(raceName);

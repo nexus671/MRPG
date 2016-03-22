@@ -21,8 +21,11 @@ public class Weapon extends CombatGear {
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param material the material
+     * @param suffix   the suffix
+     * @param type     the type
+     */
     public Weapon(Material material, WeaponSuffix suffix, WeaponType type) {
         this.material = material;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
@@ -34,6 +37,14 @@ public class Weapon extends CombatGear {
         assignName();
     }
 
+    /**
+     * Instantiates a new Weapon.
+     *
+     * @param slot     the slot
+     * @param material the material
+     * @param suffix   the suffix
+     * @param type     the type
+     */
     public Weapon(WornSlot slot, Material material, WeaponSuffix suffix, WeaponType type) {
         this.slot = slot;
         double avgDamage = material.getAvgDamage() * type.getDamageModifier();
@@ -47,60 +58,124 @@ public class Weapon extends CombatGear {
 
     /*************
      * Getters and Setters
-     *************/
-
+     *
+     * @return the max damage
+     */
     public double getMaxDamage() {
         return maxDamage;
     }
 
+    /**
+     * Sets max damage.
+     *
+     * @param maxDamage the max damage
+     */
     public void setMaxDamage(double maxDamage) {
         this.maxDamage = maxDamage;
     }
 
+    /**
+     * Gets min damage.
+     *
+     * @return the min damage
+     */
     public double getMinDamage() {
         return minDamage;
     }
 
+    /**
+     * Sets min damage.
+     *
+     * @param minDamage the min damage
+     */
     public void setMinDamage(double minDamage) {
         this.minDamage = minDamage;
     }
 
+    /**
+     * Gets random damage.
+     *
+     * @return the random damage
+     */
     public double getRandomDamage() {
         return (minDamage + ((maxDamage - minDamage) * RandomNumber.RANDOM.nextDouble()));
     }
 
+    /**
+     * Gets suffix.
+     *
+     * @return the suffix
+     */
     public WeaponSuffix getSuffix() {
         return suffix;
     }
 
+    /**
+     * Sets suffix.
+     *
+     * @param suffix the suffix
+     */
     public void setSuffix(WeaponSuffix suffix) {
         this.suffix = suffix;
     }
 
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
     public WeaponType getType() {
         return type;
     }
 
+    /**
+     * Sets type.
+     *
+     * @param type the type
+     */
     public void setType(WeaponType type) {
         this.type = type;
     }
 
+    /**
+     * Gets attack style.
+     *
+     * @return the attack style
+     */
     public DamageType getAttackStyle() {
         return type.getStyle();
     }
 
+    /**
+     * Gets crit chance.
+     *
+     * @return the crit chance
+     */
     public double getCritChance() {
         return type.getCritChance();
     }
 
+    /**
+     * Gets range.
+     *
+     * @return the range
+     */
     public int getRange() {
         return type.getRange();
     }
 
+    /**
+     * Gets elemental type.
+     *
+     * @return the elemental type
+     */
     public ElementalType getElementalType() {
         return suffix.getElementalType();
     }
 
+    /**
+     * Assign name.
+     */
     public void assignName() {
         String str = getMaterial().toString();
         str += " " + type;

@@ -10,24 +10,35 @@ import java.util.List;
  * Created by acurr on 2/17/2016.
  */
 public class DependentEntityStat extends EntityStat {
+    /**
+     * The Attrs.
+     */
     protected List<EntityStat> attrs = new ArrayList<EntityStat>();
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param name    the name
+     * @param baseMax the base max
+     */
     public DependentEntityStat(EntityStatName name, double baseMax) {
         super(name, baseMax);
     }
 
     /*************
      * Getters
-     *************/
-
+     *
+     * @param attr the attr
+     */
     public void addStat(EntityStat attr) {
         attrs.add(attr);
     }
 
+    /**
+     * Remove stat.
+     *
+     * @param attr the attr
+     */
     public void removeStat(EntityStat attr) {
         attrs.remove(attr);
     }

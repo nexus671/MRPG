@@ -53,26 +53,57 @@ public class Profession extends EntityStats {
      */
     protected ProfessionName name;
 
+    /**
+     * The Unlocked abilities.
+     */
     protected ArrayList<Ability> unlockedAbilities = new ArrayList<Ability>();
 
+    /**
+     * The Abilities.
+     */
     protected ArrayList<Ability> abilities = new ArrayList<Ability>();
 
+    /**
+     * Gets profession name.
+     *
+     * @return the profession name
+     */
     public ProfessionName getProfessionName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(ProfessionName name) {
         this.name = name;
     }
 
+    /**
+     * Gets unlocked abilities.
+     *
+     * @return the unlocked abilities
+     */
     public ArrayList<Ability> getUnlockedAbilities() {
         return unlockedAbilities;
     }
 
+    /**
+     * Sets unlocked abilities.
+     *
+     * @param unlockedAbilities the unlocked abilities
+     */
     public void setUnlockedAbilities(ArrayList<Ability> unlockedAbilities) {
         this.unlockedAbilities = unlockedAbilities;
     }
 
+    /**
+     * Gets unlocked active abilities.
+     *
+     * @return the unlocked active abilities
+     */
     public List<ActiveAbility> getUnlockedActiveAbilities() {
         List<ActiveAbility> abilities = new ArrayList<ActiveAbility>();
         for (Ability a : unlockedAbilities) {
@@ -83,10 +114,20 @@ public class Profession extends EntityStats {
         return abilities;
     }
 
+    /**
+     * Gets abilities.
+     *
+     * @return the abilities
+     */
     public ArrayList<Ability> getAbilities() {
         return abilities;
     }
 
+    /**
+     * Sets abilities.
+     *
+     * @param abilities the abilities
+     */
     public void setAbilities(ArrayList<Ability> abilities) {
         this.abilities = abilities;
     }

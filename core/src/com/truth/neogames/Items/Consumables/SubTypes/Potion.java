@@ -20,6 +20,9 @@ public class Potion extends Consumable {
     private boolean refreshes; //whether the potion buff refreshes every turn
 
 
+    /**
+     * Instantiates a new Potion.
+     */
     public Potion() {
         flatAmount = 0;
         percentAmount = 0.0;
@@ -31,6 +34,16 @@ public class Potion extends Consumable {
         setStackable(false);
     }
 
+    /**
+     * Instantiates a new Potion.
+     *
+     * @param flatAmount    the flat amount
+     * @param percentAmount the percent amount
+     * @param duration      the duration
+     * @param stats         the stats
+     * @param refreshes     the refreshes
+     * @param name          the name
+     */
     public Potion(int flatAmount, double percentAmount, int duration, List<EntityStat> stats, boolean refreshes,
                   String name) {
         this.flatAmount = flatAmount;
@@ -43,50 +56,108 @@ public class Potion extends Consumable {
         assignDescription();
     }
 
+    /**
+     * Gets max stats.
+     *
+     * @return the max stats
+     */
     public double getMAX_STATS() {
         return MAX_STATS;
     }
 
+    /**
+     * Gets duration.
+     *
+     * @return the duration
+     */
     public int getDuration() {
         return duration;
     }
 
+    /**
+     * Sets duration.
+     *
+     * @param duration the duration
+     */
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
+    /**
+     * Gets flat amount.
+     *
+     * @return the flat amount
+     */
     public int getFlatAmount() {
         return flatAmount;
     }
 
+    /**
+     * Sets flat amount.
+     *
+     * @param flatAmount the flat amount
+     */
     public void setFlatAmount(int flatAmount) {
         this.flatAmount = flatAmount;
     }
 
+    /**
+     * Gets percent amount.
+     *
+     * @return the percent amount
+     */
     public double getPercentAmount() {
         return percentAmount;
     }
 
+    /**
+     * Sets percent amount.
+     *
+     * @param percentAmount the percent amount
+     */
     public void setPercentAmount(double percentAmount) {
         this.percentAmount = percentAmount;
     }
 
+    /**
+     * Gets stats.
+     *
+     * @return the stats
+     */
     public Iterable<EntityStat> getStats() {
         return stats;
     }
 
+    /**
+     * Sets stats.
+     *
+     * @param stats the stats
+     */
     public void setStats(List<EntityStat> stats) {
         this.stats = stats;
     }
 
+    /**
+     * Is refreshes boolean.
+     *
+     * @return the boolean
+     */
     public boolean isRefreshes() {
         return refreshes;
     }
 
+    /**
+     * Sets refreshes.
+     *
+     * @param refreshes the refreshes
+     */
     public void setRefreshes(boolean refreshes) {
         this.refreshes = refreshes;
     }
 
+    /**
+     * Assign description.
+     */
     public void assignDescription() {
         description = "Consume to increase ";
         for (int i = 0; i < stats.size(); i++) {

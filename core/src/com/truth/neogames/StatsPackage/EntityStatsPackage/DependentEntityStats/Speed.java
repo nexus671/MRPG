@@ -8,6 +8,12 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.DependentEntityStat;
  */
 public class Speed extends DependentEntityStat {
 
+    /**
+     * Instantiates a new Speed.
+     *
+     * @param name    the name
+     * @param baseMax the base max
+     */
     public Speed(EntityStatName name, double baseMax) {
         super(name, baseMax);
     }

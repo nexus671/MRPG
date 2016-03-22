@@ -26,6 +26,12 @@ public class BasicAttack extends ActiveAbility {
     private int area = 1;
 
 
+    /**
+     * Instantiates a new Basic attack.
+     *
+     * @param level the level
+     * @param e     the e
+     */
     public BasicAttack(int level, LivingEntity e) {
         name = "Basic Attack";
         this.level = level;
@@ -34,6 +40,11 @@ public class BasicAttack extends ActiveAbility {
         user = e;
     }
 
+    /**
+     * Gets r.
+     *
+     * @return the r
+     */
     public static AbilityRange getR() {
         return r;
     }
@@ -54,6 +65,11 @@ public class BasicAttack extends ActiveAbility {
         monsters.get(0).receiveDamage(damages);
     }
 
+    /**
+     * Calc cost int.
+     *
+     * @return the int
+     */
     public int calcCost() {
         return (int) (Math.pow(2.0, (double) level) * 5.0);
     }
@@ -69,6 +85,11 @@ public class BasicAttack extends ActiveAbility {
     }
 
 
+    /**
+     * Gets damage.
+     *
+     * @return the damage
+     */
     public double getDamage() {
         double basicDamage = 1.0;
         boolean hasWeapon = !user.getWornGear().slotIsEmpty(WornSlot.MAINHAND);
@@ -105,6 +126,11 @@ public class BasicAttack extends ActiveAbility {
         return area;
     }
 
+    /**
+     * Sets area.
+     *
+     * @param area the area
+     */
     public void setArea(int area) {
         this.area = area;
     }

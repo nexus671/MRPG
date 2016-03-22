@@ -16,14 +16,22 @@ public class Monster extends LivingEntity {
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param hostile the hostile
+     * @param stats   the stats
+     */
     public Monster(boolean hostile, EntityStats stats) {
 
         this.hostile = hostile;
         this.stats = stats;
     }
 
+    /**
+     * Move toward target.
+     *
+     * @param b the b
+     * @param e the e
+     */
     public void moveTowardTarget(BattleGrid b, Entity e) {
 
     }
@@ -33,15 +41,27 @@ public class Monster extends LivingEntity {
 
     /*************
      * Setters
-     *************/
+     *
+     * @return the boolean
+     */
     public boolean isAlive() {
         return this.getStats().getHealth().getCurrent() >= 0;
     }
 
+    /**
+     * Is hostile boolean.
+     *
+     * @return the boolean
+     */
     public boolean isHostile() {
         return hostile;
     }
 
+    /**
+     * Sets hostile.
+     *
+     * @param hostile the hostile
+     */
     public void setHostile(boolean hostile) {
         this.hostile = hostile;
     }

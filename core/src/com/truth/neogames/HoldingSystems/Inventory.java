@@ -10,22 +10,25 @@ import java.util.Arrays;
  * Class Description: The inventory system for the player.
  */
 public class Inventory extends RPGObject {
+    /**
+     * The Size.
+     */
     public int size = 20;
 
     private Item[] inv;
 
     /*************
      * Constructors
-     *************/
-
+     */
     public Inventory() {
         inv = new Item[size];
     }
 
     /*************
      * Specific Methods
-     *************/
-
+     *
+     * @return the size
+     */
     public int getSIZE() {
         return size;
     }
@@ -52,6 +55,8 @@ public class Inventory extends RPGObject {
     }
 
     /**
+     * Gets first empty space.
+     *
      * @return The index of the first null object in the array, or -1 if the array is full.
      */
     public int getFirstEmptySpace() {
@@ -67,8 +72,7 @@ public class Inventory extends RPGObject {
      * Gets the index of an item in the inventory.
      *
      * @param i The item to be checked for.
-     * @return The first index the item is located at, or -1 if the item is not
-     * found in the inventory.
+     * @return The first index the item is located at, or -1 if the item is not found in the inventory.
      */
     public int getIndexOf(Item i) {
         for (int count = 0; count < size; count++) {
@@ -96,6 +100,8 @@ public class Inventory extends RPGObject {
     }
 
     /**
+     * Is full boolean.
+     *
      * @return True if the inventory is full of items.
      */
     public boolean isFull() {
@@ -109,8 +115,9 @@ public class Inventory extends RPGObject {
 
     /*************
      * Getters
-     *************/
-
+     *
+     * @return the item [ ]
+     */
     public Item[] getInv() {
         return inv;
     }

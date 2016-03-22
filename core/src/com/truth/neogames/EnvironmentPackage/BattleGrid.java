@@ -15,18 +15,41 @@ import java.util.Random;
 public class BattleGrid extends RPGObject {
     private final Entity[][] grid;
 
+    /**
+     * Instantiates a new Battle grid.
+     */
     public BattleGrid() {
         grid = new Entity[13][13];
     }
 
+    /**
+     * Instantiates a new Battle grid.
+     *
+     * @param r the r
+     * @param c the c
+     */
     public BattleGrid(int r, int c) {
         grid = new Entity[r][c];
     }
 
+    /**
+     * Is space empty boolean.
+     *
+     * @param x the x
+     * @param y the y
+     * @return the boolean
+     */
     public boolean isSpaceEmpty(int x, int y) {
         return (grid[x][y] == null);
     }
 
+    /**
+     * Shift entity.
+     *
+     * @param e the e
+     * @param x the x
+     * @param y the y
+     */
     public void shiftEntity(Entity e, int x, int y) {
         int oldX = e.getxPos();
         int oldY = e.getyPos();
@@ -39,6 +62,13 @@ public class BattleGrid extends RPGObject {
         addEntity(e);
     }
 
+    /**
+     * Move entity.
+     *
+     * @param e the e
+     * @param x the x
+     * @param y the y
+     */
     public void moveEntity(Entity e, int x, int y) {
         int oldX = e.getxPos();
         int oldY = e.getyPos();
@@ -51,6 +81,11 @@ public class BattleGrid extends RPGObject {
         addEntity(e);
     }
 
+    /**
+     * Add entity.
+     *
+     * @param e the e
+     */
     public void addEntity(Entity e) {
         grid[e.getxPos()][e.getyPos()] = e;
     }
@@ -68,6 +103,9 @@ public class BattleGrid extends RPGObject {
         }
     }
 
+    /**
+     * Show grid.
+     */
     public void showGrid() {
         for (int i = 0; i < 13; i++) {
             System.out.print("\t" + (i));

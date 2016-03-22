@@ -21,6 +21,14 @@ public class Armor extends CombatGear {
     private ArmorSuffix suffix;
     private ArmorType type;
 
+    /**
+     * Instantiates a new Armor.
+     *
+     * @param slot     the slot
+     * @param material the material
+     * @param suffix   the suffix
+     * @param type     the type
+     */
     public Armor(WornSlot slot, Material material, ArmorSuffix suffix, ArmorType type) {
         this.slot = slot;
         this.material = material;
@@ -36,59 +44,127 @@ public class Armor extends CombatGear {
         setLevel(material.getLevel());
     }
 
+    /**
+     * Gets pierce def.
+     *
+     * @return the pierce def
+     */
     public ArmorStat getPierceDef() {
         return pierceDef;
     }
 
+    /**
+     * Sets pierce def.
+     *
+     * @param pierceDef the pierce def
+     */
     public void setPierceDef(ArmorStat pierceDef) {
         this.pierceDef = pierceDef;
     }
 
+    /**
+     * Gets slash def.
+     *
+     * @return the slash def
+     */
     public ArmorStat getSlashDef() {
         return slashDef;
     }
 
+    /**
+     * Sets slash def.
+     *
+     * @param slashDef the slash def
+     */
     public void setSlashDef(ArmorStat slashDef) {
         this.slashDef = slashDef;
     }
 
+    /**
+     * Gets crush def.
+     *
+     * @return the crush def
+     */
     public ArmorStat getCrushDef() {
         return crushDef;
     }
 
+    /**
+     * Sets crush def.
+     *
+     * @param crushDef the crush def
+     */
     public void setCrushDef(ArmorStat crushDef) {
         this.crushDef = crushDef;
     }
 
+    /**
+     * Gets arcane def.
+     *
+     * @return the arcane def
+     */
     public ArmorStat getArcaneDef() {
         return arcaneDef;
     }
 
+    /**
+     * Sets arcane def.
+     *
+     * @param arcaneDef the arcane def
+     */
     public void setArcaneDef(ArmorStat arcaneDef) {
         this.arcaneDef = arcaneDef;
     }
 
+    /**
+     * Gets suffix.
+     *
+     * @return the suffix
+     */
     public ArmorSuffix getSuffix() {
         return suffix;
     }
 
+    /**
+     * Sets suffix.
+     *
+     * @param suffix the suffix
+     */
     public void setSuffix(ArmorSuffix suffix) {
         this.suffix = suffix;
     }
 
+    /**
+     * Gets elemental type.
+     *
+     * @return the elemental type
+     */
     public ElementalType getElementalType() {
         return suffix.getElementalType();
     }
 
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
     public ArmorType getType() {
         return type;
     }
 
+    /**
+     * Sets type.
+     *
+     * @param type the type
+     */
     public void setType(ArmorType type) {
         this.type = type;
 
     }
 
+    /**
+     * Assign name.
+     */
     public void assignName() {
         name = material + " " + type;
         if (suffix != ArmorSuffix.NONE) {

@@ -12,10 +12,18 @@ public final class KBReader {
     private KBReader() {
     }
 
+    /**
+     * Gets scanner.
+     *
+     * @return the scanner
+     */
     public static Scanner getScanner() {
         return kbReader;
     }
 
+    /**
+     * Reset.
+     */
     public static void reset() {
         kbReader = new Scanner(System.in);
     }

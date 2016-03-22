@@ -7,7 +7,22 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description: Elemental types based on suffix, which apply different effects on hit.
  */
 public enum ElementalType {
-    LIGHT, DARK, FIRE, FROST, NONE;
+    /**
+     * Light elemental type.
+     */
+    LIGHT, /**
+     * Dark elemental type.
+     */
+    DARK, /**
+     * Fire elemental type.
+     */
+    FIRE, /**
+     * Frost elemental type.
+     */
+    FROST, /**
+     * None elemental type.
+     */
+    NONE;
 
     // These constants are multiplied by (CombatGear.getLevel() / Gear.getMAXLEVEL());
     private static final double LIGHT_SCALING = 0.05;
@@ -16,22 +31,45 @@ public enum ElementalType {
     private static final double FROST_SCALING = 0.3;
     private final String lowercase;
 
+    /**
+     * Instantiates a new Elemental type.
+     */
     ElementalType() {
         lowercase = StringManip.toLowercase(super.toString());
     }
 
+    /**
+     * Gets light scaling.
+     *
+     * @return the light scaling
+     */
     public static double getLightScaling() {
         return LIGHT_SCALING;
     }
 
+    /**
+     * Gets dark scaling.
+     *
+     * @return the dark scaling
+     */
     public static double getDarkScaling() {
         return DARK_SCALING;
     }
 
+    /**
+     * Gets fire scaling.
+     *
+     * @return the fire scaling
+     */
     public static double getFireScaling() {
         return FIRE_SCALING;
     }
 
+    /**
+     * Gets frost scaling.
+     *
+     * @return the frost scaling
+     */
     public static double getFrostScaling() {
         return FROST_SCALING;
     }

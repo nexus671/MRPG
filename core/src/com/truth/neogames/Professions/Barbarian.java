@@ -24,6 +24,11 @@ public class Barbarian extends Profession {
     private int level = 1;
     private int sp = 1;
 
+    /**
+     * Instantiates a new Barbarian.
+     *
+     * @param e the e
+     */
     public Barbarian(LivingEntity e) {
         name = ProfessionName.BARBARIAN;
         stats = e.getStats();
@@ -45,14 +50,29 @@ public class Barbarian extends Profession {
 
     //Actives
 
+    /**
+     * Gets maxlevel.
+     *
+     * @return the maxlevel
+     */
     public static int getMAXLEVEL() {
         return MAXLEVEL;
     }
 
+    /**
+     * Gets stats.
+     *
+     * @return the stats
+     */
     public EntityStats getStats() {
         return stats;
     }
 
+    /**
+     * Sets stats.
+     *
+     * @param stats the stats
+     */
     public void setStats(EntityStats stats) {
         this.stats = stats;
     }

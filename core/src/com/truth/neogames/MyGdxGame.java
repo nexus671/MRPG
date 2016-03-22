@@ -23,10 +23,24 @@ import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * The type My gdx game.
+ */
 public class MyGdxGame extends ApplicationAdapter {
+    /**
+     * The Batch.
+     */
     SpriteBatch batch;
+    /**
+     * The Img.
+     */
     Texture img;
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Collection<EntityStat> stats = new ArrayList<EntityStat>();
         stats.add(new EntityStat(EntityStatName.STRENGTH, 20.0));

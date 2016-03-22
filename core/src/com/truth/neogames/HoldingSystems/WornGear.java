@@ -13,21 +13,28 @@ public class WornGear extends RPGObject {
 
     /*************
      * Constructors
-     *************/
-
+     */
     public WornGear() {
         gear = new Gear[9];
     }
 
     /**************
      * Specific Methods
-     *************/
-
+     *
+     * @param g the g
+     * @return the boolean
+     */
     public boolean contains(Gear g) {
         WornSlot slot = g.getSlot();
         return gear[slot.getSlotNumber()].equals(g);
     }
 
+    /**
+     * Slot is empty boolean.
+     *
+     * @param slot the slot
+     * @return the boolean
+     */
     public boolean slotIsEmpty(WornSlot slot) {
         int index = slot.getSlotNumber();
         return (gear[index] == null);
@@ -35,12 +42,19 @@ public class WornGear extends RPGObject {
 
     /*************
      * Getters
-     *************/
-
+     *
+     * @return the gear [ ]
+     */
     public Gear[] getGear() {
         return gear;
     }
 
+    /**
+     * Gets from slot.
+     *
+     * @param slot the slot
+     * @return the from slot
+     */
     public Gear getFromSlot(WornSlot slot) {
         return gear[slot.getSlotNumber()];
     }

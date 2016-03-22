@@ -9,24 +9,80 @@ import com.truth.neogames.Utilities.StringManip;
  * gives special bonuses.
  */
 public enum ArmorSuffix {
-    NONE, HARDINESS, ENLIGHTENING, BRAWLING, APTITUDE,
-    PROSPERITY, INCANDESCENCE(ElementalType.LIGHT), RADIANCE(ElementalType.LIGHT),
-    TWILIGHT(ElementalType.DARK), SHADOW(ElementalType.DARK), FLAME(ElementalType.FIRE),
-    BURNING(ElementalType.FIRE), ICE(ElementalType.FROST), FREEZING(ElementalType.FROST);
+    /**
+     * None armor suffix.
+     */
+    NONE, /**
+     * Hardiness armor suffix.
+     */
+    HARDINESS, /**
+     * Enlightening armor suffix.
+     */
+    ENLIGHTENING, /**
+     * Brawling armor suffix.
+     */
+    BRAWLING, /**
+     * Aptitude armor suffix.
+     */
+    APTITUDE,
+    /**
+     * Prosperity armor suffix.
+     */
+    PROSPERITY, /**
+     * Incandescence armor suffix.
+     */
+    INCANDESCENCE(ElementalType.LIGHT), /**
+     * Radiance armor suffix.
+     */
+    RADIANCE(ElementalType.LIGHT),
+    /**
+     * Twilight armor suffix.
+     */
+    TWILIGHT(ElementalType.DARK), /**
+     * Shadow armor suffix.
+     */
+    SHADOW(ElementalType.DARK), /**
+     * Flame armor suffix.
+     */
+    FLAME(ElementalType.FIRE),
+    /**
+     * Burning armor suffix.
+     */
+    BURNING(ElementalType.FIRE), /**
+     * Ice armor suffix.
+     */
+    ICE(ElementalType.FROST), /**
+     * Freezing armor suffix.
+     */
+    FREEZING(ElementalType.FROST);
 
     private final ElementalType elementalType;
     private final String lowercase;
 
+    /**
+     * Instantiates a new Armor suffix.
+     */
     ArmorSuffix() {
         lowercase = StringManip.toLowercase(super.toString());
         elementalType = ElementalType.NONE;
     }
 
+    /**
+     * Instantiates a new Armor suffix.
+     *
+     * @param type the type
+     */
     ArmorSuffix(ElementalType type) {
         lowercase = StringManip.toLowercase(super.toString());
         elementalType = type;
     }
 
+    /**
+     * Gets description.
+     *
+     * @param suffix the suffix
+     * @return the description
+     */
     public static String getDescription(ArmorSuffix suffix) {
         String description = "";
         if (suffix.elementalType == ElementalType.NONE) {
@@ -69,10 +125,20 @@ public enum ArmorSuffix {
         return description;
     }
 
+    /**
+     * Gets elemental type.
+     *
+     * @return the elemental type
+     */
     public ElementalType getElementalType() {
         return elementalType;
     }
 
+    /**
+     * Is elemental boolean.
+     *
+     * @return the boolean
+     */
     public boolean isElemental() {
         return elementalType == ElementalType.NONE;
     }

@@ -15,15 +15,26 @@ import java.util.List;
 public class TempUI {
     private final Battle battle;
 
+    /**
+     * Instantiates a new Temp ui.
+     *
+     * @param b the b
+     */
     public TempUI(Battle b) {
         battle = b;
         playerTurn();
     }
 
+    /**
+     * Player turn.
+     */
     public void playerTurn() {
         printPlayerMenu();
     }
 
+    /**
+     * Print player menu.
+     */
     public void printPlayerMenu() {
         battle.getGrid().showGrid();
         double speed = battle.getPlayer().getStats().getStat(EntityStatName.SPEED).getMax();

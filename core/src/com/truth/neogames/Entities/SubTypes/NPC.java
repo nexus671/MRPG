@@ -15,8 +15,7 @@ public class NPC extends Entity {
 
     /*************
      * Constructors
-     *************/
-
+     */
     public NPC() {
         shop = new Shop();
         dialogueOptions = new ArrayList<String>();
@@ -24,24 +23,36 @@ public class NPC extends Entity {
 
     /*************
      * Getters
-     *************/
-
+     *
+     * @return the shop
+     */
     public Shop getShop() {
         return shop;
     }
 
     /*************
      * Setters
-     *************/
-
+     *
+     * @param shop the shop
+     */
     public void setShop(Shop shop) {
         this.shop = shop;
     }
 
+    /**
+     * Gets dialogue options.
+     *
+     * @return the dialogue options
+     */
     public ArrayList<String> getDialogueOptions() {
         return dialogueOptions;
     }
 
+    /**
+     * Sets dialogue options.
+     *
+     * @param dialogueOptions the dialogue options
+     */
     public void setDialogueOptions(ArrayList<String> dialogueOptions) {
         this.dialogueOptions = dialogueOptions;
     }

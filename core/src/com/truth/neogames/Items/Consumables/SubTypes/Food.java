@@ -12,22 +12,38 @@ public class Food extends Consumable {
 
     /*************
      * Constructors
-     *************/
-
+     *
+     * @param name        the name
+     * @param description the description
+     * @param healAmount  the heal amount
+     */
     public Food(String name, String description, int healAmount) {
         this.healAmount = (double) healAmount;
         super.name = name;
         assignDescription();
     }
 
+    /**
+     * Gets heal amount.
+     *
+     * @return the heal amount
+     */
     public double getHealAmount() {
         return healAmount;
     }
 
+    /**
+     * Sets heal amount.
+     *
+     * @param healAmount the heal amount
+     */
     public void setHealAmount(double healAmount) {
         this.healAmount = healAmount;
     }
 
+    /**
+     * Assign description.
+     */
     public void assignDescription() {
         description = "Consume to restore up to " + healAmount + " health.";
     }

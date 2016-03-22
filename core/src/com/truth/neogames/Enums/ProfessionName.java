@@ -7,11 +7,41 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description:
  */
 public enum ProfessionName {
-    BARBARIAN, BARD, CLERIC, DRUID, FIGHTER,
-    PALADIN, RANGER, ROGUE, SORCERER;
+    /**
+     * Barbarian profession name.
+     */
+    BARBARIAN, /**
+     * Bard profession name.
+     */
+    BARD, /**
+     * Cleric profession name.
+     */
+    CLERIC, /**
+     * Druid profession name.
+     */
+    DRUID, /**
+     * Fighter profession name.
+     */
+    FIGHTER,
+    /**
+     * Paladin profession name.
+     */
+    PALADIN, /**
+     * Ranger profession name.
+     */
+    RANGER, /**
+     * Rogue profession name.
+     */
+    ROGUE, /**
+     * Sorcerer profession name.
+     */
+    SORCERER;
 
     private final String lowercase;
 
+    /**
+     * Instantiates a new Profession name.
+     */
     ProfessionName() {
         lowercase = StringManip.toLowercase(super.toString());
     }

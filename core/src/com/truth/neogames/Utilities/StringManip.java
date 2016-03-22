@@ -8,6 +8,12 @@ public final class StringManip {
     private StringManip() {
     }
 
+    /**
+     * To lowercase string.
+     *
+     * @param str the str
+     * @return the string
+     */
     public static String toLowercase(String str) {
         char firstLetter = str.charAt(0);
         str = str.substring(1);

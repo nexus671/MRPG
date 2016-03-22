@@ -7,10 +7,31 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description: Enumerator class for raceName names.
  */
 public enum RaceName {
-    HUMAN(), ELF(), ORC(), DWARF(), GNOME(), CATFOLK();
+    /**
+     * Human race name.
+     */
+    HUMAN(), /**
+     * Elf race name.
+     */
+    ELF(), /**
+     * Orc race name.
+     */
+    ORC(), /**
+     * Dwarf race name.
+     */
+    DWARF(), /**
+     * Gnome race name.
+     */
+    GNOME(), /**
+     * Catfolk race name.
+     */
+    CATFOLK();
 
     private final String lowercase;
 
+    /**
+     * Instantiates a new Race name.
+     */
     RaceName() {
         lowercase = StringManip.toLowercase(super.toString());
     }

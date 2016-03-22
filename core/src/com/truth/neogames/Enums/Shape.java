@@ -5,14 +5,21 @@ package com.truth.neogames.Enums;
  * Class Description: Shapes
  */
 public enum Shape {
-    SQUARE("square"), CIRCLE("circle");
+    /**
+     * Square shape.
+     */
+    SQUARE("square"), /**
+     * Circle shape.
+     */
+    CIRCLE("circle");
 
     private final String lowercase;
 
 
     /**
-     * @param lowercase Sets the lowercase field to the lowercase version of
-     *                  the object name.
+     * Instantiates a new Shape.
+     *
+     * @param lowercase Sets the lowercase field to the lowercase version of                  the object name.
      */
     Shape(String lowercase) {
         this.lowercase = lowercase;

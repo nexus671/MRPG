@@ -11,29 +11,62 @@ public class Slow extends Ailment {
     private double magnitude;
     private LivingEntity e;
 
+    /**
+     * Instantiates a new Slow.
+     *
+     * @param duration  the duration
+     * @param magnitude the magnitude
+     */
     public Slow(int duration, double magnitude) {
         this.duration = duration;
         this.magnitude = magnitude;
     }
 
+    /**
+     * Instantiates a new Slow.
+     *
+     * @param duration  the duration
+     * @param magnitude the magnitude
+     * @param e         the e
+     */
     public Slow(int duration, double magnitude, LivingEntity e) {
         this.duration = duration;
         this.magnitude = magnitude;
         this.e = e;
     }
 
+    /**
+     * Gets duration.
+     *
+     * @return the duration
+     */
     public int getDuration() {
         return duration;
     }
 
+    /**
+     * Sets duration.
+     *
+     * @param duration the duration
+     */
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
+    /**
+     * Gets magnitude.
+     *
+     * @return the magnitude
+     */
     public double getMagnitude() {
         return magnitude;
     }
 
+    /**
+     * Sets magnitude.
+     *
+     * @param magnitude the magnitude
+     */
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
     }

@@ -7,9 +7,21 @@ import com.truth.neogames.EnvironmentPackage.BattleGrid;
  * Created by acurr on 3/21/2016.
  */
 public class MoveTo extends Routine {
+    /**
+     * The Dest x.
+     */
     final protected int destX;
+    /**
+     * The Dest y.
+     */
     final protected int destY;
 
+    /**
+     * Instantiates a new Move to.
+     *
+     * @param destX the dest x
+     * @param destY the dest y
+     */
     public MoveTo(int destX, int destY) {
         super();
         this.destX = destX;

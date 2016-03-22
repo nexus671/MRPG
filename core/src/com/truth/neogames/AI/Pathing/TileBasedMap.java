@@ -39,8 +39,7 @@ public interface TileBasedMap {
      * Check if the given location is blocked, i.e. blocks movement of
      * the supplied mover.
      *
-     * @param mover The mover that is potentially moving through the specified
-     *              tile.
+     * @param mover The mover that is potentially moving through the specified              tile.
      * @param x     The x coordinate of the tile to check
      * @param y     The y coordinate of the tile to check
      * @return True if the location is blocked

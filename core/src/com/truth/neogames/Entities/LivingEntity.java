@@ -35,12 +35,42 @@ import java.util.ArrayList;
  */
 public abstract class LivingEntity extends Entity {
     private static final int MAX_LEVEL = 21;
+    /**
+     * The Profession.
+     */
     protected Profession profession;
+    /**
+     * The Worn gear.
+     */
     protected WornGear wornGear;
+    /**
+     * The Inventory.
+     */
     protected Inventory inventory;
+    /**
+     * The Stats.
+     */
     protected EntityStats stats;
+    /**
+     * The Aliments.
+     */
     protected ArrayList<Ailment> aliments = new ArrayList<Ailment>();
 
+    /**
+     * Instantiates a new Living entity.
+     *
+     * @param name        the name
+     * @param raceName    the race name
+     * @param sex         the sex
+     * @param sprite      the sprite
+     * @param description the description
+     * @param xPos        the x pos
+     * @param yPos        the y pos
+     * @param profession  the profession
+     * @param entityStats the entity stats
+     * @param inventory   the inventory
+     * @param wornGear    the worn gear
+     */
     protected LivingEntity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos,
                            Profession profession, EntityStats entityStats, Inventory inventory, WornGear wornGear) {
         this.profession = profession;
@@ -49,9 +79,17 @@ public abstract class LivingEntity extends Entity {
         this.wornGear = wornGear;
     }
 
+    /**
+     * Instantiates a new Living entity.
+     */
     protected LivingEntity() {
     }
 
+    /**
+     * Gets max level.
+     *
+     * @return the max level
+     */
     public static int getMaxLevel() {
         return MAX_LEVEL;
     }
@@ -128,6 +166,9 @@ public abstract class LivingEntity extends Entity {
         return true;
     }
 
+    /**
+     * Print ablities.
+     */
     public void printAblities() {
         for (ActiveAbility a : profession.getUnlockedActiveAbilities()) {
             if (a.getType() != AbilityType.PASSIVE) {
@@ -138,6 +179,11 @@ public abstract class LivingEntity extends Entity {
     }
 
 
+    /**
+     * Receive damage.
+     *
+     * @param damages the damages
+     */
     public void receiveDamage(Iterable<Damage> damages) {
 
 
@@ -157,6 +203,12 @@ public abstract class LivingEntity extends Entity {
 
     }
 
+    /**
+     * Equip boolean.
+     *
+     * @param j the j
+     * @return the boolean
+     */
     public boolean equip(Jewelry j) {
         if (j.getLevel() > stats.getLevel()) {
             return false;
@@ -343,45 +395,85 @@ public abstract class LivingEntity extends Entity {
 
     /*************
      * Getters
-     *************/
-
+     *
+     * @return the stats
+     */
     public EntityStats getStats() {
         return stats;
     }
 
     /**************
      * Setters
-     *************/
-
+     *
+     * @param stats the stats
+     */
     public void setStats(EntityStats stats) {
         this.stats = stats;
     }
 
+    /**
+     * Gets profession.
+     *
+     * @return the profession
+     */
     public Profession getProfession() {
         return profession;
     }
 
+    /**
+     * Sets profession.
+     *
+     * @param profession the profession
+     */
     public void setProfession(Profession profession) {
         this.profession = profession;
     }
 
+    /**
+     * Gets worn gear.
+     *
+     * @return the worn gear
+     */
     public WornGear getWornGear() {
         return wornGear;
     }
 
+    /**
+     * Sets worn gear.
+     *
+     * @param wornGear the worn gear
+     */
     public void setWornGear(WornGear wornGear) {
         this.wornGear = wornGear;
     }
 
+    /**
+     * Gets inventory.
+     *
+     * @return the inventory
+     */
     public Inventory getInventory() {
         return inventory;
     }
 
+    /**
+     * Sets inventory.
+     *
+     * @param inventory the inventory
+     */
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 
 
+    /**
+     * Move boolean.
+     *
+     * @param grid the grid
+     * @param x    the x
+     * @param y    the y
+     * @return the boolean
+     */
     public boolean move(BattleGrid grid, int x, int y) {
         if (grid.isSpaceEmpty(x, y)) {
             grid.moveEntity(this, x, y);
@@ -390,6 +482,12 @@ public abstract class LivingEntity extends Entity {
         return false;
     }
 
+    /**
+     * Move left boolean.
+     *
+     * @param grid the grid
+     * @return the boolean
+     */
     public boolean moveLeft(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos - 1, yPos)) {
@@ -403,6 +501,12 @@ public abstract class LivingEntity extends Entity {
         }
     }
 
+    /**
+     * Move right boolean.
+     *
+     * @param grid the grid
+     * @return the boolean
+     */
     public boolean moveRight(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos + 1, yPos)) {
@@ -418,6 +522,12 @@ public abstract class LivingEntity extends Entity {
 
     }
 
+    /**
+     * Move forward boolean.
+     *
+     * @param grid the grid
+     * @return the boolean
+     */
     public boolean moveForward(BattleGrid grid) {
         try {
 
@@ -433,6 +543,12 @@ public abstract class LivingEntity extends Entity {
         }
     }
 
+    /**
+     * Move backward boolean.
+     *
+     * @param grid the grid
+     * @return the boolean
+     */
     public boolean moveBackward(BattleGrid grid) {
         try {
             if (grid.isSpaceEmpty(xPos, yPos - 1)) {
@@ -521,19 +637,39 @@ public abstract class LivingEntity extends Entity {
         this.yPos = yPos;
     }
 
+    /**
+     * Add aliment.
+     *
+     * @param e the e
+     */
     public void addAliment(Ailment e) {
         aliments.add(e);
     }
 
+    /**
+     * Remove aliment.
+     *
+     * @param e the e
+     */
     public void removeAliment(Ailment e) {
         aliments.remove(e);
     }
 
 
+    /**
+     * Gets aliments.
+     *
+     * @return the aliments
+     */
     public ArrayList<Ailment> getAliments() {
         return aliments;
     }
 
+    /**
+     * Sets aliments.
+     *
+     * @param aliments the aliments
+     */
     public void setAliments(ArrayList<Ailment> aliments) {
         this.aliments = aliments;
     }

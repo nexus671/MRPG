@@ -7,6 +7,9 @@ import java.util.Random;
  * Class Description: Generates RANDOM numbers.
  */
 public final class RandomNumber {
+    /**
+     * The constant RANDOM.
+     */
     public static final Random RANDOM = new Random();
 
     private RandomNumber() {

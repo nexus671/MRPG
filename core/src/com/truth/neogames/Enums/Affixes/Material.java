@@ -13,9 +13,39 @@ import com.truth.neogames.Utilities.StringManip;
  * k2 = 3
  */
 public enum Material {
-    BRONZE(1), IRON(2), STEEL(3), MITHRIL(4),
-    GOLDEN(5), LAMINAR(8), PLATED(10), OBSIDIAN(12),
-    CRYSTAL(16), DRACONIC(21);
+    /**
+     * Bronze material.
+     */
+    BRONZE(1), /**
+     * Iron material.
+     */
+    IRON(2), /**
+     * Steel material.
+     */
+    STEEL(3), /**
+     * Mithril material.
+     */
+    MITHRIL(4),
+    /**
+     * Golden material.
+     */
+    GOLDEN(5), /**
+     * Laminar material.
+     */
+    LAMINAR(8), /**
+     * Plated material.
+     */
+    PLATED(10), /**
+     * Obsidian material.
+     */
+    OBSIDIAN(12),
+    /**
+     * Crystal material.
+     */
+    CRYSTAL(16), /**
+     * Draconic material.
+     */
+    DRACONIC(21);
 
     private final String lowercase;
     private final double avgDamage;
@@ -23,6 +53,11 @@ public enum Material {
     private final boolean metallic;
     private int level;
 
+    /**
+     * Instantiates a new Material.
+     *
+     * @param level the level
+     */
     Material(int level) {
         this.level = level;
         lowercase = StringManip.toLowercase(super.toString());
@@ -31,26 +66,56 @@ public enum Material {
         metallic = true;
     }
 
+    /**
+     * Gets level.
+     *
+     * @return the level
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Sets level.
+     *
+     * @param level the level
+     */
     public void setLevel(int level) {
         this.level = level;
     }
 
+    /**
+     * Gets lowercase.
+     *
+     * @return the lowercase
+     */
     public String getLowercase() {
         return lowercase;
     }
 
+    /**
+     * Gets avg damage.
+     *
+     * @return the avg damage
+     */
     public double getAvgDamage() {
         return avgDamage;
     }
 
+    /**
+     * Gets avg defense.
+     *
+     * @return the avg defense
+     */
     public double getAvgDefense() {
         return avgDefense;
     }
 
+    /**
+     * Is metallic boolean.
+     *
+     * @return the boolean
+     */
     public boolean isMetallic() {
         return metallic;
     }

@@ -7,10 +7,28 @@ import com.truth.neogames.Utilities.StringManip;
  * Class Description:
  */
 public enum DamageType {
-    PIERCING, SLASHING, CRUSHING, ARCANE;
+    /**
+     * Piercing damage type.
+     */
+    PIERCING, /**
+     * Slashing damage type.
+     */
+    SLASHING, /**
+     * Crushing damage type.
+     */
+    CRUSHING, /**
+     * Arcane damage type.
+     */
+    ARCANE;
 
+    /**
+     * The Lowercase.
+     */
     final String lowercase;
 
+    /**
+     * Instantiates a new Damage type.
+     */
     DamageType() {
         lowercase = StringManip.toLowercase(super.toString());
     }

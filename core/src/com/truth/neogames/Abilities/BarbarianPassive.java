@@ -15,6 +15,12 @@ public class BarbarianPassive extends PassiveAbility {
     private int duration;
     private int area = 1;
 
+    /**
+     * Instantiates a new Barbarian passive.
+     *
+     * @param level the level
+     * @param e     the e
+     */
     public BarbarianPassive(int level, LivingEntity e) {
         name = "Barbarian Passive";
         setType(AbilityType.PASSIVE);
@@ -27,6 +33,11 @@ public class BarbarianPassive extends PassiveAbility {
         e.getStats().getStrength().addBonus(buff);
     }
 
+    /**
+     * Gets range.
+     *
+     * @return the range
+     */
     public static AbilityRange getRange() {
         return RANGE;
     }
@@ -61,6 +72,11 @@ public class BarbarianPassive extends PassiveAbility {
         return area;
     }
 
+    /**
+     * Sets area.
+     *
+     * @param area the area
+     */
     public void setArea(int area) {
         this.area = area;
     }

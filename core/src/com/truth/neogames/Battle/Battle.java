@@ -20,33 +20,73 @@ public class Battle extends RPGObject {
     private Monster[] monsters;
     private BattleGrid grid;
 
+    /**
+     * Instantiates a new Battle.
+     *
+     * @param p        the p
+     * @param monsters the monsters
+     * @param b        the b
+     */
     public Battle(Player p, Monster[] monsters, BattleGrid b) {
         player = p;
         this.monsters = monsters;
         grid = b;
     }
 
+    /**
+     * Apply ability.
+     *
+     * @param ability the ability
+     * @param targets the targets
+     * @param caster  the caster
+     */
     public void ApplyAbility(ActiveAbility ability, ArrayList<LivingEntity> targets, LivingEntity caster) {
 
     }
 
+    /**
+     * Gets player.
+     *
+     * @return the player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * Sets player.
+     *
+     * @param player the player
+     */
     public void setPlayer(Player player) {
         this.player = player;
     }
 
+    /**
+     * Get monsters monster [ ].
+     *
+     * @return the monster [ ]
+     */
     public Monster[] getMonsters() {
 
         return monsters;
     }
 
+    /**
+     * Sets monsters.
+     *
+     * @param monsters the monsters
+     */
     public void setMonsters(Monster... monsters) {
         this.monsters = monsters;
     }
 
+    /**
+     * Gets monsters in area.
+     *
+     * @param area the area
+     * @return the monsters area
+     */
     public List<Monster> getMonstersArea(int area) {
 
 
@@ -69,10 +109,20 @@ public class Battle extends RPGObject {
         return mlist;
     }
 
+    /**
+     * Gets grid.
+     *
+     * @return the grid
+     */
     public BattleGrid getGrid() {
         return grid;
     }
 
+    /**
+     * Sets grid.
+     *
+     * @param grid the grid
+     */
     public void setGrid(BattleGrid grid) {
         this.grid = grid;
     }

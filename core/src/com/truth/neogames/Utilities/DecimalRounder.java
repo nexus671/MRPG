@@ -13,6 +13,12 @@ public final class DecimalRounder {
     private DecimalRounder() {
     }
 
+    /**
+     * Round string.
+     *
+     * @param a the a
+     * @return the string
+     */
     public static String round(double a) {
         return ROUNDER.format(a);
     }

@@ -15,6 +15,9 @@ import java.util.ArrayList;
  * Class Description: Generates weapons and armor for monster drops and chests.
  */
 public class GearGenerator {
+    /**
+     * The Stats affected.
+     */
     ArrayList<EntityStatName> statsAffected;
 
     /**
@@ -36,6 +39,12 @@ public class GearGenerator {
         return new Weapon(EnumPicker.getGearMaterial(level), EnumPicker.getRandomWeaponSuffix(), EnumPicker.getRandomWeaponType());
     }
 
+    /**
+     * Gets random armor.
+     *
+     * @param slot the slot
+     * @return the random armor
+     */
     public static Armor getRandomArmor(WornSlot slot) {
         switch (slot) {
             case RING:
@@ -48,6 +57,13 @@ public class GearGenerator {
         }
     }
 
+    /**
+     * Gets armor.
+     *
+     * @param level the level
+     * @param slot  the slot
+     * @return the armor
+     */
     public static Armor getArmor(int level, WornSlot slot) {
         switch (slot) {
             case RING:
@@ -93,6 +109,11 @@ public class GearGenerator {
         return null;
     }
 
+    /**
+     * Gets random jewelry.
+     *
+     * @return the random jewelry
+     */
     public Jewelry getRandomJewelry() {
         boolean ring = RandomNumber.RANDOM.nextBoolean();
         int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
@@ -100,6 +121,12 @@ public class GearGenerator {
         return new Jewelry(EnumPicker.getRandomJewelryMetal(), EnumPicker.getRandomJewelryGem(), statsAffected, ring);
     }
 
+    /**
+     * Gets jewelry.
+     *
+     * @param level the level
+     * @return the jewelry
+     */
     public Jewelry getJewelry(int level) {
         boolean ring = RandomNumber.RANDOM.nextBoolean();
         int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
@@ -107,6 +134,13 @@ public class GearGenerator {
         return new Jewelry(EnumPicker.getJewelryMetal(level), EnumPicker.getJewelryGem(level), statsAffected, ring);
     }
 
+    /**
+     * Gets jewelry.
+     *
+     * @param level  the level
+     * @param isRing the is ring
+     * @return the jewelry
+     */
     public Jewelry getJewelry(int level, boolean isRing) {
         int numStats = RandomNumber.RANDOM.nextInt(Jewelry.getMaxStats());
         addRandomStats(numStats);
@@ -147,7 +181,14 @@ public class GearGenerator {
         return null;
     }
 
-    //HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), GLOVES(5), RING(6), LEGS(7), FEET(8), AMMO(9)
+    /**
+     * Gets random.
+     *
+     * @param level the level
+     * @param slot  the slot
+     * @return the random
+     */
+//HEAD(0), NECK(1), CHEST(2), MAINHAND(3), OFFHAND(4), GLOVES(5), RING(6), LEGS(7), FEET(8), AMMO(9)
     public Gear getRandom(int level, WornSlot slot) {
         switch (slot) {
             case HEAD:
