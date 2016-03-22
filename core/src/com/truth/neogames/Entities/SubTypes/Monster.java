@@ -1,6 +1,8 @@
 package com.truth.neogames.Entities.SubTypes;
 
+import com.truth.neogames.Entities.Entity;
 import com.truth.neogames.Entities.LivingEntity;
+import com.truth.neogames.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
 
 
@@ -22,13 +24,19 @@ public class Monster extends LivingEntity {
         this.stats = stats;
     }
 
+    public void moveTowardTarget(BattleGrid b, Entity e) {
+
+    }
+
     /************* Getters *************/
 
 
     /*************
      * Setters
      *************/
-
+    public boolean isAlive() {
+        return this.getStats().getHealth().getCurrent() >= 0;
+    }
 
     public boolean isHostile() {
         return hostile;
