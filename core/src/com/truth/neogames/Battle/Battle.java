@@ -1,5 +1,7 @@
 package com.truth.neogames.Battle;
 
+import com.truth.neogames.AI.Pathing.Path;
+import com.truth.neogames.AI.Pathing.PathFinder;
 import com.truth.neogames.Abilities.ActiveAbility;
 import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Entities.SubTypes.Monster;
@@ -19,6 +21,8 @@ public class Battle extends RPGObject {
     private Player player;
     private Monster[] monsters;
     private BattleGrid grid;
+    private PathFinder finder;
+    private Path path;
 
     /**
      * Instantiates a new Battle.
@@ -107,6 +111,22 @@ public class Battle extends RPGObject {
         }
 
         return mlist;
+    }
+
+    public PathFinder getFinder() {
+        return finder;
+    }
+
+    public void setFinder(PathFinder finder) {
+        this.finder = finder;
+    }
+
+    public Path getPath() {
+        return path;
+    }
+
+    public void setPath(Path path) {
+        this.path = path;
     }
 
     /**

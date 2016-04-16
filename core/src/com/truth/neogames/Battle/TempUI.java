@@ -49,6 +49,7 @@ public class TempUI {
         System.out.print("Enter your choice: ");
         int choice = KBReader.getScanner().nextInt();
         while (choice != -1) {
+
             if ((choice == 0) && (speed > 0.0)) {
                 System.out.println("1. UP 2.Down 3.Left 4.Right");
                 int m = KBReader.getScanner().nextInt();

@@ -1,6 +1,8 @@
 package com.truth.neogames.EnvironmentPackage;
 
+import com.truth.neogames.AI.Pathing.TileBasedMap;
 import com.truth.neogames.Entities.Entity;
+import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Entities.SubTypes.Monster;
 import com.truth.neogames.Entities.SubTypes.Player;
 import com.truth.neogames.RPGObject;
@@ -12,24 +14,33 @@ import java.util.Random;
  * Created by acurr on 11/4/2015.
  * Class Description:
  */
-public class BattleGrid extends RPGObject {
-    private final Entity[][] grid;
+public class BattleGrid extends RPGObject implements TileBasedMap {
+    private int WIDTH;
+    private int HEIGHT;
+    private final Entity[][] entities = new Entity[WIDTH][HEIGHT];
+    private final Terrain[][] terrain = new Terrain[WIDTH][HEIGHT];
+    private final boolean[][] visited = new boolean[WIDTH][HEIGHT];
+
+
+
 
     /**
-     * Instantiates a new Battle grid.
+     * Instantiates a new Battle entities.
      */
     public BattleGrid() {
-        grid = new Entity[13][13];
+        WIDTH = 13;
+        HEIGHT = 13;
     }
 
     /**
-     * Instantiates a new Battle grid.
+     * Instantiates a new Battle entities.
      *
-     * @param r the r
-     * @param c the c
+     * @param width the width
+     * @param height the height
      */
-    public BattleGrid(int r, int c) {
-        grid = new Entity[r][c];
+    public BattleGrid(int width, int height) {
+        WIDTH = width;
+        HEIGHT = height;
     }
 
     /**
@@ -39,8 +50,8 @@ public class BattleGrid extends RPGObject {
      * @param y the y
      * @return the boolean
      */
-    public boolean isSpaceEmpty(int x, int y) {
-        return (grid[x][y] == null);
+    public boolean blocked(LivingEntity entity, int x, int y) {
+        return (entities[x][y] == null);
     }
 
     /**
@@ -57,7 +68,7 @@ public class BattleGrid extends RPGObject {
         e.setxPos(oldX + x);
         e.setyPos(oldY + y);
 
-        grid[oldX][oldY] = null;
+        entities[oldX][oldY] = null;
 
         addEntity(e);
     }
@@ -76,9 +87,78 @@ public class BattleGrid extends RPGObject {
         e.setxPos(x);
         e.setyPos(y);
 
-        grid[oldX][oldY] = null;
+        entities[oldX][oldY] = null;
 
         addEntity(e);
+    }
+
+    /**
+     * Clear the array marking which tiles have been visted by the path
+     * finder.
+     */
+    public void clearVisited() {
+        for (int x = 0; x < getWidthInTiles(); x++) {
+            for (int y = 0; y < getHeightInTiles(); y++) {
+                visited[x][y] = false;
+            }
+        }
+    }
+
+    public boolean visited(int x, int y) {
+        return visited[x][y];
+    }
+
+    /**
+     * Get the terrain at a given location
+     *
+     * @param x The x coordinate of the terrain tile to retrieve
+     * @param y The y coordinate of the terrain tile to retrieve
+     * @return The terrain tile at the given location
+     */
+    public Terrain getTerrain(int x, int y) {
+        return terrain[x][y];
+    }
+
+
+    public int getHeightInTiles() {
+        return WIDTH;
+    }
+
+
+    public int getWidthInTiles() {
+        return HEIGHT;
+    }
+
+    /**
+     * Get the unit at a given location
+     *
+     * @param x The x coordinate of the tile to check for a unit
+     * @param y The y coordinate of the tile to check for a unit
+     * @return The ID of the unit at the given location or 0 if there is no unit
+     */
+    public Entity getEntity(int x, int y) {
+        return entities[x][y];
+    }
+
+    /**
+     * Set the unit at the given location
+     *
+     * @param x      The x coordinate of the location where the unit should be set
+     * @param y      The y coordinate of the location where the unit should be set
+     * @param entity The ID of the unit to be placed on the map, or 0 to clear the unit at the
+     *               given location
+     */
+    public void setEntity(int x, int y, LivingEntity entity) {
+        entities[x][y] = entity;
+    }
+
+    public void pathFinderVisited(int x, int y) {
+        visited[x][y] = true;
+    }
+
+
+    public float getCost(LivingEntity entity, int sx, int sy, int tx, int ty) {
+        return 1;
     }
 
     /**
@@ -87,7 +167,7 @@ public class BattleGrid extends RPGObject {
      * @param e the e
      */
     public void addEntity(Entity e) {
-        grid[e.getxPos()][e.getyPos()] = e;
+        entities[e.getxPos()][e.getyPos()] = e;
     }
 
     private void placeObstacles() {
@@ -96,15 +176,14 @@ public class BattleGrid extends RPGObject {
         while (treesPlaced < 10) {
             int x = random.nextInt(13);
             int y = random.nextInt(13);
-            if (grid[x][y] == null) {
-                //grid[x][y] = Tree; TODO Add tree entity and add rocks
+            if (entities[x][y] == null) {
                 treesPlaced++;
             }
         }
     }
 
     /**
-     * Show grid.
+     * Show entities.
      */
     public void showGrid() {
         for (int i = 0; i < 13; i++) {
@@ -115,11 +194,11 @@ public class BattleGrid extends RPGObject {
         for (int row = 0; row < 13; row++) {
             System.out.print(row);
             for (int column = 0; column < 13; column++) {
-                if (grid[row][column] == null) {
+                if (entities[row][column] == null) {
                     System.out.print("\t" + '-');
-                } else if (grid[row][column].getClass().equals(Monster.class)) {
+                } else if (entities[row][column].getClass().equals(Monster.class)) {
                     System.out.print("\t" + 'M');
-                } else if (grid[row][column].getClass().equals(Player.class)) {
+                } else if (entities[row][column].getClass().equals(Player.class)) {
                     System.out.print("\t" + 'P');
                 }
             }
@@ -131,7 +210,7 @@ public class BattleGrid extends RPGObject {
     @Override
     public String toString() {
         return "BattleGrid{" +
-                "grid=" + Arrays.toString(grid) +
+                "entities=" + Arrays.toString(entities) +
                 '}';
     }
 }

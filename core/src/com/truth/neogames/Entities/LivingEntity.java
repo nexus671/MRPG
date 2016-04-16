@@ -475,7 +475,7 @@ public abstract class LivingEntity extends Entity {
      * @return the boolean
      */
     public boolean move(BattleGrid grid, int x, int y) {
-        if (grid.isSpaceEmpty(x, y)) {
+        if (grid.blocked(this, x, y)) {
             grid.moveEntity(this, x, y);
             return true;
         }
@@ -490,7 +490,7 @@ public abstract class LivingEntity extends Entity {
      */
     public boolean moveLeft(BattleGrid grid) {
         try {
-            if (grid.isSpaceEmpty(xPos - 1, yPos)) {
+            if (grid.blocked(this, xPos - 1, yPos)) {
                 grid.shiftEntity(this, -1, 0);
                 return true;
             }
@@ -509,7 +509,7 @@ public abstract class LivingEntity extends Entity {
      */
     public boolean moveRight(BattleGrid grid) {
         try {
-            if (grid.isSpaceEmpty(xPos + 1, yPos)) {
+            if (grid.blocked(this, xPos + 1, yPos)) {
                 grid.shiftEntity(this, 1, 0);
                 return true;
             }
@@ -532,7 +532,7 @@ public abstract class LivingEntity extends Entity {
         try {
 
 
-            if (grid.isSpaceEmpty(xPos, yPos + 1)) {
+            if (grid.blocked(this, xPos, yPos + 1)) {
                 grid.shiftEntity(this, 0, 1);
                 return true;
             }
@@ -551,7 +551,7 @@ public abstract class LivingEntity extends Entity {
      */
     public boolean moveBackward(BattleGrid grid) {
         try {
-            if (grid.isSpaceEmpty(xPos, yPos - 1)) {
+            if (grid.blocked(this, xPos, yPos - 1)) {
                 grid.shiftEntity(this, 0, -1);
                 return true;
             }

@@ -42,6 +42,7 @@ public class MyGdxGame extends ApplicationAdapter {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+
         Collection<EntityStat> stats = new ArrayList<EntityStat>();
         stats.add(new EntityStat(EntityStatName.STRENGTH, 20.0));
 
