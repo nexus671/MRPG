@@ -15,8 +15,8 @@ import java.util.Random;
  * Class Description:
  */
 public class BattleGrid extends RPGObject implements TileBasedMap {
-    private int WIDTH;
-    private int HEIGHT;
+    private int WIDTH = 13;
+    private int HEIGHT = 13;
     private final Entity[][] entities = new Entity[WIDTH][HEIGHT];
     private final Terrain[][] terrain = new Terrain[WIDTH][HEIGHT];
     private final boolean[][] visited = new boolean[WIDTH][HEIGHT];
