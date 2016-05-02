@@ -1,4 +1,4 @@
-package com.truth.neogames.Effects;
+package com.truth.neogames.Effects.StatusAilments;
 
 import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Enums.DamageType;
@@ -6,11 +6,10 @@ import com.truth.neogames.Enums.DamageType;
 /**
  * Created by acurr on 2/15/2016.
  */
-public class DamageOvertime extends Effect {
+public class DamageOvertime extends Ailment {
     private double damage;
     private DamageType type;
     private int duration;
-    private LivingEntity e;
 
     /**
      * Instantiates a new Damage overtime.
@@ -19,11 +18,22 @@ public class DamageOvertime extends Effect {
      * @param type     the type
      * @param duration the duration
      */
-    public DamageOvertime(double damage, DamageType type, int duration) {
+    public DamageOvertime(double damage, DamageType type, int duration, LivingEntity e) {
+        super(e);
         this.damage = damage;
         this.type = type;
         this.duration = duration;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
+
 
     /**
      * Instantiates a new Damage overtime.
@@ -33,13 +43,7 @@ public class DamageOvertime extends Effect {
      * @param duration the duration
      * @param e        the e
      */
-    public DamageOvertime(double damage, DamageType type, int duration, LivingEntity e) {
-        this.damage = damage;
-        this.type = type;
-        this.duration = duration;
-        this.e = e;
 
-    }
 
     /**
      * Gets damage.

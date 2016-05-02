@@ -4,7 +4,8 @@ import com.truth.neogames.Entities.SubTypes.Monster;
 import com.truth.neogames.EnvironmentPackage.BattleGrid;
 
 /**
- * Created by acurr on 3/21/2016.
+ * Created by Ahmane on 3/21/2016.
+ *  Class Description:
  */
 public class MoveTo extends Routine {
     /**

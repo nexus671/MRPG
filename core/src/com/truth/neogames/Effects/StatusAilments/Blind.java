@@ -16,23 +16,26 @@ public class Blind extends Ailment {
      *
      * @param duration  the duration
      * @param magnitude the magnitude
-     */
-    public Blind(int duration, double magnitude) {
-        this.duration = duration;
-        this.magnitude = magnitude;
-    }
-
-    /**
-     * Instantiates a new Blind.
-     *
-     * @param duration  the duration
-     * @param magnitude the magnitude
      * @param e         the e
      */
     public Blind(int duration, double magnitude, LivingEntity e) {
+        super(e);
         this.duration = duration;
         this.magnitude = magnitude;
         this.e = e;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
+    }
+
+    public void Destroy() {
+        e.removeAilment(this);
     }
 
     /**

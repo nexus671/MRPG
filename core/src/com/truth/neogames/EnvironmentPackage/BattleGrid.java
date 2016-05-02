@@ -22,8 +22,6 @@ public class BattleGrid extends RPGObject implements TileBasedMap {
     private final boolean[][] visited = new boolean[WIDTH][HEIGHT];
 
 
-
-
     /**
      * Instantiates a new Battle entities.
      */
@@ -35,7 +33,7 @@ public class BattleGrid extends RPGObject implements TileBasedMap {
     /**
      * Instantiates a new Battle entities.
      *
-     * @param width the width
+     * @param width  the width
      * @param height the height
      */
     public BattleGrid(int width, int height) {
@@ -104,6 +102,13 @@ public class BattleGrid extends RPGObject implements TileBasedMap {
         }
     }
 
+    /**
+     * Visited boolean.
+     *
+     * @param x the x
+     * @param y the y
+     * @return the boolean
+     */
     public boolean visited(int x, int y) {
         return visited[x][y];
     }
@@ -145,8 +150,7 @@ public class BattleGrid extends RPGObject implements TileBasedMap {
      *
      * @param x      The x coordinate of the location where the unit should be set
      * @param y      The y coordinate of the location where the unit should be set
-     * @param entity The ID of the unit to be placed on the map, or 0 to clear the unit at the
-     *               given location
+     * @param entity The ID of the unit to be placed on the map, or 0 to clear the unit at the               given location
      */
     public void setEntity(int x, int y, LivingEntity entity) {
         entities[x][y] = entity;

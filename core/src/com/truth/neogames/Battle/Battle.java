@@ -113,18 +113,38 @@ public class Battle extends RPGObject {
         return mlist;
     }
 
+    /**
+     * Gets finder.
+     *
+     * @return the finder
+     */
     public PathFinder getFinder() {
         return finder;
     }
 
+    /**
+     * Sets finder.
+     *
+     * @param finder the finder
+     */
     public void setFinder(PathFinder finder) {
         this.finder = finder;
     }
 
+    /**
+     * Gets path.
+     *
+     * @return the path
+     */
     public Path getPath() {
         return path;
     }
 
+    /**
+     * Sets path.
+     *
+     * @param path the path
+     */
     public void setPath(Path path) {
         this.path = path;
     }

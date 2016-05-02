@@ -17,23 +17,21 @@ public class Slow extends Ailment {
      * @param duration  the duration
      * @param magnitude the magnitude
      */
-    public Slow(int duration, double magnitude) {
+    public Slow(int duration, double magnitude, LivingEntity e) {
+        super(e);
         this.duration = duration;
         this.magnitude = magnitude;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
 
-    /**
-     * Instantiates a new Slow.
-     *
-     * @param duration  the duration
-     * @param magnitude the magnitude
-     * @param e         the e
-     */
-    public Slow(int duration, double magnitude, LivingEntity e) {
-        this.duration = duration;
-        this.magnitude = magnitude;
-        this.e = e;
-    }
 
     /**
      * Gets duration.

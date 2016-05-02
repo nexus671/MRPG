@@ -10,14 +10,7 @@ public class Stun extends Ailment {
     private int duration;
     private LivingEntity e;
 
-    /**
-     * Instantiates a new Stun.
-     *
-     * @param duration the duration
-     */
-    public Stun(int duration) {
-        this.duration = duration;
-    }
+
 
     /**
      * Instantiates a new Stun.
@@ -26,8 +19,18 @@ public class Stun extends Ailment {
      * @param e        the e
      */
     public Stun(int duration, LivingEntity e) {
+        super(e);
         this.duration = duration;
         this.e = e;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
 
     /**

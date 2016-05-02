@@ -651,7 +651,7 @@ public abstract class LivingEntity extends Entity {
      *
      * @param e the e
      */
-    public void removeAliment(Ailment e) {
+    public void removeAilment(Ailment e) {
         aliments.remove(e);
     }
 

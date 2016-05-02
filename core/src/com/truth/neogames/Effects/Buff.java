@@ -33,6 +33,15 @@ public class Buff extends Effect {
         this.stat = stat;
         statName = stat.getStatName();
         assignDescription();
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
 
     /**
@@ -51,6 +60,15 @@ public class Buff extends Effect {
         magnitude = 1.0;
         statName = stat.getStatName();
         assignDescription();
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
 
     /**
@@ -69,6 +87,15 @@ public class Buff extends Effect {
         value = 0;
         statName = stat.getStatName();
         assignDescription();
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
 
     /**
@@ -120,11 +147,8 @@ public class Buff extends Effect {
         assignDescription();
     }
 
-    /**
-     * Start timer.
-     */
-    public void startTimer() {
-        //TODO: 2/17/2016
+    public void Destroy() {
+        stat.removeBonus(this);
     }
 
     /**

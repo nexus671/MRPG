@@ -10,14 +10,6 @@ public class Root extends Ailment {
     private int duration;
     private LivingEntity e;
 
-    /**
-     * Instantiates a new Root.
-     *
-     * @param duration the duration
-     */
-    public Root(int duration) {
-        this.duration = duration;
-    }
 
     /**
      * Instantiates a new Root.
@@ -26,9 +18,20 @@ public class Root extends Ailment {
      * @param e        the e
      */
     public Root(int duration, LivingEntity e) {
+        super(e);
         this.duration = duration;
         this.e = e;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        Destroy();
+                    }
+                },
+                duration * 1000
+        );
     }
+
 
     /**
      * Gets duration.
