@@ -2,11 +2,12 @@ package com.truth.neogames.AI;
 
 import com.truth.neogames.Entities.SubTypes.Monster;
 import com.truth.neogames.EnvironmentPackage.BattleGrid;
+import com.truth.neogames.RPGObject;
 
 /**
  * Created by acurr on 3/21/2016.
  */
-public abstract class Routine {
+public abstract class Routine extends RPGObject{
     /**
      * The State.
      */
