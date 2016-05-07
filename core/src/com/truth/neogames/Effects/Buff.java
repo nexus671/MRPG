@@ -44,6 +44,16 @@ public class Buff extends Effect {
         );
     }
 
+    public Buff(double magnitude, int value, EntityStat stat, boolean debuff) {
+        this.magnitude = magnitude;
+        this.value = value;
+        this.debuff = debuff;
+        this.stat = stat;
+        statName = stat.getStatName();
+        assignDescription();
+
+    }
+
     /**
      * Instantiates a new Buff.
      *

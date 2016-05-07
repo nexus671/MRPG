@@ -26,7 +26,7 @@ public class BarbarianPassive extends PassiveAbility {
         setType(AbilityType.PASSIVE);
         cost = 0;
         double modifier = 0.5 + (0.1 * (double) level);
-        Buff buff = new Buff(-1, modifier, 0, e.getStats().getStrength(), false);
+        Buff buff = new Buff(modifier, 0, e.getStats().getStrength(), false);
         effects.add(buff);
 
         this.level = level;
