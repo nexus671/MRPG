@@ -10,18 +10,14 @@ import com.truth.neogames.Battle.Battle;
 import com.truth.neogames.Battle.TempUI;
 import com.truth.neogames.Entities.SubTypes.Monster;
 import com.truth.neogames.Entities.SubTypes.Player;
-import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.RaceName;
+import com.truth.neogames.Enums.Sex;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.Items.Generators.GearGenerator;
 import com.truth.neogames.Professions.Barbarian;
 import com.truth.neogames.Professions.Profession;
-import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStat;
 import com.truth.neogames.StatsPackage.EntityStatsPackage.EntityStats;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The type My gdx game.
@@ -43,11 +39,8 @@ public class MyGdxGame extends ApplicationAdapter {
      */
     public static void main(String[] args) {
 
-        Collection<EntityStat> stats = new ArrayList<EntityStat>();
-        stats.add(new EntityStat(EntityStatName.STRENGTH, 20.0));
 
-
-        Player p = new Player("Adam", RaceName.HUMAN, "Male", new Profession(), new Sprite());
+        Player p = new Player("Adam", RaceName.HUMAN, Sex.MALE, new Profession(), new Sprite());
         p.setProfession(new Barbarian(p));
         Monster m = new Monster(true, new EntityStats(1));
         m.setName("Skeleton");
