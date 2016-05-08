@@ -3,6 +3,7 @@ package com.truth.neogames.Entities;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Enums.RaceName;
+import com.truth.neogames.Enums.Sex;
 import com.truth.neogames.RPGObject;
 
 /**
@@ -17,7 +18,7 @@ public abstract class Entity extends RPGObject {
     /**
      * The Sex.
      */
-    protected String sex;
+    protected Sex sex;
     /**
      * The Sprite.
      */
@@ -41,7 +42,7 @@ public abstract class Entity extends RPGObject {
      * @param xPos        the x pos
      * @param yPos        the y pos
      */
-    protected Entity(String name, RaceName raceName, String sex, Sprite sprite, String description, int xPos, int yPos) {
+    protected Entity(String name, RaceName raceName, Sex sex, Sprite sprite, String description, int xPos, int yPos) {
         this.name = name;
         this.raceName = raceName;
         this.sex = sex;
@@ -98,7 +99,7 @@ public abstract class Entity extends RPGObject {
      *
      * @return the sex
      */
-    public String getSex() {
+    public Sex getSex() {
         return sex;
     }
 
@@ -107,7 +108,7 @@ public abstract class Entity extends RPGObject {
      *
      * @param sex the sex
      */
-    public void setSex(String sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 
@@ -167,6 +168,7 @@ public abstract class Entity extends RPGObject {
         this.xPos = xPos;
         this.yPos = yPos;
     }
+
 
     /**
      * Gets sprite.

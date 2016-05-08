@@ -11,6 +11,7 @@ import com.truth.neogames.Enums.DamageType;
 import com.truth.neogames.Enums.ElementalType;
 import com.truth.neogames.Enums.EntityStatName;
 import com.truth.neogames.Enums.RaceName;
+import com.truth.neogames.Enums.Sex;
 import com.truth.neogames.Enums.WornSlot;
 import com.truth.neogames.EnvironmentPackage.BattleGrid;
 import com.truth.neogames.HoldingSystems.Inventory;
@@ -592,12 +593,12 @@ public abstract class LivingEntity extends Entity {
     }
 
     @Override
-    public String getSex() {
+    public Sex getSex() {
         return sex;
     }
 
     @Override
-    public void setSex(String sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 

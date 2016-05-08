@@ -3,6 +3,7 @@ package com.truth.neogames.Entities.SubTypes;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.truth.neogames.Entities.LivingEntity;
 import com.truth.neogames.Enums.RaceName;
+import com.truth.neogames.Enums.Sex;
 import com.truth.neogames.HoldingSystems.Inventory;
 import com.truth.neogames.HoldingSystems.WornGear;
 import com.truth.neogames.Professions.Profession;
@@ -24,7 +25,7 @@ public class Player extends LivingEntity {
      * @param profession the profession
      * @param sprite     the sprite
      */
-    public Player(String name, RaceName raceName, String sex, Profession profession, Sprite sprite) {
+    public Player(String name, RaceName raceName, Sex sex, Profession profession, Sprite sprite) {
         setName(name);
         setRaceName(raceName);
         setSex(sex);
